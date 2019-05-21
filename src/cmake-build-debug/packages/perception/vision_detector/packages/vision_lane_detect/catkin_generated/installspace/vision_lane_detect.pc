@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: vision_lane_detect
+Description: Description of vision_lane_detect
+Version: 1.11.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: roscpp

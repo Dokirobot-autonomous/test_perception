@@ -172,9 +172,24 @@ namespace beyondtrack
 
     void propagate_cur_det(cv::Mat cuboid, double h, cv::Mat k, cv::Mat inv_k, cv::Mat n)
     {
+
+if(k.empty())
+{
+ROS_ERROR_STREAM("Camera parameter k is empty! Please publish camera_info.");
+}
+
       // std::cout << "Propagate current detection\n";
       cv::Mat b1Q = (cv::Mat_<double>(3, 1) << bbox_[0] + (bbox_[2] - bbox_[0]) / 2, bbox_[3], 1.0);
-      B1Q = (h * inv_k * b1Q) / (n * inv_k * b1Q);
+
+cv::Mat k_tmp,inv_k_tmp;
+k.convertTo(k_tmp,CV_64F);
+inv_k.convertTo(inv_k_tmp,CV_64F);
+
+cv::Mat tmp1=(h * inv_k_tmp * b1Q);
+cv::Mat tmp2=(n * inv_k_tmp * b1Q);
+B1Q=tmp1/tmp2;
+
+//      B1Q = (h * inv_k_tmp * b1Q) / (n * inv_k_tmp * b1Q);
       // apply offset which is a function of yaw and get car's origin.
       double offset_z = calc_offset_base_yaw();
       B1Q.at<double>(0, 2) += offset_z;
@@ -182,7 +197,7 @@ namespace beyondtrack
       origin_ = B1Q;
       cv::Mat offset = (cv::Mat_<double>(1, 3) << 0, params_car_cuboid_.avg_w / 2., 0);
       bvolume_ = bvolume - repeat(offset, bvolume.size().height, 1);
-      bvolume_proj_ = bvolume_ * k.t();
+      bvolume_proj_ = bvolume_ * k_tmp.t();
       bvolume_proj_.colRange(0, 3) /= repeat(bvolume_proj_.col(2), 1, 3);
 
       // Pre-calculate the convexhull -- 3d --

@@ -78,7 +78,7 @@ VisualizeDetectedObjects::VisualizeDetectedObjects() : arrow_height_(0.5), label
   ROS_INFO("[%s] object_src_topic: %s", __APP_NAME__, object_src_topic.c_str());
 
   publisher_markers_ = node_handle_.advertise<visualization_msgs::MarkerArray>(
-    markers_out_topic, 1);
+    markers_out_topic, 0);
   ROS_INFO("[%s] markers_out_topic: %s", __APP_NAME__, markers_out_topic.c_str());
 
 }

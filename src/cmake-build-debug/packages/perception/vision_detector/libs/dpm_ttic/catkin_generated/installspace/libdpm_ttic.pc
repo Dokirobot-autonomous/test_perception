@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: libdpm_ttic
+Description: Description of libdpm_ttic
+Version: 1.11.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -llibdpm_ttic
+Requires: 

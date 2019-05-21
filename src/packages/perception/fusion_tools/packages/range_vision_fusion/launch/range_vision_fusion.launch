@@ -1,7 +1,8 @@
+<!-- -->
 <launch>
   <arg name="detected_objects_range" default="/detection/lidar_detector/objects"/>
   <arg name="detected_objects_vision" default="/detection/image_detector/objects"/>
-  <arg name="camera_info_src" default="/camera_info"/>
+  <arg name="camera_info_src" default="/sensor/camera/color/left/camera_info"/>
   <arg name="min_car_dimensions" default="[3,2,2]"/>
   <arg name="min_person_dimensions" default="[1,2,1]"/>
   <arg name="min_truck_dimensions" default="[4,2,2]"/>

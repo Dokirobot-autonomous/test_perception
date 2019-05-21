@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: integrated_viewer
+Description: Description of integrated_viewer
+Version: 1.11.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: rviz

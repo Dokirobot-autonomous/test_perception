@@ -1,0 +1,6 @@
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="integrated_viewer"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-o
+/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/node/data_rate_checker_plugin/moc_data_rate_checker_plugin.cpp
+/home/ohashi/test_perception/src/packages/perception/visualizers/packages/integrated_viewer/node/data_rate_checker_plugin/data_rate_checker_plugin.h

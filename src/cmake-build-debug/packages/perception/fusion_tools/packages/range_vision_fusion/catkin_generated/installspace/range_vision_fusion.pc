@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: range_vision_fusion
+Description: Description of range_vision_fusion
+Version: 1.11.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: cv_bridge sensor_msgs image_transport roscpp tf autoware_msgs jsk_recognition_utils eigen_conversions tf_conversions jsk_topic_tools image_geometry jsk_topic_tools

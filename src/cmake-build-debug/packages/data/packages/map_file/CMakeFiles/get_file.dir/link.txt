@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -Wall -O3 -std=c++11 -Wall  -g   -shared -Wl,-soname,libget_file.so -o ../../../../devel/lib/libget_file.so CMakeFiles/get_file.dir/lib/map_file/get_file.cpp.o -lcurl 

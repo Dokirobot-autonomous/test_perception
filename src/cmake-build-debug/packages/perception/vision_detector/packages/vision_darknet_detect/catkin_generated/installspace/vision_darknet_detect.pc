@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: vision_darknet_detect
+Description: Description of vision_darknet_detect
+Version: 1.11.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: cv_bridge image_transport roscpp sensor_msgs std_msgs autoware_msgs autoware_config_msgs

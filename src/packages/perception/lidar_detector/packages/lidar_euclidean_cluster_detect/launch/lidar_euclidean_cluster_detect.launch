@@ -1,6 +1,6 @@
 <!-- -->
 <launch>
-  <arg name="points_node" default="/points_raw" /><!--CHANGE THIS TO READ WHETHER FROM VSCAN OR POINTS_RAW -->
+  <arg name="points_node" default="/sensor/velodyne/cloud_euclidean" /><!--CHANGE THIS TO READ WHETHER FROM VSCAN OR POINTS_RAW -->
   <arg name="remove_ground" default="true" />
   <arg name="downsample_cloud" default="false" /> <!-- Apply VoxelGrid Filter with the value given by "leaf_size"-->
   <arg name="leaf_size" default="0.1" /><!-- Voxel Grid Filter leaf size-->
@@ -22,11 +22,11 @@
   <arg name="use_vector_map" default="false" />
   <arg name="wayarea_gridmap_layer" default="wayarea" />
 
-  <arg name="output_frame" default="velodyne" />
+  <arg name="output_frame" default="/sensor/velodyne" />
 
   <arg name="remove_points_upto" default="0.0" />
 
-  <arg name="use_gpu" default="false" />
+  <arg name="use_gpu" default="true" />
 
   <arg name="use_multiple_thres" default="false"/>
   <arg name="clustering_ranges" default="[15,30,45,60]"/><!-- Distances to segment pointcloud -->

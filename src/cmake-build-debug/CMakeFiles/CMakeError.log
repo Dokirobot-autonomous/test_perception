@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_550d7/fast 
+/usr/bin/make -f CMakeFiles/cmTC_550d7.dir/build.make CMakeFiles/cmTC_550d7.dir/build
+make[1]: ディレクトリ '/home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp' に入ります
+Building C object CMakeFiles/cmTC_550d7.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_550d7.dir/CheckSymbolExists.c.o   -c /home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_550d7
+/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_550d7.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_550d7.dir/CheckSymbolExists.c.o  -o cmTC_550d7 
+CMakeFiles/cmTC_550d7.dir/CheckSymbolExists.c.o: 関数 `main' 内:
+CheckSymbolExists.c:(.text+0x16): `pthread_create' に対する定義されていない参照です
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_550d7.dir/build.make:86: ターゲット 'cmTC_550d7' のレシピで失敗しました
+make[1]: *** [cmTC_550d7] エラー 1
+make[1]: ディレクトリ '/home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp' から出ます
+Makefile:121: ターゲット 'cmTC_550d7/fast' のレシピで失敗しました
+make: *** [cmTC_550d7/fast] エラー 2
+
+File /home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4ef2d/fast 
+/usr/bin/make -f CMakeFiles/cmTC_4ef2d.dir/build.make CMakeFiles/cmTC_4ef2d.dir/build
+make[1]: ディレクトリ '/home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp' に入ります
+Building C object CMakeFiles/cmTC_4ef2d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4ef2d.dir/CheckFunctionExists.c.o   -c /home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4ef2d
+/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ef2d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_4ef2d.dir/CheckFunctionExists.c.o  -o cmTC_4ef2d -lpthreads 
+/usr/bin/ld: -lpthreads が見つかりません
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_4ef2d.dir/build.make:86: ターゲット 'cmTC_4ef2d' のレシピで失敗しました
+make[1]: *** [cmTC_4ef2d] エラー 1
+make[1]: ディレクトリ '/home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp' から出ます
+Makefile:121: ターゲット 'cmTC_4ef2d/fast' のレシピで失敗しました
+make: *** [cmTC_4ef2d/fast] エラー 2
+
+

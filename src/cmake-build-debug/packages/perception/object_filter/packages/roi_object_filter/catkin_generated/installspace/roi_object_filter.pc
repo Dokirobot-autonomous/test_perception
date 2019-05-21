@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: roi_object_filter
+Description: Description of roi_object_filter
+Version: 1.11.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: roscpp sensor_msgs geometry_msgs autoware_msgs grid_map_ros grid_map_cv grid_map_msgs tf

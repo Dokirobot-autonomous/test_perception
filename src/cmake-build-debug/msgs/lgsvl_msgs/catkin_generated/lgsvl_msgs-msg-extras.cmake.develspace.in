@@ -1,0 +1,2 @@
+set(lgsvl_msgs_MESSAGE_FILES "/home/ohashi/test_perception/src/msgs/lgsvl_msgs/msg/Detection3DArray.msg;/home/ohashi/test_perception/src/msgs/lgsvl_msgs/msg/Detection3D.msg;/home/ohashi/test_perception/src/msgs/lgsvl_msgs/msg/BoundingBox3D.msg;/home/ohashi/test_perception/src/msgs/lgsvl_msgs/msg/Detection2DArray.msg;/home/ohashi/test_perception/src/msgs/lgsvl_msgs/msg/Detection2D.msg;/home/ohashi/test_perception/src/msgs/lgsvl_msgs/msg/BoundingBox2D.msg")
+set(lgsvl_msgs_SERVICE_FILES "")

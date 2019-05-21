@@ -22,13 +22,16 @@
 
 #include "range_vision_fusion/range_vision_fusion.h"
 
-int main(int argc, char **argv)
-{
-  ros::init(argc, argv, __APP_NAME__);
+int main(int argc, char **argv) {
 
-  ROSRangeVisionFusionApp app;
+    ros::init(argc, argv, __APP_NAME__);
+    if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Debug)) {
+        ros::console::notifyLoggerLevelsChanged();
+    }
 
-  app.Run();
+    ROSRangeVisionFusionApp app;
 
-  return 0;
+    app.Run();
+
+    return 0;
 }

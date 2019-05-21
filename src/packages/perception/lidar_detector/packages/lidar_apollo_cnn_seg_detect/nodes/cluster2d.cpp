@@ -77,7 +77,7 @@ void Cluster2D::cluster(const caffe::Blob<float> &category_pt_blob,
     size_t tot_point_num = pc_ptr_->size();
     valid_indices_in_pc_ = &(valid_indices.indices);
     CHECK_LE(valid_indices_in_pc_->size(), tot_point_num);
-    point2grid_.assign(valid_indices_in_pc_->size(), -1);
+    point2grid_.assign(valid_indices_in_pc_->size(), -1); // labeling points
 
     for (size_t i = 0; i < valid_indices_in_pc_->size(); ++i)
     {

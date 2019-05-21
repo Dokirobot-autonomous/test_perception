@@ -1,0 +1,19 @@
+point_pillarsが立ち上がらなかった
+
+ERROR: cannot launch node of type [lidar_point_pillars/lidar_point_pillars]: can't locate node [lidar_point_pillars] in package [lidar_point_pillars]
+
+lidar_point_pillarsノードが正常にビルドできていない
+おそらく、CUDNNを正常にインストールできていなかった or パスが通っていなかった
+
+やったこと(https://qiita.com/daichan1111/items/6ca75c688fff4cf14023)
+1. 
+export CUDA_ROOT=/usr/local/cuda-10.0
+export PATH=/usr/local/cuda-10.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:/usr/local/cuda-10.0/lib:$LD_LIBRARY_PATH
+export CPATH=/usr/local/cuda-10.0/include:$CPATH
+
+/usr/include/cudnn.hを/usr/local/cuda-10.0/include にコピー
+/usr/share/doc/libcudnn*を/usr/local/cuda-10.0/lib64 にコピー
+
+catkin_make
+

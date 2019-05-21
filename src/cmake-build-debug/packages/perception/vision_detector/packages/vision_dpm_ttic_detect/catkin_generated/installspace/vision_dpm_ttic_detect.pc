@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: vision_dpm_ttic_detect
+Description: Description of vision_dpm_ttic_detect
+Version: 1.11.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: cv_bridge roscpp sensor_msgs std_msgs autoware_config_msgs autoware_msgs libdpm_ttic

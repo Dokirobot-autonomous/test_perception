@@ -226,9 +226,13 @@ void publishCloudClusters(const ros::Publisher *in_publisher, const autoware_msg
     clusters_transformed.header.frame_id = in_target_frame;
     for (auto i = in_clusters.clusters.begin(); i != in_clusters.clusters.end(); i++)
     {
+
+
       autoware_msgs::CloudCluster cluster_transformed;
       cluster_transformed.header = in_header;
-      try
+
+
+        try
       {
         _transform_listener->lookupTransform(in_target_frame, _velodyne_header.frame_id, ros::Time(),
                                              *_transform);
@@ -246,14 +250,17 @@ void publishCloudClusters(const ros::Publisher *in_publisher, const autoware_msg
         cluster_transformed.eigen_values = i->eigen_values;
         cluster_transformed.eigen_vectors = i->eigen_vectors;
 
-        clusters_transformed.clusters.push_back(cluster_transformed);
+        transformBoundingBox(i->bounding_box,cluster_transformed.bounding_box,in_target_frame,in_header);
+
+          clusters_transformed.clusters.push_back(cluster_transformed);
       }
       catch (tf::TransformException &ex)
       {
         ROS_ERROR("publishCloudClusters: %s", ex.what());
       }
     }
-    in_publisher->publish(clusters_transformed);
+
+      in_publisher->publish(clusters_transformed);
     publishDetectedObjects(clusters_transformed);
   } else
   {
@@ -536,6 +543,7 @@ void segmentByDistance(const pcl::PointCloud<pcl::PointXYZ>::Ptr in_cloud_ptr,
                        pcl::PointCloud<pcl::PointXYZRGB>::Ptr out_cloud_ptr,
                        autoware_msgs::Centroids &in_out_centroids, autoware_msgs::CloudClusterArray &in_out_clusters)
 {
+    // Clustering
   // cluster the pointcloud according to the distance of the points using different thresholds (not only one for the
   // entire pc)
   // in this way, the points farther in the pc will also be clustered
@@ -926,7 +934,12 @@ int main(int argc, char **argv)
   ros::NodeHandle h;
   ros::NodeHandle private_nh("~");
 
-  tf::StampedTransform transform;
+    if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Debug)) {
+        ros::console::notifyLoggerLevelsChanged();
+    }
+
+
+    tf::StampedTransform transform;
   tf::TransformListener listener;
   tf::TransformListener vectormap_tf_listener;
 
@@ -999,7 +1012,7 @@ int main(int argc, char **argv)
   ROS_INFO("[%s] max_boundingbox_side: %f", __APP_NAME__, _max_boundingbox_side);
   private_nh.param("cluster_merge_threshold", _cluster_merge_threshold, 1.5);
   ROS_INFO("[%s] cluster_merge_threshold: %f", __APP_NAME__, _cluster_merge_threshold);
-  private_nh.param<std::string>("output_frame", _output_frame, "velodyne");
+  private_nh.param<std::string>("output_frame", _output_frame, "sensor/velodyne");
   ROS_INFO("[%s] output_frame: %s", __APP_NAME__, _output_frame.c_str());
 
   private_nh.param("remove_points_upto", _remove_points_upto, 0.0);

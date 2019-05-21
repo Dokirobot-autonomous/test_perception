@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: lidar_apollo_cnn_seg_detect
+Description: Description of lidar_apollo_cnn_seg_detect
+Version: 1.11.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib 
+Requires: roscpp tf tf_conversions pcl_ros sensor_msgs geometry_msgs autoware_msgs

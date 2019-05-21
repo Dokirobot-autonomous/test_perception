@@ -259,7 +259,9 @@ void Cluster::SetCloud(const pcl::PointCloud<pcl::PointXYZ>::Ptr in_origin_cloud
   tf::Quaternion quat = tf::createQuaternionFromRPY(0.0, 0.0, rz);
   tf::quaternionTFToMsg(quat, bounding_box_.pose.orientation);
 
-  current_cluster->width = current_cluster->points.size();
+    ROS_DEBUG_STREAM("Bounding Box: "<<bounding_box_);
+
+    current_cluster->width = current_cluster->points.size();
   current_cluster->height = 1;
   current_cluster->is_dense = true;
 

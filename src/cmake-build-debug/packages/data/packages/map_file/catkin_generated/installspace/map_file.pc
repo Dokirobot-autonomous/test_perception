@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: map_file
+Description: Description of map_file
+Version: 1.11.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

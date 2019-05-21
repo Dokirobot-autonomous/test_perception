@@ -125,6 +125,7 @@ namespace beyondtrack
 
   void BeyondTracker::process(std::vector<Detection> in_detections, cv::Mat in_pose, cv::Mat in_angle, double in_height)
   {
+
     cur_detections_ = in_detections;
     cur_pose_ = in_pose;
 
@@ -140,6 +141,7 @@ namespace beyondtrack
       return;
     }
 
+    // Compute car motion_
     motion_ = -(cur_pose_ - prev_pose_);
     motion_.at<double>(0, 3) = deg2rad(0); // TODO: subscribe from lidar localizer or camera localizer
     // motion *= (1.72 / 44);

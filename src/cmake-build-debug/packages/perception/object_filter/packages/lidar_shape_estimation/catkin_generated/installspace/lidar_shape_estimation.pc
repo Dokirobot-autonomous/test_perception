@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: lidar_shape_estimation
+Description: Description of lidar_shape_estimation
+Version: 1.11.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib 
+Requires: autoware_build_flags autoware_msgs pcl_ros roscpp tf2 tf2_geometry_msgs
