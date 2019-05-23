@@ -963,6 +963,12 @@ eigen_conversions_DIR:PATH=/opt/ros/kinetic/share/eigen_conversions/cmake
 //The directory containing a CMake configuration file for filters.
 filters_DIR:PATH=/opt/ros/kinetic/share/filters/cmake
 
+//Value Computed by CMake
+frustum_fusion_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion
+
+//Value Computed by CMake
+frustum_fusion_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/perception/fusion_tools/packages/frustum_fusion
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
 
@@ -1605,7 +1611,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=37
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=38
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

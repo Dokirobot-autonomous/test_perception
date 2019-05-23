@@ -12980,6 +12980,24 @@ clean: packages/perception/visualizers/packages/detected_objects_visualizer/CMak
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory packages/perception/fusion_tools/packages/frustum_fusion
+
+# Convenience name for "all" pass in the directory.
+packages/perception/fusion_tools/packages/frustum_fusion/all:
+
+.PHONY : packages/perception/fusion_tools/packages/frustum_fusion/all
+
+# Convenience name for "clean" pass in the directory.
+packages/perception/fusion_tools/packages/frustum_fusion/clean:
+
+.PHONY : packages/perception/fusion_tools/packages/frustum_fusion/clean
+
+# Convenience name for "preinstall" pass in the directory.
+packages/perception/fusion_tools/packages/frustum_fusion/preinstall:
+
+.PHONY : packages/perception/fusion_tools/packages/frustum_fusion/preinstall
+
+#=============================================================================
 # Directory level rules for directory packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect
 
 # Convenience name for "all" pass in the directory.

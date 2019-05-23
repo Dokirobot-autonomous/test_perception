@@ -155,6 +155,7 @@ void Cluster2D::cluster(const caffe::Blob<float> &category_pt_blob,
         }
     }
 
+    // 障害物判定
     int count_obstacles = 0;
     obstacles_.clear();
     id_img_.assign(grids_, -1);

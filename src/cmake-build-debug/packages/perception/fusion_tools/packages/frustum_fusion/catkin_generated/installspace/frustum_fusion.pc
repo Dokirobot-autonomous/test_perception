@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: frustum_fusion
+Description: Description of frustum_fusion
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 
