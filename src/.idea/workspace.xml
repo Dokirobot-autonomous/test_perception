@@ -6,6 +6,7 @@
       <config projectName="Project" targetName="visualization_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_lgsvl_msgs_generate_messages_check_deps_BoundingBox2D" />
       <config projectName="Project" targetName="roscpp_generate_messages_py" />
+      <config projectName="Project" targetName="velodyne_pointcloud_gencfg" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetDriveOnPortion" />
       <config projectName="Project" targetName="clean_test_results" />
       <config projectName="Project" targetName="lgsvl_msgs_geneus" />
@@ -13,15 +14,17 @@
       <config projectName="Project" targetName="geometry_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_run_tests_roi_object_filter" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="clean_test_results_autoware_health_checker" />
+      <config projectName="Project" targetName="health_aggregator" />
       <config projectName="Project" targetName="clean_test_results_lidar_point_pillars" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigWaypointFollower" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="bond_generate_messages_py" />
       <config projectName="Project" targetName="libdpm_ttic" />
+      <config projectName="Project" targetName="bond_generate_messages_py" />
       <config projectName="Project" targetName="dynamic_reconfigure_gencfg" />
-      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_TurnSignal" />
       <config projectName="Project" targetName="vision_lane_detect" />
+      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_TurnSignal" />
       <config projectName="Project" targetName="autoware_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_CrossWalkArray" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_BrakeCmd" />
@@ -31,8 +34,8 @@
       <config projectName="Project" targetName="lgsvl_msgs_gencpp" />
       <config projectName="Project" targetName="obj_downloader" />
       <config projectName="Project" targetName="visualize_detected_objects" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="roi_object_filter_lib" />
       <config projectName="Project" targetName="std_srvs_generate_messages_cpp" />
       <config projectName="Project" targetName="autoware_config_msgs_gennodejs" />
@@ -41,11 +44,11 @@
       <config projectName="Project" targetName="bond_generate_messages_cpp" />
       <config projectName="Project" targetName="pcl_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_WhiteLineArray" />
-      <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetDTLane" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_NDTStat" />
+      <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetDTLane" />
       <config projectName="Project" targetName="jsk_footstep_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianFusion" />
       <config projectName="Project" targetName="autoware_system_msgs_genpy" />
+      <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianFusion" />
       <config projectName="Project" targetName="range_vision_fusion" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_VehicleLocation" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_py" />
@@ -58,18 +61,20 @@
       <config projectName="Project" targetName="std_srvs_generate_messages_eus" />
       <config projectName="Project" targetName="pcl_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ScanImage" />
+      <config projectName="Project" targetName="ray_ground_filter_lib" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetWayArea" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigCarDPM" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadEdgeArray" />
       <config projectName="Project" targetName="tf_generate_messages_eus" />
       <config projectName="Project" targetName="test-roi_object_filter" />
       <config projectName="Project" targetName="nav_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetRoadMark" />
       <config projectName="Project" targetName="vector_map_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="lgsvl_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetRoadMark" />
       <config projectName="Project" targetName="_run_tests_roi_object_filter_rostest_test_test_roi_object_filter.test" />
+      <config projectName="Project" targetName="lgsvl_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigNDT" />
       <config projectName="Project" targetName="autoware_system_msgs_genlisp" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_py" />
       <config projectName="Project" targetName="run_tests_lidar_point_pillars" />
       <config projectName="Project" targetName="autoware_msgs_gennodejs" />
       <config projectName="Project" targetName="dbw_mkz_msgs_genpy" />
@@ -82,20 +87,20 @@
       <config projectName="Project" targetName="tf_generate_messages_cpp" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetStopLine" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_GeometricRectangle" />
-      <config projectName="Project" targetName="gmock" />
       <config projectName="Project" targetName="roscpp_generate_messages_eus" />
+      <config projectName="Project" targetName="gmock" />
       <config projectName="Project" targetName="bond_generate_messages_eus" />
       <config projectName="Project" targetName="points_map_loader" />
       <config projectName="Project" targetName="tests" />
       <config projectName="Project" targetName="lgsvl_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ValueSet" />
       <config projectName="Project" targetName="integrated_viewer" />
-      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Area" />
       <config projectName="Project" targetName="dbw_mkz_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Area" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_GutterArray" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_AdjustXY" />
-      <config projectName="Project" targetName="autoware_can_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="grid_map_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="autoware_can_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigDecisionMaker" />
       <config projectName="Project" targetName="vector_map_server_genlisp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_StreetLightArray" />
@@ -120,23 +125,23 @@
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ProjectionMatrix" />
       <config projectName="Project" targetName="vector_map_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_TunedResult" />
-      <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetWhiteLine" />
       <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
+      <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetWhiteLine" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_FuelLevelReport" />
       <config projectName="Project" targetName="lgsvl_msgs_genlisp" />
       <config projectName="Project" targetName="_autoware_system_msgs_generate_messages_check_deps_DiagnosticStatusArray" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_ZebraZoneArray" />
-      <config projectName="Project" targetName="clean_test_results_roi_object_filter" />
-      <config projectName="Project" targetName="visualization_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="jsk_topic_tools_gencfg" />
+      <config projectName="Project" targetName="visualization_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="clean_test_results_roi_object_filter" />
       <config projectName="Project" targetName="_run_tests_lidar_point_pillars" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_GuardRailArray" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="tf_generate_messages_py" />
-      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_RemoteCmd" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_SideWalkArray" />
-      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadPole" />
+      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_RemoteCmd" />
       <config projectName="Project" targetName="can_uploader" />
+      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadPole" />
       <config projectName="Project" targetName="test-lidar_shape_estimation" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ImageObjRanged" />
       <config projectName="Project" targetName="dbw_mkz_msgs_generate_messages_py" />
@@ -144,6 +149,7 @@
       <config projectName="Project" targetName="run_tests_lidar_shape_estimation" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Node" />
+      <config projectName="Project" targetName="health_analyzer" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_Signals" />
       <config projectName="Project" targetName="actionlib_generate_messages_nodejs" />
       <config projectName="Project" targetName="lgsvl_msgs_generate_messages_lisp" />
@@ -159,25 +165,27 @@
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_TrafficLight" />
       <config projectName="Project" targetName="map_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_WatchdogCounter" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="people_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_CurbArray" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_AreaArray" />
       <config projectName="Project" targetName="gnss" />
-      <config projectName="Project" targetName="_lgsvl_msgs_generate_messages_check_deps_Detection3D" />
       <config projectName="Project" targetName="lgsvl_msgs_generate_messages" />
+      <config projectName="Project" targetName="_lgsvl_msgs_generate_messages_check_deps_Detection3D" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Curb" />
       <config projectName="Project" targetName="_lgsvl_msgs_generate_messages_check_deps_Detection2D" />
       <config projectName="Project" targetName="vector_map_msgs_genpy" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadMarkArray" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_run_tests_lidar_point_pillars_gtest" />
       <config projectName="Project" targetName="jsk_hark_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="actionlib_generate_messages_eus" />
       <config projectName="Project" targetName="_lgsvl_msgs_generate_messages_check_deps_Detection2DArray" />
+      <config projectName="Project" targetName="actionlib_generate_messages_eus" />
       <config projectName="Project" targetName="download_extra_data" />
-      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_AmbientLight" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigLaneRule" />
+      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_AmbientLight" />
+      <config projectName="Project" targetName="run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" />
+      <config projectName="Project" targetName="run_tests_autoware_health_checker_rostest" />
       <config projectName="Project" targetName="map_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_py" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_nodejs" />
@@ -185,15 +193,17 @@
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetCurveMirror" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_py" />
       <config projectName="Project" targetName="vector_map_server" />
+      <config projectName="Project" targetName="_run_tests_autoware_health_checker_rostest" />
       <config projectName="Project" targetName="std_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetGuardRail" />
       <config projectName="Project" targetName="topic_tools_generate_messages_py" />
       <config projectName="Project" targetName="dbw_mkz_msgs_genlisp" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_StateCmd" />
-      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_VehicleStatus" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_NodeArray" />
+      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_VehicleStatus" />
       <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
       <config projectName="Project" targetName="run_tests_roi_object_filter_rostest_test_test_roi_object_filter.test" />
+      <config projectName="Project" targetName="apollo_cnn_segmentation" />
       <config projectName="Project" targetName="autoware_config_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_WheelSpeedReport" />
       <config projectName="Project" targetName="run_tests_roi_object_filter_rostest" />
@@ -218,13 +228,15 @@
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_SideStripArray" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_Gear" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="velodyne_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="run_tests_lidar_shape_estimation_rostest_test_test_lidar_shape_estimation.test" />
-      <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigRayGroundFilter" />
       <config projectName="Project" targetName="jsk_footstep_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigRayGroundFilter" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_CloudCluster" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetZebraZone" />
-      <config projectName="Project" targetName="dbw_mkz_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_SteerCmd" />
+      <config projectName="Project" targetName="dbw_mkz_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="velodyne_msgs_generate_messages_py" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_CrossRoad" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigVoxelGridFilter" />
@@ -241,16 +253,16 @@
       <config projectName="Project" targetName="pcl_ros_gencfg" />
       <config projectName="Project" targetName="jsk_topic_tools_generate_messages_nodejs" />
       <config projectName="Project" targetName="_autoware_can_msgs_generate_messages_check_deps_CANPacket" />
-      <config projectName="Project" targetName="lgsvl_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_GearReport" />
+      <config projectName="Project" targetName="lgsvl_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="vector_map_msgs_generate_messages" />
       <config projectName="Project" targetName="nodelet_generate_messages_py" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_DTLane" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="autoware_system_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="topic_tools_generate_messages_lisp" />
-      <config projectName="Project" targetName="grid_map_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_Waypoint" />
+      <config projectName="Project" targetName="grid_map_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="gpu_point_pillars_lib" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadMark" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
@@ -259,6 +271,7 @@
       <config projectName="Project" targetName="autoware_can_msgs_generate_messages" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ObjPose" />
       <config projectName="Project" targetName="autoware_rviz_plugins_autogen" />
+      <config projectName="Project" targetName="_run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" />
       <config projectName="Project" targetName="nodelet_generate_messages_nodejs" />
       <config projectName="Project" targetName="nav_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigNDTMapping" />
@@ -266,8 +279,8 @@
       <config projectName="Project" targetName="_run_tests_lidar_shape_estimation_rostest" />
       <config projectName="Project" targetName="cuda_binary" />
       <config projectName="Project" targetName="grid_map_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_PointsImage" />
       <config projectName="Project" targetName="visualization_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_PointsImage" />
       <config projectName="Project" targetName="vector_map" />
       <config projectName="Project" targetName="lidar_point_pillars" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_SignalArray" />
@@ -280,13 +293,15 @@
       <config projectName="Project" targetName="nav_msgs_generate_messages_py" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_LampCmd" />
       <config projectName="Project" targetName="point_pillars_lib" />
-      <config projectName="Project" targetName="autoware_launcher_rviz" />
       <config projectName="Project" targetName="lidar_shape_estimation" />
+      <config projectName="Project" targetName="autoware_launcher_rviz" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ColorSet" />
+      <config projectName="Project" targetName="ring_ground_filter" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_WheelPositionReport" />
       <config projectName="Project" targetName="rosbag_controller" />
       <config projectName="Project" targetName="people_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetNode" />
+      <config projectName="Project" targetName="velodyne_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="autoware_msgs_generate_messages_py" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigPoints2Polygon" />
       <config projectName="Project" targetName="jsk_recognition_utils_gencfg" />
@@ -297,18 +312,20 @@
       <config projectName="Project" targetName="autoware_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetLane" />
       <config projectName="Project" targetName="jsk_topic_tools_generate_messages_eus" />
-      <config projectName="Project" targetName="vector_map_client" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigRingGroundFilter" />
-      <config projectName="Project" targetName="vector_map_server_generate_messages" />
-      <config projectName="Project" targetName="actionlib_generate_messages_py" />
+      <config projectName="Project" targetName="vector_map_client" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_StreetLight" />
+      <config projectName="Project" targetName="actionlib_generate_messages_py" />
+      <config projectName="Project" targetName="vector_map_server_generate_messages" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_SyncTimeDiff" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ControlCommandStamped" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_TwistCmd" />
+      <config projectName="Project" targetName="velodyne_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_CrossRoadArray" />
       <config projectName="Project" targetName="jsk_rviz_plugins_generate_messages_eus" />
       <config projectName="Project" targetName="vision_darknet_detect_lib" />
       <config projectName="Project" targetName="autoware_can_msgs_gencpp" />
+      <config projectName="Project" targetName="run_tests_autoware_health_checker" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigLaneStop" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_SideWalk" />
       <config projectName="Project" targetName="autoware_config_msgs_generate_messages_py" />
@@ -317,8 +334,8 @@
       <config projectName="Project" targetName="jsk_rviz_plugins_generate_messages_cpp" />
       <config projectName="Project" targetName="autoware_can_msgs_geneus" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetRailCrossing" />
-      <config projectName="Project" targetName="dbw_mkz_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_run_tests_lidar_shape_estimation" />
+      <config projectName="Project" targetName="dbw_mkz_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_BrakeCmd" />
       <config projectName="Project" targetName="vector_map_msgs_generate_messages_py" />
       <config projectName="Project" targetName="grid_map_msgs_generate_messages_py" />
@@ -331,28 +348,32 @@
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_StopLineArray" />
       <config projectName="Project" targetName="autoware_system_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_TurnSignalCmd" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="range_vision_fusion_lib" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_VscanTrackedArray" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_AccelCmd" />
-      <config projectName="Project" targetName="autoware_msgs_genpy" />
       <config projectName="Project" targetName="_run_tests_lidar_point_pillars_gtest_test-point_pillars" />
+      <config projectName="Project" targetName="autoware_msgs_genpy" />
       <config projectName="Project" targetName="pixel_cloud_fusion_lib" />
       <config projectName="Project" targetName="jsk_hark_msgs_generate_messages_py" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Vector" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_py" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_PositionState" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_BoxArray" />
+      <config projectName="Project" targetName="system_status_subscriber" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_DTLaneArray" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetWall" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_VscanTracked" />
       <config projectName="Project" targetName="test-point_pillars" />
       <config projectName="Project" targetName="run_tests_roi_object_filter" />
       <config projectName="Project" targetName="lidar_apollo_cnn_seg_detect" />
-      <config projectName="Project" targetName="bond_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetUtilityPole" />
+      <config projectName="Project" targetName="bond_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetCrossRoad" />
       <config projectName="Project" targetName="autoware_can_msgs_genpy" />
       <config projectName="Project" targetName="jsk_topic_tools_generate_messages_lisp" />
+      <config projectName="Project" targetName="_run_tests_autoware_health_checker" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_SteeringReport" />
       <config projectName="Project" targetName="_autoware_can_msgs_generate_messages_check_deps_CANInfo" />
       <config projectName="Project" targetName="run_tests_lidar_shape_estimation_rostest" />
@@ -360,12 +381,13 @@
       <config projectName="Project" targetName="nodelet_topic_tools_gencfg" />
       <config projectName="Project" targetName="topic_tools_generate_messages_cpp" />
       <config projectName="Project" targetName="vector_map_msgs_geneus" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_WayArea" />
       <config projectName="Project" targetName="_autoware_system_msgs_generate_messages_check_deps_DiagnosticStatus" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_GearCmd" />
+      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RailCrossingArray" />
       <config projectName="Project" targetName="map_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="jsk_hark_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RailCrossingArray" />
       <config projectName="Project" targetName="std_srvs_generate_messages_lisp" />
       <config projectName="Project" targetName="tf_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_LineArray" />
@@ -378,13 +400,15 @@
       <config projectName="Project" targetName="vector_map_loader" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianDPM" />
       <config projectName="Project" targetName="get_file" />
+      <config projectName="Project" targetName="frustum_points_extractor" />
       <config projectName="Project" targetName="autoware_system_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Fence" />
-      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadEdge" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_CurveMirror" />
+      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadEdge" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigNDTMappingOutput" />
-      <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigTwistFilter" />
       <config projectName="Project" targetName="clean_test_results_lidar_shape_estimation" />
+      <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigTwistFilter" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigCompareMapFilter" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigSSD" />
       <config projectName="Project" targetName="autoware_can_msgs_generate_messages_lisp" />
@@ -411,10 +435,11 @@
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Box" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="jsk_hark_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="velodyne_driver_gencfg" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadPoleArray" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_SyncTimeMonitor" />
-      <config projectName="Project" targetName="lidar_euclidean_cluster_detect" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="lidar_euclidean_cluster_detect" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigLatticeVelocitySet" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Pole" />
@@ -432,6 +457,7 @@
       <config projectName="Project" targetName="sensor_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="autoware_can_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="autoware_system_msgs_gencpp" />
+      <config projectName="Project" targetName="test-autoware_health_checker" />
       <config projectName="Project" targetName="vector_map_server_generate_messages_nodejs" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_ZebraZone" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_CurveMirrorArray" />
@@ -445,11 +471,14 @@
       <config projectName="Project" targetName="std_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="roi_object_filter" />
       <config projectName="Project" targetName="gtest" />
-      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_TrafficLightResult" />
       <config projectName="Project" targetName="_run_tests_lidar_shape_estimation_rostest_test_test_lidar_shape_estimation.test" />
+      <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_TrafficLightResult" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ImageObjects" />
       <config projectName="Project" targetName="autoware_config_msgs_gencpp" />
+      <config projectName="Project" targetName="node_status_publisher" />
       <config projectName="Project" targetName="jsk_footstep_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="ray_ground_filter" />
+      <config projectName="Project" targetName="velodyne_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_autoware_system_msgs_generate_messages_check_deps_SystemStatus" />
       <config projectName="Project" targetName="std_msgs_generate_messages_py" />
       <config projectName="Project" targetName="autoware_config_msgs_genlisp" />
@@ -462,6 +491,7 @@
       <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetRoadPole" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetStreetLight" />
+      <config projectName="Project" targetName="frustum_points_extractor_lib" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_Misc1Report" />
       <config projectName="Project" targetName="_autoware_can_msgs_generate_messages_check_deps_CANData" />
       <config projectName="Project" targetName="std_srvs_generate_messages_py" />
@@ -470,8 +500,8 @@
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianKF" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_PointArray" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_cpp" />
-      <config projectName="Project" targetName="autoware_config_msgs_generate_messages" />
       <config projectName="Project" targetName="jsk_footstep_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="autoware_config_msgs_generate_messages" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_GuardRail" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_SideStrip" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetFence" />
@@ -495,8 +525,8 @@
       <config projectName="Project" targetName="jsk_recognition_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="vision_beyond_track" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_eus" />
-      <config projectName="Project" targetName="vision_dpm_ttic_detect" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_DriveOnPortion" />
+      <config projectName="Project" targetName="vision_dpm_ttic_detect" />
       <config projectName="Project" targetName="vector_map_server_geneus" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_DetectedObject" />
       <config projectName="Project" targetName="grid_map_msgs_generate_messages_lisp" />
@@ -506,8 +536,8 @@
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_StopLine" />
       <config projectName="Project" targetName="vector_map_server_gennodejs" />
       <config projectName="Project" targetName="jsk_recognition_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_ThrottleInfoReport" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigApproximateNDTMapping" />
+      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_ThrottleInfoReport" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_Wiper" />
       <config projectName="Project" targetName="autoware_config_msgs_geneus" />
     </generated>
@@ -519,65 +549,172 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78db5cd5-c846-4ce4-9116-08869ba8c3a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CHANGELOG.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/frustum_fusion.launch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/package.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion_node.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/cluster2d.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/cnn_segmentation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/disjoint_set.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/feature_generator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/pcl_types.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/util.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/frustum_points_extractor/frustum_points_extractor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/apollo_cnn_segmentation.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/frustum_points_extractor.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/apollo_cnn_segmentation_node.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/cluster2d.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/cnn_segmentation.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/feature_generator.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/frustum_points_extractor/frustum_points_extractor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/frustum_points_extractor/frustum_points_extractor_node.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/frustum_ec_detector.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/cluster.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/frustum_ec_detector.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/gpu_euclidean_clustering.cu" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../run/apolloCNN.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../run/apolloCNN.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../run/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../run/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../run/yolov3_beyondPixels.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../run/yolov3_beyondPixels.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../run/yolov3_euclidian_fusion.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../run/yolov3_euclidian_fusion.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Project.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/order_packages.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/order_packages.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gmock.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gmock.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/gtest.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/gtest.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/CMakeFiles/autoware_can_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/CMakeFiles/autoware_can_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/CMakeFiles/autoware_can_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/CMakeFiles/autoware_can_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/autoware_can_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/autoware_can_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/autoware_config_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/autoware_config_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/autoware_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/autoware_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/autoware_system_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/autoware_system_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/dbw_mkz_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/dbw_mkz_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/lgsvl_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/lgsvl_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/get_file.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/get_file.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/map_file.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/map_file.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/obj_downloader.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/obj_downloader.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/obj_uploader.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/obj_uploader.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/obj_db.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/obj_db.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/pos_db/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/pos_db/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/pos_db/pos_db.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/pos_db/pos_db.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/CMakeFiles/vector_map.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/CMakeFiles/vector_map.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/vector_map.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/vector_map.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/vector_map_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/vector_map_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_client.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_client.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/vector_map_server.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/vector_map_server.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/localization/lib/gnss/gnss.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/localization/lib/gnss/gnss.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/installspace/frustum_fusion.pc" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/installspace/frustum_fusion.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/installspace/frustum_fusionConfig-version.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/installspace/frustum_fusionConfig-version.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/installspace/frustum_fusionConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/installspace/frustum_fusionConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/package.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/package.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/pkg.develspace.context.pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/pkg.develspace.context.pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/pkg.installspace.context.pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/pkg.installspace.context.pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/stamps/frustum_fusion/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/catkin_generated/stamps/frustum_fusion/package.xml.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/frustum_fusion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_fusion/frustum_fusion.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/pixel_cloud_fusion/pixel_cloud_fusion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/pixel_cloud_fusion/pixel_cloud_fusion.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/range_vision_fusion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/range_vision_fusion.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/lidar_euclidean_cluster_detect.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/lidar_euclidean_cluster_detect.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/lidar_fake_perception.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/lidar_fake_perception.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/lidar_naive_l_shape_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/lidar_naive_l_shape_detect.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/gpu_point_pillars_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/gpu_point_pillars_lib.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/lidar_point_pillars.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/lidar_point_pillars.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/lidar_point_pillars.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/lidar_point_pillars.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/lidar_shape_estimation.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/lidar_shape_estimation.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/CMakeFiles/roi_object_filter_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/CMakeFiles/roi_object_filter_lib.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/roi_object_filter.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/roi_object_filter.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/CMakeFiles/libdpm_ttic.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/CMakeFiles/libdpm_ttic.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/libdpm_ttic.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/libdpm_ttic.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect_lib.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/vision_darknet_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/vision_darknet_detect.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/vision_dpm_ttic_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/vision_dpm_ttic_detect.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/vision_lane_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/vision_lane_detect.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_segment_enet_detect/vision_segment_enet_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_segment_enet_detect/vision_segment_enet_detect.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_ssd_detect/vision_ssd_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_ssd_detect/vision_ssd_detect.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/beyond_track_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/beyond_track_lib.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/vision_beyond_track.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/vision_beyond_track.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/detected_objects_visualizer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/detected_objects_visualizer.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/integrated_viewer.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/integrated_viewer.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/integrated_viewer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/integrated_viewer.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/autoware_launcher_rviz.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/autoware_launcher_rviz.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/rosbag_controller.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/rosbag_controller.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/rosbag_controller.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/rosbag_controller.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/autoware_rviz_plugins.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/autoware_rviz_plugins.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/autoware_rviz_plugins.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/autoware_rviz_plugins.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cluster2d.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cluster2d.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CHANGELOG.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/frustum_fusion/frustum_fusion.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/frustum_fusion.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/package.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_points_extractor/frustum_fusion_node.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/lidar_euclidean_cluster_detect.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/lidar_euclidean_cluster_detect.launch" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -589,32 +726,128 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/CloudCluster.msg">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="60">
+                    <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/DetectedObject.msg">
+                <provider selected="true" editor-type-id="text-editor" />
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/CloudClusterArray.msg">
+                <provider selected="true" editor-type-id="text-editor" />
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion_node.cpp">
+        <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="390">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/frustum_fusion/frustum_fusion.h">
+        <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/frustum_points_extractor/frustum_points_extractor.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="472">
+              <caret line="258" column="76" selection-start-line="258" selection-start-column="76" selection-end-line="258" selection-end-column="76" />
+              <folding>
+                <element signature="e#9202#13529#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/frustum_points_extractor.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/frustum_points_extractor/frustum_points_extractor.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-68">
+              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/cluster.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="261" selection-start-line="261" selection-end-line="261" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/include/cluster.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/frustum_ec_detector.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="777" lean-forward="true" selection-start-line="777" selection-end-line="777" />
+              <folding>
+                <element signature="e#3367#3788#0" />
+                <element signature="e#3790#4074#0" />
+                <element signature="e#4076#4998#0" />
+                <element signature="e#5001#6132#0" />
+                <element signature="e#6134#6425#0" />
+                <element signature="e#6427#6749#0" />
+                <element signature="e#6751#7742#0" />
+                <element signature="e#9521#11539#0" />
+                <element signature="e#11541#12543#0" />
+                <element signature="e#12545#13758#0" />
+                <element signature="e#13760#14731#0" />
+                <element signature="e#14733#20696#0" />
+                <element signature="e#20698#22184#0" />
+                <element signature="e#22186#22551#0" />
+                <element signature="e#22553#23028#0" />
+                <element signature="e#23030#25791#0" />
+                <element signature="e#25793#26299#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion.cpp">
+        <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/frustum_ec_detector.launch">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="634" lean-forward="true" selection-start-line="634" selection-end-line="634" />
+            <state relative-caret-position="90">
+              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -623,41 +856,56 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>objectness_thresh</find>
-      <find>visualization</find>
-      <find>car</find>
-      <find>obstacleToObject</find>
-      <find>pub</find>
-      <find>kf</find>
-      <find>proba</find>
-      <find>updateIMMUKF</find>
-      <find>update</find>
-      <find>update(</find>
-      <find>probability</find>
-      <find>gate</find>
-      <find>detection_probability</find>
-      <find>updateEachMotion</find>
-      <find>p</find>
+      <find>add_library</find>
       <find>callback</find>
-      <find>tracker</find>
-      <find>tracker(</find>
-      <find>targets_</find>
-      <find>targets_.</find>
-      <find>probabilisticDataAssociation</find>
-      <find>measurementValidation</find>
-      <find>GAIN</find>
-      <find>updateKalmanGain</find>
-      <find>calculateNIS</find>
-      <find>RANGE_VISION_FUSION</find>
-      <find>range</find>
-      <find>range_vision_fusion</find>
-      <find>ROSRangeVisionFusionApp</find>
-      <find>Range</find>
+      <find>points_topic</find>
+      <find>in_publisher</find>
+      <find>_pub_ground_cloud</find>
+      <find>_pub_cluster_cloud</find>
+      <find>_pub_cluster_cloud</find>
+      <find>_pub_ground</find>
+      <find>velodyne_callback</find>
+      <find>cloud_clusters</find>
+      <find>publishCloudClusters</find>
+      <find>output_frame</find>
+      <find>publishCentroids</find>
+      <find>publishColorCloud</find>
+      <find>publishCloud</find>
+      <find>input_topi</find>
+      <find>publishCloudClu</find>
+      <find>cloud_clus</find>
+      <find>input_topic</find>
+      <find>points_node</find>
+      <find>befo</find>
+      <find>publishDe</find>
+      <find>gpu_euclidean_clustering</find>
+      <find>adver</find>
+      <find>_pub_detected_objects</find>
+      <find>pub</find>
+      <find>_pub_detected_objects</find>
+      <find>input</find>
+      <find>DEBUG</find>
+      <find>cout</find>
     </findStrings>
     <replaceStrings>
       <replace>FRUSTUM_FUSION</replace>
       <replace>frustum_fusion</replace>
       <replace>FrustumFusion</replace>
+      <replace>hoge</replace>
+      <replace>hoge.</replace>
+      <replace>hoge_cloud.</replace>
+      <replace>in_cloud_msg-&gt;</replace>
+      <replace>in_vision_detection-&gt;</replace>
+      <replace>in_vision_detections</replace>
+      <replace>in_vision_detections.</replace>
+      <replace>frustum_extractor</replace>
+      <replace>frustum_points_extractor</replace>
+      <replace>frustrum_points_detector</replace>
+      <replace>extractor</replace>
+      <replace>FrustumPointsExtractor</replace>
+      <replace>XYZI</replace>
+      <replace>detection_callback</replace>
+      <replace>input_topic</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -666,9 +914,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/lidar_euclidean_cluster_detect/gpu_euclidean_clustering.cu" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/lidar_euclidean_cluster_detect.launch" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/range_vision_fusion/launch/range_vision_fusion.launch" />
         <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/range_vision_fusion/src/range_vision_fusion_node.cpp" />
         <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/range_vision_fusion/src/range_vision_fusion.cpp" />
         <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/lidar_euclidean_cluster_detect/cluster.cpp" />
@@ -678,21 +923,55 @@
         <option value="$PROJECT_DIR$/packages/perception/visualizers/packages/detected_objects_visualizer/src/visualize_detected_objects.cpp" />
         <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_point_pillars/launch/lidar_point_pillars.launch" />
         <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cluster2d.cpp" />
         <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/range_vision_fusion/frustum_fusion.h" />
         <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/range_vision_fusion.launch" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/frustum_fusion.launch" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/package.xml" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion.cpp" />
         <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion_node.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/frustum_fusion.launch" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/apollo_cnn_segmentation/apollo_cnn_segmentation_node.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/package.xml" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/apollo_cnn_segmentation/cluster2d.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/apollo_cnn_segmentation/feature_generator.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/apollo_cnn_segmentation/cnn_segmentation.h" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/apollo_cnn_segmentation/cnn_segmentation.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/apollo_cnn_segmentation.launch" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_points_extractor/frustum_fusion.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_points_extractor/frustum_fusion_node.cpp" />
         <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/frustum_fusion/frustum_fusion.h" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/frustum_points_extractor/frustum_points_extractor_node.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector_tmp/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector_tmp/src/frustum_points_extractor/frustum_points_extractor.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/frustum_points_extractor.launch" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/apollo_cnn_segmentation.launch" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/cluster2d.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/frustum_points_extractor/frustum_points_extractor.h" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/cluster2d.h" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/cnn_segmentation.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/frustum_points_extractor/frustum_points_extractor.cpp" />
+        <option value="$PROJECT_DIR$/packages/filter/points_preprocessor/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ray_ground_filter.launch" />
+        <option value="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ring_ground_filter.launch" />
+        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/lidar_euclidean_cluster_detect.launch" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/cluster.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/gpu_euclidean_clustering.cu" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/lidar_euclidean_cluster_detect.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/package.xml" />
+        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/lidar_euclidean_cluster_detect.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/cluster.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/frustum_ec_detector.cpp" />
+        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/frustum_ec_detector.launch" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-frustum_fusion" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="-4" />
     <option name="width" value="1280" />
@@ -704,6 +983,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -720,7 +1000,20 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="msgs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -752,9 +1045,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
               <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="fusion_tools" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="frustum_fusion" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -762,9 +1053,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
               <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="fusion_tools" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="frustum_fusion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="perception" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_euclidean_cluster_detect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="perception" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_euclidean_cluster_detect" type="462c0819:PsiDirectoryNode" />
               <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -773,21 +1083,9 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
               <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="fusion_tools" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="frustum_fusion" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
-              <item name="frustum_fusion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="fusion_tools" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="frustum_fusion" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_euclidean_cluster_detect" type="462c0819:PsiDirectoryNode" />
               <item name="launch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -796,10 +1094,47 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
               <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="fusion_tools" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="frustum_fusion" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_euclidean_cluster_detect" type="462c0819:PsiDirectoryNode" />
+              <item name="nodes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="perception" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_euclidean_cluster_detect" type="462c0819:PsiDirectoryNode" />
+              <item name="nodes" type="462c0819:PsiDirectoryNode" />
+              <item name="frustum_ec_detector" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="perception" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_detector" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_euclidean_cluster_detect" type="462c0819:PsiDirectoryNode" />
+              <item name="nodes" type="462c0819:PsiDirectoryNode" />
+              <item name="lidar_euclidean_cluster_detect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="autoware_health_checker" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -818,24 +1153,26 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch" />
-      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/range_vision_fusion" />
-      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src" />
-      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages" />
-      <recent name="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes" />
+      <recent name="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch" />
+      <recent name="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector" />
+      <recent name="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes" />
+      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch" />
+      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_points_extractor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1466,6 +1803,21 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="_run_tests_autoware_health_checker" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="_run_tests_autoware_health_checker" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_run_tests_autoware_health_checker_rostest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="_run_tests_autoware_health_checker_rostest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="_run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="_run_tests_lidar_point_pillars" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="_run_tests_lidar_point_pillars" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -2016,6 +2368,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="apollo_cnn_segmentation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="apollo_cnn_segmentation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="apollo_cnn_segmentation">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="autoware_can_msgs_gencpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="autoware_can_msgs_gencpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -2291,6 +2648,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="clean_test_results_autoware_health_checker" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="clean_test_results_autoware_health_checker" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="clean_test_results_lidar_point_pillars" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="clean_test_results_lidar_point_pillars" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -2366,6 +2728,31 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="diagnostic_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="diagnostic_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="diagnostic_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="diagnostic_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="diagnostic_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="diagnostic_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="diagnostic_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="diagnostic_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="diagnostic_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="diagnostic_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="download_extra_data" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="download_extra_data" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -2402,6 +2789,16 @@
       </method>
     </configuration>
     <configuration name="dynamic_reconfigure_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dynamic_reconfigure_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="frustum_points_extractor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="frustum_points_extractor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="frustum_points_extractor">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="frustum_points_extractor_lib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="frustum_points_extractor_lib" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -2492,6 +2889,16 @@
       </method>
     </configuration>
     <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="health_aggregator" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="health_aggregator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="health_aggregator">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="health_analyzer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="health_analyzer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="health_analyzer">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -2781,6 +3188,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="node_status_publisher" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="node_status_publisher" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="nodelet_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="nodelet_generate_messages_cpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -2916,6 +3328,21 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ray_ground_filter" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="ray_ground_filter" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="ray_ground_filter">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ray_ground_filter_lib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="ray_ground_filter_lib" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ring_ground_filter" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="ring_ground_filter" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="ring_ground_filter">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="roi_object_filter" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="roi_object_filter" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="roi_object_filter">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -2982,6 +3409,21 @@
       </method>
     </configuration>
     <configuration name="run_tests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="run_tests" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run_tests_autoware_health_checker" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="run_tests_autoware_health_checker" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run_tests_autoware_health_checker_rostest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="run_tests_autoware_health_checker_rostest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -3102,6 +3544,16 @@
       </method>
     </configuration>
     <configuration name="std_srvs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="std_srvs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="system_status_subscriber" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="system_status_subscriber" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test-autoware_health_checker" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="test-autoware_health_checker" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="test-autoware_health_checker">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -3327,6 +3779,41 @@
       </method>
     </configuration>
     <configuration name="vector_map_server_genpy" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vector_map_server_genpy" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="velodyne_driver_gencfg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_driver_gencfg" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="velodyne_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="velodyne_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="velodyne_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="velodyne_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="velodyne_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="velodyne_pointcloud_gencfg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_pointcloud_gencfg" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -3717,6 +4204,17 @@
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CMake Application.integrated_viewer" />
+      <item itemvalue="CMake Application._run_tests_autoware_health_checker" />
+      <item itemvalue="CMake Application._run_tests_autoware_health_checker_rostest" />
+      <item itemvalue="CMake Application._run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" />
+      <item itemvalue="CMake Application.clean_test_results_autoware_health_checker" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.health_aggregator" />
+      <item itemvalue="CMake Application.health_analyzer" />
       <item itemvalue="CMake Application.jsk_footstep_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.jsk_footstep_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.jsk_footstep_msgs_generate_messages_lisp" />
@@ -3739,6 +4237,7 @@
       <item itemvalue="CMake Application.jsk_rviz_plugins_generate_messages_lisp" />
       <item itemvalue="CMake Application.jsk_rviz_plugins_generate_messages_nodejs" />
       <item itemvalue="CMake Application.jsk_rviz_plugins_generate_messages_py" />
+      <item itemvalue="CMake Application.node_status_publisher" />
       <item itemvalue="CMake Application.jsk_topic_tools_gencfg" />
       <item itemvalue="CMake Application.jsk_topic_tools_generate_messages_cpp" />
       <item itemvalue="CMake Application.jsk_topic_tools_generate_messages_eus" />
@@ -3791,6 +4290,11 @@
       <item itemvalue="CMake Application.people_msgs_generate_messages_lisp" />
       <item itemvalue="CMake Application.people_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.people_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.run_tests_autoware_health_checker" />
+      <item itemvalue="CMake Application.run_tests_autoware_health_checker_rostest" />
+      <item itemvalue="CMake Application.run_tests_autoware_health_checker_rostest_test_test_autoware_health_checker.test" />
+      <item itemvalue="CMake Application.system_status_subscriber" />
+      <item itemvalue="CMake Application.test-autoware_health_checker" />
       <item itemvalue="CMake Application.pixel_cloud_fusion" />
       <item itemvalue="CMake Application.pixel_cloud_fusion_lib" />
       <item itemvalue="CMake Application.points_map_filter" />
@@ -3806,6 +4310,9 @@
       <item itemvalue="CMake Application.roscpp_generate_messages_lisp" />
       <item itemvalue="CMake Application.roscpp_generate_messages_nodejs" />
       <item itemvalue="CMake Application.roscpp_generate_messages_py" />
+      <item itemvalue="CMake Application.apollo_cnn_segmentation" />
+      <item itemvalue="CMake Application.frustum_points_extractor" />
+      <item itemvalue="CMake Application.frustum_points_extractor_lib" />
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_lisp" />
@@ -3888,6 +4395,16 @@
       <item itemvalue="CMake Application.vector_map_server_genlisp" />
       <item itemvalue="CMake Application.vector_map_server_gennodejs" />
       <item itemvalue="CMake Application.vector_map_server_genpy" />
+      <item itemvalue="CMake Application.ray_ground_filter" />
+      <item itemvalue="CMake Application.ray_ground_filter_lib" />
+      <item itemvalue="CMake Application.ring_ground_filter" />
+      <item itemvalue="CMake Application.velodyne_driver_gencfg" />
+      <item itemvalue="CMake Application.velodyne_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.velodyne_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.velodyne_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.velodyne_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.velodyne_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.velodyne_pointcloud_gencfg" />
       <item itemvalue="CMake Application.vision_beyond_track" />
       <item itemvalue="CMake Application.vision_darknet_detect" />
       <item itemvalue="CMake Application.vision_darknet_detect_lib" />
@@ -3922,18 +4439,29 @@
       <workItem from="1557986791490" duration="2712000" />
       <workItem from="1558410285225" duration="7400000" />
       <workItem from="1558485798688" duration="5429000" />
-      <workItem from="1558582856628" duration="1011000" />
+      <workItem from="1558582856628" duration="16761000" />
+      <workItem from="1558656720369" duration="10988000" />
+      <workItem from="1558669459790" duration="6203000" />
+      <workItem from="1558677602975" duration="13422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36399000" />
+    <option name="totallyTimeSpent" value="82762000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="2560" height="1444" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16997617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1703733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -3942,12 +4470,12 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936803" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28401488" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.267658" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.22854973" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32936803" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.22825278" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -3958,328 +4486,324 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/lidar_euclidean_cluster_detect.launch">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector_tmp/package.xml" />
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector_tmp/CATKIN_IGNORE" />
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector_tmp/CMakeLists.txt" />
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector_tmp/launch/frustum_points_extractor.launch" />
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector_tmp/src/frustum_points_extractor/frustum_points_extractor.cpp" />
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/apollo_cnn_segmentation.launch">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="300">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/pcl_types.h">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/feature_generator.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="500">
+          <caret line="129" column="17" lean-forward="true" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/disjoint_set.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/feature_generator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/range_vision_fusion/src/range_vision_fusion.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="558" column="77" lean-forward="true" selection-start-line="558" selection-start-column="77" selection-end-line="558" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/feature_generator.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/visualizers/packages/detected_objects_visualizer/src/visualize_rects_main.cpp">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/apollo_cnn_segmentation_node.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/feature_generator_190515.cpp">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/util.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_point_pillars/launch/lidar_point_pillars.launch">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/disjoint_set.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        <state relative-caret-position="423">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/visualizers/packages/detected_objects_visualizer/src/visualize_rects.cpp">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/cnn_segmentation.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="1620">
+          <caret line="108" selection-start-line="107" selection-end-line="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/cnn_segmentation.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="97" column="36" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="487" column="6" selection-start-line="487" selection-start-column="6" selection-end-line="487" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/glog/logging.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="768" column="8" selection-start-line="768" selection-start-column="8" selection-end-line="768" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/vision_tracker/packages/vision_beyond_track/include/detection.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="172" column="9" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="734" column="13" selection-start-line="734" selection-start-column="9" selection-end-line="734" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="94" column="7" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/pixel_cloud_fusion/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgs/autoware_can_msgs/msg/CANData.msg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgs/autoware_config_msgs/package.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/vision_tracker/packages/vision_beyond_track/src/vision_beyond_track.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cluster2d.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3206">
-          <caret line="250" column="24" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/visualizers/packages/detected_objects_visualizer/include/visualize_detected_objects.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/visualizers/packages/detected_objects_visualizer/src/visualize_detected_objects_main.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/visualizers/packages/detected_objects_visualizer/src/visualize_detected_objects.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="263" column="29" selection-start-line="263" selection-start-column="26" selection-end-line="263" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/cluster2d.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_kf_contour_track/nodes/lidar_kf_contour_track/SimpleTracker.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="698" column="34" selection-start-line="698" selection-start-column="34" selection-end-line="698" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_kf_contour_track/nodes/lidar_kf_contour_track/lidar_kf_contour_track_core.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="599" column="36" selection-start-line="599" selection-start-column="36" selection-end-line="599" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/DetectedObject.msg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_kf_contour_track/nodes/lidar_kf_contour_track/PolygonGenerator.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_kf_contour_track/nodes/lidar_kf_contour_track/lidar_kf_contour_track.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_kf_contour_track/include/lidar_kf_contour_track_core.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3480">
-          <caret line="232" column="66" selection-start-line="232" selection-start-column="66" selection-end-line="232" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/nodes/imm_ukf_pda/imm_ukf_pda.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/include/imm_ukf_pda.h">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/pcl_types.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/include/ukf.h">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/cnn_segmentation.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="267" column="58" selection-start-line="267" selection-start-column="37" selection-end-line="267" selection-end-column="58" />
+        <state relative-caret-position="3330">
+          <caret line="222" column="78" selection-start-line="222" selection-start-column="78" selection-end-line="222" selection-end-column="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/nodes/imm_ukf_pda/ukf.cpp">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/apollo_cnn_segmentation/cluster2d.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="1294" lean-forward="true" selection-start-line="1294" selection-end-line="1294" />
+        <state relative-caret-position="4020">
+          <caret line="268" column="5" selection-start-line="268" selection-start-column="5" selection-end-line="268" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/range_vision_fusion.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/range_vision_fusion_node.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/range_vision_fusion/range_vision_fusion.h">
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/euclidean_clustering_Exp.launch">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/range_vision_fusion/frustum_fusion.h">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/feature_generator.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="651">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/range_vision_fusion.launch">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/apollo_cnn_segmentation/cluster2d.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="255">
+          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/launch/frustum_fusion.launch">
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/lidar_euclidean_cluster_detect/cluster.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="486">
+          <caret line="289" selection-start-line="289" selection-end-line="289" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/include/gencolors.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        <state relative-caret-position="453">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/CHANGELOG.rst">
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/lidar_euclidean_cluster_detect.launch">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2284" />
+        <state relative-caret-position="195">
+          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/package.xml">
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/lidar_euclidean_cluster_detect/gpu_euclidean_clustering.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="131" column="18" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/filter/points_preprocessor/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion_node.cpp">
+    <entry file="file://$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ray_ground_filter.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ring_ground_filter.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/package.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" selection-start-line="27" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="18" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/autoware_health_checker/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/filter/points_preprocessor/nodes/ring_ground_filter/ring_ground_filter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="197" column="31" selection-start-line="197" selection-start-column="19" selection-end-line="197" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_cluster_detect/cluster.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/lidar_euclidean_clustering/cluster.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/package.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="19" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/cluster.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/gpu_euclidean_clustering.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/lidar_euclidean_cluster_detect.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/include/frustum_fusion/frustum_fusion.h">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/package.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="630">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_fusion.cpp">
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/lidar_euclidean_clustering.launch">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="634" lean-forward="true" selection-start-line="634" selection-end-line="634" />
+        <state relative-caret-position="90">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/lidar_euclidean_cluster_detect.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/DetectedObject.msg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/CloudClusterArray.msg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="146" column="27" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/include/gpu_euclidean_clustering.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/CloudCluster.msg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="191" column="49" lean-forward="true" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/include/cluster.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/cluster.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="261" selection-start-line="261" selection-end-line="261" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/frustum_ec_detector.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="777" lean-forward="true" selection-start-line="777" selection-end-line="777" />
+          <folding>
+            <element signature="e#3367#3788#0" />
+            <element signature="e#3790#4074#0" />
+            <element signature="e#4076#4998#0" />
+            <element signature="e#5001#6132#0" />
+            <element signature="e#6134#6425#0" />
+            <element signature="e#6427#6749#0" />
+            <element signature="e#6751#7742#0" />
+            <element signature="e#9521#11539#0" />
+            <element signature="e#11541#12543#0" />
+            <element signature="e#12545#13758#0" />
+            <element signature="e#13760#14731#0" />
+            <element signature="e#14733#20696#0" />
+            <element signature="e#20698#22184#0" />
+            <element signature="e#22186#22551#0" />
+            <element signature="e#22553#23028#0" />
+            <element signature="e#23030#25791#0" />
+            <element signature="e#25793#26299#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/frustum_points_extractor/frustum_points_extractor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="258" column="76" selection-start-line="258" selection-start-column="76" selection-end-line="258" selection-end-column="76" />
+          <folding>
+            <element signature="e#9202#13529#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/launch/frustum_points_extractor.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/include/frustum_points_extractor/frustum_points_extractor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/frustum_ec_detector.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>

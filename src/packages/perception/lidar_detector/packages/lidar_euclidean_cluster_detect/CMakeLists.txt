@@ -62,6 +62,10 @@ add_executable(lidar_euclidean_cluster_detect
         nodes/lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect.cpp
         nodes/lidar_euclidean_cluster_detect/cluster.cpp)
 
+add_executable(frustum_ec_detector
+        nodes/frustum_ec_detector/frustum_ec_detector.cpp
+        nodes/frustum_ec_detector/cluster.cpp)
+
 find_package(CUDA)
 if (${CUDA_FOUND})
     INCLUDE(FindCUDA)
@@ -85,6 +89,12 @@ if (${CUDA_FOUND})
             ${YAML_CPP_LIBRARIES}
             gpu_euclidean_clustering)
 
+    target_link_libraries(frustum_ec_detector
+            ${OpenCV_LIBRARIES}
+            ${catkin_LIBRARIES}
+            ${YAML_CPP_LIBRARIES}
+            gpu_euclidean_clustering)
+
     install(TARGETS
             gpu_euclidean_clustering
             ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
@@ -98,14 +108,26 @@ else ()
             ${catkin_LIBRARIES}
             ${YAML_CPP_LIBRARIES})
 
+    target_link_libraries(frustum_ec_detector
+            ${OpenCV_LIBRARIES}
+            ${catkin_LIBRARIES}
+            ${YAML_CPP_LIBRARIES})
 endif ()
 
 add_dependencies(lidar_euclidean_cluster_detect
         ${catkin_EXPORTED_TARGETS}
         )
 
+add_dependencies(frustum_ec_detector
+        ${catkin_EXPORTED_TARGETS}
+        )
+
 if (OPENMP_FOUND)
     set_target_properties(lidar_euclidean_cluster_detect PROPERTIES
+            COMPILE_FLAGS ${OpenMP_CXX_FLAGS}
+            LINK_FLAGS ${OpenMP_CXX_FLAGS}
+            )
+    set_target_properties(frustum_ec_detector PROPERTIES
             COMPILE_FLAGS ${OpenMP_CXX_FLAGS}
             LINK_FLAGS ${OpenMP_CXX_FLAGS}
             )
@@ -120,6 +142,13 @@ install(TARGETS
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
+install(TARGETS
+        frustum_ec_detector
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
 
 install(DIRECTORY launch/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch

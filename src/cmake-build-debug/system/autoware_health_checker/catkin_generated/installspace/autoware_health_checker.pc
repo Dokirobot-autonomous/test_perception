@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: autoware_health_checker
+Description: Description of autoware_health_checker
+Version: 1.11.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -lnode_status_publisher
+Requires: autoware_system_msgs roscpp rosgraph_msgs
