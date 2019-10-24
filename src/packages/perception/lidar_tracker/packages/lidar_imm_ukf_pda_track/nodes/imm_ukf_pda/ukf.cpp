@@ -202,7 +202,7 @@ void UKF::initialize(const Eigen::VectorXd& z, const double timestamp, const int
   // first measurement
   x_merge_ << 0, 0, 0, 0, 0.1;
 
-  // init covariance matrix by hardcoding since no clue about initial state covrariance
+  // first_orientation_computation covariance matrix by hardcoding since no clue about initial state covrariance
   p_merge_ << 0.5, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 1;
 
   // set weights
@@ -223,7 +223,7 @@ void UKF::initialize(const Eigen::VectorXd& z, const double timestamp, const int
     weights_c_(i) = weight;
   }
 
-  // init timestamp
+  // first_orientation_computation timestamp
   time_ = timestamp;
 
   x_merge_(0) = z(0);
@@ -263,7 +263,7 @@ void UKF::initialize(const Eigen::VectorXd& z, const double timestamp, const int
                                             0,                       0, std_lane_direction_*std_lane_direction_;
   // clang-format on
 
-  // init tracking num
+  // first_orientation_computation tracking num
   tracking_num_ = 1;
 }
 

@@ -367,7 +367,7 @@ void ImmUkfPda::secondInit(UKF& target, const std::vector<autoware_msgs::Detecte
     target.tracking_num_ = TrackingState::Die;
     return;
   }
-  // record init measurement for env classification
+  // record first_orientation_computation measurement for env classification
   target.init_meas_ << target.x_merge_(0), target.x_merge_(1);
 
   // state update

@@ -5784,6 +5784,58 @@ range_vision_fusion_lib/fast:
 .PHONY : range_vision_fusion_lib/fast
 
 #=============================================================================
+# Target rules for targets named smartphone_sensors
+
+# Build rule for target.
+smartphone_sensors: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 smartphone_sensors
+.PHONY : smartphone_sensors
+
+# fast build rule for target.
+smartphone_sensors/fast:
+	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build
+.PHONY : smartphone_sensors/fast
+
+#=============================================================================
+# Target rules for targets named localizer
+
+# Build rule for target.
+localizer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 localizer
+.PHONY : localizer
+
+# fast build rule for target.
+localizer/fast:
+	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/localizer.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/localizer.dir/build
+.PHONY : localizer/fast
+
+#=============================================================================
+# Target rules for targets named phonesensors_raw
+
+# Build rule for target.
+phonesensors_raw: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 phonesensors_raw
+.PHONY : phonesensors_raw
+
+# fast build rule for target.
+phonesensors_raw/fast:
+	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/phonesensors_raw.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/phonesensors_raw.dir/build
+.PHONY : phonesensors_raw/fast
+
+#=============================================================================
+# Target rules for targets named fusion
+
+# Build rule for target.
+fusion: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fusion
+.PHONY : fusion
+
+# fast build rule for target.
+fusion/fast:
+	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build
+.PHONY : fusion/fast
+
+#=============================================================================
 # Target rules for targets named map_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -6356,6 +6408,19 @@ vector_map/fast:
 .PHONY : vector_map/fast
 
 #=============================================================================
+# Target rules for targets named imm_ukf_pda
+
+# Build rule for target.
+imm_ukf_pda: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imm_ukf_pda
+.PHONY : imm_ukf_pda
+
+# fast build rule for target.
+imm_ukf_pda/fast:
+	$(MAKE) -f packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/CMakeFiles/imm_ukf_pda.dir/build.make packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/CMakeFiles/imm_ukf_pda.dir/build
+.PHONY : imm_ukf_pda/fast
+
+#=============================================================================
 # Target rules for targets named points_map_loader
 
 # Build rule for target.
@@ -6926,6 +6991,19 @@ vector_map_server_gennodejs: cmake_check_build_system
 vector_map_server_gennodejs/fast:
 	$(MAKE) -f packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_gennodejs.dir/build.make packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_gennodejs.dir/build
 .PHONY : vector_map_server_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named frustum_ec_detector
+
+# Build rule for target.
+frustum_ec_detector: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 frustum_ec_detector
+.PHONY : frustum_ec_detector
+
+# fast build rule for target.
+frustum_ec_detector/fast:
+	$(MAKE) -f packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/frustum_ec_detector.dir/build.make packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/frustum_ec_detector.dir/build
+.PHONY : frustum_ec_detector/fast
 
 #=============================================================================
 # Target rules for targets named gpu_euclidean_clustering
@@ -7606,6 +7684,10 @@ help:
 	@echo "... lidar_fake_perception_node"
 	@echo "... range_vision_fusion"
 	@echo "... range_vision_fusion_lib"
+	@echo "... smartphone_sensors"
+	@echo "... localizer"
+	@echo "... phonesensors_raw"
+	@echo "... fusion"
 	@echo "... map_msgs_generate_messages_cpp"
 	@echo "... map_msgs_generate_messages_lisp"
 	@echo "... map_msgs_generate_messages_nodejs"
@@ -7650,6 +7732,7 @@ help:
 	@echo "... clean_test_results_autoware_health_checker"
 	@echo "... rosbag_controller"
 	@echo "... vector_map"
+	@echo "... imm_ukf_pda"
 	@echo "... points_map_loader"
 	@echo "... get_file"
 	@echo "... vector_map_loader"
@@ -7694,6 +7777,7 @@ help:
 	@echo "... vector_map_server_generate_messages_nodejs"
 	@echo "... vector_map_server_genpy"
 	@echo "... vector_map_server_gennodejs"
+	@echo "... frustum_ec_detector"
 	@echo "... gpu_euclidean_clustering"
 	@echo "... lidar_euclidean_cluster_detect"
 	@echo "... velodyne_msgs_generate_messages_nodejs"

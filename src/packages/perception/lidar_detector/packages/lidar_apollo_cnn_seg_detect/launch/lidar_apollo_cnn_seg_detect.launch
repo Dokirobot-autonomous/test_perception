@@ -3,7 +3,7 @@
   <arg name="network_definition_file" />
   <arg name="pretrained_model_file" />
   <arg name="points_src" default="/points_raw" />
-  <arg name="score_threshold" default="0.1" />
+  <arg name="score_threshold" default="0.5" />
   <arg name="use_gpu" default="true" />
   <arg name="gpu_device_id" default="0" />
   <arg name="marker_display_duration" default="0.2"/>

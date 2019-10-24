@@ -902,7 +902,7 @@ void detection_callback(const autoware_msgs::DetectedObjectArray::ConstPtr objec
 
 int main(int argc, char **argv)
 {
-  // Initialize ROS
+  // particleInitialization ROS
   ros::init(argc, argv, "frustum_ec_detector");
 
   ros::NodeHandle h;
@@ -958,7 +958,7 @@ int main(int argc, char **argv)
             ROS_INFO("Euclidean Clustering: Difference of Normals will not be used.");
     }
 
-    /* Initialize tuning parameter */
+    /* particleInitialization tuning parameter */
     private_nh.param("downsample_cloud", _downsample_cloud, false);
     ROS_INFO("[%s] downsample_cloud: %d", __APP_NAME__, _downsample_cloud);
     private_nh.param("remove_ground", _remove_ground, true);

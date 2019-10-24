@@ -73,38 +73,47 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/setup.bash")
+   "/usr/local/setup.bash;/usr/local/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES
+    "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/setup.bash"
+    "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/local_setup.bash"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/setup.sh")
+   "/usr/local/setup.sh;/usr/local/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES
+    "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/setup.sh"
+    "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/local_setup.sh"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/setup.zsh")
+   "/usr/local/setup.zsh;/usr/local/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES
+    "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/setup.zsh"
+    "/home/ohashi/test_perception/src/cmake-build-debug/catkin_generated/installspace/local_setup.zsh"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -142,6 +151,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/cmake_install.cmake")
+  include("/home/ohashi/test_perception/src/cmake-build-debug/packages/smartphones/smartphone_localizer/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/cmake_install.cmake")
@@ -149,6 +159,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/data/packages/pos_db/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/data/packages/vector_map/cmake_install.cmake")
+  include("/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/data/packages/map_file/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/data/packages/vector_map_server/cmake_install.cmake")
   include("/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/cmake_install.cmake")

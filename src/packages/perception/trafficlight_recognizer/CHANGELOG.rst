@@ -284,7 +284,7 @@ Changelog for package trafficlight_recognizer
   In this modification, target light will be chosen if it faces to camera +- 50 degree in camera coordinate system
 * Apply vector_map_server function
 * Fix usage of std::string::substr
-* Modify State Transition Matrix of TLR for more precise recognition
+* Modify State particleTransition Matrix of TLR for more precise recognition
   * w.r.t `region_tlr`, just fixed comment
   * w.r.t `region_tlr_ssd`, applied manner of erring on the side of caution
 * Add region_tlr_ssd

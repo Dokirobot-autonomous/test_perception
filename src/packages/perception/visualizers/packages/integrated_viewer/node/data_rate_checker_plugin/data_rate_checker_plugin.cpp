@@ -20,7 +20,7 @@ namespace integrated_viewer {
     DataRateCheckerPlugin::DataRateCheckerPlugin(QWidget *parent)
             : rviz::Panel(parent) {
 
-        // Initialize form
+        // particleInitialization form
         ui_.setupUi(this);
 
         // Set minimum frequency parameter

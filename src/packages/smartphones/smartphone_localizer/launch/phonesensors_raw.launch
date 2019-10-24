@@ -1,0 +1,12 @@
+<!-- -->
+<launch>
+
+  <arg name="ori_fix" />
+  <arg name="person_init_dir" />
+
+  <node pkg="smartphone_localizer" type="phonesensors_raw" name="phonesensors_raw" output="screen">
+    <param name="origin_fix" value="$(arg ori_fix)" />
+    <param name="person_initial_direction" value="$(arg person_init_dir" />
+  </node>
+
+</launch>

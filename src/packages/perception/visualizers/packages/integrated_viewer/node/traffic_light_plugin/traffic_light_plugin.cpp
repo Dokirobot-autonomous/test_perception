@@ -13,7 +13,7 @@ namespace integrated_viewer
   TrafficLightPlugin::TrafficLightPlugin(QWidget* parent)
     : rviz::Panel(parent) {
 
-    // Initialize Form
+    // particleInitialization Form
     ui_.setupUi(this);
 
     // Set initial state to "UNDEFINED"

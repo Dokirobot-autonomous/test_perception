@@ -12,10 +12,10 @@
     <library_geometries>
         <geometry id="shape0-lib" name="shape0">
             <mesh>
-                <source id="shape0-lib-positions" name="position">
-                    <float_array id="shape0-lib-positions-array" count="24">-0.5 -0.5 -0.5 0.5 -0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5</float_array>
+                <source id="shape0-lib-position" name="position">
+                    <float_array id="shape0-lib-position-array" count="24">-0.5 -0.5 -0.5 0.5 -0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5</float_array>
                     <technique_common>
-                        <accessor count="8" source="#shape0-lib-positions-array" stride="3">
+                        <accessor count="8" source="#shape0-lib-position-array" stride="3">
                             <param name="X" type="float"/>
                             <param name="Y" type="float"/>
                             <param name="Z" type="float"/>
@@ -33,7 +33,7 @@
                     </technique_common>
                 </source>
                 <vertices id="shape0-lib-vertices">
-                    <input semantic="POSITION" source="#shape0-lib-positions"/>
+                    <input semantic="POSITION" source="#shape0-lib-position"/>
                 </vertices>
                 <triangles count="12">
                     <input offset="0" semantic="VERTEX" source="#shape0-lib-vertices"/>

@@ -121,6 +121,8 @@ foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND autoware_launcher_rviz_LIBRARIES ${library})
+  elseif(${library} MATCHES "^-l")
+    list(APPEND autoware_launcher_rviz_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND autoware_launcher_rviz_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -129,7 +131,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /usr/local/lib;/home/ohashi/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /usr/local/lib;/home/ohashi/catkin_ws/devel/lib;/home/ohashi/test_perception/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

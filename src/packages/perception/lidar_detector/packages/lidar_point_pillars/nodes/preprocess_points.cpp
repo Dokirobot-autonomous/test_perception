@@ -81,7 +81,7 @@ void PreprocessPoints::preprocess(const float* in_points_array, int in_num_point
   int pillar_count = 0;
   float x_coors_for_sub[MAX_NUM_PILLARS_] = { 0 };
   float y_coors_for_sub[MAX_NUM_PILLARS_] = { 0 };
-  // init variables
+  // first_orientation_computation variables
   int coor_to_pillaridx[GRID_Y_SIZE_ * GRID_X_SIZE_];
   initializeVariables(coor_to_pillaridx, sparse_pillar_map, pillar_x, pillar_y, pillar_z, pillar_i,
                       x_coors_for_sub_shaped, y_coors_for_sub_shaped);

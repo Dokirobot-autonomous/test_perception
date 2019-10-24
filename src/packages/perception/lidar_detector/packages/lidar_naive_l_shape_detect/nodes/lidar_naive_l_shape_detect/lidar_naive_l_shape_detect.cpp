@@ -197,7 +197,7 @@ void LShapeFilter::getLShapeBB(const autoware_msgs::DetectedObjectArray& in_obje
     std::vector<cv::Point> point_vec(num_points);
     std::vector<cv::Point2f> pointcloud_frame_points(4);
 
-    // init variables
+    // first_orientation_computation variables
     cv::Point2f min_m_p(0, 0);
     cv::Point2f max_m_p(0, 0);
     float min_m = std::numeric_limits<float>::max();

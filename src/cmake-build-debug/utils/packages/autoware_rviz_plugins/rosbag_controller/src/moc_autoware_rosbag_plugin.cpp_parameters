@@ -6,6 +6,7 @@
 -I/usr/include/OGRE
 -I/home/ohashi/test_perception/src/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller
 -DROS_BUILD_SHARED_LIBS=1
+-DROS_BUILD_SHARED_LIBS=1
 -DROS_PACKAGE_NAME="rosbag_controller"
 -DROSCONSOLE_BACKEND_LOG4CXX
 -D_FILE_OFFSET_BITS=64

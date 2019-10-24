@@ -24,7 +24,7 @@ namespace integrated_viewer {
     ImageViewerPlugin::ImageViewerPlugin(QWidget *parent)
             : rviz::Panel(parent) {
 
-        // Initialize Form
+        // particleInitialization Form
         ui_.setupUi(this);
 
         // Set point size parameter

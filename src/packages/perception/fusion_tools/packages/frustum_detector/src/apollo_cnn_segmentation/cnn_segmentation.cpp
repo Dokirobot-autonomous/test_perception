@@ -106,13 +106,13 @@ bool CNNSegmentation::init() {
 
     cluster2d_.reset(new Cluster2D());
     if (!cluster2d_->init(height_, width_, range_)) {
-        ROS_ERROR("[%s] Fail to Initialize cluster2d for CNNSegmentation", __APP_NAME__);
+        ROS_ERROR("[%s] Fail to particleInitialization cluster2d for CNNSegmentation", __APP_NAME__);
         return false;
     }
 
     feature_generator_.reset(new FeatureGenerator());
     if (!feature_generator_->init(feature_blob_.get())) {
-        ROS_ERROR("[%s] Fail to Initialize feature generator for CNNSegmentation", __APP_NAME__);
+        ROS_ERROR("[%s] Fail to particleInitialization feature generator for CNNSegmentation", __APP_NAME__);
         return false;
     }
 
