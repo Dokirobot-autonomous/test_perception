@@ -54,14 +54,30 @@ install(DIRECTORY include/${PROJECT_NAME}/ include/autoware_msgs/
         PATTERN ".svn" EXCLUDE
         )
 
-add_executable(localizer src/localizer_node.cpp)
-target_link_libraries(localizer ${catkin_LIBRARIES})
-add_dependencies(localizer ${catkin_EXPORTED_TARGETS})
-install(TARGETS localizer
+add_executable(phone_localizer
+        src/phone_localizer_node.cpp
+        src/phone_localizer.cpp
+        src/geo_pos_conv.cpp)
+target_link_libraries(phone_localizer ${catkin_LIBRARIES})
+add_dependencies(phone_localizer ${catkin_EXPORTED_TARGETS})
+install(TARGETS phone_localizer
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
+
+add_executable(phone_vehicle_fusion
+        src/phone_vehicle_fusioin.cpp
+        src/phone_localizer.cpp
+        src/geo_pos_conv.cpp)
+target_link_libraries(phone_vehicle_fusion ${catkin_LIBRARIES})
+add_dependencies(phone_vehicle_fusion ${catkin_EXPORTED_TARGETS})
+install(TARGETS phone_vehicle_fusion
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
 
 add_executable(smartphone_sensors src/smartphone_node.cpp src/geo_pos_conv.cpp)
 target_link_libraries(smartphone_sensors ${catkin_LIBRARIES})

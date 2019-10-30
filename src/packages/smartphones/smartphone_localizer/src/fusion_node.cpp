@@ -49,7 +49,7 @@
 #define PERSON_FRAME_ID "person"
 
 #define ORIGIN_FIX "37.9181551873,-122.331354939,0.0"
-#define PERSON_INITIAL_FIX "37.9180604745,-122.331348873,0.0"
+#define PHONE_INITIAL_FIX "37.9180604745,-122.331348873,0.0"
 #define PERSON_INITIAL_DERECTION "-0.580381653" // radian from north, opposite clock direction
 //#define PHONE_INITIAL_QUATERNION "0.05702500453,0.253443002701,0.902796983719,0.342742472887"
 
@@ -85,7 +85,7 @@
 #define TOPIC_NAME_IMU "/android/imu"
 #define TOPIC_NAME_MAGNETIC "/android/magnetic_field"
 #define TOPIC_NAME_GPS "/android/fix"
-#define TOPIC_NAME_VEHICLE_PERCEPTION "/detection/object_tracker/objects"
+#define TOPIC_NAMES_MKZ_PERCEPTION "/detection/object_tracker/objects"
 #define TOPIC_NAME_PUBLISH_ODOM "/phone_localizer/odom"
 #define TOPIC_NAME_PUBLISH_POSEARRAY "phone_localizer/particles"
 
@@ -241,7 +241,7 @@ Localizer::Localizer() : nh(), private_nh(ros::NodeHandle("~")),
         sub_gps=nh.subscribe(TOPIC_NAME_GPS, 1, &Localizer::callback_gps,this);
     }
     if(use_vehicle_perception){
-        sub_vehicle_perception=nh.subscribe(TOPIC_NAME_VEHICLE_PERCEPTION,1,&Localizer::callback_vehiclePerception,this);
+        sub_vehicle_perception=nh.subscribe(TOPIC_NAMES_MKZ_PERCEPTION,1,&Localizer::callback_vehiclePerception,this);
     }
 
     ros::spin();
@@ -409,7 +409,7 @@ void Localizer::particleInitialization() {
     double person_initial_lat,person_initial_lon,person_initial_ele;
     std::string str;
     if (!nh.getParam("person_initial_fix",str)){
-        str=PERSON_INITIAL_FIX;
+        str=PHONE_INITIAL_FIX;
     }
     sscanf(str.c_str(),"%lf,%lf,%lf",&person_initial_lat,&person_initial_lon,&person_initial_ele);
     if (!nh.getParam("person_initial_direction",str)){

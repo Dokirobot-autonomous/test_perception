@@ -1,0 +1,38 @@
+<!-- -->
+<launch>
+
+  <arg name="bag_file_name" default="/media/ohashi/a65390d1-3a01-41f6-bcb9-97c998a6b643/dataset/UCB/190928.1/2019-09-28-14-07-05.bag" />
+  <arg name="bag_rate" default="1.0" />
+  <arg name="bag_start_time" default="22" />
+  <arg name="ori_fix" default="37.9181551873,-122.331354939,0.0"/>
+  <arg name="phone_init_fix" default="37.9180604745,-122.331348873,0.0"/>
+  <arg name="phone_init_dir" default="-0.580381653"/>
+  <arg name="device_name" default="android" />
+  <arg name="topic_names_perception" default="/detection/object_tracker/objects" />
+
+  <node pkg="rosbag" type="play" name="bag_player" args="$(arg bag_file_name) -r $(arg bag_rate) -s $(arg bag_start_time) --clock --pause"/>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_true2rslidar" args="0. 0. 0. -3.1415 0. 0. /base_link_true /rslidar" required="true"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="odom2base_link_true" args="0. 0. 0. -2.282229840820556 -0.016004571027008946 0.038261584385544466 /odom /base_link_true" required="true"/>
+
+  <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch">
+    <arg name="points_src" value="/rslidar_points"/>
+    <arg name="node_no" value="00" />
+  </include>
+
+  <include file="$(find imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch">
+    <arg name="node_no" value="00"/>
+  </include>
+
+  <include file="$(find smartphone_localizer)/launch/phone_vehicle_fusion.launch">
+    <arg name="device_name" default="android" />
+    <arg name="ori_fix" value="$(arg ori_fix)" />
+    <arg name="phone_init_fix" value="$(arg phone_init_fix)"/>
+    <arg name="phone_init_dir" value="$(arg phone_init_dir)"/>
+    <arg name="topic_names_perception" value="$(arg topic_names_perception)" />
+  </include>
+
+  <node type="rqt_console" name="rqt_console" pkg="rqt_console" />
+  <node type="rqt_logger_level" name="rqt_logger_level" pkg="rqt_logger_level" />
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find smartphone_localizer)/rviz/phone_localizers.rviz" />
+</launch>

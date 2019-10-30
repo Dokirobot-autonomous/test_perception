@@ -38,7 +38,7 @@
 #define USE_GPS true
 
 #define ORIGIN_FIX "37.9181551934,-122.331354965,0.0"
-#define PERSON_INITIAL_FIX "37.918303,-122.331325,0.0"
+#define PHONE_INITIAL_FIX "37.918303,-122.331325,0.0"
 #define PERSON_INITIAL_PHONE_QUATERNION "0.057025000453,0.253443002701,0.902796983719,0.342742472887"
 
 #define ACCELERATION_GROUND_BIAS "-0.03,0.01,0.0"
@@ -327,7 +327,7 @@ void Localizer::particleInitialization() {
     double person_initial_lat,person_initial_lon,person_initial_ele;
     std::string str;
     if (!nh.getParam("person_initial_fix",str)){
-        str=PERSON_INITIAL_FIX;
+        str=PHONE_INITIAL_FIX;
     }
     sscanf(str.c_str(),"%lf,%lf,%lf",&person_initial_lat,&person_initial_lon,&person_initial_ele);
     if (!nh.getParam("person_initial_phone_quaternion",str)){

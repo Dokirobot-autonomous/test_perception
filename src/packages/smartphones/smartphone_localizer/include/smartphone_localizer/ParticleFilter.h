@@ -383,6 +383,9 @@ public:
 	//! This function should calculate this for all particles and update weights accordingly
 //	virtual void Likelihood() = 0;
 
+    //! Hand over access to particles to subclasses
+    std::vector<Particle<State>* >& getParticles() { return set.particles; }
+
 protected:
 	//! Output estimated position by mean
 	State getMean()
@@ -418,9 +421,6 @@ protected:
 		out /= (double)set.particles.size();
 		return out;
 	}
-
-	//! Hand over access to particles to subclasses
-	std::vector<Particle<State>* >& getParticles() { return set.particles; }
 
 private:
 
