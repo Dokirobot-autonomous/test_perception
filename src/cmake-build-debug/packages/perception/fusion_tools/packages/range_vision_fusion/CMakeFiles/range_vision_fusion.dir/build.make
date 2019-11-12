@@ -313,7 +313,7 @@ devel/lib/range_vision_fusion/range_vision_fusion: /usr/lib/x86_64-linux-gnu/lib
 devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/libeigen_conversions.so
 devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/libtf_conversions.so
 devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/libkdl_conversions.so
-devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/libtf.so
 devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/libtf2_ros.so
 devel/lib/range_vision_fusion/range_vision_fusion: /opt/ros/kinetic/lib/libactionlib.so

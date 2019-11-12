@@ -126,7 +126,7 @@ devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: packages/perc
 devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/build.make
 devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: /opt/ros/kinetic/lib/libtf_conversions.so
 devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: /opt/ros/kinetic/lib/libkdl_conversions.so
-devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: /opt/ros/kinetic/lib/libpcl_ros_filters.so
 devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: /opt/ros/kinetic/lib/libpcl_ros_io.so
 devel/lib/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect: /opt/ros/kinetic/lib/libpcl_ros_tf.so

@@ -5784,6 +5784,19 @@ range_vision_fusion_lib/fast:
 .PHONY : range_vision_fusion_lib/fast
 
 #=============================================================================
+# Target rules for targets named fusion
+
+# Build rule for target.
+fusion: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fusion
+.PHONY : fusion
+
+# fast build rule for target.
+fusion/fast:
+	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build
+.PHONY : fusion/fast
+
+#=============================================================================
 # Target rules for targets named phone_localizer
 
 # Build rule for target.
@@ -5797,17 +5810,17 @@ phone_localizer/fast:
 .PHONY : phone_localizer/fast
 
 #=============================================================================
-# Target rules for targets named phone_vehicle_fusion
+# Target rules for targets named vehicle_phones_manager
 
 # Build rule for target.
-phone_vehicle_fusion: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 phone_vehicle_fusion
-.PHONY : phone_vehicle_fusion
+vehicle_phones_manager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vehicle_phones_manager
+.PHONY : vehicle_phones_manager
 
 # fast build rule for target.
-phone_vehicle_fusion/fast:
-	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/phone_vehicle_fusion.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/phone_vehicle_fusion.dir/build
-.PHONY : phone_vehicle_fusion/fast
+vehicle_phones_manager/fast:
+	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/vehicle_phones_manager.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/vehicle_phones_manager.dir/build
+.PHONY : vehicle_phones_manager/fast
 
 #=============================================================================
 # Target rules for targets named smartphone_sensors
@@ -5821,19 +5834,6 @@ smartphone_sensors: cmake_check_build_system
 smartphone_sensors/fast:
 	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build
 .PHONY : smartphone_sensors/fast
-
-#=============================================================================
-# Target rules for targets named fusion
-
-# Build rule for target.
-fusion: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fusion
-.PHONY : fusion
-
-# fast build rule for target.
-fusion/fast:
-	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build
-.PHONY : fusion/fast
 
 #=============================================================================
 # Target rules for targets named phonesensors_raw
@@ -7801,10 +7801,10 @@ help:
 	@echo "... lidar_fake_perception_node"
 	@echo "... range_vision_fusion"
 	@echo "... range_vision_fusion_lib"
-	@echo "... phone_localizer"
-	@echo "... phone_vehicle_fusion"
-	@echo "... smartphone_sensors"
 	@echo "... fusion"
+	@echo "... phone_localizer"
+	@echo "... vehicle_phones_manager"
+	@echo "... smartphone_sensors"
 	@echo "... phonesensors_raw"
 	@echo "... map_msgs_generate_messages_cpp"
 	@echo "... map_msgs_generate_messages_lisp"

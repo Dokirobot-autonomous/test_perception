@@ -230,8 +230,7 @@ void CNNSegmentation::pubColoredPoints(const autoware_msgs::DetectedObjectArray 
   pcl::PointCloud<pcl::PointXYZRGB> colored_cloud;
   for (size_t object_i = 0; object_i < objects_array.objects.size(); object_i++)
   {
-      std::cout<<objects_array.objects[object_i].label<<std::endl;
-    // std::cout << "objct i" << object_i << std::endl;
+      ROS_DEBUG_STREAM(objects_array.objects[object_i].label);
     pcl::PointCloud<pcl::PointXYZI> object_cloud;
     pcl::fromROSMsg(objects_array.objects[object_i].pointcloud, object_cloud);
     int red = (object_i) % 256;
@@ -240,7 +239,6 @@ void CNNSegmentation::pubColoredPoints(const autoware_msgs::DetectedObjectArray 
 
     for (size_t i = 0; i < object_cloud.size(); i++)
     {
-      // std::cout << "point i" << i << "/ size: "<<object_cloud.size()  << std::endl;
       pcl::PointXYZRGB colored_point;
       colored_point.x = object_cloud[i].x;
       colored_point.y = object_cloud[i].y;

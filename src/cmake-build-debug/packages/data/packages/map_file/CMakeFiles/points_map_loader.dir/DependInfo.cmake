@@ -47,6 +47,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "devel/include"
+  "/opt/ros/kinetic/share/orocos_kdl/../../include"
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"
   "/usr/include/ni"

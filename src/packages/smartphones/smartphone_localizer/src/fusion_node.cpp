@@ -161,7 +161,7 @@ private:
 
     /** Particle Filter Tracker **/
     State<> person_initial_state;
-    unsigned int particle_size;
+    int particle_size;
     State<> now_person_state;
 
     /** Random Seed **/
@@ -219,16 +219,16 @@ Localizer::Localizer() : nh(), private_nh(ros::NodeHandle("~")),
 
     /** Set subscriber **/
     bool use_imu,use_mag,use_gps,use_vehicle_perception;
-    if (!nh.getParam("use_imu",use_imu)){
+    if (!private_nh.getParam("use_imu",use_imu)){
         use_imu=USE_IMU;
     }
-    if (!nh.getParam("use_magnetic",use_mag)){
+    if (!private_nh.getParam("use_magnetic",use_mag)){
         use_mag=USE_MAGNETIC;
     }
-    if (!nh.getParam("use_gps",use_gps)){
+    if (!private_nh.getParam("use_gps",use_gps)){
         use_gps=USE_GPS;
     }
-    if (!nh.getParam("use_vehicle_perception",use_vehicle_perception)){
+    if (!private_nh.getParam("use_vehicle_perception",use_vehicle_perception)){
         use_vehicle_perception=USE_VEHICLE_PERCEPTION;
     }
     if(use_imu){
@@ -379,7 +379,7 @@ void Localizer::run(){
 
         //// add system noise
         std::string str;
-        if (!nh.getParam("particlefilter_system_noise_standard_deviation",str)){
+        if (!private_nh.getParam("particlefilter_system_noise_standard_deviation",str)){
             str=PARTICLEFILTER_SYSTEM_NOISE_STANDARD_DEVIATION;
         }
         State<> sd;
@@ -408,11 +408,11 @@ void Localizer::particleInitialization() {
     //// Preparing person initial parameter
     double person_initial_lat,person_initial_lon,person_initial_ele;
     std::string str;
-    if (!nh.getParam("person_initial_fix",str)){
+    if (!private_nh.getParam("person_initial_fix",str)){
         str=PHONE_INITIAL_FIX;
     }
     sscanf(str.c_str(),"%lf,%lf,%lf",&person_initial_lat,&person_initial_lon,&person_initial_ele);
-    if (!nh.getParam("person_initial_direction",str)){
+    if (!private_nh.getParam("person_initial_direction",str)){
         str=PERSON_INITIAL_DERECTION;
     }
     double person_initial_direction=std::stod(str);
@@ -439,13 +439,13 @@ void Localizer::particleInitialization() {
 
     //// Setting particles sampling range
     double xy_radius,r_radius,v_radius;
-    if (!nh.getParam("particlefilter_initial_xy_radius",xy_radius)){
+    if (!private_nh.getParam("particlefilter_initial_xy_radius",xy_radius)){
         xy_radius=PARTICLEFILTER_INITIAL_XY_RADIUS;
     }
-    if (!nh.getParam("particlefilter_initial_r_radius",r_radius)){
+    if (!private_nh.getParam("particlefilter_initial_r_radius",r_radius)){
         r_radius=PARTICLEFILTER_INITIAL_R_RADIUS;
     }
-    if (!nh.getParam("particlefilter_initial_v_radius",v_radius)){
+    if (!private_nh.getParam("particlefilter_initial_v_radius",v_radius)){
         v_radius=PARTICLEFITLER_INITIAL_V_RADIUS;
     }
     std::uniform_real_distribution<double> rand_xy(-xy_radius,xy_radius);
@@ -455,6 +455,9 @@ void Localizer::particleInitialization() {
 
 
     //// Sampling particles
+    if (!private_nh.getParam("particlefilter_particle_size",particle_size)){
+        particle_size=PARTICLEFILTER_PARTICLE_SIZE;
+    }
     for(size_t i=0;i<particle_size;i++){
         Particle<State<>>* p = new Particle<State<>>;
         State<>* s=new State<>;
@@ -540,7 +543,7 @@ void Localizer::particleTransition() {
 //    Eigen::Vector3f accel(imu.linear_acceleration.x,imu.linear_acceleration.y,imu.linear_acceleration.z);
 //    Eigen::Vector3f person_accel=-1*phone2person*accel-Eigen::Vector3f(axb,ayb,0.0);   // 座標系ではカメラ反対方向を正で定義しているにもかかわらず，カメラ方向を正で出力している
     //// gyro
-    if (!nh.getParam("gyro_z_bias",gzb)){
+    if (!private_nh.getParam("gyro_z_bias",gzb)){
         gzb=GYRO_Z_BIAS;
     }
     double diff_person_yaw=State<>::normalize_radian(now_imu_rpy[2]-pre_imu_rpy[2]);
@@ -552,7 +555,7 @@ void Localizer::particleTransition() {
 //    if (!nh.getParam("particlefilter_acceleration_standard_deviation",asd)){
 //        asd=PARTICLEFILTER_ACCELERATION_STANDARD_DEVIATION;
 //    }
-    if (!nh.getParam("particlefilter_gyro_standard_deviation",gsd)){
+    if (!private_nh.getParam("particlefilter_gyro_standard_deviation",gsd)){
         gsd=PARTICLEFILTER_GYRO_STANDARD_DEVIATION;
     }
 
@@ -774,6 +777,7 @@ void Localizer::particleLikelihoodGpsXY() {
     }
 
     /** Compute Likelihood **/
+    std::vector<double> w_vec;
     for (auto particle:getParticles()) {
         State<> s = *particle->getState();
 
@@ -785,9 +789,17 @@ void Localizer::particleLikelihoodGpsXY() {
         } else {
             w = std::exp(-std::pow(r_xy - xy_bias, 2) / (2 * xy_sd * xy_sd));
         }
-        w*=particle->getWeight();
-        particle->setWeight(w);
+
+        w_vec.push_back(w);
     }
+
+    if(!std::accumulate(w_vec.begin(),w_vec.end(),0.0)==0.0){
+        for(size_t i=0;i<getParticles().size();i++){
+            double w=w_vec[i]*getParticles()[i]->getWeight();
+            getParticles()[i]->setWeight(w);
+        }
+    }
+
 
 //    std::cout << "Particle States \n" << getParticles() << std::endl;
     particleNormalize();
@@ -828,6 +840,7 @@ void Localizer::particleLikelihoodGpsV() {
     }
 
     /** Compute Likelihood **/
+    std::vector<double> w_vec;
     for (auto particle:getParticles()){
         State<> s=*particle->getState();
 
@@ -842,9 +855,18 @@ void Localizer::particleLikelihoodGpsV() {
             w=std::exp(-std::pow(r_v-v_bias,2)/(2*v_sd*v_sd));
         }
 
-        w*=particle->getWeight();
-        particle->setWeight(w);
+        w_vec.push_back(w);
+
     }
+
+    if(!std::accumulate(w_vec.begin(),w_vec.end(),0.0)==0.0){
+        for(size_t i=0;i<getParticles().size();i++){
+            double w=w_vec[i]*getParticles()[i]->getWeight();
+            getParticles()[i]->setWeight(w);
+        }
+    }
+
+
 
 //    std::cout << "Particle States \n" << getParticles() << std::endl;
     particleNormalize();
@@ -888,16 +910,22 @@ void Localizer::particleLikelihoodGpsR() {
 
 
     /** Compute Likelihood **/
+    std::vector<double> w_vec;
     for (auto particle:getParticles()){
         State<> s=*particle->getState();
 
-        //// Likelihood V
-        double w;
+        //// Likelihood R
         double r_r=std::abs(State<>::normalize_radian(s.r-gps_r));
-        w=std::exp(-std::pow(r_r,2)/(2*r_sd*r_sd));
+        double w=std::exp(-std::pow(r_r,2)/(2*r_sd*r_sd));
 
-        w*=particle->getWeight();
-        particle->setWeight(w);
+        w_vec.push_back(w);
+    }
+
+    if(!std::accumulate(w_vec.begin(),w_vec.end(),0.0)==0.0){
+        for(size_t i=0;i<getParticles().size();i++){
+            double w=w_vec[i]*getParticles()[i]->getWeight();
+            getParticles()[i]->setWeight(w);
+        }
     }
 
 //    std::cout << "Particle States \n" << getParticles() << std::endl;
@@ -982,16 +1010,24 @@ void Localizer::particleLikelihoodVehiclePerceptionXY() {
     }
 
     /** Compute Likelihood **/
+    std::vector<double> w_vec;
     for (auto particle:getParticles()) {
         State<> s = *particle->getState();
-        double w=particle->getWeight();
 
         //// Likelihood XY
         double r_xy = std::sqrt(std::pow(s.x - per_x, 2) + std::pow(s.y - per_y, 2));
-        w *= std::exp(-r_xy*r_xy / (2 * xy_sd * xy_sd));
+        double w = std::exp(-r_xy*r_xy / (2 * xy_sd * xy_sd));
 
-        particle->setWeight(w);
+        w_vec.push_back(w);
     }
+
+    if(!std::accumulate(w_vec.begin(),w_vec.end(),0.0)==0.0){
+        for(size_t i=0;i<getParticles().size();i++){
+            double w=w_vec[i]*getParticles()[i]->getWeight();
+            getParticles()[i]->setWeight(w);
+        }
+    }
+
 
 //    std::cout << "Particle States \n" << getParticles() << std::endl;
     particleNormalize();
@@ -1022,15 +1058,23 @@ void Localizer::particleLikelihoodVehiclePerceptionV() {
         sd=PARTICLEFILTER_PERCEPTION_V_STANDARD_DEVIATION;
     }
 
+    std::vector<double> w_vec;
     for (auto particle:getParticles()) {
         State<> s = *particle->getState();
-        double w = particle->getWeight();
 
         double s_v=std::sqrt(s.vx*s.vx+s.vy*s.vy);
-        w*=std::exp(-std::pow(s_v-per_v,2)/(2*sd*sd));
+        double w=std::exp(-std::pow(s_v-per_v,2)/(2*sd*sd));
 
-        particle->setWeight(w);
+        w_vec.push_back(w);
     }
+
+    if(!std::accumulate(w_vec.begin(),w_vec.end(),0.0)==0.0){
+        for(size_t i=0;i<getParticles().size();i++){
+            double w=w_vec[i]*getParticles()[i]->getWeight();
+            getParticles()[i]->setWeight(w);
+        }
+    }
+
 
 //    std::cout << "Particle States \n" << getParticles() << std::endl;
     particleNormalize();
@@ -1062,15 +1106,24 @@ void Localizer::particleLikelihoodVehiclePerceptionR() {
         sd=PARTICLEFILTER_PERCEPTION_R_STANDARD_DEVIATION;
     }
 
+    std::vector<double> w_vec;
     for (auto particle:getParticles()) {
         State<> s = *particle->getState();
-        double w = particle->getWeight();
 
         double r_r=State<>::normalize_radian(person_perception_origin_state.r-s.r);
-        w*=std::exp(-r_r*r_r/(2*sd*sd));
+        double w=std::exp(-r_r*r_r/(2*sd*sd));
 
-        particle->setWeight(w);
+        w_vec.push_back(w);
+
     }
+
+    if(!std::accumulate(w_vec.begin(),w_vec.end(),0.0)==0.0){
+        for(size_t i=0;i<getParticles().size();i++){
+            double w=w_vec[i]*getParticles()[i]->getWeight();
+            getParticles()[i]->setWeight(w);
+        }
+    }
+
 
 //    std::cout << "Particle States \n" << getParticles() << std::endl;
     particleNormalize();

@@ -34,5 +34,7 @@
 
   <node type="rqt_console" name="rqt_console" pkg="rqt_console" />
   <node type="rqt_logger_level" name="rqt_logger_level" pkg="rqt_logger_level" />
+  <node type="rqt_graph" name="rqt_graph" pkg="rqt_graph" />
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find smartphone_localizer)/rviz/phone_localizers.rviz" />
+
 </launch>

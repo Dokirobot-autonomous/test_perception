@@ -3,12 +3,9 @@
 //
 
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
-#include <thread>
-#include <chrono>
 
 #include <Eigen/Core>
 
@@ -25,97 +22,106 @@
 #include <phone_localizer.h>
 
 #define USE_MKS false
-#define USE_MKZ true
-#define USE_PRIUS false
+#define USE_MKZ false
+#define USE_PRIUS true
 
 #define PHONE_NAMES "android"
+#define VEHICLE_NAME "prius"
 
 #define ORIGIN_FRAME_ID "odom"
 #define ORIGIN_FIX "37.9181551873,-122.331354939,0.0"
 
-#define PARTICLEFILTER_PERCEPTION_XY_STANDARD_DEVIATION 0.3                      //
-#define PARTICLEFILTER_PERCEPTION_V_STANDARD_DEVIATION 0.01                      //
-#define PARTICLEFILTER_PERCEPTION_R_STANDARD_DEVIATION 2.0*M_PI/180                      //
-#define PARTICLEFILTER_PERCEPTION_V_TH 1.0                      // 5.0[m/s]
+#define ASSIGN_PEDESTRIANS_TO_PHONES_EXTRACTION_PARTICLE_SIZE 100
 
-#define TOPIC_NAMES_MKS_PERCEPTION "/detection/object_tracker/objects"
-#define TOPIC_NAMES_MKZ_PERCEPTION "/detection/object_tracker/objects"
-#define TOPIC_NAMES_PRIUS_PERCEPTION "/detection/object_tracker/objects"
+#define PARTICLEFILTER_VEHICLE_PERCEPTION_XY_STANDARD_DEVIATION 0.3                      //
+#define PARTICLEFILTER_VEHICLE_PERCEPTION_V_STANDARD_DEVIATION 0.01                      //
+#define PARTICLEFILTER_VEHICLE_PERCEPTION_R_STANDARD_DEVIATION 2.0*M_PI/180                      //
+
+#define TOPIC_NAMES_PERCEPTION VEHICLE_NAME + "/detection/object_tracker/objects"
 
 class PhoneVehicleFusion{
 
 public:
 
-    PhoneVehicleFusion();
+    PhoneVehicleFusion(ros::NodeHandle* nh, ros::NodeHandle* private_nh, std::vector<PhoneLocalizer*>* phone_localizers, std::string vehicle_name=VEHICLE_NAME);
+//    PhoneVehicleFusion(ros::NodeHandle& nh, ros::NodeHandle& private_nh);
     ~PhoneVehicleFusion();
 
-    void callback_perception(const autoware_msgs::DetectedObjectArrayConstPtr &msg, const std::string &topic);
+    void callback_vehicle_perception(const autoware_msgs::DetectedObjectArrayConstPtr &msg);
 
     void run();
 
-    std::vector<State<>> getPedestriansStates(const autoware_msgs::DetectedObjectArray& msg);
-    std::vector<int> assignPedestrianToPhoneLocalizer(const std::vector<State<>>& pedestrian_states);
-    std::vector<double> particleLikelihoodPerceptionXY(const State<>& pedestrian,PhoneLocalizer& pl);
-    std::vector<double> particleLikelihoodPerceptionV(const State<>& pedestrian,PhoneLocalizer& pl);
-    std::vector<double> particleLikelihoodPerceptionR(const State<>& pedestrian,PhoneLocalizer& pl);
+    void getPedestriansFromVehiclePerception();
+    void transformPedestriansFromVehicleToOrigin();
+    void assignVehiclePedestriansToPhones();
+    void particleLikelihoodVehiclePerceptionXY();
+    void particleLikelihoodVehiclePerceptionV();
+    void particleLikelihoodVehiclePerceptionR();
+
+    double computeWeightXY(const State<>& pedestrian,const State<>& particle);
+    double computeWeightV(const State<>& pedestrian,const State<>& particle);
+    double computeWeightR(const State<>& pedestrian,const State<>& particle);
+
+//
+//
+//
+//    void particleLikelihoodPerception(const std::vector<State<>> )
+//    void assignPedestrianToPhoneLocalizer(const std::vector<State<>>& pedestrian_states, std::vector<int>* idx_pedestrians);
+//    std::vector<double> particleLikelihoodPerceptionXY(const State<>& pedestrian,const PhoneLocalizer& pl);
+//    std::vector<double> particleLikelihoodPerceptionV(const State<>& pedestrian,const PhoneLocalizer& pl);
+//    std::vector<double> particleLikelihoodPerceptionR(const State<>& pedestrian,const PhoneLocalizer& pl);
 
 private:
 
-    ros::NodeHandle nh;
-    ros::NodeHandle private_nh;
-    std::vector<ros::Subscriber> sub_perceptions;
+    std::string vehicle_name;
+
+    ros::NodeHandle& nh;
+    ros::NodeHandle& private_nh;
+    ros::Subscriber sub_vehicle_perception;
 
     /** Subscribed Topics **/
-    size_t perceptions_size;
-    std::vector<autoware_msgs::DetectedObjectArray> perceptions;
-    std::vector<std::string> topic_names_perception;
-    std::vector<bool> perceptions_update;
+    autoware_msgs::DetectedObjectArray vehicle_perception_objects;
+    autoware_msgs::DetectedObjectArray vehicle_perception_pedestrians;
+    bool vehicle_perception_update;
 
     //// Frame ID
-    std::string origin_frame_id,phone_frame_id;
-
+    std::string origin_frame_id;
 
     /** TF Listener **/
     tf2_ros::Buffer tf_buffer;
 
-    /** Phone Localizer **/
-    size_t phones_size;
-    std::vector<std::string> phone_names;
-    std::vector<PhoneLocalizer*> phone_localizers;
+    /** Phone Localizer (external)**/
+    std::vector<PhoneLocalizer*>& phone_localizers;
 
     /** Vehicle Likelihood **/
-    std::vector<std::vector<State<>>> perceptions_pedestrian_states;
+    std::vector<State<>> pedestrian_origin_states;
+    std::vector<int> pedestrian_indices_assigned_to_phones;
+
+//    std::vector<std::vector<State<>>> perceptions_pedestrian_states;
 
     /** GPS fix -> pose **/
     geo_pos_conv geo;
     double origin_lat,origin_lon,origin_ele;
 
-
+    /** Others **/
+    ros::Time time;
 
 
 };
 
-PhoneVehicleFusion::PhoneVehicleFusion() : nh(), private_nh(ros::NodeHandle("~"))
-{
+PhoneVehicleFusion::PhoneVehicleFusion( ros::NodeHandle* nh, ros::NodeHandle* private_nh,
+                                        std::vector<PhoneLocalizer*>* phone_localizers,
+                                        std::string vehicle_name) :
+                                        nh(*nh),private_nh(*private_nh),
+                                        phone_localizers(*phone_localizers),vehicle_name(vehicle_name){
 
     ROS_DEBUG("%s",__FUNCTION__);
 
     /** Set Parameter **/
 
-    //// phone name
-    std::string str;
-    if (!private_nh.getParam("phone_names", str)) {
-        str = PHONE_NAMES;
-    }
-    std::stringstream ss(str);
-    std::string token;
-    while (std::getline(ss, token, ',')) {
-        phone_names.push_back(token);
-    }
-    phones_size=phone_names.size();
-
     //// origin
-    if (!nh.getParam("origin_fix", str)) {
+    std::string str;
+    if (!this->nh.getParam("origin_fix", str)) {
         str = ORIGIN_FIX;
     }
     sscanf(str.c_str(), "%lf,%lf,%lf", &origin_lat, &origin_lon, &origin_ele);
@@ -125,54 +131,24 @@ PhoneVehicleFusion::PhoneVehicleFusion() : nh(), private_nh(ros::NodeHandle("~")
     tf2_ros::TransformListener tf_listener(tf_buffer);
 
 
-    /** Initialize Phone Localizer **/
-    for(size_t iph=0;iph<phones_size;iph++){
-        PhoneLocalizer* pl=new PhoneLocalizer;
-        pl->set_phone_name(phone_names[iph]);
-        phone_localizers.push_back(pl);
-    }
-
-
     /** Set subscriber **/
-    if (!private_nh.getParam("topic_names_perception", str)) {
-        str = TOPIC_NAMES_MKZ_PERCEPTION;
-    }
-    ss=std::stringstream(str);
-    while (std::getline(ss, token, ',')) {
-        topic_names_perception.push_back(token);
-    }
-    perceptions_size = sub_perceptions.size();
-    perceptions_update = std::vector<bool>(perceptions_size, false);
-    perceptions.resize(perceptions_size);
-    perceptions_pedestrian_states.resize(perceptions_size);
-
-    /** Set subscriber **/
-    sub_perceptions.resize(perceptions_size);
-    for(auto& sub:sub_perceptions){
-        sub = nh.subscribe<autoware_msgs::DetectedObjectArray>
-                (token, 1, boost::bind(&PhoneVehicleFusion::callback_perception, this, _1, token));
-
-    }
+    sub_vehicle_perception=this->nh.subscribe(str,1,&PhoneVehicleFusion::callback_vehicle_perception,this);
 
     ros::spin();
 }
 
-PhoneVehicleFusion::~PhoneVehicleFusion() {
-    for(auto& pl:phone_localizers){
-        delete pl;
-    }
-}
 
-void PhoneVehicleFusion::callback_perception(const autoware_msgs::DetectedObjectArrayConstPtr &msg,
-                                             const std::string &topic) {
+
+PhoneVehicleFusion::~PhoneVehicleFusion() {}
+
+void PhoneVehicleFusion::callback_vehicle_perception(const autoware_msgs::DetectedObjectArrayConstPtr &msg) {
 
     ROS_INFO("%s",__FUNCTION__);
 
-    auto itr = std::find(topic_names_perception.begin(),topic_names_perception.end(),topic);
-    size_t idx=std::distance(topic_names_perception.begin(),itr);
-    perceptions[idx]=*msg;
-    perceptions_update[idx]=true;
+    vehicle_perception_objects=*msg;
+    vehicle_perception_update=true;
     run();
+    vehicle_perception_update=false;
 
 }
 
@@ -180,33 +156,19 @@ void PhoneVehicleFusion::run() {
 
     ROS_DEBUG("%s",__FUNCTION__);
 
-    std::vector<int> idx_pedestrian_assigned_localizers;
     for(auto& pl:phone_localizers){
         pl->lock.lock();
     }
 
-    for(size_t pi=0;pi<perceptions_size;pi++){
+    if(vehicle_perception_update){
 
-        if(perceptions_update[pi]==false){
-            continue;
-        }
+        getPedestriansFromVehiclePerception();
+        transformPedestriansFromVehicleToOrigin();
+        assignVehiclePedestriansToPhones();
+        particleLikelihoodVehiclePerceptionXY();
+        particleLikelihoodVehiclePerceptionV();
+        particleLikelihoodVehiclePerceptionR();
 
-        //// Get Pedestrian states
-        std::vector<State<>> ped_states=getPedestriansStates(perceptions[pi]);
-        perceptions_pedestrian_states[pi]=ped_states;
-
-        //// Assign pedestrian states to phone loclizer
-        idx_pedestrian_assigned_localizers=assignPedestrianToPhoneLocalizer(ped_states);
-
-
-
-    }
-
-    for(size_t iph=0;iph<phones_size;iph++){
-        ROS_DEBUG_STREAM(phone_names[iph]<<": ");
-        (*phone_localizers[iph]).publish_odom();
-        (*phone_localizers[iph]).publish_poseaary();
-        perceptions_update[iph]=false;
     }
 
     for(auto& pl:phone_localizers){
@@ -216,17 +178,30 @@ void PhoneVehicleFusion::run() {
 
 }
 
-std::vector<State<>> PhoneVehicleFusion::getPedestriansStates(const autoware_msgs::DetectedObjectArray& objects) {
-
-    ROS_DEBUG("%s", __FUNCTION__);
-
-    std::vector<State<>> pedestrian_states;
+void PhoneVehicleFusion::getPedestriansFromVehiclePerception() {
 
     /** Extracting pedestrian object in Detected objects **/
-    for(const autoware_msgs::DetectedObject obj:objects.objects){
-        if (obj.label=="pedestrian"){
+    vehicle_perception_pedestrians.header=vehicle_perception_objects.header;
+    vehicle_perception_pedestrians.objects.clear();
 
-//            std::cout<<obj.pose<<std::endl;
+    for(const autoware_msgs::DetectedObject& obj:vehicle_perception_objects.objects){
+        if (obj.label=="pedestrian"){
+            vehicle_perception_pedestrians.objects.push_back(obj);
+        }
+    }
+
+    if(!vehicle_perception_pedestrians.objects.empty()){
+        ROS_DEBUG_STREAM("Pedestrians: \n"<< vehicle_perception_pedestrians);
+    }
+    else{
+        ROS_DEBUG("No Pedestrians");
+    }
+}
+
+void PhoneVehicleFusion::transformPedestriansFromVehicleToOrigin(){
+
+    for(const autoware_msgs::DetectedObject obj:vehicle_perception_pedestrians.objects){
+
             if (std::isnan(obj.pose.orientation.x) ||
                 std::isnan(obj.pose.orientation.y) ||
                 std::isnan(obj.pose.orientation.z) ||
@@ -255,38 +230,39 @@ std::vector<State<>> PhoneVehicleFusion::getPedestriansStates(const autoware_msg
             tf::Matrix3x3(quat).getRPY(rpy[0], rpy[1], rpy[2]);
             pedestrian.r=State<>::normalize_radian(rpy[2]-M_PI/2.0);
 
-            pedestrian_states.push_back(pedestrian);
-            ROS_DEBUG_STREAM("Pedestrian"<< pedestrian_states.size() <<" state: "<<pedestrian);
-        }
+            pedestrian_origin_states.push_back(pedestrian);
+            ROS_DEBUG_STREAM("Pedestrian origin states: \n"<< pedestrian_origin_states);
     }
-
-    return pedestrian_states;
-
 }
 
-std::vector<int> PhoneVehicleFusion::assignPedestrianToPhoneLocalizer(const std::vector<State<>>& pedestrian_states) {
+void PhoneVehicleFusion::assignVehiclePedestriansToPhones() {
 
     ROS_DEBUG("%s",__FUNCTION__);
 
-    std::vector<int> idx_pedestrians(phones_size,-1);
+    static std::vector<int> idxs(PARTICLEFILTER_PARTICLE_SIZE);
+    std::iota(idxs.begin(),idxs.end(),0);
 
-    std::vector<std::vector<std::vector<double>>> w_table(phones_size,std::vector<std::vector<double>>(perceptions_size,std::vector<double>(0)));
-    Eigen::MatrixXd w_sum_table(perceptions_size,phones_size);
+    std::vector<int> ped_idxs_to_phone=std::vector<int>(phone_localizers.size(),-1);
+
+    Eigen::MatrixXd w_sum_table(pedestrian_origin_states.size(),phone_localizers.size());
 //    std::vector<double> w_pl(phones_size);
 
     /** Creating weight table **/
-    for(size_t ipl=0;ipl<phones_size;ipl++){
-        auto& pl=phone_localizers[ipl];
-        for(size_t ips=0;ips<pedestrian_states.size();ips++){
-            auto& ps=pedestrian_states[ips];
-            std::vector<double> w_xy=particleLikelihoodPerceptionXY(ps,*pl);
-            std::vector<double> w_v=particleLikelihoodPerceptionV(ps,*pl);
-            std::vector<double> w_r=particleLikelihoodPerceptionR(ps,*pl);
-            for(int i=0;i<w_xy.size();i++){
-                double w=w_xy[i]*w_v[i]*w_r[i];
-                w_table[ipl][ips].push_back(w);
+    for(size_t i_pl=0;i_pl<phone_localizers.size();i_pl++){
+        auto& pl=phone_localizers[i_pl];
+        std::random_shuffle(pl->getParticles().begin(),pl->getParticles().end());
+        std::vector<Particle<State<>>*> particles(ASSIGN_PEDESTRIANS_TO_PHONES_EXTRACTION_PARTICLE_SIZE);
+        std::copy(pl->getParticles().begin(),pl->getParticles().begin()+ASSIGN_PEDESTRIANS_TO_PHONES_EXTRACTION_PARTICLE_SIZE,particles.begin());
+        for(size_t i_pos=0;i_pos<pedestrian_origin_states.size();i_pos++){
+            const auto& pos=pedestrian_origin_states[i_pos];
+            std::vector<double> weights;
+            for(auto& p:particles){
+                double w_xy=computeWeightXY(pos,*p->getState());
+                double w_v=computeWeightV(pos,*p->getState());
+                double w_r=computeWeightR(pos,*p->getState());
+                weights.push_back(w_xy*w_v*w_r);
             }
-            w_sum_table(ips,ipl)=std::accumulate(w_table[ipl][ips].begin(),w_table[ipl][ips].end(),0.0);
+            w_sum_table(i_pos,i_pl)=std::accumulate(weights.begin(),weights.end(),0.0);
         }
     }
 
@@ -296,137 +272,150 @@ std::vector<int> PhoneVehicleFusion::assignPedestrianToPhoneLocalizer(const std:
     while(true){
         Eigen::MatrixXd::Index idx_max_pe,idx_max_pl;
         w_sum_table_tmp.maxCoeff(&idx_max_pe,&idx_max_pl);
-        idx_pedestrians[idx_max_pl]=idx_max_pe;
+        ped_idxs_to_phone[idx_max_pl]=idx_max_pe;
         w_sum_table_tmp.row(idx_max_pe).setZero();
         w_sum_table_tmp.col(idx_max_pl).setZero();
-        if(std::find(idx_pedestrians.begin(),idx_pedestrians.end(),-1)==idx_pedestrians.end()){
+        if(std::find(ped_idxs_to_phone.begin(),ped_idxs_to_phone.end(),-1)==ped_idxs_to_phone.end()){
             assert(w_sum_table_tmp.isZero());
             break;
         }
     }
 
-    /** Set likelihood **/
-    for(size_t ipl=0;ipl<phones_size;ipl++){
-        int ipe=idx_pedestrians[ipl];
-        auto& particles=phone_localizers[ipl]->getParticles();
-        for(int ipa=0;ipa<particles.size();ipa++){
-            double w=particles[ipa]->getWeight()*w_table[ipl][ipe][ipa];
-            particles[ipa]->setWeight(w);
+    pedestrian_indices_assigned_to_phones=ped_idxs_to_phone;
+
+}
+
+void PhoneVehicleFusion::particleLikelihoodVehiclePerceptionXY() {
+
+    ROS_DEBUG("%s", __FUNCTION__);
+
+    for(size_t i_pl=0;i_pl<phone_localizers.size();i_pl++){
+        auto& pl=phone_localizers[i_pl];
+        State<> ped_s=pedestrian_origin_states[pedestrian_indices_assigned_to_phones[i_pl]];
+
+        std::vector<double> weights;
+        for(auto& particle:pl->getParticles()){
+            State<> par_s=*particle->getState();
+            weights.push_back(computeWeightXY(ped_s,par_s));
         }
-        phone_localizers[ipl]->particleNormalize();
+
+        if(std::accumulate(weights.begin(),weights.end(),0.0)!=0.0){
+            for(size_t i=0;i<weights.size();i++){
+                double w=weights[i]*pl->getParticles()[i]->getWeight();
+                pl->getParticles()[i]->setWeight(w);
+            }
+            pl->particleNormalize();
+//    std::cout << "Particle States \n" << pl->getParticles() << std::endl;
+        }
+        else{
+            ROS_DEBUG("Skip likelihood: %s",__FUNCTION__);
+        }
     }
 
 }
 
-std::vector<double> PhoneVehicleFusion::particleLikelihoodPerceptionXY(const State<>& pedestrian,PhoneLocalizer& pl) {
+void PhoneVehicleFusion::particleLikelihoodVehiclePerceptionV() {
 
     ROS_DEBUG("%s", __FUNCTION__);
 
-    double per_x=pedestrian.x;
-    double per_y=pedestrian.y;
-    assert(pedestrian.x!=0.0);
-    assert(pedestrian.y!=0.0);
+    for(size_t i_pl=0;i_pl<phone_localizers.size();i_pl++){
+        auto& pl=phone_localizers[i_pl];
+        State<> ped_s=pedestrian_origin_states[pedestrian_indices_assigned_to_phones[i_pl]];
 
-    double xy_sd;
-    if (!private_nh.getParam("particlefitler_perception_xy_standard_deviation",xy_sd)){
-        xy_sd=PARTICLEFILTER_PERCEPTION_XY_STANDARD_DEVIATION;
+        std::vector<double> weights;
+        for(auto& particle:pl->getParticles()){
+            State<> par_s=*particle->getState();
+            weights.push_back(computeWeightV(ped_s,par_s));
+        }
+
+        if(std::accumulate(weights.begin(),weights.end(),0.0)!=0.0){
+            for(size_t i=0;i<weights.size();i++){
+                double w=weights[i]*pl->getParticles()[i]->getWeight();
+                pl->getParticles()[i]->setWeight(w);
+            }
+            pl->particleNormalize();
+//    std::cout << "Particle States \n" << pl->getParticles() << std::endl;
+        }
+        else{
+            ROS_DEBUG("Skip likelihood: %s",__FUNCTION__);
+        }
     }
-
-    /** Compute Likelihood **/
-    for (auto particle:pl.getParticles()) {
-        State<> s = *particle->getState();
-        double w=particle->getWeight();
-
-        //// Likelihood XY
-        double r_xy = std::sqrt(std::pow(s.x - per_x, 2) + std::pow(s.y - per_y, 2));
-        w *= std::exp(-r_xy*r_xy / (2 * xy_sd * xy_sd));
-
-        particle->setWeight(w);
-    }
-
-//    std::cout << "Particle States \n" << getParticles() << std::endl;
 
 }
 
-std::vector<double> PhoneVehicleFusion::particleLikelihoodPerceptionV(const State<>& pedestrian,PhoneLocalizer& pl) {
+void PhoneVehicleFusion::particleLikelihoodVehiclePerceptionR() {
 
     ROS_DEBUG("%s", __FUNCTION__);
 
-    double per_vx=pedestrian.vx;
-    double per_vy=pedestrian.vy;
+    for(size_t i_pl=0;i_pl<phone_localizers.size();i_pl++){
+        auto& pl=phone_localizers[i_pl];
+        State<> ped_s=pedestrian_origin_states[pedestrian_indices_assigned_to_phones[i_pl]];
 
-    double per_v=std::sqrt(per_vx*per_vx+per_vy*per_vy);
+        std::vector<double> weights;
+        for(auto& particle:pl->getParticles()){
+            State<> par_s=*particle->getState();
+            weights.push_back(computeWeightR(ped_s,par_s));
+        }
 
-    double v_th;
-    if (!private_nh.getParam("particlefitler_perception_v_th",v_th)){
-        v_th=PARTICLEFILTER_PERCEPTION_V_TH;
+        if(std::accumulate(weights.begin(),weights.end(),0.0)!=0.0){
+            for(size_t i=0;i<weights.size();i++){
+                double w=weights[i]*pl->getParticles()[i]->getWeight();
+                pl->getParticles()[i]->setWeight(w);
+            }
+            pl->particleNormalize();
+//    std::cout << "Particle States \n" << pl->getParticles() << std::endl;
+        }
+        else{
+            ROS_DEBUG("Skip likelihood: %s",__FUNCTION__);
+        }
     }
-    if (per_v<v_th){
-        ROS_DEBUG("Skip Likelihood V");
-    }
-
-    double sd;
-    if (!private_nh.getParam("particlefitler_perception_v_standard_deviation",sd)){
-        sd=PARTICLEFILTER_PERCEPTION_V_STANDARD_DEVIATION;
-    }
-
-    for (auto particle:pl.getParticles()) {
-        State<> s = *particle->getState();
-        double w = particle->getWeight();
-
-        double s_v=std::sqrt(s.vx*s.vx+s.vy*s.vy);
-        w*=std::exp(-std::pow(s_v-per_v,2)/(2*sd*sd));
-
-        particle->setWeight(w);
-    }
-
-//    std::cout << "Particle States \n" << getParticles() << std::endl;
 
 }
 
-std::vector<double> PhoneVehicleFusion::particleLikelihoodPerceptionR(const State<>& pedestrian,PhoneLocalizer& pl) {
+double PhoneVehicleFusion::computeWeightXY(const State<> &pedestrian, const State<> &particle) {
 
     ROS_DEBUG("%s", __FUNCTION__);
 
-//    double per_r=person_perception_origin_state.r;
-//    assert(person_perception_origin_state.r!=0.0);
+    static double xy_sd=PARTICLEFILTER_VEHICLE_PERCEPTION_XY_STANDARD_DEVIATION;
+    private_nh.getParam("particlefilter_vehicle_perception_xy_statndard_deviation",xy_sd);
+    std::cout<<xy_sd<<std::endl;
 
-    double per_vx=pedestrian.vx;
-    double per_vy=pedestrian.vy;
+    //// Likelihood XY
+    double r_xy = std::sqrt(std::pow(pedestrian.x - particle.x, 2) + std::pow(pedestrian.y - particle.y, 2));
+    double w = std::exp(-r_xy*r_xy / (2 * xy_sd * xy_sd));
 
-    double per_v=std::sqrt(per_vx*per_vx+per_vy*per_vy);
+    return w;
+}
 
-    double v_th;
-    if (!private_nh.getParam("particlefitler_perception_v_th",v_th)){
-        v_th=PARTICLEFILTER_PERCEPTION_V_TH;
-    }
-    if (per_v<v_th){
-        ROS_DEBUG("Skip Likelihood R");
-    }
+double PhoneVehicleFusion::computeWeightV(const State<> &pedestrian, const State<> &particle) {
 
-    double sd;
-    if (!private_nh.getParam("particlefitler_perception_r_standard_deviation",sd)){
-        sd=PARTICLEFILTER_PERCEPTION_R_STANDARD_DEVIATION;
-    }
+    double ped_v=std::sqrt(pedestrian.vx*pedestrian.vx+pedestrian.vy*pedestrian.vy);
+    double par_v=std::sqrt(particle.vx*particle.vx+particle.vy*particle.vy);
 
-    for (auto particle:pl.getParticles()) {
-        State<> s = *particle->getState();
-        double w = particle->getWeight();
+    static double sd=PARTICLEFILTER_VEHICLE_PERCEPTION_V_STANDARD_DEVIATION;
+    private_nh.getParam("particlefilter_vehicle_perception_v_statndard_deviation",sd);
 
-        double r_r=State<>::normalize_radian(pedestrian.r-s.r);
-        w*=std::exp(-r_r*r_r/(2*sd*sd));
+    double w=std::exp(-std::pow(ped_v-par_v,2)/(2*sd*sd));
+    return w;
 
-        particle->setWeight(w);
-    }
+}
 
-//    std::cout << "Particle States \n" << getParticles() << std::endl;
+double PhoneVehicleFusion::computeWeightR(const State<> &pedestrian, const State<> &particle) {
+
+    static double sd=PARTICLEFILTER_VEHICLE_PERCEPTION_R_STANDARD_DEVIATION;
+    private_nh.getParam("particlefilter_vehicle_perception_r_statndard_deviation",sd);
+
+    double w=std::exp(-std::pow(pedestrian.r-particle.r,2)/(2*sd*sd));
+    return w;
 
 }
 
 
-// -----------------------------------
-//	Main Function
-// -----------------------------------
+
+/**************************************
+ *      Main Function
+ **************************************/
+
 int main(int argc, char **argv) {
 
 //    // debug mode
@@ -434,9 +423,24 @@ int main(int argc, char **argv) {
 //        ros::console::notifyLoggerLevelsChanged();
 //    }
 
-    // Initialize ROS
-    ros::init(argc, argv, "phone_vehicle_fusion");
-    PhoneVehicleFusion node;
+    //// Initialize ROS
+    ros::init(argc, argv, "vehicle_perceptor");
+    ros::NodeHandle nh,private_nh("~");
+
+    //// Phone Localizer
+    std::vector<PhoneLocalizer*> phone_localizers;
+    std::string phone_names, token;
+    if (!private_nh.getParam("phone_names", phone_names)) {
+        phone_names = PHONE_NAMES;
+    }
+    std::stringstream ss(phone_names);
+    while (std::getline(ss, token, ',')) {
+        PhoneLocalizer *pl = new PhoneLocalizer(&nh, &private_nh, token);
+        phone_localizers.push_back(pl);
+    }
+
+    //// Vehicle Perceptor
+    PhoneVehicleFusion node(&nh,&private_nh,&phone_localizers);
     ros::spin();
 
     return (0);

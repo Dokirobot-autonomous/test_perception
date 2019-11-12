@@ -6,18 +6,21 @@
   <arg name="phone_init_fix" />
   <arg name="phone_init_dir" />
   <arg name="pf_gyro_sd" default="0.000001" />
-  <arg name="pf_sys_noise_sd" default="0.05,0.05,0.087263889,0.00001,0.1" />
-  <arg name="pf_gps_xy_bias" default="5" />
+  <arg name="pf_sys_noise_sd" default="0.05,0.05,0.087263889,0.1,0.00001" />
+  <arg name="pf_gps_xy_bias" default="0" />
+  <arg name="pf_gps_xy_sd" default="1.5" />
+  <arg name="output" default="log" />
+
 
   <param name="origin_fix" value="$(arg ori_fix)" />
-
-  <node pkg="smartphone_localizer" type="phone_localizers" name="phone_localizer_node" output="screen">
+  <node pkg="smartphone_localizer" type="phone_localizer" name="phone_localizer_node" output="$(arg output)">
     <param name="phone_name" value="$(arg device_name)" />
     <param name="phone_initial_fix" value="$(arg phone_init_fix)" />
     <param name="phone_initial_direction" value="$(arg phone_init_dir)" />
     <param name="particlefilter_gyro_standard_deviation" value="$(arg pf_gyro_sd)" />
     <param name="particlefilter_system_noise_standard_deviation" value="$(arg pf_sys_noise_sd)" />
     <param name="particlefitler_gps_xy_bias" value="$(arg pf_gps_xy_bias)" />
+    <param name="particlefitler_gps_xy_standard_deviation" value="$(arg pf_gps_xy_sd)" />
   </node>
 
 </launch>

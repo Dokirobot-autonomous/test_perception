@@ -24,8 +24,10 @@
 
   <arg name="marker_display_duration" default="0.2"/>
 
+  <arg name="output" default="log" />
+
   <!-- rosrun lidar_tracker euclidean_cluster _points_node:="" -->
-  <node pkg="imm_ukf_pda_track" type="imm_ukf_pda" name="imm_ukf_pda_$(arg node_no)" output="screen">
+  <node pkg="imm_ukf_pda_track" type="imm_ukf_pda" name="imm_ukf_pda_$(arg node_no)" output="$(arg output)">
     <param name="gating_thres"            value="$(arg gating_thres)" />
     <param name="gate_probability"        value="$(arg gate_probability)" />
     <param name="detection_probability"   value="$(arg detection_probability)" />
@@ -45,12 +47,12 @@
   </node>
 
   <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="ukf_track_visualization_$(arg node_no)"
-        output="screen" ns="$(arg namespace)">
+        output="$(arg output)" ns="$(arg namespace)">
     <param name="marker_display_duration"            value="$(arg marker_display_duration)" />
   </node>
 
   <node pkg="topic_tools" type="relay" name="ukf_track_relay_$(arg node_no)"
-        output="screen" args="$(arg namespace)/objects /detection/objects"/>
+        output="$(arg output)" args="$(arg namespace)/objects /detection/objects"/>
 
 <!--  <node pkg="tf2_ros" type="static_transform_publisher" name="transform_world_velodyne" args="0.0 0.0 0.0 0.0 0.0 0.0 world velo_link" required="true"/>-->
 

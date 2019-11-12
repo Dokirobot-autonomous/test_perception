@@ -66,17 +66,31 @@ install(TARGETS phone_localizer
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
 
-add_executable(phone_vehicle_fusion
-        src/phone_vehicle_fusioin.cpp
+add_executable(vehicle_phones_manager
+        src/vehicle_phones_manager.cpp
         src/phone_localizer.cpp
         src/geo_pos_conv.cpp)
-target_link_libraries(phone_vehicle_fusion ${catkin_LIBRARIES})
-add_dependencies(phone_vehicle_fusion ${catkin_EXPORTED_TARGETS})
-install(TARGETS phone_vehicle_fusion
+target_link_libraries(vehicle_phones_manager ${catkin_LIBRARIES})
+add_dependencies(vehicle_phones_manager ${catkin_EXPORTED_TARGETS})
+install(TARGETS vehicle_phones_manager
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
+
+
+#add_executable(vehicle_perceptor
+#        src/vehicle_perceptor_node.cpp
+#        src/vehicle_perceptor.cpp
+#        src/phone_localizer.cpp
+#        src/geo_pos_conv.cpp)
+#target_link_libraries(vehicle_perceptor ${catkin_LIBRARIES})
+#add_dependencies(vehicle_perceptor ${catkin_EXPORTED_TARGETS})
+#install(TARGETS vehicle_perceptor
+#        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#        )
 
 
 add_executable(smartphone_sensors src/smartphone_node.cpp src/geo_pos_conv.cpp)

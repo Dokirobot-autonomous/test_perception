@@ -1,0 +1,31 @@
+<!-- -->
+<launch>
+  <rosparam param="/use_sim_time">true</rosparam>
+  <arg name="device_name" />
+  <arg name="topic_names_perception" />
+  <arg name="ori_fix" />
+  <arg name="phone_init_fix" />
+  <arg name="phone_init_dir" />
+  <arg name="pf_particle_size" default="1000" />
+  <arg name="pf_gyro_sd" default="0.000001" />
+  <arg name="pf_sys_noise_sd" default="0.1,0.1,0.087263889,0.00001,0.1" />
+  <arg name="pf_gps_xy_bias" default="5" />
+  <arg name="pf_perception_xy_sd" default="0.3" />
+  <arg name="pf_perception_r_sd" default="0.034905556" />
+
+  <param name="origin_fix" value="$(arg ori_fix)" />
+
+  <node pkg="smartphone_localizer" type="vehicle_phones_manager" name="vehicle_phones_manager_node" output="screen">
+    <param name="phone_name" value="$(arg device_name)" />
+    <param name="topic_names_perception" value="$(arg topic_names_perception)" />
+    phone_vehicle_maneger    <param name="phone_initial_fix" value="$(arg phone_init_fix)" />
+    <param name="phone_initial_direction" value="$(arg phone_init_dir)" />
+    <param name="particlefilter_particle_size" value="$(arg pf_particle_size" />
+    <param name="particlefilter_gyro_standard_deviation" value="$(arg pf_gyro_sd)" />
+    <param name="particlefilter_system_noise_standard_deviation" value="$(arg pf_sys_noise_sd)" />
+    <param name="particlefitler_gps_xy_bias" value="$(arg pf_gps_xy_bias)" />
+    <param name="pf_perception_xy_sd" value="$(arg pf_perception_xy_sd)" />
+    <param name="pf_perception_r_sd" value="$(arg pf_perception_r_sd)" />
+  </node>
+
+</launch>

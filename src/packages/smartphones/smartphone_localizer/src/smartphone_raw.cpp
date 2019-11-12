@@ -58,6 +58,10 @@ public:
 
     void run();
 
+    void imu2rpy(const sensor_msgs::Imu &imu, double *rpy);
+    void magnetic2yaw(const sensor_msgs::MagneticField& magnetic, double* rpy);
+    void rpy2matrix(double roll, double pitch, double yaw, Eigen::Matrix3f *rotation_matrix);
+
 private:
 
     /** ROS **/
@@ -131,7 +135,7 @@ Localizer::Localizer() : nh(), private_nh(ros::NodeHandle("~")),
 
     /** Set subscriber **/
     sub_imu = nh.subscribe(TOPIC_NAME_IMU, 1, &Localizer::callback_imu, this);
-//    sub_magnetic = nh.subscribe(TOPIC_NAME_MAGNETIC, 1, &Localizer::callback_magnetic, this);
+    sub_magnetic = nh.subscribe(TOPIC_NAME_MAGNETIC, 1, &Localizer::callback_magnetic, this);
     sub_gps=nh.subscribe(TOPIC_NAME_GPS, 1, &Localizer::callback_gps,this);
 
     ros::spin();
@@ -174,19 +178,18 @@ void Localizer::run(){
 
     ROS_DEBUG("%s", __FUNCTION__);
 
-    if (update_imu) {
+    if (update_imu && update_magnetic) {
 
         double rpy[3];
-        tf::Quaternion quat(imu.orientation.x,imu.orientation.y,imu.orientation.z,imu.orientation.w);
-        tf::Matrix3x3(quat).getRPY(rpy[0], rpy[1], rpy[2]);
-        static double imu_initial_yaw=rpy[2];
+        imu2rpy(imu,rpy);
+//        static double imu_initial_yaw=rpy[2];
+        magnetic2yaw(magnetic,rpy);
 
-        std::string str;
-        if (!nh.getParam("person_initial_direction",str)){
-            str=PERSON_INITIAL_DERECTION;
-        }
-        double pid=std::stod(str);
-        double person_yaw=pid+(rpy[2]-imu_initial_yaw);
+
+
+        double person_initial_direction=rpy[2];
+        double person_yaw=person_initial_direction;
+//        double person_yaw=person_initial_direction+(rpy[2]-imu_initial_yaw);
 
         tf::Quaternion quat2=tf::createQuaternionFromRPY(0.0,0.0,person_yaw);
 //        quaternionTFToMsg(quat2,pose.pose.orientation);
@@ -221,9 +224,6 @@ void Localizer::run(){
 //        update_imu=false;
 //
         update_imu=false;
-    }
-
-    if (update_magnetic){
         update_magnetic=false;
     }
 
@@ -232,8 +232,8 @@ void Localizer::run(){
 //        pose.pose.position.x=geo.x();
 //        pose.pose.position.y=geo.y();
 //        pose.pose.position.z=0;
-        odom.pose.pose.position.x=geo.x();
-        odom.pose.pose.position.y=geo.y();
+        odom.pose.pose.position.x=geo.y();
+        odom.pose.pose.position.y=-geo.x();
         odom.pose.pose.position.z=0;
         update_gps=false;
     }
@@ -248,17 +248,45 @@ void Localizer::run(){
 
 }
 
+void Localizer::imu2rpy(const sensor_msgs::Imu &imu, double *rpy) {
 
+    tf::Quaternion quat(imu.orientation.x, imu.orientation.y, imu.orientation.z, imu.orientation.w);
+    tf::Matrix3x3(quat).getRPY(*rpy, *(rpy+1), *(rpy+2));
+    ROS_DEBUG_STREAM(*rpy<<","<<*(rpy+1)<<","<<*(rpy+2));
+
+}
+
+void Localizer::magnetic2yaw(const sensor_msgs::MagneticField& magnetic, double* rpy) {
+
+    Eigen::Vector3f mag(magnetic.magnetic_field.x, magnetic.magnetic_field.y, magnetic.magnetic_field.z);
+    Eigen::Matrix3f rp_mat;
+    rpy2matrix(-rpy[0],-rpy[1],0.0,&rp_mat);
+    Eigen::Vector3f mag_horizontal=rp_mat*mag;
+    *(rpy+2)=-std::atan2(-mag_horizontal(0),mag_horizontal(1));
+    ROS_DEBUG_STREAM(*rpy<<","<<*(rpy+1)<<","<<*(rpy+2));
+
+}
+
+void Localizer::rpy2matrix(double roll, double pitch, double yaw, Eigen::Matrix3f *rotation_matrix) {
+
+    Eigen::Vector3f axis_dr(1, 0, 0), axis_dp(0, 1, 0), axis_dy(0, 0, 1);
+    Eigen::Matrix3f matrix_dr, matrix_dp, matrix_dy;
+    matrix_dr = Eigen::AngleAxisf(roll, axis_dr);
+    matrix_dp = Eigen::AngleAxisf(pitch, axis_dp);
+    matrix_dy = Eigen::AngleAxisf(yaw, axis_dy);
+    *rotation_matrix=matrix_dy*matrix_dp*matrix_dr;
+
+}
 
 /**
  *  Main Function
  **/
 int main(int argc, char **argv) {
 
-    // debug mode
-    if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Debug)) {
-        ros::console::notifyLoggerLevelsChanged();
-    }
+//    // debug mode
+//    if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Debug)) {
+//        ros::console::notifyLoggerLevelsChanged();
+//    }
 
     ros::init(argc, argv, "phonesensors_raw");
     Localizer node;

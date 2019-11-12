@@ -293,7 +293,7 @@ devel/lib/librange_vision_fusion_lib.so: /usr/lib/x86_64-linux-gnu/liblz4.so
 devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/libeigen_conversions.so
 devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/libtf_conversions.so
 devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/libkdl_conversions.so
-devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/libtf.so
 devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/libtf2_ros.so
 devel/lib/librange_vision_fusion_lib.so: /opt/ros/kinetic/lib/libactionlib.so

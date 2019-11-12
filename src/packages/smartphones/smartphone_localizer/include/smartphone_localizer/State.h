@@ -117,6 +117,17 @@ public:
         vy /= obj;
         return *this;
     }
+    bool operator==(const State<T> &obj) {
+        if (x == obj.x &&
+            y == obj.y &&
+            r == obj.r &&
+            vx == obj.vx &&
+            vy == obj.vy) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     //値変更
     void set(T x, T y, T r, T vx, T vy){
         this->x = x;

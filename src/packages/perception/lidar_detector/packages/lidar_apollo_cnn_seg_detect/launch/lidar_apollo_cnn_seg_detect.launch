@@ -8,8 +8,9 @@
   <arg name="use_gpu" default="true" />
   <arg name="gpu_device_id" default="0" />
   <arg name="marker_display_duration" default="1.0"/>
+  <arg name="output" default="log" />
 
-  <node pkg="lidar_apollo_cnn_seg_detect" type="lidar_apollo_cnn_seg_detect" name="lidar_apollo_cnn_seg_detect_$(arg node_no)" output="screen">
+  <node pkg="lidar_apollo_cnn_seg_detect" type="lidar_apollo_cnn_seg_detect" name="lidar_apollo_cnn_seg_detect_$(arg node_no)" output="$(arg output)">
     <param name="network_definition_file" value="$(arg network_definition_file)" />
     <param name="pretrained_model_file" value="$(arg pretrained_model_file)" />
     <param name="points_src" value="$(arg points_src)" />
@@ -19,7 +20,7 @@
   </node>
 
   <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="cluster_detect_visualization_$(arg node_no)"
-          output="screen" ns="/detection/lidar_detector" >
+        output="$(arg output)" ns="/detection/lidar_detector" >
     <param name="marker_display_duration"            value="$(arg marker_display_duration)" />
   </node>
 

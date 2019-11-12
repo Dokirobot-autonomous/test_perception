@@ -77,6 +77,7 @@
 					<Add directory="/home/ohashi/test_perception/src/cmake-build-debug/devel/include"/>
 					<Add directory="/opt/ros/kinetic/include"/>
 					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/kinetic/share/orocos_kdl/../../include"/>
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/pcl-1.7"/>
 					<Add directory="/usr/include/ni"/>
@@ -140,6 +141,7 @@
 					<Add directory="/home/ohashi/test_perception/src/cmake-build-debug/devel/include"/>
 					<Add directory="/opt/ros/kinetic/include"/>
 					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/kinetic/share/orocos_kdl/../../include"/>
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/pcl-1.7"/>
 					<Add directory="/usr/include/ni"/>
@@ -255,6 +257,7 @@
 					<Add directory="/home/ohashi/test_perception/src/cmake-build-debug/devel/include"/>
 					<Add directory="/opt/ros/kinetic/include"/>
 					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/kinetic/share/orocos_kdl/../../include"/>
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/pcl-1.7"/>
 					<Add directory="/usr/include/ni"/>
@@ -326,6 +329,7 @@
 					<Add directory="/home/ohashi/test_perception/src/cmake-build-debug/devel/include"/>
 					<Add directory="/opt/ros/kinetic/include"/>
 					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/kinetic/share/orocos_kdl/../../include"/>
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/pcl-1.7"/>
 					<Add directory="/usr/include/ni"/>
@@ -397,6 +401,7 @@
 					<Add directory="/home/ohashi/test_perception/src/cmake-build-debug/devel/include"/>
 					<Add directory="/opt/ros/kinetic/include"/>
 					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/kinetic/share/orocos_kdl/../../include"/>
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/pcl-1.7"/>
 					<Add directory="/usr/include/ni"/>
@@ -468,6 +473,7 @@
 					<Add directory="/home/ohashi/test_perception/src/cmake-build-debug/devel/include"/>
 					<Add directory="/opt/ros/kinetic/include"/>
 					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/opt/ros/kinetic/share/orocos_kdl/../../include"/>
 					<Add directory="/usr/include/eigen3"/>
 					<Add directory="/usr/include/pcl-1.7"/>
 					<Add directory="/usr/include/ni"/>

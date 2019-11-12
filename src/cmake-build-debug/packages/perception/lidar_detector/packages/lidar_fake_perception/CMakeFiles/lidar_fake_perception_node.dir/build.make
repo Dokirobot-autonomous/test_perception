@@ -96,7 +96,7 @@ devel/lib/lidar_fake_perception/lidar_fake_perception_node: packages/perception/
 devel/lib/lidar_fake_perception/lidar_fake_perception_node: packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/build.make
 devel/lib/lidar_fake_perception/lidar_fake_perception_node: /opt/ros/kinetic/lib/libtf_conversions.so
 devel/lib/lidar_fake_perception/lidar_fake_perception_node: /opt/ros/kinetic/lib/libkdl_conversions.so
-devel/lib/lidar_fake_perception/lidar_fake_perception_node: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/lidar_fake_perception/lidar_fake_perception_node: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/lidar_fake_perception/lidar_fake_perception_node: /opt/ros/kinetic/lib/libpcl_ros_filters.so
 devel/lib/lidar_fake_perception/lidar_fake_perception_node: /opt/ros/kinetic/lib/libpcl_ros_io.so
 devel/lib/lidar_fake_perception/lidar_fake_perception_node: /opt/ros/kinetic/lib/libpcl_ros_tf.so

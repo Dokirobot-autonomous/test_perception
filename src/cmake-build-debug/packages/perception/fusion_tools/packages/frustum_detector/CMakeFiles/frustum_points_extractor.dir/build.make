@@ -131,7 +131,7 @@ devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/libjsk
 devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/libeigen_conversions.so
 devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/libtf_conversions.so
 devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/libkdl_conversions.so
-devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/libimage_geometry.so
 devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1
 devel/lib/frustum_detector/frustum_points_extractor: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1

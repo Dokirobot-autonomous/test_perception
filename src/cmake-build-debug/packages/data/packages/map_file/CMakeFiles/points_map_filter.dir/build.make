@@ -288,7 +288,7 @@ devel/lib/map_file/points_map_filter: /opt/ros/kinetic/lib/libroslz4.so
 devel/lib/map_file/points_map_filter: /usr/lib/x86_64-linux-gnu/liblz4.so
 devel/lib/map_file/points_map_filter: /opt/ros/kinetic/lib/libtopic_tools.so
 devel/lib/map_file/points_map_filter: /opt/ros/kinetic/lib/liborocos-kdl.so
-devel/lib/map_file/points_map_filter: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/map_file/points_map_filter: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/map_file/points_map_filter: devel/lib/libvector_map.so
 devel/lib/map_file/points_map_filter: /opt/ros/kinetic/lib/libtf.so
 devel/lib/map_file/points_map_filter: /opt/ros/kinetic/lib/libtf2_ros.so

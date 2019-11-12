@@ -64,7 +64,7 @@
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetNode" />
       <config projectName="Project" targetName="autoware_rviz_plugins" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_BrakeInfoReport" />
-      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_HillStartAssist" />
+      <config projectName="Project" targetName="doxygen" />
       <config projectName="Project" targetName="map_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="grid_map_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="jsk_recognition_msgs_generate_messages_py" />
@@ -97,7 +97,6 @@
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigVoxelGridFilter" />
       <config projectName="Project" targetName="health_aggregator" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_FenceArray" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="std_msgs_generate_messages_py" />
       <config projectName="Project" targetName="autoware_launcher_rviz" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetZebraZone" />
@@ -128,6 +127,7 @@
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigCarDPM" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetWhiteLine" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadEdgeArray" />
+      <config projectName="Project" targetName="system_status_subscriber" />
       <config projectName="Project" targetName="wayarea2grid" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Node" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ImageRect" />
@@ -285,7 +285,7 @@
       <config projectName="Project" targetName="autoware_config_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ImageLaneObjects" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_RoadSignArray" />
-      <config projectName="Project" targetName="system_status_subscriber" />
+      <config projectName="Project" targetName="ring_ground_filter" />
       <config projectName="Project" targetName="run_tests_lidar_point_pillars_gtest_test-point_pillars" />
       <config projectName="Project" targetName="vector_map_server_genlisp" />
       <config projectName="Project" targetName="jsk_rviz_plugins_generate_messages_eus" />
@@ -344,7 +344,7 @@
       <config projectName="Project" targetName="grid_map_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_ThrottleInfoReport" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_PoleArray" />
-      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_StopLine" />
+      <config projectName="Project" targetName="_dbw_mkz_msgs_generate_messages_check_deps_HillStartAssist" />
       <config projectName="Project" targetName="nodelet_generate_messages_eus" />
       <config projectName="Project" targetName="jsk_rviz_plugins_generate_messages_lisp" />
       <config projectName="Project" targetName="obj_downloader" />
@@ -393,14 +393,12 @@
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigICP" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Gutter" />
       <config projectName="Project" targetName="vision_darknet_detect" />
-      <config projectName="Project" targetName="phone_vehicle_fusion" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_DTLane" />
       <config projectName="Project" targetName="lgsvl_msgs_genpy" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_Fence" />
       <config projectName="Project" targetName="autoware_can_msgs_gennodejs" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="doxygen" />
       <config projectName="Project" targetName="run_tests_lidar_shape_estimation" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="autoware_can_msgs_gencpp" />
@@ -419,6 +417,7 @@
       <config projectName="Project" targetName="clean_test_results_autoware_health_checker" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_eus" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianFusion" />
+      <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_StopLine" />
       <config projectName="Project" targetName="_autoware_config_msgs_generate_messages_check_deps_ConfigCompareMapFilter" />
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetUtilityPole" />
       <config projectName="Project" targetName="_autoware_msgs_generate_messages_check_deps_ControlCommand" />
@@ -464,6 +463,7 @@
       <config projectName="Project" targetName="libdpm_ttic" />
       <config projectName="Project" targetName="autoware_config_msgs_gencpp" />
       <config projectName="Project" targetName="jsk_hark_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="vehicle_phones_manager" />
       <config projectName="Project" targetName="people_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_vector_map_msgs_generate_messages_check_deps_StopLineArray" />
@@ -493,7 +493,7 @@
       <config projectName="Project" targetName="_vector_map_server_generate_messages_check_deps_GetGuardRail" />
       <config projectName="Project" targetName="dbw_mkz_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="apollo_cnn_segmentation" />
-      <config projectName="Project" targetName="ring_ground_filter" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="roscpp_generate_messages_py" />
       <config projectName="Project" targetName="vector_map_client" />
       <config projectName="Project" targetName="jsk_rviz_plugins_generate_messages_py" />
@@ -548,7 +548,7 @@
       <config projectName="Project" targetName="_lgsvl_msgs_generate_messages_check_deps_Detection3DArray" />
       <config projectName="Project" targetName="ray_ground_filter" />
       <config projectName="Project" targetName="jsk_topic_tools_generate_messages_lisp" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="autoware_config_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="health_analyzer" />
@@ -564,156 +564,127 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78db5cd5-c846-4ce4-9116-08869ba8c3a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/semantics/object_map/nodes/points2costmap/points2costmap_original.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer_191024.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_test.launch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion.launch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion_test.launch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node_191024.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer_191031.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_perceptor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_phones_manager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_old.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_manager.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_manager_test.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_perceptor.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_perceptor_test.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager_test.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_191030.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node_191031.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin_191030.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_perceptor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_perceptor_node.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_phones_manager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Project.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/order_packages.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/order_packages.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gmock.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gmock.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/gtest.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/gtest.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/autoware_can_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_can_msgs/autoware_can_msgs.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/autoware_config_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/autoware_config_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_config_msgs/autoware_config_msgs.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/autoware_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/autoware_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_msgs/autoware_msgs.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/autoware_system_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/autoware_system_msgs/autoware_system_msgs.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/CMakeFiles/dbw_mkz_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/dbw_mkz_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/dbw_mkz_msgs/dbw_mkz_msgs.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/CMakeFiles/lgsvl_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/lgsvl_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/msgs/lgsvl_msgs/lgsvl_msgs.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/get_file.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/get_file.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/get_file.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/get_file.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_filter.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/points_map_loader.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/CMakeFiles/vector_map_loader.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/map_file.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/map_file/map_file.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/obj_db.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/obj_db.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/obj_db.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/obj_db/obj_db.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/pos_db/pos_db.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/pos_db/pos_db.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/vector_map.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map/vector_map.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_cpp.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_eus.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_lisp.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_nodejs.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/vector_map_msgs.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/vector_map_msgs.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_msgs/CMakeFiles/vector_map_msgs_generate_messages_py.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_client.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_client.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_cpp.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_eus.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_lisp.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_nodejs.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/CMakeFiles/vector_map_server_generate_messages_py.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/vector_map_server.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/data/packages/vector_map_server/vector_map_server.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/filter/points_preprocessor/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/filter/points_preprocessor/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/filter/points_preprocessor/CMakeFiles/ray_ground_filter_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/filter/points_preprocessor/CMakeFiles/ray_ground_filter_lib.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/filter/points_preprocessor/points_preprocessor.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/filter/points_preprocessor/points_preprocessor.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/localization/lib/gnss/gnss.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/localization/lib/gnss/gnss.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/frustum_detector.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/frustum_detector/frustum_detector.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/pixel_cloud_fusion/pixel_cloud_fusion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/pixel_cloud_fusion/pixel_cloud_fusion.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/range_vision_fusion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/fusion_tools/packages/range_vision_fusion/range_vision_fusion.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/lidar_apollo_cnn_seg_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/lidar_euclidean_cluster_detect.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/lidar_euclidean_cluster_detect.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/lidar_euclidean_cluster_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/lidar_fake_perception.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_fake_perception/lidar_fake_perception.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/CMakeFiles/lidar_naive_l_shape_detect.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/CMakeFiles/lidar_naive_l_shape_detect.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/lidar_naive_l_shape_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect/lidar_naive_l_shape_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/gpu_point_pillars_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/gpu_point_pillars_lib.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/point_pillars_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/point_pillars_lib.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/lidar_point_pillars.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_point_pillars/lidar_point_pillars.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/lidar_shape_estimation.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/test-lidar_shape_estimation.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/lidar_shape_estimation.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/lidar_shape_estimation/lidar_shape_estimation.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/roi_object_filter.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/object_filter/packages/roi_object_filter/roi_object_filter.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/CMakeFiles/libdpm_ttic.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/CMakeFiles/libdpm_ttic.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/libdpm_ttic.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/libs/dpm_ttic/libdpm_ttic.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect_lib.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/vision_darknet_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/vision_darknet_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/CMakeFiles/vision_dpm_ttic_detect.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/CMakeFiles/vision_dpm_ttic_detect.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/vision_dpm_ttic_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_dpm_ttic_detect/vision_dpm_ttic_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/vision_lane_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_lane_detect/vision_lane_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_segment_enet_detect/vision_segment_enet_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_segment_enet_detect/vision_segment_enet_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_ssd_detect/vision_ssd_detect.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_detector/packages/vision_ssd_detect/vision_ssd_detect.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/beyond_track_lib.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/beyond_track_lib.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/vision_beyond_track.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/CMakeFiles/vision_beyond_track.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/vision_beyond_track.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/vision_tracker/packages/vision_beyond_track/vision_beyond_track.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/CMakeFiles/visualize_rects.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/CMakeFiles/visualize_rects.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/detected_objects_visualizer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/detected_objects_visualizer/detected_objects_visualizer.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/integrated_viewer.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/integrated_viewer.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/integrated_viewer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/packages/perception/visualizers/packages/integrated_viewer/integrated_viewer.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/CMakeFiles/health_aggregator.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/CMakeFiles/health_aggregator.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/CMakeFiles/node_status_publisher.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/CMakeFiles/node_status_publisher.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/autoware_health_checker.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/system/autoware_health_checker/autoware_health_checker.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/CMakeFiles/autoware_launcher_rviz.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/CMakeFiles/autoware_launcher_rviz.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/autoware_launcher_rviz.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/autoware_launcher_rviz/autoware_launcher_rviz.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/rosbag_controller.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/CMakeFiles/rosbag_controller.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/rosbag_controller.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/rosbag_controller/rosbag_controller.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/autoware_rviz_plugins.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/autoware_rviz_plugins.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/autoware_rviz_plugins.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/utils/packages/autoware_rviz_plugins/state_panel/autoware_rviz_plugins.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ray_ground_filter.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ray_ground_filter.launch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ring_ground_filter.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ring_ground_filter.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/ParticleFilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/ParticleFilter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/State.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/State.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_test.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_test.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion_test.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion_test.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/rviz/phone_localizers.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/rviz/phone_localizers.rviz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_raw.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_raw.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/phone_localizer.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run/phone_localizer.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -732,93 +703,103 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#41#60#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion.launch">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/CMakeLists.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1035">
-                  <caret line="69" column="33" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_phones_manager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2257">
+              <caret line="214" column="29" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="55" column="66" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="53" column="23" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="23" />
+              <folding>
+                <element signature="e#102#119#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/State.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+              <folding>
+                <element signature="e#175#196#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager_test.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TOPIC_NAME_PUBLISH_POSE</find>
-      <find>PHONE_FRAME_ID</find>
-      <find>PERSON_FRAME_ID</find>
-      <find>pose</find>
-      <find>PARTICLEFILTER_GPS_XY_BIAS</find>
+      <find>scan</find>
+      <find>spinOn</find>
+      <find>callback_imu</find>
+      <find>TOPIC_NAME_MAGNETIC</find>
+      <find>geo.x</find>
+      <find>Transi</find>
+      <find>frame</find>
+      <find>Phone State</find>
+      <find>bool</find>
+      <find>PhoneVehicleFusion</find>
+      <find>particleLikelihoodVehiclePerceptionR</find>
+      <find>normali</find>
       <find>publish</find>
-      <find>localizer</find>
-      <find>createCostMap</find>
-      <find>filter</find>
-      <find>filterCostMap</find>
-      <find>line</find>
-      <find>unsigned char</find>
-      <find>-1</find>
-      <find>offset_</find>
-      <find>line(</find>
-      <find>phone</find>
-      <find>TOPIC_NAME</find>
-      <find>cout</find>
-      <find>ClassName</find>
-      <find>person</find>
-      <find>,</find>
-      <find>origin_fix</find>
-      <find>private_nh</find>
-      <find>!nh</find>
-      <find>false</find>
-      <find>is</find>
-      <find>isZ</find>
-      <find>phone_localizers</find>
+      <find>sub_vehicle_perception</find>
       <find>callback</find>
+      <find>cout</find>
+      <find>print</find>
+      <find>origin_fix</find>
+      <find>topic_name_vehicle_perception</find>
+      <find>phone_origin_frame_id</find>
+      <find>accele</find>
+      <find>getP</find>
+      <find>a</find>
       <find>getParam</find>
+      <find>runI</find>
+      <find>phone_states</find>
+      <find>Una</find>
+      <find>phone_ori</find>
+      <find>origin_frame_id</find>
+      <find>ORIGIN_FRAME_ID</find>
     </findStrings>
     <replaceStrings>
-      <replace>in_vision_detections</replace>
-      <replace>in_vision_detections.</replace>
-      <replace>frustum_extractor</replace>
       <replace>frustum_points_extractor</replace>
       <replace>frustrum_points_detector</replace>
       <replace>extractor</replace>
@@ -846,6 +827,9 @@
       <replace>phone</replace>
       <replace>PhoneVehicleFusion</replace>
       <replace>!private_nh</replace>
+      <replace>-VehiclePhoneManager</replace>
+      <replace>-geo.x</replace>
+      <replace>VehiclePhonesManager</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -854,21 +838,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/packages/filter/points_preprocessor/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/lidar_euclidean_cluster_detect.launch" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/cluster.cpp" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/gpu_euclidean_clustering.cu" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/src/lidar_euclidean_clustering/lidar_euclidean_cluster_detect.cpp" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/package.xml" />
-        <option value="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_detector/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/lidar_euclidean_cluster_detect.cpp" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/cluster.cpp" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/nodes/frustum_ec_detector/frustum_ec_detector.cpp" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch/frustum_ec_detector.launch" />
-        <option value="$PROJECT_DIR$/packages/smartphones/deadreckoning/src/test.cpp" />
-        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/lidar_apollo_cnn_seg_detect_node.cpp" />
-        <option value="$PROJECT_DIR$/packages/smartphones/robot_pose_ekf/test/test_robot_pose_ekf.launch" />
         <option value="$PROJECT_DIR$/packages/smartphones/robot_pose_ekf/include/robot_pose_ekf/odom_estimation_node.h" />
         <option value="$PROJECT_DIR$/packages/smartphones/robot_pose_ekf/robot_pose_ekf.launch" />
         <option value="$PROJECT_DIR$/packages/smartphones/robot_pose_ekf/src/odom_estimation_node.cpp" />
@@ -878,14 +847,10 @@
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/geo_pos_conv.cpp" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node_bkup_191004.cpp" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node_bkup_Trans_Maglike.cpp" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/State.h" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node.cpp" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/package.xml" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phonesensors_raw.launch" />
         <option value="$PROJECT_DIR$/run/apolloCNN.sh" />
-        <option value="$PROJECT_DIR$/run/phone_localizer.sh" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_raw.cpp" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node.cpp" />
         <option value="$PROJECT_DIR$/packages/semantics/object_map/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ring_ground_filter.launch" />
         <option value="$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ray_ground_filter.launch" />
@@ -893,18 +858,37 @@
         <option value="$PROJECT_DIR$/packages/semantics/object_map/nodes/points2costmap/points2costmap_original.cpp" />
         <option value="$PROJECT_DIR$/packages/semantics/object_map/nodes/points2costmap/points2costmap.cpp" />
         <option value="$PROJECT_DIR$/packages/semantics/object_map/launch/points2costmap.launch" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node.cpp" />
+        <option value="$PROJECT_DIR$/run/phone_localizer.sh" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_old.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node.cpp" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/ParticleFilter.h" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin.cpp" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_perceptor.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_perceptor.h" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_perceptor_node.cpp" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_perceptor.cpp" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_perceptor_test.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_raw.cpp" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_test.launch" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/State.h" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_phone_manager.h" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_phone_manager.cpp" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_phones_manager.h" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion_test.launch" />
         <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_manager_test.launch" />
+        <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp" />
         <option value="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" />
         <option value="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion_test.launch" />
-        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin.cpp" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_manager.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node.cpp" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_phones_manager.cpp" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager_test.launch" />
+        <option value="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp" />
       </list>
     </option>
   </component>
@@ -955,44 +939,6 @@
               <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="lidar_tracker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="lidar_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="lidar_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="lidar_imm_ukf_pda_track" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="perception" type="462c0819:PsiDirectoryNode" />
-              <item name="lidar_tracker" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="lidar_imm_ukf_pda_track" type="462c0819:PsiDirectoryNode" />
-              <item name="launch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
               <item name="smartphones" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1007,7 +953,38 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="47feb1d3:ProjectViewModuleNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="run" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphones" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphone_localizer" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphones" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphone_localizer" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphone_localizer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphones" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphone_localizer" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphones" type="462c0819:PsiDirectoryNode" />
+              <item name="smartphone_localizer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1029,15 +1006,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_points_extractor" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch" />
       <recent name="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer" />
       <recent name="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src" />
       <recent name="$PROJECT_DIR$/packages/semantics/object_map/nodes/points2costmap" />
       <recent name="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_euclidean_cluster_detect/launch" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_points_extractor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -3198,11 +3175,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="phone_vehicle_fusion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="phone_vehicle_fusion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="phone_vehicle_fusion">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="phonesensors_raw" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="phonesensors_raw" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="phonesensors_raw">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -3713,6 +3685,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="vehicle_phones_manager" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vehicle_phones_manager" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="vehicle_phones_manager">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="velodyne_driver_gencfg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="velodyne_driver_gencfg" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -4145,7 +4122,6 @@
       <item itemvalue="CMake Application.frustum_points_extractor_lib" />
       <item itemvalue="CMake Application.fusion" />
       <item itemvalue="CMake Application.phone_localizer" />
-      <item itemvalue="CMake Application.phone_vehicle_fusion" />
       <item itemvalue="CMake Application.geometry_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.geometry_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.geometry_msgs_generate_messages_lisp" />
@@ -4296,6 +4272,7 @@
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.smartphone_sensors" />
+      <item itemvalue="CMake Application.vehicle_phones_manager" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.std_msgs_generate_messages_lisp" />
@@ -4437,11 +4414,14 @@
       <workItem from="1572023399070" duration="14400000" />
       <workItem from="1572045494466" duration="2794000" />
       <workItem from="1572456683450" duration="165000" />
+      <workItem from="1572547040339" duration="36738000" />
+      <workItem from="1573420755368" duration="6401000" />
+      <workItem from="1573487980067" duration="2450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320997000" />
+    <option name="totallyTimeSpent" value="401191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -4454,9 +4434,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13513513" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13623828" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -4467,10 +4446,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936803" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" x="86" y="409" width="1813" height="257" id="Terminal" order="8" sideWeight="0.4997242" visible="true" weight="0.24771574" />
+      <window_info active="true" anchor="bottom" x="86" y="409" width="1813" height="257" id="Terminal" order="8" sideWeight="0.4997242" visible="true" weight="0.26192895" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002758" side_tool="true" weight="0.26903552" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.328934" />
-      <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.4997242" weight="0.16091955" />
+      <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.4997242" weight="0.24467005" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -4508,186 +4487,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node_191004.3.cpp" />
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node_bkup_onlyTransition.cpp" />
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node_bkup_Trans_Maglike.cpp" />
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/include/ukf.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node_bkup_191005.cpp" />
-    <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/DetectedObject.msg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/package.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/nodes/imm_ukf_pda/imm_ukf_pda.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="266" column="69" selection-start-line="266" selection-start-column="59" selection-end-line="266" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/nodes/imm_ukf_pda/imm_ukf_pda_main.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_raw_bkup_191007.1.cpp" />
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node_bkup_191007.cpp" />
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phonesensors_raw.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="6" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run/apolloCNN.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="15" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/package.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/State.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/DetectedObjectArray.msg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/localizer_node.cpp" />
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/memo.cpp" />
-    <entry file="file://$PROJECT_DIR$/packages/data/packages/vector_map/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_node.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1142">
-          <caret line="466" column="19" selection-start-line="466" selection-start-column="19" selection-end-line="466" selection-end-column="19" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-            <element signature="e#16764#19505#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ring_ground_filter.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/semantics/object_map/launch/grid_map_filter.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="59" lean-forward="true" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/semantics/object_map/launch/potential_field.launch">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/semantics/object_map/launch/laserscan2costmap.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/semantics/object_map/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/semantics/object_map/nodes/points2costmap/points2costmap_original.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/semantics/object_map/nodes/points2costmap/points2costmap.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <element signature="e#631#651#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node_191024.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/filter/points_preprocessor/launch/ray_ground_filter.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/lidar_apollo_cnn_seg_detect_node.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#630#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/cnn_segmentation.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="51" column="46" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_raw.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="33" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-            <element signature="e#492#522#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4701,114 +4504,338 @@
     <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer_191024.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node_191024.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_old.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="29" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin_191030.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_191030.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/ParticleFilter.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="387" column="4" selection-start-line="387" selection-start-column="4" selection-end-line="387" selection-end-column="4" />
+        <state relative-caret-position="271">
+          <caret line="407" column="22" selection-start-line="407" selection-start-column="22" selection-end-line="407" selection-end-column="22" />
           <folding>
             <element signature="e#1001#1018#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="32" lean-forward="true" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_test.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-          <folding>
-            <element signature="e#102#119#0" expanded="true" />
+            <element signature="e#5203#5837#0" />
+            <element signature="e#8755#9097#0" />
+            <element signature="e#9100#10927#0" />
+            <element signature="e#10930#11413#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/fusion_node.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15570">
-          <caret line="1038" selection-start-line="1038" selection-end-line="1038" />
+        <state relative-caret-position="10665">
+          <caret line="1019" selection-start-line="1016" selection-end-line="1019" />
           <folding>
             <element signature="e#41#58#0" expanded="true" />
-            <element signature="e#658#706#0" expanded="true" />
+            <element signature="e#20916#23754#0" />
+            <element signature="e#23756#25003#0" />
+            <element signature="e#25005#26775#0" />
+            <element signature="e#26777#28447#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run/phone_localizer.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion_test.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="33" />
+        <state relative-caret-position="426">
+          <caret line="51" column="518" lean-forward="true" selection-start-line="51" selection-start-column="462" selection-end-line="51" selection-end-column="518" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_vehicle_fusioin.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        <state relative-caret-position="441">
+          <caret line="134" column="26" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="26" />
           <folding>
             <element signature="e#41#60#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msgs/autoware_msgs/msg/DetectedObject.msg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer_191031.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node_191031.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_perceptor_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="41" column="97" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_perceptor.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/smartphone_raw.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3810">
+          <caret line="266" selection-start-line="260" selection-end-line="266" />
+          <folding>
+            <element signature="e#41#58#0" expanded="true" />
+            <element signature="e#492#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_perceptor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="38" column="72" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="72" />
+          <folding>
+            <element signature="e#106#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_perceptor_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="7" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_perceptor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="279" lean-forward="true" selection-start-line="279" selection-end-line="279" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_phone_manager.h" />
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_phones]_manager.cpp" />
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_phone_manager.cpp" />
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/vehicle_phones_manager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#106#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_fusion.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="61" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="68" column="37" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_manager_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/pcl_types.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/feature_generator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#687#713#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/disjoint_set.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/cnn_segmentation.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/cluster2d.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/feature_generator_190515.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/feature_generator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cnn_segmentation.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="244" column="42" lean-forward="true" selection-start-line="244" selection-start-column="42" selection-end-line="244" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/cluster2d.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/nodes/lidar_apollo_cnn_seg_detect_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#630#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_localizer.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/phone_vehicle_manager.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="11" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/State.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding>
+            <element signature="e#175#196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/vehicle_phones_manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2257">
+          <caret line="214" column="29" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/phone_localizer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="53" column="23" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="23" />
+          <folding>
+            <element signature="e#102#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/launch/vehicle_phones_manager_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/phone_localizer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="55" column="66" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="66" />
         </state>
       </provider>
     </entry>

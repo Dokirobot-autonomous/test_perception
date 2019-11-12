@@ -199,7 +199,13 @@ public:
 	void Normalize() {
 		double w = std::accumulate(particles.begin(), particles.end(), double(0), sum_particle_weight<State>);
 		if(w==1.0) return;
-		assert(w!=0.0);
+//		else if(w==0.0){
+//		    for(auto& particle:particles){
+//		        particle->setWeight(1.0/particles.size());
+//		    }
+//		    w=1.0;
+//		}
+//		assert(w!=0.0);
 		std::for_each(particles.begin(), particles.end(), divide_weight<State>(w));
 #ifdef DEBUG
 		double check = std::accumulate(posearray.begin(), posearray.end(), double(0), sum_particle_weight<State>);
@@ -285,12 +291,12 @@ public:
 
 	bool isParticleReample(){
 
-        double sum_2=0;
+        double sum_2=0.0;
         for (auto p:set.particles){
             sum_2+=p->getWeight()*p->getWeight();
         }
         float neff=1.0/sum_2;
-        int neff_th=getParticles().size()/2.0;
+        int neff_th=set.particles.size()/2.0;
         if (neff<neff_th){
             return true;
         }
@@ -385,6 +391,23 @@ public:
 
     //! Hand over access to particles to subclasses
     std::vector<Particle<State>* >& getParticles() { return set.particles; }
+
+    std::vector<double> getWeights(){
+        std::vector<double> weights(set.particles.size());
+        for(size_t i=0;i<set.particles.size();i++){
+            weights.push_back(set.particles[i]->getWeight());
+        }
+        return weights;
+    }
+
+    std::vector<State*> getStates(){
+        std::vector<State*> states(set.particles.size());
+        for(auto& p:set.particles){
+            states.push_back(p->getState());
+        }
+        return states;
+    }
+
 
 protected:
 	//! Output estimated position by mean

@@ -349,7 +349,7 @@ devel/lib/lidar_shape_estimation/lidar_shape_estimation: /usr/lib/x86_64-linux-g
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libtopic_tools.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libtf.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/liborocos-kdl.so
-devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libtf2_ros.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libactionlib.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libmessage_filters.so
@@ -701,7 +701,7 @@ devel/lib/lidar_shape_estimation/lidar_shape_estimation: /usr/lib/x86_64-linux-g
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libtopic_tools.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libtf.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/liborocos-kdl.so
-devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libtf2_ros.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libactionlib.so
 devel/lib/lidar_shape_estimation/lidar_shape_estimation: /opt/ros/kinetic/lib/libmessage_filters.so

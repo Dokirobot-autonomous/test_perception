@@ -15,7 +15,8 @@ int main(int argc, char **argv) {
 //    }
 
     ros::init(argc, argv, "phone_localizer_node");
-    PhoneLocalizer node;
+    ros::NodeHandle nh,private_nh("~");
+    PhoneLocalizer node(&nh,&private_nh);
     ros::spin();
 
     return (0);
