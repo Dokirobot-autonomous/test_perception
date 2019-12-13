@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/vector_map_client.dir/nodes/vector_map_client/vector_map_client.cpp.o"
-  "../../../../devel/lib/vector_map_server/vector_map_client.pdb"
   "../../../../devel/lib/vector_map_server/vector_map_client"
+  "../../../../devel/lib/vector_map_server/vector_map_client.pdb"
+  "CMakeFiles/vector_map_client.dir/nodes/vector_map_client/vector_map_client.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

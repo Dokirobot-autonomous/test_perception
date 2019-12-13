@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ray_ground_filter.dir/nodes/ray_ground_filter/ray_ground_filter_main.cpp.o"
-  "../../../devel/lib/points_preprocessor/ray_ground_filter.pdb"
   "../../../devel/lib/points_preprocessor/ray_ground_filter"
+  "../../../devel/lib/points_preprocessor/ray_ground_filter.pdb"
+  "CMakeFiles/ray_ground_filter.dir/nodes/ray_ground_filter/ray_ground_filter_main.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

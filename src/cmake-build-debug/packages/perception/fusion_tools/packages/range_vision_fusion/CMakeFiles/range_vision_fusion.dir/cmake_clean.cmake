@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/range_vision_fusion.dir/src/range_vision_fusion_node.cpp.o"
-  "../../../../../devel/lib/range_vision_fusion/range_vision_fusion.pdb"
   "../../../../../devel/lib/range_vision_fusion/range_vision_fusion"
+  "../../../../../devel/lib/range_vision_fusion/range_vision_fusion.pdb"
+  "CMakeFiles/range_vision_fusion.dir/src/range_vision_fusion_node.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

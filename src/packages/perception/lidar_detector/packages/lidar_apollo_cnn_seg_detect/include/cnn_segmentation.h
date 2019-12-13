@@ -61,7 +61,7 @@ private:
   int width_;
   int height_;
   std_msgs::Header message_header_;
-  std::string topic_src_;
+  std::string topic_src_,points_out_,objects_out_;
 
   int gpu_device_id_;
   bool use_gpu_;

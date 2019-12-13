@@ -1,7 +1,6 @@
 <!-- -->
 <launch>
 
-  <arg name="bag_file_name" default="/media/ohashi/a65390d1-3a01-41f6-bcb9-97c998a6b643/dataset/UCB/190928.1/2019-09-28-14-07-05.bag" />
   <arg name="bag_rate" default="1.0" />
   <arg name="bag_start_time" default="22" />
   <arg name="ori_fix" default="37.9181551873,-122.331354939,0.0"/>

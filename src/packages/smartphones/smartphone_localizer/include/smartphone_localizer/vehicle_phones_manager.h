@@ -36,9 +36,9 @@
 #define ASSIGN_PEDESTRIANS2PHONE_WEIGHT_V 1.0
 #define ASSIGN_PEDESTRIANS2PHONE_WEIGHT_R 1.0
 
-#define TOPIC_NAME_OBJECTS "/detection/object_tracker/objects"
-#define TOPIC_NAME_PHONE_ODOM "/odom"
-#define TOPIC_NAME_PEDESTRIAN2PHONE "/pedestrian2phone"
+#define TOPIC_NAME_OBJECTS "detection/object_tracker/objects"
+#define TOPIC_NAME_PHONE_ODOM "odom"
+#define TOPIC_NAME_PEDESTRIAN2PHONE "pedestrian2phone"
 
 class VehiclePhonesManager{
 
@@ -48,7 +48,6 @@ public:
     ~VehiclePhonesManager();
 
     void callback_objects(const autoware_msgs::DetectedObjectArrayConstPtr &msg);
-    void callback_phone_odom(const nav_msgs::OdometryConstPtr &msg);
 
     void publish_pedestrian2phone_objects();
 
@@ -61,6 +60,38 @@ public:
 
 private:
 
+    /** Subscriber Class **/
+    class MySubscriber{
+
+    public:
+        /**
+         * My Subscriber
+         * @param nh
+         * @param topic_name
+         */
+        inline MySubscriber():is_upadte(false){};
+        inline void set_subscriber(const ros::NodeHandle& nh,const std::string& topic_name){
+            this->nh=nh;
+            this->topic_name=topic_name;
+            sub=this->nh.subscribe(this->topic_name,1,&VehiclePhonesManager::MySubscriber::callback,this);
+        }
+        inline void callback(const nav_msgs::OdometryConstPtr& msg){
+            this->msg=*msg;
+            is_upadte=true;
+        };
+        inline nav_msgs::Odometry getMsg() const {return msg;}
+        inline bool isUpdate(){return is_upadte;};
+        inline void setUpdate(bool b){is_upadte=b;};
+
+    private:
+        ros::NodeHandle nh;
+        ros::Subscriber sub;
+        std::string topic_name;
+        nav_msgs::Odometry msg;
+        bool is_upadte;
+    };
+
+
     std::string vehicle_name;
     std::vector<std::string> phone_names;
 
@@ -68,7 +99,7 @@ private:
     ros::NodeHandle& private_nh;
     std::vector<ros::Publisher> pubs_pedestrian2phone;
     ros::Subscriber sub_objects;
-    std::vector<ros::Subscriber> subs_phone_odoms;
+    std::vector<MySubscriber> subs_phone_odom;
 
 
     /** Topics **/
@@ -95,6 +126,7 @@ private:
 
     /** TF Listener **/
     tf2_ros::Buffer tf_buffer;
+
 
     /** Vehicle Likelihood **/
     std::vector<State<>> pedestrian_states;

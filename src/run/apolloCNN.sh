@@ -14,7 +14,7 @@ xterm -e bash -c 'rosbag play /media/ohashi/a65390d1-3a01-41f6-bcb9-97c998a6b643
 sleep 1
 
 #new terminal
-xterm -e bash -c 'rosrun tf2_ros static_transform_publisher 0. 0. 0. -3.1415 0. 0. /base_link /rslidar'
+xterm -e bash -c 'rosrun tf2_ros static_transform_publisher 0. 0. 0. -3.1415 0. 0. /base_link /rslidar' &
 sleep 1
 
 #new terminal
@@ -22,7 +22,7 @@ xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch lidar_apo
 sleep 1
 
 #new terminal 
-xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch imm_ukf_pda_track imm_ukf_pda_track.launch" &
+xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch imm_ukf_pda_track imm_ukf_pda_track.launch" 
 sleep 1
 
 #new terminal 

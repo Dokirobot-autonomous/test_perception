@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "../../../../../devel/lib/liblibdpm_ttic.pdb"
+  "../../../../../devel/lib/liblibdpm_ttic.so"
   "CMakeFiles/libdpm_ttic.dir/common/common.cpp.o"
   "CMakeFiles/libdpm_ttic.dir/cpu/detect.cpp.o"
   "CMakeFiles/libdpm_ttic.dir/cpu/dt.cpp.o"
@@ -23,8 +25,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/libdpm_ttic.dir/gpu/obstacle_detection.cpp.o"
   "CMakeFiles/libdpm_ttic.dir/gpu/resize_GPU.cpp.o"
   "CMakeFiles/libdpm_ttic.dir/gpu/tracking.cpp.o"
-  "../../../../../devel/lib/liblibdpm_ttic.pdb"
-  "../../../../../devel/lib/liblibdpm_ttic.so"
 )
 
 # Per-language clean rules from dependency scanning.

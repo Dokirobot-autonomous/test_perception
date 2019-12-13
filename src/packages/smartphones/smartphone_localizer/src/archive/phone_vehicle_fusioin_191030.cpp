@@ -19,8 +19,8 @@
 #include <tf2_ros/transform_listener.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
-#include "../../../../../devel/include/autoware_msgs/DetectedObject.h"
-#include "../../../../../devel/include/autoware_msgs/DetectedObjectArray.h"
+#include "../../../../../../devel/include/autoware_msgs/DetectedObject.h"
+#include "../../../../../../devel/include/autoware_msgs/DetectedObjectArray.h"
 
 #include <phone_localizer.h>
 

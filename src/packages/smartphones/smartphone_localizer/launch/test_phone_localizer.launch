@@ -1,0 +1,24 @@
+<!-- -->
+<launch>
+
+  <arg name="device_name" default="android/galaxy1" />
+  <arg name="rate" default="1.0" />
+  <arg name="start" default="50" />
+  <arg name="pf_gps_xy_bias" default="0.0" />
+
+  <include file="/media/ohashi/a65390d1-3a01-41f6-bcb9-97c998a6b643/dataset/UCB/191116/good1.launch" >
+    <arg name="rate" value="$(arg rate)"/>
+    <arg name="start" value="$(arg start)"/>
+  </include>
+
+  <include file="$(find smartphone_localizer)/launch/phone_localizer.launch">
+    <arg name="device_name" value="$(arg device_name)" />
+    <arg name="output" value="screen" />
+    <arg name="pf_gps_xy_bias" value="$(arg pf_gps_xy_bias)"/>
+  </include>
+
+
+  <node type="rqt_console" name="rqt_console" pkg="rqt_console" />
+  <node type="rqt_logger_level" name="rqt_logger_level" pkg="rqt_logger_level" />
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find smartphone_localizer)/rviz/phone_localizers.rviz" />
+</launch>

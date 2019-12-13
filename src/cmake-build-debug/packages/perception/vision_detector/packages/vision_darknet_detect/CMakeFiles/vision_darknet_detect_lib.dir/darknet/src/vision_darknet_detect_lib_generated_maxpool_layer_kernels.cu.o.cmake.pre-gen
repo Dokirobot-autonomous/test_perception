@@ -61,8 +61,8 @@ set(CMAKE_COMMAND "/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linu
 set(source_file "/home/ohashi/test_perception/src/packages/perception/vision_detector/packages/vision_darknet_detect/darknet/src/maxpool_layer_kernels.cu") # path
 set(NVCC_generated_dependency_file "/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect_lib.dir/darknet/src/vision_darknet_detect_lib_generated_maxpool_layer_kernels.cu.o.NVCC-depend") # path
 set(cmake_dependency_file "/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/vision_detector/packages/vision_darknet_detect/CMakeFiles/vision_darknet_detect_lib.dir/darknet/src/vision_darknet_detect_lib_generated_maxpool_layer_kernels.cu.o.depend") # path
-set(CUDA_make2cmake "/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/share/cmake-3.14/Modules/FindCUDA/make2cmake.cmake") # path
-set(CUDA_parse_cubin "/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/share/cmake-3.14/Modules/FindCUDA/parse_cubin.cmake") # path
+set(CUDA_make2cmake "/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/share/cmake-3.15/Modules/FindCUDA/make2cmake.cmake") # path
+set(CUDA_parse_cubin "/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/share/cmake-3.15/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "/usr/bin/cc") # path
 # We won't actually use these variables for now, but we need to set this, in

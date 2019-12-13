@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/frustum_points_extractor_lib.dir/src/frustum_points_extractor/frustum_points_extractor.cpp.o"
   "../../../../../devel/lib/libfrustum_points_extractor_lib.pdb"
   "../../../../../devel/lib/libfrustum_points_extractor_lib.so"
+  "CMakeFiles/frustum_points_extractor_lib.dir/src/frustum_points_extractor/frustum_points_extractor.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

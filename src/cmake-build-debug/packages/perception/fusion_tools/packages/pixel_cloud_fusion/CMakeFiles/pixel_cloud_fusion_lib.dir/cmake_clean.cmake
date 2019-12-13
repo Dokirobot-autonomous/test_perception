@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/pixel_cloud_fusion_lib.dir/src/pixel_cloud_fusion.cpp.o"
   "../../../../../devel/lib/libpixel_cloud_fusion_lib.pdb"
   "../../../../../devel/lib/libpixel_cloud_fusion_lib.so"
+  "CMakeFiles/pixel_cloud_fusion_lib.dir/src/pixel_cloud_fusion.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,0 +1,19 @@
+<!-- -->
+<launch>
+    <rosparam param="/use_sim_time">true</rosparam>
+    <arg name="vehicle_name" default="/"/>
+    <arg name="points_raw" default="points_raw"/>
+    <arg name="output" default="screen"/>
+
+    <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch">
+        <arg name="name_space" value="$(arg vehicle_name)"/>
+        <arg name="points_src" value="$(arg points_raw)"/>
+        <arg name="output" value="screen"/>
+    </include>
+
+    <include file="$(find imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch">
+        <arg name="name_space" value="$(arg vehicle_name)"/>
+        <arg name="output" value="screen"/>
+    </include>
+
+</launch>

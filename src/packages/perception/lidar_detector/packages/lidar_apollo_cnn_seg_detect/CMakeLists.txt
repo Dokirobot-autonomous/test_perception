@@ -38,7 +38,9 @@ IF (CUDA_FOUND)
     endif ()
 ENDIF ()
 ###CAFFE
-set(CAFFE_PATH "$ENV{HOME}/caffe/distribute")
+#set(CAFFE_PATH "$ENV{HOME}/caffe/distribute")
+set(CAFFE_PATH "$ENV{HOME}/test_perception/test_perception/src/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/distribute")
+
 
 if (EXISTS "${CAFFE_PATH}")
 

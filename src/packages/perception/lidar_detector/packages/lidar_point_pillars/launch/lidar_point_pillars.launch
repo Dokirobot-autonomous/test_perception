@@ -4,7 +4,7 @@
   <arg name="input_topic" default="/sensor/velodyne/cloud_euclidean" />
   <arg name="baselink_support" default="false" />
   <arg name="reproduce_result_mode" default="true" />
-  <arg name="score_threshold" default="0.5" />
+  <arg name="score_threshold" default="0.05" />
   <arg name="nms_overlap_threshold" default="0.5" />
   <arg name="pfe_onnx_file"/>
   <arg name="rpn_onnx_file"/>

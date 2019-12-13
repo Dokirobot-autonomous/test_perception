@@ -1,0 +1,8 @@
+accel_lpf=zeros(s(1),3);
+
+currentOrientationValues=accel_g(1,:);
+
+for i=1:s(1)
+
+end
+

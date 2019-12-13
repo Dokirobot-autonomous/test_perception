@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/obj_downloader.dir/nodes/obj_downloader/obj_downloader.cpp.o"
-  "../../../../devel/lib/obj_db/obj_downloader.pdb"
   "../../../../devel/lib/obj_db/obj_downloader"
+  "../../../../devel/lib/obj_db/obj_downloader.pdb"
+  "CMakeFiles/obj_downloader.dir/nodes/obj_downloader/obj_downloader.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

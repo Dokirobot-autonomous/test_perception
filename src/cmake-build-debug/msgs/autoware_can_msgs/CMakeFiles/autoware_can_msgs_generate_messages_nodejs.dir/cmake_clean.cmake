@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/autoware_can_msgs_generate_messages_nodejs"
   "../../devel/share/gennodejs/ros/autoware_can_msgs/msg/CANData.js"
-  "../../devel/share/gennodejs/ros/autoware_can_msgs/msg/CANPacket.js"
   "../../devel/share/gennodejs/ros/autoware_can_msgs/msg/CANInfo.js"
+  "../../devel/share/gennodejs/ros/autoware_can_msgs/msg/CANPacket.js"
+  "CMakeFiles/autoware_can_msgs_generate_messages_nodejs"
 )
 
 # Per-language clean rules from dependency scanning.

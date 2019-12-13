@@ -86,7 +86,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.0500000007
         Value: Arrow
-      Topic: /android/odom
+      Topic: /android/galaxy1/odom
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -114,7 +114,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.100000001
       Style: Flat Squares
-      Topic: /rslidar_points
+      Topic: /prius/rslidar_points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -132,7 +132,7 @@ Visualization Manager:
       Shaft Length: 0.230000004
       Shaft Radius: 0.00999999978
       Shape: Arrow (Flat)
-      Topic: /android/particles
+      Topic: /android/galaxy1/particles
       Unreliable: false
       Value: true
     - Angle Tolerance: 0.100000001
@@ -174,11 +174,7 @@ Visualization Manager:
       Marker Topic: /detection/object_tracker/objects_markers
       Name: MarkerArray
       Namespaces:
-        /detection/object_tracker/arrow_markers: true
-        /detection/object_tracker/box_markers: true
-        /detection/object_tracker/centroid_markers: true
-        /detection/object_tracker/label_markers: true
-        /detection/object_tracker/model_markers: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/TF
@@ -186,15 +182,13 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        android/odom:
-          Value: true
         base_link:
-          Value: true
-        base_link_true:
           Value: true
         odom:
           Value: true
         rslidar:
+          Value: true
+        velodyne:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -203,13 +197,10 @@ Visualization Manager:
       Show Names: true
       Tree:
         odom:
-          android/odom:
-            {}
           base_link:
-            {}
-          base_link_true:
             rslidar:
-              {}
+              velodyne:
+                {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -236,7 +227,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
+      Angle: 0.0149999885
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -246,11 +237,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 17.6234169
+      Scale: 17.3226547
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 5.27706909
-      Y: 3.40456057
+      X: 10.9065437
+      Y: 0.326306462
     Saved: ~
 Window Geometry:
   Displays:

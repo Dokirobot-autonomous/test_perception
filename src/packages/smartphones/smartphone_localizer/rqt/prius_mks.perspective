@@ -1,0 +1,962 @@
+{
+  "keys": {},
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr",
+          "repr": "{u'rqt_image_view/ImageView': [12, 11, 10, 7, 6, 5, 4, 3, 2, 1, 9, 8]}"
+        }
+      },
+      "groups": {
+        "plugin__rqt_image_view__ImageView__6": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (6)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam4/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam4/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__7": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (7)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam2/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam2/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__4": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (4)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam2/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam2/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__5": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (5)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam7/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam7/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__2": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (2)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam5/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam5/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__3": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (3)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam0/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam0/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam3/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam3/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_top__TOP__1": {
+          "keys": {},
+          "groups": {
+            "plugin": {
+              "keys": {
+                "is_regex": {
+                  "type": "repr",
+                  "repr": "u'0'"
+                },
+                "filter_text": {
+                  "type": "repr",
+                  "repr": "u''"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__8": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (8)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam3/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam3/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__9": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (9)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam1/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/prius/camera_array/cam1/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_publisher__Publisher__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__PublisherWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Message Publisher'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr",
+                  "repr": "u\"[{'type_name': 'sensor_msgs/FluidPressure', 'topic_name': '/android/galaxy1/barometric_pressure', 'enabled': False, 'rate': 1.0, 'expressions': {}, 'publisher_id': 0, 'counter': 0}, {'type_name': 'sensor_msgs/FluidPressure', 'topic_name': '/android/galaxy1/barometric_pressure', 'enabled': False, 'rate': 1.0, 'expressions': {}, 'publisher_id': 1, 'counter': 0}, {'type_name': 'sensor_msgs/FluidPressure', 'topic_name': '/android/galaxy1/barometric_pressure', 'enabled': False, 'rate': 1.0, 'expressions': {}, 'publisher_id': 2, 'counter': 0}, {'type_name': 'autoware_msgs/DetectedObjectArray', 'topic_name': '/mks/detection/object_tracker/objects', 'enabled': False, 'rate': 1.0, 'expressions': {}, 'publisher_id': 3, 'counter': 0}, {'type_name': 'autoware_msgs/DetectedObjectArray', 'topic_name': '/mks/detection/object_tracker/objects', 'enabled': False, 'rate': 1.0, 'expressions': {}, 'publisher_id': 4, 'counter': 0}]\""
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__jsk_rqt_plugins__ImageView2Plugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u''"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_topic__TopicPlugin__2": {
+          "keys": {},
+          "groups": {
+            "plugin": {
+              "keys": {
+                "tree_widget_header_state": {
+                  "type": "repr(QByteArray.hex)",
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000000000001000000000000000001000000000000000000000000000000000000041c000000050101000100000000000000000500000064ffffffff0000008100000003000000050000018e00000001000000030000017b00000001000000030000007200000001000000030000003d0000000100000003000000640000000100000003000003e800')",
+                  "pretty-print": "                              d               {     r     =     d      "
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_topic__TopicPlugin__1": {
+          "keys": {},
+          "groups": {
+            "plugin": {
+              "keys": {
+                "tree_widget_header_state": {
+                  "type": "repr(QByteArray.hex)",
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff000000000000000100000000000000000100000000000000000000000000000000000004ef000000050101000100000000000000000500000064ffffffff0000008100000003000000050000026100000001000000030000017b00000001000000030000007200000001000000030000003d0000000100000003000000640000000100000003000003e800')",
+                  "pretty-print": "                              d         a     {     r     =     d      "
+                }
+              },
+              "groups": {}
+            },
+            "dock_widget__TopicWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Topic Monitor'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__10": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (10)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam2/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam2/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__11": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (11)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam6/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam6/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_image_view__ImageView__12": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Image View (12)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "max_range": {
+                  "type": "repr",
+                  "repr": "10.0"
+                },
+                "rotate": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "smooth_image": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "mouse_pub_topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam1/image_raw/compressed_mouse_left'"
+                },
+                "num_gridlines": {
+                  "type": "repr",
+                  "repr": "0"
+                },
+                "toolbar_hidden": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "zoom1": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "dynamic_range": {
+                  "type": "repr",
+                  "repr": "False"
+                },
+                "topic": {
+                  "type": "repr",
+                  "repr": "u'/mks/usb_cam1/image_raw/compressed'"
+                },
+                "publish_click_location": {
+                  "type": "repr",
+                  "repr": "False"
+                }
+              },
+              "groups": {}
+            }
+          }
+        }
+      }
+    },
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb0002000000000041000000180000077f0000043700000041000000180000077f0000043700000001000000000780')",
+          "pretty-print": "     A     7 A     7     "
+        },
+        "state": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd00000001000000030000073f0000040afc010000000bfb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000000000004b30000000000000000fb0000004c007200710074005f0074006f007000690063005f005f0054006f0070006900630050006c007500670069006e005f005f0031005f005f0054006f00700069006300570069006400670065007401000003e60000015b0000000000000000fb0000004c006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f0049006d006100670065005600690065007700320050006c007500670069006e005f005f0031005f005f01000000000000009f0000000000000000fb0000004c007200710074005f0074006f007000690063005f005f0054006f0070006900630050006c007500670069006e005f005f0032005f005f0054006f0070006900630057006900640067006500740100000651000000ee0000000000000000fb00000022007200710074005f0074006f0070005f005f0054004f0050005f005f0031005f005f0100000651000000ee0000000000000000fb00000042007200710074005f006d00730067005f005f004d0065007300730061006700650073005f005f0031005f005f006d0065007300730061006700650073002e0075006901000004d6000002690000000000000000fb00000050007200710074005f0061006300740069006f006e005f005f0041006300740069006f006e0050006c007500670069006e005f005f0031005f005f006d0065007300730061006700650073002e0075006901000003d6000002690000000000000000fc000000000000026c000000e500fffffffc0200000002fc00000000000002340000006f0100001dfa000000000100000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0032005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000dd00fffffffb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0037005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000dd00fffffffc0000023a000001d00000006f0100001dfa000000000100000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0031005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000c700fffffffb0000005c007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f00310030005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000e500fffffffb00000054006a0073006b005f007200710074005f0070006c007500670069006e0073005f005f0050006c006f007400320044005f005f0031005f005f00440061007400610050006c006f0074005700690064006700650074010000055b000001e40000000000000000fc0000027200000262000000e500fffffffc0200000002fc00000000000002360000006f0100001dfa000000000100000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0033005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000dd00fffffffb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0038005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000dd00fffffffc0000023c000001ce0000006f0100001dfa000000000100000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0036005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000dd00fffffffb0000005c007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f00310031005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000e500fffffffc000004da00000265000000e500fffffffc0200000002fc00000000000002320000006f0100001dfa000000000100000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0039005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000dd00fffffffb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0034005f005f0049006d006100670065005600690065007700570069006400670065007401000004da00000265000000dd00fffffffc00000238000001d20000006f0100001dfa000000000100000002fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0035005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000dd00fffffffb0000005c007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f00310032005f005f0049006d00610067006500560069006500770057006900640067006500740100000000ffffffff000000e500ffffff0000073f0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')",
+          "pretty-print": "                 Xrqt_publisher__Publisher__1__PublisherWidget          Lrqt_topic__TopicPlugin__1__TopicWidget          Ljsk_rqt_plugins__ImageView2Plugin__1__          Lrqt_topic__TopicPlugin__2__TopicWidget          \"rqt_top__TOP__1__          Brqt_msg__Messages__1__messages.ui          Prqt_action__ActionPlugin__1__messages.ui            l                      Zrqt_image_view__ImageView__2__ImageViewWidget          Zrqt_image_view__ImageView__7__ImageViewWidget          :   o                                                                                                                                                                      [                     6 o                                                                                                                                      Zrqt_image_view__ImageView__6__ImageViewWidget          \\rqt_image_view__ImageView__11__ImageViewWidget            e                      Zrqt_image_view__ImageView__9__ImageViewWidget          Zrqt_image_view__ImageView__4__ImageViewWidget          8   o                                                                                                                         ?                                                      "
+        }
+      },
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr",
+              "repr": "8"
+            }
+          },
+          "groups": {}
+        }
+      }
+    }
+  }
+}

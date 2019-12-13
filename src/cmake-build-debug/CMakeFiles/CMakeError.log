@@ -53,3 +53,46 @@ Makefile:121: ターゲット 'cmTC_4ef2d/fast' のレシピで失敗しまし�
 make: *** [cmTC_4ef2d/fast] エラー 2
 
 
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7117f/fast && /usr/bin/make -f CMakeFiles/cmTC_7117f.dir/build.make CMakeFiles/cmTC_7117f.dir/build
+make[1]: ディレクトリ '/home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp' に入ります
+Building C object CMakeFiles/cmTC_7117f.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7117f.dir/src.c.o   -c /home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_7117f
+/home/ohashi/ダウンロード/clion-2019.1.3/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7117f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_7117f.dir/src.c.o  -o cmTC_7117f 
+CMakeFiles/cmTC_7117f.dir/src.c.o: 関数 `main' 内:
+src.c:(.text+0x3c): `pthread_create' に対する定義されていない参照です
+src.c:(.text+0x48): `pthread_detach' に対する定義されていない参照です
+src.c:(.text+0x59): `pthread_join' に対する定義されていない参照です
+src.c:(.text+0x6d): `pthread_atfork' に対する定義されていない参照です
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7117f.dir/build.make:86: ターゲット 'cmTC_7117f' のレシピで失敗しました
+make[1]: *** [cmTC_7117f] エラー 1
+make[1]: ディレクトリ '/home/ohashi/test_perception/src/cmake-build-debug/CMakeFiles/CMakeTmp' から出ます
+Makefile:121: ターゲット 'cmTC_7117f/fast' のレシピで失敗しました
+make: *** [cmTC_7117f/fast] エラー 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

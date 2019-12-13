@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
+  "../../../../../devel/lib/lidar_shape_estimation/lidar_shape_estimation"
+  "../../../../../devel/lib/lidar_shape_estimation/lidar_shape_estimation.pdb"
   "CMakeFiles/lidar_shape_estimation.dir/src/main.cpp.o"
-  "CMakeFiles/lidar_shape_estimation.dir/src/node.cpp.o"
-  "CMakeFiles/lidar_shape_estimation.dir/src/shape_estimator.cpp.o"
   "CMakeFiles/lidar_shape_estimation.dir/src/model/bounding_box.cpp.o"
   "CMakeFiles/lidar_shape_estimation.dir/src/model/convex_hull.cpp.o"
   "CMakeFiles/lidar_shape_estimation.dir/src/model/cylinder.cpp.o"
-  "../../../../../devel/lib/lidar_shape_estimation/lidar_shape_estimation.pdb"
-  "../../../../../devel/lib/lidar_shape_estimation/lidar_shape_estimation"
+  "CMakeFiles/lidar_shape_estimation.dir/src/node.cpp.o"
+  "CMakeFiles/lidar_shape_estimation.dir/src/shape_estimator.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

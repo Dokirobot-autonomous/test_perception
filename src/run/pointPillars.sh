@@ -9,7 +9,7 @@ xterm -e bash -c 'source ~/test_perception/devel/setup.bash; rviz' &
 sleep 1
 
 #new terminal 
-xterm -e bash -c 'source ~/test_perception/devel/setup.bash; roslaunch lidar_point_pillars lidar_point_pillars.launch pfe_onnx_file:=/home/ohashi/test_perception/src/packages/perception/lidar_detector/packages/lidar_point_pillars/model/pfe.onnx rpn_onnx_file:=/home/ohashi/test_perception/src/packages/perception/lidar_detector/packages/lidar_point_pillars/model/rpn.onnx' &
+xterm -e bash -c 'source ~/test_perception/devel/setup.bash; roslaunch lidar_point_pillars lidar_point_pillars.launch pfe_onnx_file:=/home/ohashi/test_perception/src/packages/perception/lidar_detector/packages/lidar_point_pillars/model/pfe.onnx rpn_onnx_file:=/home/ohashi/test_perception/src/packages/perception/lidar_detector/packages/lidar_point_pillars/model/rpn.onnx input_topic:=/sensor/velodyne/cloud_euclidean' &
 sleep 1
 
 #new terminal
