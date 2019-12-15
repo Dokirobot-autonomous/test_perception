@@ -29,11 +29,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"
   "/usr/lib/openmpi/include"
   "/usr/lib/openmpi/include/openmpi"
+  "/usr/include/jsoncpp"
   "/usr/include/freetype2"
   "/usr/include/python2.7"
-  "/usr/include/jsoncpp"
-  "/usr/include/libxml2"
   "/usr/include/tcl"
+  "/usr/include/libxml2"
   "/usr/local/cuda/include"
   )
 

@@ -5602,147 +5602,30 @@ _run_tests_lidar_shape_estimation_rostest/fast:
 .PHONY : _run_tests_lidar_shape_estimation_rostest/fast
 
 #=============================================================================
-# Target rules for targets named jsk_topic_tools_generate_messages_lisp
+# Target rules for targets named mkz_setup
 
 # Build rule for target.
-jsk_topic_tools_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_lisp
-.PHONY : jsk_topic_tools_generate_messages_lisp
+mkz_setup: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mkz_setup
+.PHONY : mkz_setup
 
 # fast build rule for target.
-jsk_topic_tools_generate_messages_lisp/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_lisp.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_lisp.dir/build
-.PHONY : jsk_topic_tools_generate_messages_lisp/fast
+mkz_setup/fast:
+	$(MAKE) -f packages/cooperation/cooperation_setup/CMakeFiles/mkz_setup.dir/build.make packages/cooperation/cooperation_setup/CMakeFiles/mkz_setup.dir/build
+.PHONY : mkz_setup/fast
 
 #=============================================================================
-# Target rules for targets named jsk_topic_tools_generate_messages_nodejs
+# Target rules for targets named prius_setup
 
 # Build rule for target.
-jsk_topic_tools_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_nodejs
-.PHONY : jsk_topic_tools_generate_messages_nodejs
+prius_setup: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prius_setup
+.PHONY : prius_setup
 
 # fast build rule for target.
-jsk_topic_tools_generate_messages_nodejs/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_nodejs.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_nodejs.dir/build
-.PHONY : jsk_topic_tools_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named apollo_cnn_segmentation
-
-# Build rule for target.
-apollo_cnn_segmentation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 apollo_cnn_segmentation
-.PHONY : apollo_cnn_segmentation
-
-# fast build rule for target.
-apollo_cnn_segmentation/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/apollo_cnn_segmentation.dir/build
-.PHONY : apollo_cnn_segmentation/fast
-
-#=============================================================================
-# Target rules for targets named jsk_topic_tools_generate_messages_cpp
-
-# Build rule for target.
-jsk_topic_tools_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_cpp
-.PHONY : jsk_topic_tools_generate_messages_cpp
-
-# fast build rule for target.
-jsk_topic_tools_generate_messages_cpp/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_cpp.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_cpp.dir/build
-.PHONY : jsk_topic_tools_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named jsk_topic_tools_generate_messages_eus
-
-# Build rule for target.
-jsk_topic_tools_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_eus
-.PHONY : jsk_topic_tools_generate_messages_eus
-
-# fast build rule for target.
-jsk_topic_tools_generate_messages_eus/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_eus.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_eus.dir/build
-.PHONY : jsk_topic_tools_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named jsk_recognition_utils_gencfg
-
-# Build rule for target.
-jsk_recognition_utils_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jsk_recognition_utils_gencfg
-.PHONY : jsk_recognition_utils_gencfg
-
-# fast build rule for target.
-jsk_recognition_utils_gencfg/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_recognition_utils_gencfg.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_recognition_utils_gencfg.dir/build
-.PHONY : jsk_recognition_utils_gencfg/fast
-
-#=============================================================================
-# Target rules for targets named jsk_topic_tools_gencfg
-
-# Build rule for target.
-jsk_topic_tools_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_gencfg
-.PHONY : jsk_topic_tools_gencfg
-
-# fast build rule for target.
-jsk_topic_tools_gencfg/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_gencfg.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_gencfg.dir/build
-.PHONY : jsk_topic_tools_gencfg/fast
-
-#=============================================================================
-# Target rules for targets named jsk_topic_tools_generate_messages_py
-
-# Build rule for target.
-jsk_topic_tools_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_py
-.PHONY : jsk_topic_tools_generate_messages_py
-
-# fast build rule for target.
-jsk_topic_tools_generate_messages_py/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_py.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/jsk_topic_tools_generate_messages_py.dir/build
-.PHONY : jsk_topic_tools_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named frustum_points_extractor_lib
-
-# Build rule for target.
-frustum_points_extractor_lib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 frustum_points_extractor_lib
-.PHONY : frustum_points_extractor_lib
-
-# fast build rule for target.
-frustum_points_extractor_lib/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor_lib.dir/build
-.PHONY : frustum_points_extractor_lib/fast
-
-#=============================================================================
-# Target rules for targets named frustum_points_extractor
-
-# Build rule for target.
-frustum_points_extractor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 frustum_points_extractor
-.PHONY : frustum_points_extractor
-
-# fast build rule for target.
-frustum_points_extractor/fast:
-	$(MAKE) -f packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/build.make packages/perception/fusion_tools/packages/frustum_detector/CMakeFiles/frustum_points_extractor.dir/build
-.PHONY : frustum_points_extractor/fast
-
-#=============================================================================
-# Target rules for targets named lidar_apollo_cnn_seg_detect
-
-# Build rule for target.
-lidar_apollo_cnn_seg_detect: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lidar_apollo_cnn_seg_detect
-.PHONY : lidar_apollo_cnn_seg_detect
-
-# fast build rule for target.
-lidar_apollo_cnn_seg_detect/fast:
-	$(MAKE) -f packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/build.make packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/CMakeFiles/lidar_apollo_cnn_seg_detect.dir/build
-.PHONY : lidar_apollo_cnn_seg_detect/fast
+prius_setup/fast:
+	$(MAKE) -f packages/cooperation/cooperation_setup/CMakeFiles/prius_setup.dir/build.make packages/cooperation/cooperation_setup/CMakeFiles/prius_setup.dir/build
+.PHONY : prius_setup/fast
 
 #=============================================================================
 # Target rules for targets named lidar_fake_perception_node
@@ -5782,6 +5665,97 @@ range_vision_fusion_lib: cmake_check_build_system
 range_vision_fusion_lib/fast:
 	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/build
 .PHONY : range_vision_fusion_lib/fast
+
+#=============================================================================
+# Target rules for targets named jsk_topic_tools_generate_messages_py
+
+# Build rule for target.
+jsk_topic_tools_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_py
+.PHONY : jsk_topic_tools_generate_messages_py
+
+# fast build rule for target.
+jsk_topic_tools_generate_messages_py/fast:
+	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_py.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_py.dir/build
+.PHONY : jsk_topic_tools_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named jsk_topic_tools_gencfg
+
+# Build rule for target.
+jsk_topic_tools_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_gencfg
+.PHONY : jsk_topic_tools_gencfg
+
+# fast build rule for target.
+jsk_topic_tools_gencfg/fast:
+	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_gencfg.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_gencfg.dir/build
+.PHONY : jsk_topic_tools_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named jsk_recognition_utils_gencfg
+
+# Build rule for target.
+jsk_recognition_utils_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jsk_recognition_utils_gencfg
+.PHONY : jsk_recognition_utils_gencfg
+
+# fast build rule for target.
+jsk_recognition_utils_gencfg/fast:
+	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_recognition_utils_gencfg.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_recognition_utils_gencfg.dir/build
+.PHONY : jsk_recognition_utils_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named jsk_topic_tools_generate_messages_eus
+
+# Build rule for target.
+jsk_topic_tools_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_eus
+.PHONY : jsk_topic_tools_generate_messages_eus
+
+# fast build rule for target.
+jsk_topic_tools_generate_messages_eus/fast:
+	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_eus.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_eus.dir/build
+.PHONY : jsk_topic_tools_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named jsk_topic_tools_generate_messages_cpp
+
+# Build rule for target.
+jsk_topic_tools_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_cpp
+.PHONY : jsk_topic_tools_generate_messages_cpp
+
+# fast build rule for target.
+jsk_topic_tools_generate_messages_cpp/fast:
+	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_cpp.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_cpp.dir/build
+.PHONY : jsk_topic_tools_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named jsk_topic_tools_generate_messages_nodejs
+
+# Build rule for target.
+jsk_topic_tools_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_nodejs
+.PHONY : jsk_topic_tools_generate_messages_nodejs
+
+# fast build rule for target.
+jsk_topic_tools_generate_messages_nodejs/fast:
+	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_nodejs.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_nodejs.dir/build
+.PHONY : jsk_topic_tools_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named jsk_topic_tools_generate_messages_lisp
+
+# Build rule for target.
+jsk_topic_tools_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jsk_topic_tools_generate_messages_lisp
+.PHONY : jsk_topic_tools_generate_messages_lisp
+
+# fast build rule for target.
+jsk_topic_tools_generate_messages_lisp/fast:
+	$(MAKE) -f packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_lisp.dir/build.make packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/jsk_topic_tools_generate_messages_lisp.dir/build
+.PHONY : jsk_topic_tools_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named fusion
@@ -7787,20 +7761,18 @@ help:
 	@echo "... run_tests_lidar_shape_estimation_rostest"
 	@echo "... _run_tests_lidar_shape_estimation"
 	@echo "... _run_tests_lidar_shape_estimation_rostest"
-	@echo "... jsk_topic_tools_generate_messages_lisp"
-	@echo "... jsk_topic_tools_generate_messages_nodejs"
-	@echo "... apollo_cnn_segmentation"
-	@echo "... jsk_topic_tools_generate_messages_cpp"
-	@echo "... jsk_topic_tools_generate_messages_eus"
-	@echo "... jsk_recognition_utils_gencfg"
-	@echo "... jsk_topic_tools_gencfg"
-	@echo "... jsk_topic_tools_generate_messages_py"
-	@echo "... frustum_points_extractor_lib"
-	@echo "... frustum_points_extractor"
-	@echo "... lidar_apollo_cnn_seg_detect"
+	@echo "... mkz_setup"
+	@echo "... prius_setup"
 	@echo "... lidar_fake_perception_node"
 	@echo "... range_vision_fusion"
 	@echo "... range_vision_fusion_lib"
+	@echo "... jsk_topic_tools_generate_messages_py"
+	@echo "... jsk_topic_tools_gencfg"
+	@echo "... jsk_recognition_utils_gencfg"
+	@echo "... jsk_topic_tools_generate_messages_eus"
+	@echo "... jsk_topic_tools_generate_messages_cpp"
+	@echo "... jsk_topic_tools_generate_messages_nodejs"
+	@echo "... jsk_topic_tools_generate_messages_lisp"
 	@echo "... fusion"
 	@echo "... phone_localizer"
 	@echo "... vehicle_phones_manager"

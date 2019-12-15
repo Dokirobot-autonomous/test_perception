@@ -20,7 +20,6 @@
 
 #include <ros/ros.h>
 
-
 #include <caffe/caffe.hpp>
 
 #include <pcl/point_types.h>

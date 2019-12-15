@@ -957,6 +957,12 @@ catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
 
+//Value Computed by CMake
+cooperation_setup_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/cooperation/cooperation_setup
+
+//Value Computed by CMake
+cooperation_setup_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/cooperation/cooperation_setup
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
@@ -1491,6 +1497,12 @@ vector_map_server_DIR:PATH=/home/ohashi/test_perception/src/cmake-build-debug/de
 
 //Value Computed by CMake
 vector_map_server_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/data/packages/vector_map_server
+
+//Value Computed by CMake
+vehicle_localizer_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/localization/vehicle_localizer
+
+//Value Computed by CMake
+vehicle_localizer_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/localization/vehicle_localizer
 
 //The directory containing a CMake configuration file for velodyne_driver.
 velodyne_driver_DIR:PATH=/opt/ros/kinetic/share/velodyne_driver/cmake

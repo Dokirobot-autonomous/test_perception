@@ -5,6 +5,7 @@
 # it emulates the modifications of the setup script without recurring computations
 
 # new environment variables
+export ROS_PYTHON_VERSION="2"
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ohashi/test_perception/src/cmake-build-debug/devel:$CMAKE_PREFIX_PATH"

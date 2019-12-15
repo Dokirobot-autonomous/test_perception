@@ -1,0 +1,11 @@
+<!-- -->
+<launch>
+
+  <arg name="origin_fix" />
+  <param name="origin_fix"  value="$(arg origin_fix)"/>
+
+  <node pkg="cooperation_setup" type="mkz_setup" name="mkz_setup">
+
+  </node>
+
+</launch>
