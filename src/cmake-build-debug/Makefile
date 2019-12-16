@@ -5628,6 +5628,19 @@ prius_setup/fast:
 .PHONY : prius_setup/fast
 
 #=============================================================================
+# Target rules for targets named connection_client_setup
+
+# Build rule for target.
+connection_client_setup: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 connection_client_setup
+.PHONY : connection_client_setup
+
+# fast build rule for target.
+connection_client_setup/fast:
+	$(MAKE) -f packages/cooperation/cooperation_setup/CMakeFiles/connection_client_setup.dir/build.make packages/cooperation/cooperation_setup/CMakeFiles/connection_client_setup.dir/build
+.PHONY : connection_client_setup/fast
+
+#=============================================================================
 # Target rules for targets named lidar_fake_perception_node
 
 # Build rule for target.
@@ -7763,6 +7776,7 @@ help:
 	@echo "... _run_tests_lidar_shape_estimation_rostest"
 	@echo "... mkz_setup"
 	@echo "... prius_setup"
+	@echo "... connection_client_setup"
 	@echo "... lidar_fake_perception_node"
 	@echo "... range_vision_fusion"
 	@echo "... range_vision_fusion_lib"

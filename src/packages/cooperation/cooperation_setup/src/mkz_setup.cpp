@@ -22,7 +22,7 @@
 
 #define TOPIC_NAME_ODOM "navsat/odom"
 #define TOPIC_NAME_FIX "vehicle/gps/fix"
-#define TOPIC_NAME_INIT_FIX "/mkz/origin_fix"
+#define TOPIC_NAME_INIT_FIX "origin_fix"
 #define FRAME_NAME_PRIUS_ORIGIN "/prius/my_frame"
 #define FRAME_NAME_MKZ_ORIGIN "/mkz/my_frame"
 #define FRAME_NAME_ODOM "odom"

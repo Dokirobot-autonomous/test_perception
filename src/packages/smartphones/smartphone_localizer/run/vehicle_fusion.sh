@@ -18,11 +18,11 @@ sleep 2
 xterm -e bash -c "roslaunch mypkg rosbag_player.launch bagfile_names:=/media/ohashi/a65390d1-3a01-41f6-bcb9-97c998a6b643/dataset/$BAG_NAME.bag tf_launch:=/media/ohashi/a65390d1-3a01-41f6-bcb9-97c998a6b643/dataset/$BAG_NAME.launch" &
 sleep 1
 
-##! detectioin node mks
-#xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch lidar_apollo_cnn_seg_detect lidar_apollo_cnn_seg_detect.launch \
-#                    name_space:=mks points_src:=velodyne_points points_out:=/detection/lidar_detector/points_cluster objects_out:=/detection/lidar_detector/objects"  &
-#sleep 1
-#
+#! detectioin node mks
+xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch lidar_apollo_cnn_seg_detect lidar_apollo_cnn_seg_detect.launch \
+                    name_space:=mkz points_src:=points_raw points_out:=/detection/lidar_detector/points_cluster objects_out:=/detection/lidar_detector/objects"  &
+sleep 1
+
 ##! detectioin node prius
 #xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch lidar_apollo_cnn_seg_detect lidar_apollo_cnn_seg_detect.launch \
 #                    name_space:=prius points_src:=rslidar_points points_out:=/detection/lidar_detector/points_cluster objects_out:=/detection/lidar_detector/objects"  &
@@ -33,10 +33,10 @@ sleep 1
 #sleep 1
 
 
-##! perception node mks
-#xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch imm_ukf_pda_track lidar_apollo_cnn_seg_tracker.launch \
-#                    vehicle_name:=mks points_raw:=velodyne_points"  &
-#sleep 1
+#! perception node mks
+xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch imm_ukf_pda_track lidar_apollo_cnn_seg_tracker.launch \
+                    vehicle_name:=mkz points_raw:=points_raw"  &
+sleep 1
 
 #! perception node prius
 xterm -e bash -c "source ~/test_perception/devel/setup.bash; roslaunch imm_ukf_pda_track lidar_apollo_cnn_seg_tracker.launch \

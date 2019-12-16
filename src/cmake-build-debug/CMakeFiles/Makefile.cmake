@@ -1304,6 +1304,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "packages/perception/object_filter/packages/lidar_shape_estimation/CMakeFiles/_run_tests_lidar_shape_estimation_rostest.dir/DependInfo.cmake"
   "packages/cooperation/cooperation_setup/CMakeFiles/mkz_setup.dir/DependInfo.cmake"
   "packages/cooperation/cooperation_setup/CMakeFiles/prius_setup.dir/DependInfo.cmake"
+  "packages/cooperation/cooperation_setup/CMakeFiles/connection_client_setup.dir/DependInfo.cmake"
   "packages/perception/lidar_detector/packages/lidar_fake_perception/CMakeFiles/lidar_fake_perception_node.dir/DependInfo.cmake"
   "packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion.dir/DependInfo.cmake"
   "packages/perception/fusion_tools/packages/range_vision_fusion/CMakeFiles/range_vision_fusion_lib.dir/DependInfo.cmake"

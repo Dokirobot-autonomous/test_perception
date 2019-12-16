@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
         eigen_conversions
         tf_conversions
         geometry_msgs
+        autoware_msgs
         )
 
 find_package(Eigen3 QUIET)
@@ -39,11 +40,12 @@ catkin_package(
         eigen_conversions
         tf_conversions
         geometry_msgs
+        autoware_msgs
         INCLUDE_DIRS
         include
 )
 
-include_directories(include include/${PROJECT_NAME}/ ${catkin_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIRS})
+include_directories(include include/autoware_msgs include/${PROJECT_NAME}/ ${catkin_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIRS})
 
 SET(CMAKE_CXX_FLAGS "-O2 -g -Wall ${CMAKE_CXX_FLAGS}")
 
@@ -60,6 +62,15 @@ add_executable(mkz_setup src/mkz_setup.cpp src/geo_pos_conv.cpp)
 target_link_libraries(mkz_setup ${catkin_LIBRARIES})
 add_dependencies(mkz_setup ${catkin_EXPORTED_TARGETS})
 install(TARGETS mkz_setup
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
+add_executable(connection_client_setup src/connection_client_setup.cpp)
+target_link_libraries(connection_client_setup ${catkin_LIBRARIES})
+add_dependencies(connection_client_setup ${catkin_EXPORTED_TARGETS})
+install(TARGETS connection_client_setup
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
