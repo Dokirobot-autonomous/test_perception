@@ -1,0 +1,26 @@
+<!-- -->
+<launch>
+  <rosparam param="/use_sim_time">true</rosparam>
+  <arg name="vehicle_name" />
+  <arg name="phone_names" />
+  <arg name="output" default="screen"/>
+  <arg name="pf_particle_size" default="1000" />
+  <arg name="pf_gyro_sd" default="0.000001" />
+  <arg name="pf_sys_noise_sd" default="0.1,0.1,0.087263889,0.00001,0.1" />
+  <arg name="pf_gps_xy_bias" default="10" />
+  <arg name="pf_perception_xy_sd" default="0.3" />
+  <arg name="pf_perception_r_sd" default="0.034905556" />
+
+  <node pkg="smartphone_localizer" type="vehicle_phones_manager" name="vehicle_phones_manager_node" output="$(arg output)">
+    <param name="vehicle_name" value="$(arg vehicle_name)" />
+    <param name="phone_names" value="$(arg phone_names)" />
+    <param name="topic_name_objects" value="detection/object_tracker/objects" />
+    <param name="particlefilter_particle_size" value="$(arg pf_particle_size" />
+    <param name="particlefilter_gyro_standard_deviation" value="$(arg pf_gyro_sd)" />
+    <param name="particlefilter_system_noise_standard_deviation" value="$(arg pf_sys_noise_sd)" />
+    <param name="particlefitler_gps_xy_bias" value="$(arg pf_gps_xy_bias)" />
+    <param name="pf_perception_xy_sd" value="$(arg pf_perception_xy_sd)" />
+    <param name="pf_perception_r_sd" value="$(arg pf_perception_r_sd)" />
+  </node>
+
+</launch>

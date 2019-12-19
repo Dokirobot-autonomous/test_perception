@@ -1,0 +1,9 @@
+<!-- -->
+<launch>
+
+  <arg name="ifpath" default="/home/ohashi/test_perception/src/packages/cooperation/cooperation_setup/"/>
+  <node pkg="cooperation_setup" type="android_setup" name="android_setup">
+    <param name="ifpath" value="$(arg ifpath)"/>
+  </node>
+
+</launch>

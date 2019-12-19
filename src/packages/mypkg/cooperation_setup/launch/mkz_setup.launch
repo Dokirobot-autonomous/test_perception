@@ -1,0 +1,13 @@
+<!-- -->
+<launch>
+
+  <arg name="origin_fix" />
+  <arg name="origin_quat" />
+  <param name="origin_fix"  value="$(arg origin_fix)"/>
+  <param name="origin_quat" value="$(arg origin_quat)"/>
+
+  <node pkg="cooperation_setup" type="mkz_setup" name="mkz_setup" output="screen">
+
+  </node>
+
+</launch>

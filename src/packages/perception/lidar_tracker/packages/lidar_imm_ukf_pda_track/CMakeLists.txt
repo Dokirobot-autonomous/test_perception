@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(imm_ukf_pda_track)
+project(lidar_imm_ukf_pda_track)
 
 SET (CMAKE_CXX_FLAGS "-O3 -std=c++11 -Wall")
 

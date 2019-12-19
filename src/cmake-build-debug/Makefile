@@ -5602,6 +5602,19 @@ _run_tests_lidar_shape_estimation_rostest/fast:
 .PHONY : _run_tests_lidar_shape_estimation_rostest/fast
 
 #=============================================================================
+# Target rules for targets named node_name
+
+# Build rule for target.
+node_name: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 node_name
+.PHONY : node_name
+
+# fast build rule for target.
+node_name/fast:
+	$(MAKE) -f packages/mypkg/cooperation/CMakeFiles/node_name.dir/build.make packages/mypkg/cooperation/CMakeFiles/node_name.dir/build
+.PHONY : node_name/fast
+
+#=============================================================================
 # Target rules for targets named mkz_setup
 
 # Build rule for target.
@@ -5611,21 +5624,8 @@ mkz_setup: cmake_check_build_system
 
 # fast build rule for target.
 mkz_setup/fast:
-	$(MAKE) -f packages/cooperation/cooperation_setup/CMakeFiles/mkz_setup.dir/build.make packages/cooperation/cooperation_setup/CMakeFiles/mkz_setup.dir/build
+	$(MAKE) -f packages/mypkg/cooperation_setup/CMakeFiles/mkz_setup.dir/build.make packages/mypkg/cooperation_setup/CMakeFiles/mkz_setup.dir/build
 .PHONY : mkz_setup/fast
-
-#=============================================================================
-# Target rules for targets named prius_setup
-
-# Build rule for target.
-prius_setup: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 prius_setup
-.PHONY : prius_setup
-
-# fast build rule for target.
-prius_setup/fast:
-	$(MAKE) -f packages/cooperation/cooperation_setup/CMakeFiles/prius_setup.dir/build.make packages/cooperation/cooperation_setup/CMakeFiles/prius_setup.dir/build
-.PHONY : prius_setup/fast
 
 #=============================================================================
 # Target rules for targets named connection_client_setup
@@ -5637,8 +5637,34 @@ connection_client_setup: cmake_check_build_system
 
 # fast build rule for target.
 connection_client_setup/fast:
-	$(MAKE) -f packages/cooperation/cooperation_setup/CMakeFiles/connection_client_setup.dir/build.make packages/cooperation/cooperation_setup/CMakeFiles/connection_client_setup.dir/build
+	$(MAKE) -f packages/mypkg/cooperation_setup/CMakeFiles/connection_client_setup.dir/build.make packages/mypkg/cooperation_setup/CMakeFiles/connection_client_setup.dir/build
 .PHONY : connection_client_setup/fast
+
+#=============================================================================
+# Target rules for targets named prius_setup
+
+# Build rule for target.
+prius_setup: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prius_setup
+.PHONY : prius_setup
+
+# fast build rule for target.
+prius_setup/fast:
+	$(MAKE) -f packages/mypkg/cooperation_setup/CMakeFiles/prius_setup.dir/build.make packages/mypkg/cooperation_setup/CMakeFiles/prius_setup.dir/build
+.PHONY : prius_setup/fast
+
+#=============================================================================
+# Target rules for targets named android_setup
+
+# Build rule for target.
+android_setup: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 android_setup
+.PHONY : android_setup
+
+# fast build rule for target.
+android_setup/fast:
+	$(MAKE) -f packages/mypkg/cooperation_setup/CMakeFiles/android_setup.dir/build.make packages/mypkg/cooperation_setup/CMakeFiles/android_setup.dir/build
+.PHONY : android_setup/fast
 
 #=============================================================================
 # Target rules for targets named lidar_fake_perception_node
@@ -5780,7 +5806,7 @@ fusion: cmake_check_build_system
 
 # fast build rule for target.
 fusion/fast:
-	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/fusion.dir/build
+	$(MAKE) -f packages/mypkg/smartphone_localizer/CMakeFiles/fusion.dir/build.make packages/mypkg/smartphone_localizer/CMakeFiles/fusion.dir/build
 .PHONY : fusion/fast
 
 #=============================================================================
@@ -5793,7 +5819,7 @@ phone_localizer: cmake_check_build_system
 
 # fast build rule for target.
 phone_localizer/fast:
-	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/phone_localizer.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/phone_localizer.dir/build
+	$(MAKE) -f packages/mypkg/smartphone_localizer/CMakeFiles/phone_localizer.dir/build.make packages/mypkg/smartphone_localizer/CMakeFiles/phone_localizer.dir/build
 .PHONY : phone_localizer/fast
 
 #=============================================================================
@@ -5806,7 +5832,7 @@ vehicle_phones_manager: cmake_check_build_system
 
 # fast build rule for target.
 vehicle_phones_manager/fast:
-	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/vehicle_phones_manager.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/vehicle_phones_manager.dir/build
+	$(MAKE) -f packages/mypkg/smartphone_localizer/CMakeFiles/vehicle_phones_manager.dir/build.make packages/mypkg/smartphone_localizer/CMakeFiles/vehicle_phones_manager.dir/build
 .PHONY : vehicle_phones_manager/fast
 
 #=============================================================================
@@ -5819,7 +5845,7 @@ smartphone_sensors: cmake_check_build_system
 
 # fast build rule for target.
 smartphone_sensors/fast:
-	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build
+	$(MAKE) -f packages/mypkg/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build.make packages/mypkg/smartphone_localizer/CMakeFiles/smartphone_sensors.dir/build
 .PHONY : smartphone_sensors/fast
 
 #=============================================================================
@@ -5832,7 +5858,7 @@ phonesensors_raw: cmake_check_build_system
 
 # fast build rule for target.
 phonesensors_raw/fast:
-	$(MAKE) -f packages/smartphones/smartphone_localizer/CMakeFiles/phonesensors_raw.dir/build.make packages/smartphones/smartphone_localizer/CMakeFiles/phonesensors_raw.dir/build
+	$(MAKE) -f packages/mypkg/smartphone_localizer/CMakeFiles/phonesensors_raw.dir/build.make packages/mypkg/smartphone_localizer/CMakeFiles/phonesensors_raw.dir/build
 .PHONY : phonesensors_raw/fast
 
 #=============================================================================
@@ -7774,9 +7800,11 @@ help:
 	@echo "... run_tests_lidar_shape_estimation_rostest"
 	@echo "... _run_tests_lidar_shape_estimation"
 	@echo "... _run_tests_lidar_shape_estimation_rostest"
+	@echo "... node_name"
 	@echo "... mkz_setup"
-	@echo "... prius_setup"
 	@echo "... connection_client_setup"
+	@echo "... prius_setup"
+	@echo "... android_setup"
 	@echo "... lidar_fake_perception_node"
 	@echo "... range_vision_fusion"
 	@echo "... range_vision_fusion_lib"

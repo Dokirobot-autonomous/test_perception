@@ -1,0 +1,48 @@
+<!-- -->
+<launch>
+  <rosparam param="/use_sim_time">true</rosparam>
+  <arg name="device_name" />
+  <arg name="no" default=""/>
+  <arg name="use_imu" default="true"/>
+  <arg name="use_magnetic" default="true"/>
+  <arg name="use_gps" default="true"/>
+  <arg name="use_gnssraw_fix" default="true"/>
+  <arg name="use_gnssraw_acceleration" default="true"/>
+  <arg name="use_vehicle_perception" default="true"/>
+
+  <arg name="pf_particle_size" default="200"/>
+  <arg name="pf_initial_xy_radius" default="2.0"/>
+  <arg name="pf_initial_r_radius" default="45"/>
+  <arg name="pf_initial_v_radius" default="0.01"/>
+  <arg name="pf_gyro_sd" default="0.1" />
+  <arg name="pf_trans_v_sd" default="0.1" /> <!-- [m/s] -->
+  <arg name="pf_sys_noise_sd" default="0.05,0.05,0.087263889,0.1,0.00001" />
+  <arg name="pf_gps_xy_bias" default="0" />
+  <arg name="pf_gps_xy_sd" default="1.5" />
+  <arg name="pf_gnssraw_vr_sd" default="0.1"/>
+  <arg name="pf_vehicle_perception_r_sd" default="0.034905556"/> <!-- 2[deg] -->
+  <arg name="output" default="log" />
+
+
+  <node pkg="smartphone_localizer" type="phone_localizer" name="phone_localizer_node" output="$(arg output)" ns="$(arg device_name)$(arg no)">
+    <param name="phone_name" value="$(arg device_name)" />
+    <param name="use_imu" value="$(arg use_imu)" />
+    <param name="use_magnetic" value="$(arg use_magnetic)" />
+    <param name="use_gps" value="$(arg use_gps)" />
+    <param name="use_gnssraw_fix" value="$(arg use_gnssraw_fix)" />
+    <param name="use_gnssraw_acceleration" value="$(arg use_gnssraw_acceleration)" />
+    <param name="use_vehicle_perception" value="$(arg use_vehicle_perception)" />
+    <param name="particlefilter_particle_size" value="$(arg pf_particle_size)"/>
+    <param name="particlefilter_initial_xy_radius" value="$(arg pf_initial_xy_radius)"/>
+    <param name="particlefilter_initial_r_radius" value="$(arg pf_initial_r_radius)"/>
+    <param name="particlefilter_initial_v_radius" value="$(arg pf_initial_v_radius)"/>
+    <param name="particlefilter_gyro_standard_deviation" value="$(arg pf_gyro_sd)" />
+    <param name="particlefilter_transition_v_standard_deviation" value="$(arg pf_trans_v_sd)" />
+    <param name="particlefilter_system_noise_standard_deviation" value="$(arg pf_sys_noise_sd)" />
+    <param name="particlefitler_gps_xy_bias" value="$(arg pf_gps_xy_bias)" />
+    <param name="particlefitler_gps_xy_standard_deviation" value="$(arg pf_gps_xy_sd)" />
+    <param name="particlefitler_gnssraw_vr_standard_deviation" value="$(arg pf_gnssraw_vr_sd)"/>
+    <param name="particlefilter_vehicle_perception_r_statndard_deviation" value="$(arg pf_vehicle_perception_r_sd)"/>
+  </node>
+
+</launch>

@@ -1,0 +1,21 @@
+<!-- -->
+<launch>
+
+  <!-- 1-2019-12-13-10-25-02 -->
+  <arg name="s" default="35"/>
+  <include file="/home/ohashi/test_perception/src/dataset/UCB/191213/1-2019-12-13-10-25-02.launch"> <!-- rosbag play -->
+    <arg name="s" value="$(arg s)"/>
+  </include>
+  <include file="$(find smartphone_localizer)/launch/phone_localizer.launch">
+    <arg name="device_name" value="android/galaxy1" />
+    <arg name="output" value="screen" />
+    <arg name="pf_gps_xy_bias" value="0.0"/>
+    <arg name="use_imu" default="true"/>
+    <arg name="use_magnetic" default="true"/>
+    <arg name="use_gps" default="true"/>
+    <arg name="use_gnssraw_fix" default="false"/>
+    <arg name="use_gnssraw_acceleration" default="false"/>
+    <arg name="use_vehicle_perception" default="true"/>
+  </include>
+
+</launch>

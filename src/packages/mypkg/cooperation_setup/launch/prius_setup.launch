@@ -1,0 +1,7 @@
+<!-- -->
+<launch>
+
+  <node pkg="cooperation_setup" type="prius_setup" name="prius_setup" output="screen">
+  </node>
+
+</launch>

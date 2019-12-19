@@ -1,0 +1,100 @@
+<!-- -->
+<launch>
+
+    <!-- 1-2019-12-13-10-25-02 -->
+    <arg name="vehicle_name1" default="mkz"/>
+    <arg name="vehicle_name2" default="prius"/>
+    <arg name="phone_name" default="android/galaxy1"/>
+    <include file="/home/ohashi/test_perception/src/dataset/UCB/191213/1-2019-12-13-10-25-02.launch"> <!-- rosbag play -->
+        <arg name="s" value="35"/>
+    </include>
+    <include file="$(find smartphone_localizer)/launch/phone_localizer.launch">
+        <arg name="device_name" value="$(arg phone_name)" />
+        <arg name="output" value="log" />
+        <arg name="pf_gps_xy_bias" value="10.0"/>
+        <arg name="use_imu" default="true"/>
+        <arg name="use_magnetic" default="true"/>
+        <arg name="use_gps" default="true"/>
+        <arg name="use_gnssraw_fix" default="false"/>
+        <arg name="use_gnssraw_acceleration" default="true"/>
+        <arg name="use_vehicle_perception" default="true"/>
+    </include>
+    <group ns="$(arg vehicle_name1)">
+        <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch" >
+            <arg name="points_src" value="points_raw"/>
+            <arg name="output" value="log"/>
+        </include>
+        <include file="$(find lidar_imm_ukf_pda_track)/launch/lidar_imm_ukf_pda_track.launch"/>
+        <include file="$(find smartphone_localizer)/launch/vehicle_phones_manager.launch">
+            <arg name="vehicle_name" value="$(arg vehicle_name1)"/>
+            <arg name="phone_names" value="$(arg phone_name)"/>
+            <arg name="output" value="log"/>
+        </include>
+    </group>
+    <group ns="$(arg vehicle_name2)">
+        <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch" >
+            <arg name="points_src" value="rslidar_points"/>
+            <arg name="output" value="log"/>
+        </include>
+        <include file="$(find lidar_imm_ukf_pda_track)/launch/lidar_imm_ukf_pda_track.launch">
+            <arg name="name_space" value="$(arg vehicle_name2)"/>
+        </include>
+        <!--
+                <include file="$(find smartphone_localizer)/launch/vehicle_phones_manager.launch">
+                    <arg name="vehicle_name" value="$(arg vehicle_name)"/>
+                    <arg name="phone_names" value="$(arg phone_name)"/>
+                    <arg name="output" value="log"/>
+                </include>
+        -->
+    </group>
+
+    <!-- 2-2019-12-13-10-34-19 -->
+<!--
+    <arg name="vehicle_name1" default="mkz"/>
+    <arg name="vehicle_name2" default="prius"/>
+    <arg name="phone_name" default="android/galaxy1"/>
+    <include file="/home/ohashi/test_perception/src/dataset/UCB/191213/2-2019-12-13-10-34-19.launch"> &lt;!&ndash; rosbag play &ndash;&gt;
+        <arg name="s" value="35"/>
+    </include>
+    <include file="$(find smartphone_localizer)/launch/phone_localizer.launch">
+        <arg name="device_name" value="$(arg phone_name)" />
+        <arg name="output" value="log" />
+        <arg name="pf_gps_xy_bias" value="10.0"/>
+        <arg name="use_imu" default="true"/>
+        <arg name="use_magnetic" default="true"/>
+        <arg name="use_gps" default="true"/>
+        <arg name="use_gnssraw_fix" default="false"/>
+        <arg name="use_gnssraw_acceleration" default="true"/>
+        <arg name="use_vehicle_perception" default="true"/>
+    </include>
+    <group ns="$(arg vehicle_name1)">
+        <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch" >
+            <arg name="points_src" value="points_raw"/>
+            <arg name="output" value="log"/>
+        </include>
+        <include file="$(find lidar_imm_ukf_pda_track)/launch/lidar_imm_ukf_pda_track.launch"/>
+        <include file="$(find smartphone_localizer)/launch/vehicle_phones_manager.launch">
+            <arg name="vehicle_name" value="$(arg vehicle_name1)"/>
+            <arg name="phone_names" value="$(arg phone_name)"/>
+            <arg name="output" value="log"/>
+        </include>
+    </group>
+    <group ns="$(arg vehicle_name2)">
+        <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch" >
+            <arg name="points_src" value="rslidar_points"/>
+            <arg name="output" value="log"/>
+        </include>
+        <include file="$(find lidar_imm_ukf_pda_track)/launch/lidar_imm_ukf_pda_track.launch">
+            <arg name="name_space" value="$(arg vehicle_name2)"/>
+        </include>
+        &lt;!&ndash;
+                <include file="$(find smartphone_localizer)/launch/vehicle_phones_manager.launch">
+                    <arg name="vehicle_name" value="$(arg vehicle_name)"/>
+                    <arg name="phone_names" value="$(arg phone_name)"/>
+                    <arg name="output" value="log"/>
+                </include>
+        &ndash;&gt;
+    </group>
+-->
+
+</launch>

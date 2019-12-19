@@ -958,10 +958,16 @@ catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
 
 //Value Computed by CMake
-cooperation_setup_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/cooperation/cooperation_setup
+cooperation_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/mypkg/cooperation
 
 //Value Computed by CMake
-cooperation_setup_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/cooperation/cooperation_setup
+cooperation_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/mypkg/cooperation
+
+//Value Computed by CMake
+cooperation_setup_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/mypkg/cooperation_setup
+
+//Value Computed by CMake
+cooperation_setup_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/mypkg/cooperation_setup
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
@@ -1214,6 +1220,12 @@ lidar_fake_perception_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-b
 lidar_fake_perception_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/perception/lidar_detector/packages/lidar_fake_perception
 
 //Value Computed by CMake
+lidar_imm_ukf_pda_track_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track
+
+//Value Computed by CMake
+lidar_imm_ukf_pda_track_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track
+
+//Value Computed by CMake
 lidar_naive_l_shape_detect_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect
 
 //Value Computed by CMake
@@ -1424,10 +1436,10 @@ rviz_DIR:PATH=/opt/ros/kinetic/share/rviz/cmake
 sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
 
 //Value Computed by CMake
-smartphone_localizer_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/smartphones/smartphone_localizer
+smartphone_localizer_BINARY_DIR:STATIC=/home/ohashi/test_perception/src/cmake-build-debug/packages/mypkg/smartphone_localizer
 
 //Value Computed by CMake
-smartphone_localizer_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/smartphones/smartphone_localizer
+smartphone_localizer_SOURCE_DIR:STATIC=/home/ohashi/test_perception/src/packages/mypkg/smartphone_localizer
 
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/kinetic/share/smclib/cmake
@@ -1773,7 +1785,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=43
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=44
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
