@@ -20,10 +20,12 @@
 #include <geometry_msgs/TransformStamped.h>
 #include <geometry_msgs/QuaternionStamped.h>
 #include <std_msgs/String.h>
+#include <sensor_msgs/Imu.h>
 
 #include "cooperation_setup/geo_pos_conv.hpp"
 
 #define TOPIC_NAME_NMEA "nmea_sentence"
+#define TOPIC_NAME_IMU "xsens/imu/data"
 #define TOPIC_NAME_ORIGIN "origin"
 #define FRAME_NAME_PRIUS_ORIGIN "/prius/my_frame"
 #define FRAME_NAME_MKZ_ORIGIN "/mkz/my_frame"
@@ -37,22 +39,24 @@ public:
     ~MKZSetup();
 
     void callback_nmea(const nmea_msgs::Sentence::ConstPtr &msg);
+    void callback_imu(const sensor_msgs::Imu::ConstPtr &msg);
 
 
 private:
 
     ros::NodeHandle nh;
     ros::NodeHandle private_nh;
-    ros::Publisher pub_init_fix;
+    ros::Publisher pub_origin_fix;
 
     std::string origin_fix_str;
     std::string origin_quat_str;
     geo_pos_conv geo;
 
     nmea_msgs::Sentence msg_nmea;
-    std_msgs::String msg_origin;
+    sensor_msgs::Imu msg_imu;
+    sensor_msgs::NavSatFix msg_origin_fix;
 
-    bool update_nmea;
+    bool update_nmea,update_imu;
 
 };
 
@@ -80,8 +84,8 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
 
     double fix[3];
     {
-        ros::Subscriber sub_fix = nh.subscribe(TOPIC_NAME_NMEA, 10, &MKZSetup::callback_nmea, this);
-        ros::Rate loop_rate(10);
+        ros::Subscriber sub_fix = nh.subscribe(TOPIC_NAME_NMEA, 100, &MKZSetup::callback_nmea, this);
+        ros::Rate loop_rate(1000);
         std::string key = "<     SOL_COMPUTED PPP ";
         while (ros::ok()) {
             ros::spinOnce();
@@ -111,7 +115,7 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
     std::string from = FRAME_NAME_PRIUS_ORIGIN;
     std::string to = FRAME_NAME_MKZ_ORIGIN;
 
-    static_transformStamped.header.stamp = ros::Time::now();
+    static_transformStamped.header.frame_id=msg_nmea.header.frame_id;
     static_transformStamped.header.frame_id = from;
     static_transformStamped.child_frame_id = to;
     static_transformStamped.transform.translation.x = geo.y();
@@ -124,11 +128,13 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
     static_broadcaster.sendTransform(static_transformStamped);
     ROS_INFO("Spinning until killed publishing %s to %s", from.c_str(), to.c_str());
 
-    msg_origin.data=origin_fix_str+","+origin_quat_str;
+    pub_origin_fix = nh.advertise<sensor_msgs::NavSatFix>(TOPIC_NAME_ORIGIN, 1, true);
+    msg_origin_fix.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
+    msg_origin_fix.latitude=fix[0];
+    msg_origin_fix.longitude=fix[1];
+    msg_origin_fix.altitude=fix[2];
 
-    pub_init_fix = nh.advertise<std_msgs::String>(TOPIC_NAME_ORIGIN, 1, true);
-
-    pub_init_fix.publish(msg_origin);
+    pub_origin_fix.publish(msg_origin_fix);
 
     ros::spin();
 }
@@ -147,6 +153,18 @@ void MKZSetup::callback_nmea(const nmea_msgs::Sentence::ConstPtr &msg) {
     ROS_DEBUG("%s", __FUNCTION__);
     msg_nmea = *msg;
     update_nmea = true;
+
+}
+
+/**
+ * callback_fix
+ * @param msg
+ */
+void MKZSetup::callback_imu(const sensor_msgs::Imu::ConstPtr & msg) {
+
+    ROS_DEBUG("%s", __FUNCTION__);
+    msg_imu = *msg;
+    update_imu = true;
 
 }
 

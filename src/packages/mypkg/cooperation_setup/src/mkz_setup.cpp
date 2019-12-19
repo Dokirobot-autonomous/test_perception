@@ -20,13 +20,16 @@
 #include <geometry_msgs/TransformStamped.h>
 #include <geometry_msgs/QuaternionStamped.h>
 #include <std_msgs/String.h>
+#include <sensor_msgs/Imu.h>
 
 #include "cooperation_setup/geo_pos_conv.hpp"
 
 #define TOPIC_NAME_NMEA "nmea_sentence"
-#define TOPIC_NAME_ORIGIN "origin"
-#define FRAME_NAME_PRIUS_ORIGIN "/prius/my_frame"
-#define FRAME_NAME_MKZ_ORIGIN "/mkz/my_frame"
+#define TOPIC_NAME_IMU "xsens/imu/data"
+#define TOPIC_NAME_ORIGIN "init"
+//#define FRAME_NAME_PRIUS_ORIGIN "/prius/my_frame"
+#define FRAME_NAME_MKZ_ORIGIN "mkz/my_frame"
+#define FRAME_NMAE_MKZ_GPSIMU "mkz/gps_imu"
 
 class MKZSetup {
 
@@ -37,22 +40,27 @@ public:
     ~MKZSetup();
 
     void callback_nmea(const nmea_msgs::Sentence::ConstPtr &msg);
+    void callback_imu(const sensor_msgs::Imu::ConstPtr &msg);
 
+    void run();
 
 private:
 
     ros::NodeHandle nh;
     ros::NodeHandle private_nh;
-    ros::Publisher pub_origin_fix;
+    ros::Publisher pub_init_fix,pub_init_imu,pub_odom;
+    ros::Subscriber sub_nmea,sub_imu;
+    ros::Time current;
 
-    std::string origin_fix_str;
-    std::string origin_quat_str;
     geo_pos_conv geo;
 
     nmea_msgs::Sentence msg_nmea;
-    sensor_msgs::NavSatFix msg_origin_fix;
+    double fix[3];
+    sensor_msgs::Imu msg_imu;
+    sensor_msgs::NavSatFix msg_init_fix;
+    sensor_msgs::Imu msg_init_imu;
 
-    bool update_nmea;
+    bool update_nmea,update_imu;
 
 };
 
@@ -61,78 +69,9 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
 
     ROS_DEBUG("%s", __FUNCTION__);
 
-    /** Set parameter **/
-    if (!nh.getParam("origin_fix", origin_fix_str)) {
-        ROS_ERROR("Non \"origin_fix\"");
-        exit(-1);
-    }
-    if (!nh.getParam("origin_quat", origin_quat_str)) {
-        ROS_ERROR("Non \"origin_quat\"");
-        exit(-1);
-    }
+    sub_nmea=nh.subscribe(TOPIC_NAME_NMEA, 100, &MKZSetup::callback_nmea, this);
+    sub_imu=nh.subscribe(TOPIC_NAME_IMU,100,&MKZSetup::callback_imu,this);
 
-    double origin_fix[3];
-    sscanf(origin_fix_str.c_str(), "%lf,%lf,%lf", &origin_fix[0], &origin_fix[1], &origin_fix[2]);
-    geo.set_plane(origin_fix[0], origin_fix[1]);
-    double origin_quat[4];
-    sscanf(origin_quat_str.c_str(), "%lf,%lf,%lf,%lf", &origin_quat[0], &origin_quat[1], &origin_quat[2],
-           &origin_quat[3]);
-
-    double fix[3];
-    {
-        ros::Subscriber sub_fix = nh.subscribe(TOPIC_NAME_NMEA, 100, &MKZSetup::callback_nmea, this);
-        ros::Rate loop_rate(1000);
-        std::string key = "<     SOL_COMPUTED PPP ";
-        while (ros::ok()) {
-            ros::spinOnce();
-            if (update_nmea) {
-                std::string sen = msg_nmea.sentence;
-                size_t found = sen.find(key);
-                if (found != std::string::npos) {
-                    std::string sen_sub = sen.substr(key.size());
-                    std::cout << sen_sub << std::endl;
-                    sscanf(sen_sub.c_str(),"%lf %lf %lf",&fix[0],&fix[1],&fix[2]);
-                    break;
-                }
-                update_nmea = false;
-            }
-            loop_rate.sleep();
-        }
-    }
-
-    //// Set
-
-    geo.llh_to_xyz(fix[0], fix[1], fix[2]);
-
-    /** Set publisher **/
-    static tf2_ros::StaticTransformBroadcaster static_broadcaster;
-    geometry_msgs::TransformStamped static_transformStamped;
-
-    std::string from = FRAME_NAME_PRIUS_ORIGIN;
-    std::string to = FRAME_NAME_MKZ_ORIGIN;
-
-    static_transformStamped.header.frame_id=msg_nmea.header.frame_id;
-    static_transformStamped.header.frame_id = from;
-    static_transformStamped.child_frame_id = to;
-    static_transformStamped.transform.translation.x = geo.y();
-    static_transformStamped.transform.translation.y = -geo.x();
-    static_transformStamped.transform.translation.z = geo.z();
-    static_transformStamped.transform.rotation.x = origin_quat[0];
-    static_transformStamped.transform.rotation.y = origin_quat[1];
-    static_transformStamped.transform.rotation.z = origin_quat[2];
-    static_transformStamped.transform.rotation.w = origin_quat[3];
-    static_broadcaster.sendTransform(static_transformStamped);
-    ROS_INFO("Spinning until killed publishing %s to %s", from.c_str(), to.c_str());
-
-    pub_origin_fix = nh.advertise<sensor_msgs::NavSatFix>(TOPIC_NAME_ORIGIN, 1, true);
-    msg_origin_fix.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
-    msg_origin_fix.latitude=fix[0];
-    msg_origin_fix.longitude=fix[1];
-    msg_origin_fix.altitude=fix[2];
-
-    pub_origin_fix.publish(msg_origin_fix);
-
-    ros::spin();
 }
 
 /**
@@ -147,8 +86,80 @@ MKZSetup::~MKZSetup() {}
 void MKZSetup::callback_nmea(const nmea_msgs::Sentence::ConstPtr &msg) {
 
     ROS_DEBUG("%s", __FUNCTION__);
+
+    static std::string key = "<     SOL_COMPUTED PPP ";
+
     msg_nmea = *msg;
-    update_nmea = true;
+    std::string sen = msg_nmea.sentence;
+    size_t found = sen.find(key);
+    if (found != std::string::npos) {
+        std::string sen_sub = sen.substr(key.size());
+        sscanf(sen_sub.c_str(), "%lf %lf %lf", &fix[0], &fix[1], &fix[2]);
+        current=msg_nmea.header.stamp;
+        update_nmea = true;
+        run();
+    }
+}
+
+/**
+ * callback_fix
+ * @param msg
+ */
+void MKZSetup::callback_imu(const sensor_msgs::Imu::ConstPtr & msg) {
+
+    ROS_DEBUG("%s", __FUNCTION__);
+    msg_imu = *msg;
+    current=msg_imu.header.stamp;
+    update_imu = true;
+    run();
+}
+
+/**
+ *
+ */
+void MKZSetup::run() {
+
+    ROS_DEBUG("%s", __FUNCTION__);
+
+    static bool init=true;
+    if(init){
+        if(update_nmea && update_imu){
+
+            geo.set_plane(fix[0], fix[1]);
+            msg_init_fix.header=msg_nmea.header;
+            msg_init_fix.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
+            msg_init_fix.latitude=fix[0];
+            msg_init_fix.longitude=fix[1];
+            msg_init_fix.altitude=fix[2];
+            pub_init_fix.publish(msg_init_fix);
+
+            msg_init_imu=msg_imu;
+            pub_init_imu.publish(msg_init_imu);
+
+            init=false;
+        }
+        else{
+            return;
+        }
+    }
+
+    geo.llh_to_xyz(fix[0],fix[1],fix[2]);
+
+    static int seq=0;
+    nav_msgs::Odometry odom;
+    odom.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
+    odom.header.stamp=current;
+    odom.header.seq=seq;
+    seq++;
+    odom.child_frame_id=FRAME_NMAE_MKZ_GPSIMU;
+    odom.pose.pose.position.x=geo.y();
+    odom.pose.pose.position.y=-geo.x();
+    odom.pose.pose.position.z=geo.z();
+    odom.pose.pose.orientation=msg_imu.orientation;
+    pub_odom.publish(odom);
+
+    update_nmea=false;
+    update_imu=false;
 
 }
 
