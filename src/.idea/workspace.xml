@@ -564,11 +564,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78db5cd5-c846-4ce4-9116-08869ba8c3a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp.bkup191218" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_setup.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mkz_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mkz_setup.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/prius_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/prius_setup.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/android_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/android_setup.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp.bkup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/prius_setup.cpp.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/prius_setup.cpp.bkup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/src/caffe/net.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/src/caffe/net.cpp" afterDir="false" />
@@ -622,7 +623,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -634,11 +635,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch" />
       <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src" />
       <recent name="$PROJECT_DIR$/dataset/UCB/191213" />
       <recent name="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch" />
       <recent name="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch" />
-      <recent name="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/packages/mypkg" />
@@ -4082,7 +4083,7 @@
       <workItem from="1576538142918" duration="20562000" />
       <workItem from="1576608909794" duration="13691000" />
       <workItem from="1576623414282" duration="17729000" />
-      <workItem from="1576719835163" duration="2647000" />
+      <workItem from="1576719835163" duration="5189000" />
     </task>
     <servers />
   </component>

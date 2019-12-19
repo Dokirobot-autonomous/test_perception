@@ -1,7 +1,17 @@
 <!-- -->
 <launch>
 
+  <arg name="android-dt" default="$(find cooperation_setup)/"/>
+
   <node pkg="cooperation_setup" type="prius_setup" name="prius_setup" output="screen">
   </node>
+  <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="screen">
+    <param name="ifpath" value="$(arg android-dt)/" />
+    <!--
+    <param name="date" value="2019-12-16" />
+-->
+  </node>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_2_rslidar" args="1. -1. 0. -1.5707 0. 0. /base_link /rslidar" required="true"/>
+
 
 </launch>

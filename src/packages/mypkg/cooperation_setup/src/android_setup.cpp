@@ -48,11 +48,11 @@ AndroidSetup::AndroidSetup() : nh(), private_nh(ros::NodeHandle("~")) {
         time_t now = std::time(nullptr);
         struct tm *localNow = std::localtime(&now);
         char date_char[50];
-        sprintf(date_char, "%d-%02d-%02d-android-dt", localNow->tm_year+1900, localNow->tm_mon+1, localNow->tm_mday);
+        sprintf(date_char, "%d-%02d-%02d", localNow->tm_year+1900, localNow->tm_mon+1, localNow->tm_mday);
         date_str=date_char;
     }
 
-    std::string ifname=ifpath+"."+date_str+".txt";
+    std::string ifname=ifpath+"."+date_str+"-android-dt.txt";
     std::ifstream ifs(ifname);
     if(ifs.fail()){
         ROS_ERROR("No \"%s\"",ifname.c_str());

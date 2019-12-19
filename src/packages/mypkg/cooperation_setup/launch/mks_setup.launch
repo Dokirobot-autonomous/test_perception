@@ -3,16 +3,11 @@
 
   <arg name="android-dt" default="$(find cooperation_setup)/"/>
 
-  <node pkg="cooperation_setup" type="mkz_setup" name="mkz_setup" output="screen">
-  </node>
   <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="screen">
     <param name="ifpath" value="$(arg android-dt)/" />
     <!--
         <param name="date" value="2019-12-16" />
     -->
   </node>
-  <node pkg="tf2_ros" type="static_transform_publisher" name="gps_imu_2_mkz_velodyne" args="0. 0. 0. 0. 0. 0. /gps_imu /mkz/velodyne" required="true"/>
-
-
 
 </launch>
