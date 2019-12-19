@@ -93,7 +93,7 @@
 #define PARTICLEFILTER_VEHICLE_PERCEPTION_V_STANDARD_DEVIATION 0.01                      //
 #define PARTICLEFILTER_VEHICLE_PERCEPTION_R_STANDARD_DEVIATION 2.0*M_PI/180                      //
 
-#define TOPIC_NAME_ORIGIN "/prius/origin"
+#define TOPIC_NAME_INIT_FIX "/prius/origin"
 #define TOPIC_NAME_IMU "imu"
 #define TOPIC_NAME_MAGNETIC "magnetic_field"
 #define TOPIC_NAME_GPS "fix"

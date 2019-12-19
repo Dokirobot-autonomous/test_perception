@@ -564,12 +564,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78db5cd5-c846-4ce4-9116-08869ba8c3a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_setup.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mkz_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mkz_setup.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/prius_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/prius_setup.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/android_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/android_setup.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/android_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/android_setup.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/mkz_setup.cpp.bkup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/prius_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/prius_setup.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/prius_setup.cpp.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/prius_setup.cpp.bkup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer/phone_localizer.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer/phone_localizer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/src/caffe/net.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/src/caffe/net.cpp" afterDir="false" />
@@ -4083,7 +4087,7 @@
       <workItem from="1576538142918" duration="20562000" />
       <workItem from="1576608909794" duration="13691000" />
       <workItem from="1576623414282" duration="17729000" />
-      <workItem from="1576719835163" duration="5189000" />
+      <workItem from="1576719835163" duration="8070000" />
     </task>
     <servers />
   </component>

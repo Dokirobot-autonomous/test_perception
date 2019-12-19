@@ -24,7 +24,7 @@
 #include "cooperation_setup/geo_pos_conv.hpp"
 
 #define TOPIC_NAME_NMEA "nmea_sentence"
-#define TOPIC_NAME_ORIGIN "origin"
+#define TOPIC_NAME_INIT_FIX "origin"
 #define FRAME_NAME_PRIUS_ORIGIN "/prius/my_frame"
 #define FRAME_NAME_MKZ_ORIGIN "/mkz/my_frame"
 
@@ -126,7 +126,7 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
 
     msg_origin.data=origin_fix_str+","+origin_quat_str;
 
-    pub_init_fix = nh.advertise<std_msgs::String>(TOPIC_NAME_ORIGIN, 1, true);
+    pub_init_fix = nh.advertise<std_msgs::String>(TOPIC_NAME_INIT_FIX, 1, true);
 
     pub_init_fix.publish(msg_origin);
 

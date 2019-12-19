@@ -67,7 +67,7 @@ AndroidSetup::AndroidSetup() : nh(), private_nh(ros::NodeHandle("~")) {
         std::istringstream iss(token);
         iss>>phone_name>>dt_s>>dt_nsec;
 
-        ros::Publisher pub=nh.advertise<std_msgs::Float64>("android/"+phone_name+"/"+"dt",1,true);
+        ros::Publisher pub=nh.advertise<std_msgs::Float64>("android/"+phone_name+"/dt_v2p",1,true);
 
         double dt=dt_s+dt_nsec*1E-9;
         std_msgs::Float64 msg;

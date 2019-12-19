@@ -21,6 +21,7 @@
 #include <geometry_msgs/QuaternionStamped.h>
 #include <std_msgs/String.h>
 #include <sensor_msgs/Imu.h>
+#include <geometry_msgs/QuaternionStamped.h>
 #include <tf2_ros/transform_broadcaster.h>
 
 #include "cooperation_setup/geo_pos_conv.hpp"
@@ -28,7 +29,7 @@
 #define TOPIC_NAME_NMEA "nmea_sentence"
 #define TOPIC_NAME_IMU "xsens/imu/data"
 #define TOPIC_NAME_INIT_FIX "init/fix"
-#define TOPIC_NAME_INIT_IMU "init/imu"
+#define TOPIC_NAME_INIT_QUAT "init/quat"
 #define TOPIC_NAME_ODOM "odom"
 //#define FRAME_NAME_PRIUS_ORIGIN "/prius/my_frame"
 #define FRAME_NAME_MKZ_ORIGIN "mkz/my_frame"
@@ -51,7 +52,7 @@ private:
 
     ros::NodeHandle nh;
     ros::NodeHandle private_nh;
-    ros::Publisher pub_init_fix,pub_init_imu,pub_odom;
+    ros::Publisher pub_init_fix,pub_init_quat,pub_odom;
     ros::Subscriber sub_nmea,sub_imu;
     ros::Time current;
 
@@ -63,7 +64,7 @@ private:
     double fix[3];
     sensor_msgs::Imu msg_imu;
     sensor_msgs::NavSatFix msg_init_fix;
-    sensor_msgs::Imu msg_init_imu;
+    geometry_msgs::QuaternionStamped msg_init_quat;
 
     bool update_nmea=false,update_imu=false;
 
@@ -74,8 +75,8 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
 
     ROS_DEBUG("%s", __FUNCTION__);
 
-    pub_init_fix=nh.advertise<sensor_msgs::NavSatFix>(TOPIC_NAME_INIT_FIX,100,true);
-    pub_init_imu=nh.advertise<sensor_msgs::Imu>(TOPIC_NAME_INIT_IMU,100,true);
+    pub_init_fix=nh.advertise<sensor_msgs::NavSatFix>(TOPIC_NAME_INIT_FIX,1,true);
+    pub_init_quat=nh.advertise<geometry_msgs::QuaternionStamped>(TOPIC_NAME_INIT_QUAT, 1, true);
     pub_odom=nh.advertise<nav_msgs::Odometry>(TOPIC_NAME_ODOM,100);
 
     sub_nmea=nh.subscribe(TOPIC_NAME_NMEA, 100, &MKZSetup::callback_nmea, this);
@@ -142,8 +143,10 @@ void MKZSetup::run() {
             msg_init_fix.altitude=fix[2];
             pub_init_fix.publish(msg_init_fix);
 
-            msg_init_imu=msg_imu;
-            pub_init_imu.publish(msg_init_imu);
+            msg_init_quat.header=msg_imu.header;
+            msg_init_quat.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
+            msg_init_quat.quaternion=msg_imu.orientation;
+            pub_init_quat.publish(msg_init_quat);
 
             init=false;
         }

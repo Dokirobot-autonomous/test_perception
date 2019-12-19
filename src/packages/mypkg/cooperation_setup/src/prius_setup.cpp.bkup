@@ -21,7 +21,7 @@
 
 #define TOPIC_NAME_ODOM "navsat/odom"
 #define TOPIC_NAME_FIX "navsat/fix"
-#define TOPIC_NAME_ORIGIN "/prius/origin"
+#define TOPIC_NAME_INIT_FIX "/prius/origin"
 #define FRAME_NAME_PRIUS_ORIGIN "/prius/my_frame"
 #define FRAME_NAME_ODOM "odom"
 
@@ -97,7 +97,7 @@ PriusSetup::PriusSetup() : nh(), private_nh(ros::NodeHandle("~")),
     static_broadcaster.sendTransform(static_transformStamped);
     ROS_INFO("Spinning until killed publishing %s to %s", from.c_str(), to.c_str());
 
-    pub_init_fix = nh.advertise<std_msgs::String>(TOPIC_NAME_ORIGIN, 1, true);
+    pub_init_fix = nh.advertise<std_msgs::String>(TOPIC_NAME_INIT_FIX, 1, true);
     std::ostringstream oss;
     oss << std::fixed << std::setprecision(10);
     oss << msg_fix.latitude << " " << msg_fix.longitude << " " << msg_fix.altitude << " "

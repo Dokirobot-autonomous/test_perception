@@ -1,5 +1,7 @@
 #! /bin/bash
 
+roscd cooperation_setup/run/
+
 if [ $# -ne 1 ]; then
   echo "Input phone name. "
   exit 1
