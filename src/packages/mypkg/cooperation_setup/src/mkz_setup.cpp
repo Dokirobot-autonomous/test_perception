@@ -24,10 +24,10 @@
 #include <geometry_msgs/QuaternionStamped.h>
 #include <tf2_ros/transform_broadcaster.h>
 
-#include "cooperation_setup/geo_pos_conv.hpp"
+#include <gnss/geo_pos_conv.hpp>
 
 #define TOPIC_NAME_NMEA "nmea_sentence"
-#define TOPIC_NAME_IMU "xsens/imu/data"
+#define TOPIC_NAME_SUB_IMU "xsens/imu/data"
 #define TOPIC_NAME_INIT_FIX "init/fix"
 #define TOPIC_NAME_INIT_QUAT "init/quat"
 #define TOPIC_NAME_ODOM "odom"
@@ -52,7 +52,7 @@ private:
 
     ros::NodeHandle nh;
     ros::NodeHandle private_nh;
-    ros::Publisher pub_init_fix,pub_init_quat,pub_odom;
+    ros::Publisher pub_fix,pub_init_quat,pub_odom;
     ros::Subscriber sub_nmea,sub_imu;
     ros::Time current;
 
@@ -63,7 +63,7 @@ private:
     nmea_msgs::Sentence msg_nmea;
     double fix[3];
     sensor_msgs::Imu msg_imu;
-    sensor_msgs::NavSatFix msg_init_fix;
+    sensor_msgs::NavSatFix msg_fix;
     geometry_msgs::QuaternionStamped msg_init_quat;
 
     bool update_nmea=false,update_imu=false;
@@ -75,12 +75,12 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
 
     ROS_DEBUG("%s", __FUNCTION__);
 
-    pub_init_fix=nh.advertise<sensor_msgs::NavSatFix>(TOPIC_NAME_INIT_FIX,1,true);
+    pub_fix=nh.advertise<sensor_msgs::NavSatFix>(TOPIC_NAME_INIT_FIX, 1, true);
     pub_init_quat=nh.advertise<geometry_msgs::QuaternionStamped>(TOPIC_NAME_INIT_QUAT, 1, true);
     pub_odom=nh.advertise<nav_msgs::Odometry>(TOPIC_NAME_ODOM,100);
 
     sub_nmea=nh.subscribe(TOPIC_NAME_NMEA, 100, &MKZSetup::callback_nmea, this);
-    sub_imu=nh.subscribe(TOPIC_NAME_IMU,100,&MKZSetup::callback_imu,this);
+    sub_imu=nh.subscribe(TOPIC_NAME_SUB_IMU, 100, &MKZSetup::callback_imu, this);
 
 }
 
@@ -136,12 +136,12 @@ void MKZSetup::run() {
         if(update_nmea && update_imu){
 
             geo.set_plane(fix[0], fix[1]);
-            msg_init_fix.header=msg_nmea.header;
-            msg_init_fix.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
-            msg_init_fix.latitude=fix[0];
-            msg_init_fix.longitude=fix[1];
-            msg_init_fix.altitude=fix[2];
-            pub_init_fix.publish(msg_init_fix);
+            msg_fix.header=msg_nmea.header;
+            msg_fix.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
+            msg_fix.latitude=fix[0];
+            msg_fix.longitude=fix[1];
+            msg_fix.altitude=fix[2];
+            pub_fix.publish(msg_fix);
 
             msg_init_quat.header=msg_imu.header;
             msg_init_quat.header.frame_id=FRAME_NAME_MKZ_ORIGIN;
@@ -155,7 +155,7 @@ void MKZSetup::run() {
         }
     }
 
-    geo.llh_to_xyz(fix[0],fix[1],fix[2]);
+    geo.llh_to_xyz_us(fix[0],fix[1],fix[2]);
 
     static int seq=0;
     nav_msgs::Odometry odom;

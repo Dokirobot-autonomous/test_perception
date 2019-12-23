@@ -82,7 +82,7 @@
 #define PARTICLEFILTER_PERCEPTION_V_TH 1.0                      // 5.0[m/s]
 
 
-#define TOPIC_NAME_IMU "/android/imu"
+#define TOPIC_NAME_SUB_IMU "/android/imu"
 #define TOPIC_NAME_MAGNETIC "/android/magnetic_field"
 #define TOPIC_NAME_GPS "/android/fix"
 #define TOPIC_NAMES_MKZ_PERCEPTION "/detection/object_tracker/objects"
@@ -232,7 +232,7 @@ Localizer::Localizer() : nh(), private_nh(ros::NodeHandle("~")),
         use_vehicle_perception=USE_VEHICLE_PERCEPTION;
     }
     if(use_imu){
-        sub_imu = nh.subscribe(TOPIC_NAME_IMU, 1, &Localizer::callback_imu, this);
+        sub_imu = nh.subscribe(TOPIC_NAME_SUB_IMU, 1, &Localizer::callback_imu, this);
     }
     if(use_mag){
         sub_magnetic = nh.subscribe(TOPIC_NAME_MAGNETIC, 1, &Localizer::callback_magnetic, this);

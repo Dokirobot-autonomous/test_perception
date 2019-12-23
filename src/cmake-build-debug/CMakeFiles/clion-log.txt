@@ -28,7 +28,8 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- BUILD_SHARED_LIBS is on
 -- BUILD_SHARED_LIBS is on
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--- ~~  traversing 41 packages in topological order:
+-- ~~  traversing 46 packages in topological order:
+-- ~~  - imu_tools (metapackage)
 -- ~~  - autoware_config_msgs
 -- ~~  - dbw_mkz_msgs
 -- ~~  - autoware_system_msgs
@@ -40,13 +41,16 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- ~~  - obj_db
 -- ~~  - autoware_msgs
 -- ~~  - detected_objects_visualizer
+-- ~~  - imu_complementary_filter
 -- ~~  - lidar_naive_l_shape_detect
 -- ~~  - lidar_point_pillars
 -- ~~  - pixel_cloud_fusion
 -- ~~  - roi_object_filter
+-- ~~  - imu_filter_madgwick
 -- ~~  - lidar_shape_estimation
 -- ~~  - cooperation
 -- ~~  - cooperation_setup
+-- ~~  - gnss_imu_localizer
 -- ~~  - lidar_apollo_cnn_seg_detect
 -- ~~  - lidar_fake_perception
 -- ~~  - range_vision_fusion
@@ -57,6 +61,7 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- ~~  - autoware_health_checker
 -- ~~  - pos_db
 -- ~~  - rosbag_controller
+-- ~~  - rviz_imu_plugin
 -- ~~  - vector_map
 -- ~~  - lidar_imm_ukf_pda_track
 -- ~~  - map_file
@@ -71,6 +76,8 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- ~~  - vision_segment_enet_detect
 -- ~~  - vision_ssd_detect
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin metapackage: 'imu_tools'
+-- ==> add_subdirectory(packages/localization/imu_tools/imu_tools)
 -- +++ processing catkin package: 'autoware_config_msgs'
 -- ==> add_subdirectory(msgs/autoware_config_msgs)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
@@ -130,6 +137,10 @@ In file included from /home/ohashi/test_perception/src/packages/perception/visio
 -- +++ processing catkin package: 'detected_objects_visualizer'
 -- ==> add_subdirectory(packages/perception/visualizers/packages/detected_objects_visualizer)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'imu_complementary_filter'
+-- ==> add_subdirectory(packages/localization/imu_tools/imu_complementary_filter)
+-- Found Boost: /usr/include (found version "1.58.0") found components:  thread chrono system date_time atomic 
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 -- +++ processing catkin package: 'lidar_naive_l_shape_detect'
 -- ==> add_subdirectory(packages/perception/lidar_detector/packages/lidar_naive_l_shape_detect)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
@@ -148,6 +159,7 @@ CUDNN_LIBRARY: /usr/lib/x86_64-linux-gnu/libcudnn.so
 -- +++ processing catkin package: 'pixel_cloud_fusion'
 -- ==> add_subdirectory(packages/perception/fusion_tools/packages/pixel_cloud_fusion)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Found Boost: /usr/include (found suitable version "1.58.0", minimum required is "1.40.0") found components:  system filesystem thread date_time iostreams serialization chrono atomic regex 
 -- Checking for module 'libopenni2'
 --   No package 'libopenni2' found
 -- Could NOT find OpenNI2 (missing: OPENNI2_LIBRARY OPENNI2_INCLUDE_DIRS) 
@@ -203,9 +215,14 @@ but not all the files it references.
 -- +++ processing catkin package: 'roi_object_filter'
 -- ==> add_subdirectory(packages/perception/object_filter/packages/roi_object_filter)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'imu_filter_madgwick'
+-- ==> add_subdirectory(packages/localization/imu_tools/imu_filter_madgwick)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Found Boost: /usr/include (found version "1.58.0") found components:  system thread signals chrono date_time atomic 
 -- +++ processing catkin package: 'lidar_shape_estimation'
 -- ==> add_subdirectory(packages/perception/object_filter/packages/lidar_shape_estimation)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Found Boost: /usr/include (found suitable version "1.58.0", minimum required is "1.40.0") found components:  system filesystem thread date_time iostreams serialization chrono atomic regex 
 -- Checking for module 'libopenni2'
 --   No package 'libopenni2' found
 -- Could NOT find OpenNI2 (missing: OPENNI2_LIBRARY OPENNI2_INCLUDE_DIRS) 
@@ -264,6 +281,9 @@ but not all the files it references.
 -- +++ processing catkin package: 'cooperation_setup'
 -- ==> add_subdirectory(packages/mypkg/cooperation_setup)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'gnss_imu_localizer'
+-- ==> add_subdirectory(packages/localization/gnss_imu_localizer)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 -- +++ processing catkin package: 'lidar_apollo_cnn_seg_detect'
 -- ==> add_subdirectory(packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
@@ -302,6 +322,10 @@ LibSSH2 not found. pos_db package won't be built.
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 -- Using Qt5 based on the rviz_QT_VERSION: 5.5.1
 -- Found Boost: /usr/include (found version "1.58.0") found components:  date_time regex program_options filesystem thread system chrono atomic 
+-- +++ processing catkin package: 'rviz_imu_plugin'
+-- ==> add_subdirectory(packages/localization/imu_tools/rviz_imu_plugin)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Using Qt5 based on the rviz_QT_VERSION: 5.5.1
 -- +++ processing catkin package: 'vector_map'
 -- ==> add_subdirectory(packages/data/packages/vector_map)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy

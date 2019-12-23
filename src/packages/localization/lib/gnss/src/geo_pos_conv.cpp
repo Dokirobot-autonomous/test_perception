@@ -45,8 +45,8 @@ double geo_pos_conv::z() const
 
 void geo_pos_conv::set_plane(double lat, double lon)
 {
-  m_PLo = lat*M_PI/180;
-  m_PLato = lon*M_PI/180;
+    m_PLato = lat*M_PI/180.0;
+    m_PLo = lon*M_PI/180.0;
 }
 
 void geo_pos_conv::set_plane(int num)
@@ -187,8 +187,8 @@ void geo_pos_conv::set_plane(int num)
   }
 
   // swap longitude and latitude
-  m_PLo = M_PI * ((double)lat_deg + (double)lat_min / 60.0) / 180.0;
-  m_PLato = M_PI * ((double)lon_deg + (double)lon_min / 60.0) / 180;
+    m_PLato = M_PI * ((double)lat_deg + (double)lat_min / 60.0) / 180.0;
+    m_PLo = M_PI * ((double)lon_deg + (double)lon_min / 60.0) / 180;
 }
 
 void geo_pos_conv::set_xyz(double cx, double cy, double cz)
@@ -227,6 +227,15 @@ void geo_pos_conv::llh_to_xyz(double lat, double lon, double ele)
     m_h = ele;
 
     conv_llh2xyz();
+}
+
+void geo_pos_conv::llh_to_xyz_us(double lat, double lon, double ele){
+
+    m_lat=lat * M_PI / 180.0;
+    m_lon=lon * M_PI / 180.0;
+    m_h=ele;
+
+    conv_llh2xyz_us();
 }
 
 void geo_pos_conv::conv_llh2xyz(void)
@@ -327,6 +336,43 @@ void geo_pos_conv::conv_llh2xyz(void)
         Pmo;
 
   m_z = m_h;
+}
+
+void geo_pos_conv::conv_llh2xyz_us(void){
+
+    double R = 6378.137; // Radius of earth in KM
+    {
+        double dLat = 0.0;
+        double dLon = m_lon - m_PLo;
+        double a = std::sin(dLat / 2) * std::sin(dLat / 2) +
+                std::cos(m_PLato) * std::cos(m_lat) *
+                        std::sin(dLon / 2) * std::sin(dLon / 2);
+        double c = 2 * std::atan2(std::sqrt(a), std::sqrt(1 - a));
+        double d = R * c;
+        if(dLon>0){
+            m_x=d*1000.0;
+        }
+        else{
+            m_x=-d*1000.0;
+        }
+    }
+    {
+        double dLat = m_lat - m_PLato;
+        double dLon = 0.0;
+        double a = std::sin(dLat / 2) * std::sin(dLat / 2) +
+                std::cos(m_PLato) * std::cos(m_lat) *
+                        std::sin(dLon / 2) * std::sin(dLon / 2);
+        double c = 2 * std::atan2(std::sqrt(a), std::sqrt(1 - a));
+        double d = R * c;
+        if(dLat>0){
+            m_y=d*1000.0;
+        }
+        else{
+            m_y=-d*1000.0;
+        }
+    }
+    m_z=m_h;
+
 }
 
 void geo_pos_conv::conv_xyz2llh(void)

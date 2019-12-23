@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
         tf_conversions
         geometry_msgs
         autoware_msgs
+        gnss
         )
 
 find_package(Eigen3 QUIET)
@@ -49,7 +50,7 @@ include_directories(include include/autoware_msgs include/${PROJECT_NAME}/ ${cat
 
 SET(CMAKE_CXX_FLAGS "-O2 -g -Wall ${CMAKE_CXX_FLAGS}")
 
-add_executable(prius_setup src/prius_setup.cpp src/geo_pos_conv.cpp)
+add_executable(prius_setup src/prius_setup.cpp)
 target_link_libraries(prius_setup ${catkin_LIBRARIES})
 add_dependencies(prius_setup ${catkin_EXPORTED_TARGETS})
 install(TARGETS prius_setup
@@ -58,7 +59,7 @@ install(TARGETS prius_setup
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
 
-add_executable(mkz_setup src/mkz_setup.cpp src/geo_pos_conv.cpp)
+add_executable(mkz_setup src/mkz_setup.cpp)
 target_link_libraries(mkz_setup ${catkin_LIBRARIES})
 add_dependencies(mkz_setup ${catkin_EXPORTED_TARGETS})
 install(TARGETS mkz_setup
@@ -80,6 +81,24 @@ add_executable(android_setup src/android_setup.cpp)
 target_link_libraries(android_setup ${catkin_LIBRARIES})
 add_dependencies(android_setup ${catkin_EXPORTED_TARGETS})
 install(TARGETS android_setup
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
+add_executable(nmea2fix src/nmea2fix.cpp)
+target_link_libraries(nmea2fix ${catkin_LIBRARIES})
+add_dependencies(nmea2fix ${catkin_EXPORTED_TARGETS})
+install(TARGETS nmea2fix
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
+add_executable(fix_tf_publisher src/fix_tf_publisher.cpp)
+target_link_libraries(fix_tf_publisher ${catkin_LIBRARIES})
+add_dependencies(fix_tf_publisher ${catkin_EXPORTED_TARGETS})
+install(TARGETS fix_tf_publisher
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

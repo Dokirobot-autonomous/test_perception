@@ -37,7 +37,7 @@
 #define PHONE_FRAME_ID "imu"
 #define PERSON_FRAME_ID "person_sensor_raw"
 
-#define TOPIC_NAME_IMU "/android/imu"
+#define TOPIC_NAME_SUB_IMU "/android/imu"
 #define TOPIC_NAME_MAGNETIC "/android/magnetic_field"
 #define TOPIC_NAME_GPS "/android/fix"
 #define TOPIC_NAME_PUBLISH_ODOM "/phonesensors_raw/odom"
@@ -134,7 +134,7 @@ Localizer::Localizer() : nh(), private_nh(ros::NodeHandle("~")),
 //    accel.pose.position.z=0;
 
     /** Set subscriber **/
-    sub_imu = nh.subscribe(TOPIC_NAME_IMU, 1, &Localizer::callback_imu, this);
+    sub_imu = nh.subscribe(TOPIC_NAME_SUB_IMU, 1, &Localizer::callback_imu, this);
     sub_magnetic = nh.subscribe(TOPIC_NAME_MAGNETIC, 1, &Localizer::callback_magnetic, this);
     sub_gps=nh.subscribe(TOPIC_NAME_GPS, 1, &Localizer::callback_gps,this);
 

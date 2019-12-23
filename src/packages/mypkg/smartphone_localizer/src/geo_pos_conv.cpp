@@ -37,8 +37,8 @@ geo_pos_conv::geo_pos_conv()
 
 geo_pos_conv::geo_pos_conv(double lat, double lon)
 {
-    m_PLato = lat*M_PI/180;
-    m_PLo = lon*M_PI/180;
+    m_PLato = lat*M_PI/180.0;
+    m_PLo = lon*M_PI/180.0;
 }
 
 double geo_pos_conv::x() const
@@ -59,8 +59,8 @@ double geo_pos_conv::z() const
 
 void geo_pos_conv::set_plane(double lat, double lon)
 {
-  m_PLato = lat*M_PI/180;
-  m_PLo = lon*M_PI/180;
+  m_PLato = lat*M_PI/180.0;
+  m_PLo = lon*M_PI/180.0;
 }
 
 void geo_pos_conv::set_plane(int num)
@@ -245,8 +245,8 @@ void geo_pos_conv::set_llh_nmea_degrees(double latd, double lond, double h)
 
 void geo_pos_conv::llh_to_xyz(double lat, double lon, double ele)
 {
-  m_lat = lat * M_PI / 180;
-  m_lon = lon * M_PI / 180;
+  m_lat = lat * M_PI / 180.0;
+  m_lon = lon * M_PI / 180.0;
   m_h = ele;
 
   conv_llh2xyz();

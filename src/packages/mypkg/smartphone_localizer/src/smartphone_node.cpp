@@ -60,7 +60,7 @@
 #define PARTICLEFILTER_GPS_V_STANDARD_DEVIATION 0.2                      //
 #define PARTICLEFILTER_SYSTEM_NOISE_STANDARD_DEVIATION "0.1,0.1,0.087263889,0.1,0.1"  // x,y,r,vx,vy
 
-#define TOPIC_NAME_IMU "/android/imu"
+#define TOPIC_NAME_SUB_IMU "/android/imu"
 #define TOPIC_NAME_MAGNETIC "/android/magnetic_field"
 #define TOPIC_NAME_GPS "/android/fix"
 #define TOPIC_NAME_PUBLISH_ODOM "/phone_localizer/odom"
@@ -173,7 +173,7 @@ Localizer::Localizer() : nh(), private_nh(ros::NodeHandle("~")),
         use_gps=USE_GPS;
     }
     if(use_imu){
-        sub_imu = nh.subscribe(TOPIC_NAME_IMU, 1, &Localizer::callback_imu, this);
+        sub_imu = nh.subscribe(TOPIC_NAME_SUB_IMU, 1, &Localizer::callback_imu, this);
     }
     if(use_mag){
         sub_magnetic = nh.subscribe(TOPIC_NAME_MAGNETIC, 1, &Localizer::callback_magnetic, this);

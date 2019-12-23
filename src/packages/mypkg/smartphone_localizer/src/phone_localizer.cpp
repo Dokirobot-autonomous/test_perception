@@ -33,7 +33,7 @@ PhoneLocalizer::PhoneLocalizer(ros::NodeHandle *nh, ros::NodeHandle *private_nh)
     ROS_INFO("Origin Fix: %s",origin_frame_id.c_str());
 
     //// topic names
-    topic_name_imu = TOPIC_NAME_IMU;
+    topic_name_imu = TOPIC_NAME_SUB_IMU;
     topic_name_magnetic = TOPIC_NAME_MAGNETIC;
     topic_name_gps = TOPIC_NAME_GPS;
     topic_name_gnssraw_fix = TOPIC_NAME_GNSSRAW_FIX;

@@ -1,16 +1,56 @@
 <!-- -->
 <launch>
 
-  <arg name="android-dt" default="$(find cooperation_setup)/"/>
+    <arg name="vehicle_name" default="mkz"/>
+    <arg name="base_vehicle_name" default="prius"/>
+    <arg name="android-dt" default="$(find cooperation_setup)/"/>
 
-  <node pkg="cooperation_setup" type="mkz_setup" name="mkz_setup" output="screen">
-  </node>
-  <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="screen">
-    <param name="ifpath" value="$(arg android-dt)/" />
-    <param name="date" value="2019-12-16" />
-  </node>
-  <node pkg="tf2_ros" type="static_transform_publisher" name="gps_imu_2_mkz_velodyne" args="0. 0. 0. 0. 0. 0. mkz/gps_imu /mkz/velodyne" required="true"/>
+    <group>
 
+        <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="log">
+            <param name="ifpath" value="$(arg android-dt)/"/>
+<!--
+            <param name="date" value="2019-12-16"/>
+-->
+        </node>
+
+        <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="log">
+            <param name="use_magnetic_field_msg" value="true"/>
+            <param name="publish_tf" value="false"/>
+            <remap from="imu/data_raw" to="xsens/imu/data"/>
+            <remap from="imu/mag" to="xsens/imu/mag"/>
+            <remap from="imu/data" to="imu_raw"/>
+        </node>
+        <node pkg="cooperation_setup" type="nmea2fix" name="nmea2fix" output="log">
+            <param name="vehicle_name" value="$(arg vehicle_name)"/>
+            <remap from="fix" to="navsat/fix"/>
+        </node>
+        <node pkg="gnss_imu_localizer" type="gnss_imu_localizer_node" name="gnss_imu_localizer_node" output="log">
+            <param name="frame_id_world" value="$(arg vehicle_name)/odom"/>
+            <param name="frame_id_vehicle" value="$(arg vehicle_name)/base_link"/>
+
+        </node>
+
+        <node pkg="cooperation_setup" type="fix_tf_publisher" name="fix_tf_publisher" output="log">
+            <param name="frame_id_fix1" value="$(arg base_vehicle_name)/odom" />
+            <param name="frame_id_fix2" value="$(arg vehicle_name)/odom" />
+            <remap from="fix1" to="/$(arg base_vehicle_name)/init/fix"/>
+            <remap from="fix2" to="init/fix"/>
+        </node>
+
+
+        <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_xsens"
+              args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/xsens" required="true"/>
+        <!--
+                <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_lidar"
+                      args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/velodyne" required="true"/>
+        -->
+        <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_lidar"
+              args="0. 0. 0. 1.5707 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/velodyne" required="true"/>
+        <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_gps"
+              args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/gps" required="true"/>
+
+    </group>
 
 
 </launch>
