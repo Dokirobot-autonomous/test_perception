@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <launch>
 
-<group>
+    <arg name="vehicle_name" default="mkz"/>
 
     <arg name="veh_frame_id" default="mkz/velodyne"/>
     <arg name="can_hardware_id" default="10349"/>
     <arg name="esr_can_circuit_id" default="0"/>
-    <arg name="pcap" default="" />
+    <arg name="pcap" default=""/>
 
-    <arg name="camera_1" value="" />
-    <arg name="camera_2" value="" />
-    <arg name="camera_3" value="" />
-    <arg name="camera_4" value="" />
-    
-    <arg name="left_camera" value="16492265" />
-    <arg name="enable_trigger" value="false" />
-    <arg name="trigger_source" value="gpio3" />
-    <arg name="right_camera" value="16492281" />
-    <arg name="enable_strobe2" value="false" />
-    
+    <arg name="camera_1" value=""/>
+    <arg name="camera_2" value=""/>
+    <arg name="camera_3" value=""/>
+    <arg name="camera_4" value=""/>
+
+    <arg name="left_camera" value="16492265"/>
+    <arg name="enable_trigger" value="false"/>
+    <arg name="trigger_source" value="gpio3"/>
+    <arg name="right_camera" value="16492281"/>
+    <arg name="enable_strobe2" value="false"/>
+
     <arg name="with_rviz" default="false"/>
     <arg name="with_dgps" default="true"/>
     <arg name="with_lidar" default="true"/>
@@ -26,105 +26,109 @@
     <arg name="with_dbw" default="true"/>
     <arg name="with_xsens" default="true"/>
     <arg name="with_esr" default="true"/>
-    
 
-    
-    <group if="$(arg with_cams)">
-    <!-- Camera Nodes -->
-        <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="left_camera">
-            <arg name="camera_serial" value="$(arg left_camera)" />
-            <arg name="enable_trigger" value="$(arg enable_trigger)"/>
-            <arg name="trigger_source" value="$(arg trigger_source)"/>
-        </include>
-        <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="right_camera">
-            <arg name="camera_serial" value="$(arg right_camera)" />
-            <arg name="enable_strobe2" value="$(arg enable_strobe2)"/>
-        </include>
-        <node pkg="image_flip" type="image_flip" name="image_flip_left" args="image:=/left_camera/pg_16492265/image_color flipped:=/left_camera/pg_16492265/image_color_flipped b"/>
-        <node pkg="image_flip" type="image_flip" name="image_flip_right" args="image:=/right_camera/pg_16492281/image_color flipped:=/right_camera/pg_16492281/image_color_flipped b"/>
-        <!-- 
-        <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_driver">
-            <arg name="camera_serial" value="$(arg front_driver_camera_serial)" />
-        </include>
-        <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_center">
-              <arg name="camera_serial" value="$(arg front_center_camera_serial)" />
-        </include>
-        <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_passenger">
-              <arg name="camera_serial" value="$(arg front_passenger_camera_serial)" />
-        </include>
-        <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="rear_driver">
-            <arg name="camera_serial" value="$(arg rear_driver_camera_serial)" />
-        </include>
-        -->
+    <group ns="$(arg vehicle_name)">
+
+
+        <group if="$(arg with_cams)">
+            <!-- Camera Nodes -->
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="left_camera">
+                <arg name="camera_serial" value="$(arg left_camera)"/>
+                <arg name="enable_trigger" value="$(arg enable_trigger)"/>
+                <arg name="trigger_source" value="$(arg trigger_source)"/>
+            </include>
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="right_camera">
+                <arg name="camera_serial" value="$(arg right_camera)"/>
+                <arg name="enable_strobe2" value="$(arg enable_strobe2)"/>
+            </include>
+            <node pkg="image_flip" type="image_flip" name="image_flip_left"
+                  args="image:=/left_camera/pg_16492265/image_color flipped:=/left_camera/pg_16492265/image_color_flipped b"/>
+            <node pkg="image_flip" type="image_flip" name="image_flip_right"
+                  args="image:=/right_camera/pg_16492281/image_color flipped:=/right_camera/pg_16492281/image_color_flipped b"/>
+            <!--
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_driver">
+                <arg name="camera_serial" value="$(arg front_driver_camera_serial)" />
+            </include>
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_center">
+                  <arg name="camera_serial" value="$(arg front_center_camera_serial)" />
+            </include>
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_passenger">
+                  <arg name="camera_serial" value="$(arg front_passenger_camera_serial)" />
+            </include>
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="rear_driver">
+                <arg name="camera_serial" value="$(arg rear_driver_camera_serial)" />
+            </include>
+            -->
+        </group>
+
+        <group if="$(arg with_lidar)">
+
+            <!-- declare arguments with default values -->
+            <arg name="model" default="64E_S2.1"/>
+
+            <!--  <arg name="calibration" default="$(find velodyne_pointcloud)/params/64e_utexas.yaml"/>-->
+            <arg name="calibration" default="$(find velodyne_pointcloud)/params/64HDL_S2_MKZ.yaml"/>
+            <arg name="min_range" default="2.0"/>
+            <arg name="max_range" default="250.0"/>
+            <arg name="topic_name" default="points_raw"/>
+
+            <!-- start nodelet manager and driver nodelets -->
+            <include file="/home/bdd/ohashi/run/nodelet_manager_ohashi.launch">
+                <arg name="model" value="$(arg model)"/>
+                <arg name="pcap" value="$(arg pcap)"/>
+                <arg name="frame_id" value="$(arg veh_frame_id)"/>
+            </include>
+
+            <!-- start cloud nodelet -->
+            <node pkg="nodelet" type="nodelet" name="velodyne_nodelet"
+                  args="load velodyne_pointcloud/CloudNodelet velodyne_nodelet_manager">
+                <param name="calibration" value="$(arg calibration)"/>
+                <param name="min_range" value="$(arg min_range)"/>
+                <param name="max_range" value="$(arg max_range)"/>
+                <param name="frame_id" value="$(arg veh_frame_id)"/>
+                <remap from="velodyne_points" to="$(arg topic_name)"/>
+            </node>
+
+        </group>
+
+        <group if="$(arg with_dbw)">
+            <!-- Drive By Wire Joystick control -->
+            <include file="$(find dbw_mkz_can)/launch/dbw.launch"></include>-->
+
+        </group>
+
+        <group if="$(arg with_xsens)">
+            <!-- Drive By Wire Joystick control -->
+            <!--
+                    <node pkg="tf" type="static_transform_publisher" name="vehicle_to_xsens" args="0 0 0 0 0 0 $(arg veh_frame_id) xsens 100"/>
+            -->
+            <include file="$(find xsens_driver)launch/xsens_driver.launch" ns="xsens">
+                <arg name="frame_id" value="xsens"/>
+            </include>
+        </group>
+
+        <group if="$(arg with_esr)">
+            <!--
+                    <node pkg="tf" type="static_transform_publisher" name="vehicle_to_delphi_esr" args="3.8 0 0.35 0 0 0 $(arg veh_frame_id) delphi_esr 100"/>
+            -->
+            <include file="$(find delphi_esr)/launch/delphi_esr.launch" ns="delphi_esr">
+                <!-- can configuration -->
+                <arg name="can_hardware_id" value="$(arg can_hardware_id)"/>
+                <arg name="can_circuit_id" value="$(arg esr_can_circuit_id)"/>
+                <arg name="esr_frame_id" value="delphi_esr"/>
+                <!-- driver configuration -->
+                <arg name="esr_upside_down" value="true"/>
+            </include>
+        </group>
+
+        <group if="$(arg with_dgps)">
+            <node name="nmea_topic_serial_reader" pkg="nmea_navsat_driver" type="nmea_topic_serial_reader">
+                <param name="port" value="/dev/ttyUSB1"/>
+                <param name="baud" value="9600"/>
+            </node>
+        </group>
+
+
     </group>
 
-    <group if="$(arg with_lidar)">
-      
-      <!-- declare arguments with default values -->
-      <arg name="model" default="64E_S2.1"/>
-  
-      <!--  <arg name="calibration" default="$(find velodyne_pointcloud)/params/64e_utexas.yaml"/>-->
-      <arg name="calibration" default="$(find velodyne_pointcloud)/params/64HDL_S2_MKZ.yaml"/>  
-      <arg name="min_range" default="2.0"/>
-      <arg name="max_range" default="250.0"/>
-      <arg name="topic_name" default="points_raw"/>
-
-      <!-- start nodelet manager and driver nodelets -->
-      <include file="/home/bdd/ohashi/run/nodelet_manager_ohashi.launch">
-        <arg name="model" value="$(arg model)"/>
-        <arg name="pcap" value="$(arg pcap)"/>
-	<arg name="frame_id" value="$(arg veh_frame_id)" />
-      </include>
-
-      <!-- start cloud nodelet -->
-      <node pkg="nodelet" type="nodelet" name="velodyne_nodelet"
-            args="load velodyne_pointcloud/CloudNodelet velodyne_nodelet_manager">
-        <param name="calibration" value="$(arg calibration)"/>
-        <param name="min_range" value="$(arg min_range)" />
-        <param name="max_range" value="$(arg max_range)" />
-        <param name="frame_id" value="$(arg veh_frame_id)" />
-        <remap from="velodyne_points" to="$(arg topic_name)"/>
-      </node>
-
-    </group>
-     
-    <group if="$(arg with_dbw)">
-    <!-- Drive By Wire Joystick control -->
-    	<include file="$(find dbw_mkz_can)/launch/dbw.launch" ></include>-->
-	    
-    </group>
-    
-    <group if="$(arg with_xsens)">
-    <!-- Drive By Wire Joystick control -->
-<!--
-        <node pkg="tf" type="static_transform_publisher" name="vehicle_to_xsens" args="0 0 0 0 0 0 $(arg veh_frame_id) xsens 100"/>
--->
-        <include file="$(find xsens_driver)launch/xsens_driver.launch" ns="xsens" >
-	        <arg name="frame_id" value="xsens" />
-        </include>
-    </group>
-   
-    <group if="$(arg with_esr)">
-<!--
-        <node pkg="tf" type="static_transform_publisher" name="vehicle_to_delphi_esr" args="3.8 0 0.35 0 0 0 $(arg veh_frame_id) delphi_esr 100"/>
--->
-        <include file="$(find delphi_esr)/launch/delphi_esr.launch" ns="delphi_esr">
-            <!-- can configuration -->    
-            <arg name="can_hardware_id" value="$(arg can_hardware_id)"/>
-            <arg name="can_circuit_id" value="$(arg esr_can_circuit_id)"/>
-            <arg name="esr_frame_id" value="delphi_esr"/>
-            <!-- driver configuration -->
-            <arg name="esr_upside_down" value="true"/>
-        </include>
-    </group>
-    
-    <group if="$(arg with_dgps)">
-        <node name="nmea_topic_serial_reader" pkg="nmea_navsat_driver" type="nmea_topic_serial_reader">
-		    <param name="port" value="/dev/ttyUSB1" />
-		    <param name="baud" value="9600" />
-	    </node>
-    </group>
-    
-    
-</group>
 </launch>

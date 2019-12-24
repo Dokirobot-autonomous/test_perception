@@ -1,13 +1,18 @@
 <!-- -->
 <launch>
 
-  <arg name="p" default="false"/>
-  <arg name="s" default="false"/>
-  <node pkg="cooperation_setup" type="connection_client_setup" name="connection_client_subscriber" output="screen" if="$(arg s)">
-    <param name="client_mode" value="subscriber"/>
-  </node>
-  <node pkg="cooperation_setup" type="connection_client_setup" name="connection_client_publisher" output="screen" if="$(arg p)">
-    <param name="client_mode" value="publisher"/>
-  </node>
+    <arg name="vehicle_name"/>
+    <arg name="p" default="false"/>
+    <arg name="s" default="false"/>
+    <group ns="$(arg vehicle_name)">
+        <node pkg="cooperation_setup" type="connection_client_setup" name="connection_client_subscriber" output="screen"
+              if="$(arg s)">
+            <param name="client_mode" value="subscriber"/>
+        </node>
+        <node pkg="cooperation_setup" type="connection_client_setup" name="connection_client_publisher" output="screen"
+              if="$(arg p)">
+            <param name="client_mode" value="publisher"/>
+        </node>
+    </group>
 
 </launch>

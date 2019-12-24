@@ -5,11 +5,13 @@
     <arg name="vehicle_name" default="prius"/>
     <arg name="android-dt" default="$(find cooperation_setup)/"/>
 
-    <group>
+    <group ns="$(arg vehicle_name)">
 
       <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="screen">
         <param name="ifpath" value="$(arg android-dt)/"/>
+<!--
         <param name="date" value="2019-12-16"/>
+-->
       </node>
 
         <node pkg="gnss_imu_localizer" type="gnss_imu_localizer_node" name="gnss_imu_localizer_node" output="screen">

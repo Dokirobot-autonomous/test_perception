@@ -5,7 +5,7 @@
     <arg name="base_vehicle_name" default="prius"/>
     <arg name="android-dt" default="$(find cooperation_setup)/"/>
 
-    <group>
+    <group ns="$(arg vehicle_name)">
 
         <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="log">
             <param name="ifpath" value="$(arg android-dt)/"/>
