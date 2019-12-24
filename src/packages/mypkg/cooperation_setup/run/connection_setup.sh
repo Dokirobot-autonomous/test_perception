@@ -33,7 +33,3 @@ xterm -e bash -c "echo export ROS_MASTER_URI=http://$MASTER_IP:1234/;\
                   sshpass -p bdd_path123 ssh -o StrictHostKeyChecking=no bdd@$PRIUS_IP" & sleep 1
 
 
-#xterm -e bash -c "roslaunch cooperation_setup fix_tf_publisher.launch frame_id_fix1:=prius/odom frame_id_fix2:=mkz/odom vehicle_name:=\"mkz\"" &
-#sleep 1
-#xterm -e bash -c "roslaunch cooperation_setup fix_tf_publisher.launch frame_id_fix1:=prius/odom frame_id_fix2:=mks/odom vehicle_name:=\"mks\"" &
-#sleep 1

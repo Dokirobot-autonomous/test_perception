@@ -279,7 +279,7 @@ void ConnectionClientSetup::publish(const std::string &objects_str) {
         objects.objects.push_back(ob);
     }
 
-    pub_objects.publish_objects(objects);
+    pub_objects.publish(objects);
 
 }
 

@@ -9,8 +9,8 @@
         <node pkg="cooperation_setup" type="fix_tf_publisher" name="fix_tf_publisher" output="screen">
             <param name="frame_id_fix1" value="$(arg frame_id_fix1)"/>
             <param name="frame_id_fix2" value="$(arg frame_id_fix2)"/>
-            <remap from="fix1" to="prius/init/fix"/>
-            <remap from="fix2" to="mkz/init/fix"/>
+            <remap from="fix1" to="/prius/init/fix"/>
+            <remap from="fix2" to="init/fix"/>
         </node>
     </group>
 </launch>

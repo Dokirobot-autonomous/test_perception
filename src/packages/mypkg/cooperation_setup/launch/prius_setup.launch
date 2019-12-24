@@ -7,14 +7,14 @@
 
     <group ns="$(arg vehicle_name)">
 
-      <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="screen">
+      <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="log">
         <param name="ifpath" value="$(arg android-dt)/"/>
 <!--
         <param name="date" value="2019-12-16"/>
 -->
       </node>
 
-        <node pkg="gnss_imu_localizer" type="gnss_imu_localizer_node" name="gnss_imu_localizer_node" output="screen">
+        <node pkg="gnss_imu_localizer" type="gnss_imu_localizer_node" name="gnss_imu_localizer_node" output="log">
         <param name="frame_id_world" value="$(arg vehicle_name)/odom"/>
         <param name="frame_id_vehicle" value="$(arg vehicle_name)/base_link"/>
           <param name="quaternion_sensor" value="odom"/>
