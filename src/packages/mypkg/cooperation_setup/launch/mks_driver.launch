@@ -17,7 +17,7 @@
                 <param name="bitrate" value="-2"/> <!-- BAUD_500K     (-2) -->
             </node>
 
-            <node pkg="mks_can" type="mks_node" name="mks_node" output="screen">
+            <node pkg="mks_can" type="mks_node" name="mks_node" output="log">
                 <remap from="can_raw" to="can_bus_mks/can_raw"/>
                 <param name="ackermann_wheelbase" value="$(arg ackermann_wheelbase)"/>
                 <param name="ackermann_track" value="$(arg ackermann_track)"/>
@@ -80,7 +80,7 @@
         <node name="nmea_topic_driver" pkg="nmea_navsat_driver" type="nmea_topic_driver"/>
 
         <!-- camera node -->
-        <node name="usb_cam1" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam1" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_front_left"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video0"/>
@@ -91,7 +91,7 @@
             <param name="camera_frame_id" value="image1"/>
             <param name="io_method" value="mmap"/>
         </node>
-        <node name="usb_cam2" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam2" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_front_right"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video1"/>
@@ -102,7 +102,7 @@
             <param name="camera_frame_id" value="image2"/>
             <param name="io_method" value="mmap"/>
         </node>
-        <node name="usb_cam3" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam3" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_rear_left"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video2"/>
@@ -113,7 +113,7 @@
             <param name="camera_frame_id" value="image3"/>
             <param name="io_method" value="mmap"/>
         </node>
-        <node name="usb_cam4" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam4" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_rear_right"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video3"/>
@@ -124,7 +124,7 @@
             <param name="camera_frame_id" value="image4"/>
             <param name="io_method" value="mmap"/>
         </node>
-        <node name="usb_cam5" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam5" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_rear_right"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video4"/>
@@ -135,7 +135,7 @@
             <param name="camera_frame_id" value="image5"/>
             <param name="io_method" value="mmap"/>
         </node>
-        <node name="usb_cam6" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam6" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_rear_right"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video5"/>
@@ -146,7 +146,7 @@
             <param name="camera_frame_id" value="image6"/>
             <param name="io_method" value="mmap"/>
         </node>
-        <node name="usb_cam7" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam7" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_rear_right"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video6"/>
@@ -159,7 +159,7 @@
             <param name="autofocus" value="true"/>
             <param name="focus" value="0"/>
         </node>
-        <node name="usb_cam8" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <node name="usb_cam8" pkg="usb_cam" type="usb_cam_node" output="log">
             <param name="topic_name" value="image_rear_right"/>
             <param name="framerate" value="30"/>
             <param name="video_device" value="/dev/video7"/>

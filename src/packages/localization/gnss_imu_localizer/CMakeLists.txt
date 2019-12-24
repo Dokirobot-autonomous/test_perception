@@ -41,7 +41,7 @@ catkin_package(
         tf_conversions
         geometry_msgs
         INCLUDE_DIRS
-        include
+#        include
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIRS})

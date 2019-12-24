@@ -175,7 +175,7 @@ namespace beyondtrack
 
 if(k.empty())
 {
-ROS_ERROR_STREAM("Camera parameter k is empty! Please publish camera_info.");
+ROS_ERROR_STREAM("Camera parameter k is empty! Please publish_objects camera_info.");
 }
 
       // std::cout << "Propagate current detection\n";

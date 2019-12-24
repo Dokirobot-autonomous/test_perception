@@ -41,7 +41,7 @@ namespace object_map
 
   /*!
    * Publishes in_gridmap using the specified in_publisher
-   * @param[in] in_gridmap GridMap object to publish
+   * @param[in] in_gridmap GridMap object to publish_objects
    * @param[in] in_publisher Valid Publisher object to use
    */
   void PublishGridMap(const grid_map::GridMap &in_gridmap, const ros::Publisher &in_publisher);
@@ -49,7 +49,7 @@ namespace object_map
   /*!
    * Convert and publishes a GridMap layer to a standard Ros OccupancyGrid
    * @param[in] in_gridmap GridMap object to extract the layer
-   * @param[in] in_publisher ROS Publisher to use to publish the occupancy grid
+   * @param[in] in_publisher ROS Publisher to use to publish_objects the occupancy grid
    * @param[in] in_layer Name of the layer to convert
    * @param[in] in_min_value Minimum value in the layer
    * @param[in] in_max_value Maximum value in the layer

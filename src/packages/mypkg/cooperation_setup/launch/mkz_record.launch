@@ -1,0 +1,14 @@
+<!-- -->
+<launch>
+
+    <arg name="path" default="~/ohashi/bag/"/>
+    <arg name="vehicle_name" default="mks"/>
+
+    <group ns="$(arg vehicle_name)">
+        
+        <node pkg="rosbag" type="record" name="rosbag_record" args="record -o $(arg  -e \"\"/>
+
+    </group>
+
+
+</launch>

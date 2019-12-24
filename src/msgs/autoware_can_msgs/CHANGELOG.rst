@@ -219,7 +219,7 @@ Changelog for package autoware_can_msgs
 ------------------
 * Prepare release for 1.6.0
 * Added support to publish result of multiple traffic signals according to the lane
-  VectorMapServer Support to publish signals on current lane if current_pose and final_waypoints available
+  VectorMapServer Support to publish_objects signals on current lane if current_pose and final_waypoints available
 * Initial modifications to feat_proj, tlr, context and vector_map loader, server and client to support different types of traffic signals
 * - Add new Node for object polygon representation and tracking (kf_contour_tracker)
   - Add launch file and tune tracking parameters

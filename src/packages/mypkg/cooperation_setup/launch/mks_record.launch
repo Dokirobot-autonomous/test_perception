@@ -1,0 +1,15 @@
+<!-- -->
+<launch>
+
+    <arg name="vehicle_name" default="mks"/>
+    <arg name="ofpath" default="$(find cooperation_setup)/bag/"/>
+
+    <group ns="$(arg vehicle_name)">
+
+        <node pkg="rosbag" type="record" name="record" output="screen"
+              args="record -o '$(arg ofpath)/$(arg vehicle_name)-' -e '/$(arg vehicle_name)/(.*) -e '/tf(.*)'" />
+
+    </group>
+
+
+</launch>

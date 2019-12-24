@@ -106,7 +106,7 @@ void VehiclePhonesManager::callback_phone_odom(const nav_msgs::OdometryConstPtr 
 void VehiclePhonesManager::publish_pedestrian2phone_objects() {
 
     for(size_t i_ph=0;i_ph<phone_names.size();i_ph++){
-        pubs_pedestrian2phone[i_ph].publish(pedestrian2phone_objects[i_ph]);
+        pubs_pedestrian2phone[i_ph].publish_objects(pedestrian2phone_objects[i_ph]);
     }
 
 }

@@ -17,7 +17,7 @@
 /*
 obj_downloader
 This node get location data from db server and
-publish data as ractangular plane
+publish_objects data as ractangular plane
  */
 
 #include "ros/ros.h"

@@ -564,10 +564,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78db5cd5-c846-4ce4-9116-08869ba8c3a8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_record.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mkz_record.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/connection_setup.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/record.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/connection_client_setup.cpp.bkup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch.191223bkup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgs/autoware_can_msgs/CHANGELOG.rst" beforeDir="false" afterPath="$PROJECT_DIR$/msgs/autoware_can_msgs/CHANGELOG.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgs/autoware_config_msgs/CHANGELOG.rst" beforeDir="false" afterPath="$PROJECT_DIR$/msgs/autoware_config_msgs/CHANGELOG.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msgs/autoware_msgs/CHANGELOG.rst" beforeDir="false" afterPath="$PROJECT_DIR$/msgs/autoware_msgs/CHANGELOG.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/data/packages/map_file/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/data/packages/map_file/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/data/packages/obj_db/nodes/obj_downloader/obj_downloader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/data/packages/obj_db/nodes/obj_downloader/obj_downloader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/localization/gnss_imu_localizer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/localization/gnss_imu_localizer/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/fix_tf_publisher.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/fix_tf_publisher.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_driver.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_driver.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_setup.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mkz_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mkz_setup.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/connection_client_setup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/exports.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/exports.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mks_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mks_setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mkz_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mkz_setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/prius_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/prius_setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/sshpass.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/sshpass.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/connection_client_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src/connection_client_setup.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer/archive/vehicle_phones_manager.h.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer/archive/vehicle_phones_manager.h.bkup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer/vehicle_phones_manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer/vehicle_phones_manager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/archive/vehicle_phones_manager.cpp.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/archive/vehicle_phones_manager.cpp.bkup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/phone_localizer.cpp.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/phone_localizer.cpp.bkup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/phone_localizer_191210.cpp.bkup" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/phone_localizer_191210.cpp.bkup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/smartphone_raw.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src/smartphone_raw.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/docs/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/src/caffe/net.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/src/caffe/net.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/tools/extra/plot_log.gnuplot.example" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/tools/extra/plot_log.gnuplot.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/launch/lidar_apollo_cnn_seg_detect.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_fake_perception/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_fake_perception/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_fake_perception/include/lidar_fake_perception.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_fake_perception/include/lidar_fake_perception.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_fake_perception/nodes/lidar_fake_perception.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_fake_perception/nodes/lidar_fake_perception.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_point_pillars/include/lidar_point_pillars/point_pillars_ros.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_point_pillars/include/lidar_point_pillars/point_pillars_ros.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/launch/imm_ukf_pda_track.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/trafficlight_recognizer/CHANGELOG.rst" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/trafficlight_recognizer/CHANGELOG.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/trafficlight_recognizer/launch/feat_proj.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/trafficlight_recognizer/launch/feat_proj.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/vision_detector/packages/vision_darknet_detect/darknet/src/stb_image.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/vision_detector/packages/vision_darknet_detect/darknet/src/stb_image.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/vision_detector/packages/vision_darknet_detect/darknet/src/stb_image_write.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/vision_detector/packages/vision_darknet_detect/darknet/src/stb_image_write.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/perception/vision_tracker/packages/vision_beyond_track/include/detection.h" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/vision_tracker/packages/vision_beyond_track/include/detection.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/semantics/object_map/include/object_map/object_map_utils.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/semantics/object_map/include/object_map/object_map_utils.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/semantics/object_map/nodes/grid_map_filter/grid_map_filter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/semantics/object_map/nodes/grid_map_filter/grid_map_filter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/semantics/object_map/nodes/laserscan2costmap/laserscan2costmap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/packages/semantics/object_map/nodes/laserscan2costmap/laserscan2costmap.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/autoware_health_checker/src/node_status_publisher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/system/autoware_health_checker/src/node_status_publisher.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -619,7 +667,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -630,19 +678,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run" />
-      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch" />
-      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src" />
-      <recent name="$PROJECT_DIR$/packages/localization/gnss_imu_localizer/src" />
-      <recent name="$PROJECT_DIR$/packages/localization/robot_localization/params" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/packages/mypkg" />
       <recent name="$PROJECT_DIR$/packages/mypkg/cooperation/run" />
       <recent name="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/archive" />
       <recent name="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/archive" />
       <recent name="$PROJECT_DIR$/packages/perception/fusion_tools/packages/frustum_fusion/src/frustum_points_extractor" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch" />
+      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run" />
+      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/src" />
+      <recent name="$PROJECT_DIR$/packages/localization/gnss_imu_localizer/src" />
+      <recent name="$PROJECT_DIR$/packages/localization/robot_localization/params" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application._autoware_can_msgs_generate_messages_check_deps_CANData">
@@ -4087,7 +4135,7 @@
       <workItem from="1577125571817" duration="123000" />
       <workItem from="1577125706107" duration="9765000" />
       <workItem from="1577139192109" duration="6649000" />
-      <workItem from="1577149262242" duration="863000" />
+      <workItem from="1577149262242" duration="17095000" />
     </task>
     <servers />
   </component>
@@ -4111,10 +4159,10 @@
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="547" y="263" key="#_autoware_can_msgs_generate_messages_check_deps_CANData/65.24.1855.1056/1920.0.1920.1080@65.24.1855.1056" timestamp="1576612339205" />
-    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576720439491">
+    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577163543279">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1855.1056/1920.0.1920.1080@65.24.1855.1056" timestamp="1576720439491" />
+    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1855.1056/1920.0.1920.1080@65.24.1855.1056" timestamp="1577163543279" />
     <state x="680" y="270" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576023220162">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>

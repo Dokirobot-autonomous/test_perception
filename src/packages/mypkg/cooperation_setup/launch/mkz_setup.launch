@@ -2,7 +2,6 @@
 <launch>
 
     <arg name="vehicle_name" default="mkz"/>
-    <arg name="base_vehicle_name" default="prius"/>
     <arg name="android-dt" default="$(find cooperation_setup)/"/>
 
     <group ns="$(arg vehicle_name)">
@@ -15,6 +14,7 @@
         </node>
 
         <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="log">
+            <param name="use_mag" value="true"/>
             <param name="use_magnetic_field_msg" value="true"/>
             <param name="publish_tf" value="false"/>
             <remap from="imu/data_raw" to="xsens/imu/data"/>
@@ -28,16 +28,16 @@
         <node pkg="gnss_imu_localizer" type="gnss_imu_localizer_node" name="gnss_imu_localizer_node" output="log">
             <param name="frame_id_world" value="$(arg vehicle_name)/odom"/>
             <param name="frame_id_vehicle" value="$(arg vehicle_name)/base_link"/>
-
         </node>
-
-        <node pkg="cooperation_setup" type="fix_tf_publisher" name="fix_tf_publisher" output="log">
-            <param name="frame_id_fix1" value="$(arg base_vehicle_name)/odom" />
-            <param name="frame_id_fix2" value="$(arg vehicle_name)/odom" />
-            <remap from="fix1" to="/$(arg base_vehicle_name)/init/fix"/>
-            <remap from="fix2" to="init/fix"/>
-        </node>
-
+        
+        <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch">
+            <arg name="points_src" value="points_raw"/>
+            <arg name="output" value="log"/>
+        </include>
+        <include file="$(find lidar_imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch">
+            <arg name="tracking_frame" value="$(arg vehicle_name)/odom"/>
+            <arg name="output" value="log"/>
+        </include>
 
         <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_xsens"
               args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/xsens" required="true"/>

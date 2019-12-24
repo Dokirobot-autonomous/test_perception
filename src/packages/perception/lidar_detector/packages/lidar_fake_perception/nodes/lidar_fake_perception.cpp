@@ -222,13 +222,13 @@ void LidarFakePerception::convertObjectToPoints(const autoware_msgs::DetectedObj
 
 void LidarFakePerception::publishFakes()
 {
-  if (fake_objects_.objects.size() == 0)  // publish empty
+  if (fake_objects_.objects.size() == 0)  // publish_objects empty
   {
     fake_objects_.header.frame_id = global_frame_;
     fake_objects_.header.stamp = ros::Time::now();
   }
 
-  if (fake_points_.size() != 0)  // publish empty
+  if (fake_points_.size() != 0)  // publish_objects empty
   {
     fake_points_.header = pcl_conversions::toPCL(fake_object_.header);
   }

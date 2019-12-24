@@ -16,11 +16,14 @@
 
 #include "../../../../../devel/include/autoware_msgs/DetectedObject.h"
 #include "../../../../../devel/include/autoware_msgs/DetectedObjectArray.h"
+#include <tf2_msgs/TFMessage.h>
 
 #include <ros/ros.h>
 #include <ros/console.h>
 
 #define TOPIC_NAME_OBJECTS "detection/lidar_detector/objects"
+#define TOPIC_NAME_TF "/tf"
+#define TOPIC_NAME_TF_STATIC "/tf_static"
 
 class ConnectionClientSetup {
 
@@ -31,8 +34,12 @@ public:
     ~ConnectionClientSetup();
 
     void callback_objects(const autoware_msgs::DetectedObjectArray::ConstPtr &msg);
+    void callback_tf(const tf2_msgs::TFMessage::ConstPtr &msg);
+    void callback_tf_static(const tf2_msgs::TFMessage::ConstPtr  &msg);
 
-    void publish(const std::string &objects_str);
+    void publish_objects(const std::string &objects_str);
+    void broadcast_tf(const std::string &tf_str);
+    void broadcast_tf_static(const std::string &tf_static_str);
 
     void mode_subscriber();
 
@@ -43,18 +50,18 @@ private:
     ros::NodeHandle nh;
     ros::NodeHandle private_nh;
     std::string client_mode;
-    ros::Publisher pub_objects;
-    ros::Subscriber sub_objects;
+    ros::Publisher pub_objects,pub_tf,pub_tf_static;
+    ros::Subscriber sub_objects,sub_tf,sub_tf_static;
 
-    std::string origin_fix_str;
 
     //// Shared Memory
-    std::string file_path;
-    int id;
-    key_t key;
-    int size;
-    int seg_id;
-    char *shared_memory;
+    std::string file_path1,file_path2,file_path3;
+    FILE *fp1,*fp2,*fp3;
+    int id1,id2,id3;
+    key_t key1,key2,key3;
+    int size1,size2,size3;
+    int seg_id1,seg_id2,seg_id3;
+    char *shared_memory1, *shared_memory2, *shared_memory3;
 
 };
 
@@ -69,16 +76,36 @@ ConnectionClientSetup::ConnectionClientSetup() : nh(), private_nh(ros::NodeHandl
         exit(-1);
     }
 
-    file_path="./key.dat";
-    id=50;
-    // 空のファイル作成
-    FILE *fp;
-    fp = fopen(file_path.c_str(), "w");
-    fclose(fp);
-
+    //// 1
+    file_path1="./key1.dat";
+    id1=50;
+    fp1 = fopen(file_path1.c_str(), "w");
+    fclose(fp1);
     // IPC keyの取得
-    key=ftok(file_path.c_str(), id);
-    if (key == -1) {
+    key1=ftok(file_path1.c_str(), id1);
+    if (key1 == -1) {
+        ROS_ERROR("Failed to acquire key");
+        exit(-1);
+    }
+    //// 2
+    file_path2="./key2.dat";
+    id2=50;
+    fp2 = fopen(file_path2.c_str(), "w");
+    fclose(fp2);
+    // IPC keyの取得
+    key2=ftok(file_path2.c_str(), id2);
+    if (key2 == -1) {
+        ROS_ERROR("Failed to acquire key");
+        exit(-1);
+    }
+    //// 3
+    file_path3="./key3.dat";
+    id3=50;
+    fp3 = fopen(file_path3.c_str(), "w");
+    fclose(fp3);
+    // IPC keyの取得
+    key3=ftok(file_path3.c_str(), id3);
+    if (key3 == -1) {
         ROS_ERROR("Failed to acquire key");
         exit(-1);
     }
@@ -102,11 +129,15 @@ ConnectionClientSetup::ConnectionClientSetup() : nh(), private_nh(ros::NodeHandl
 ConnectionClientSetup::~ConnectionClientSetup() {
 
     // 共有メモリをプロセスから切り離す
-    shmdt(shared_memory);
+    shmdt(shared_memory1);
+    shmdt(shared_memory2);
+    shmdt(shared_memory3);
 
     // 共有メモリを解放する
     if (client_mode == "subscriber") {
-        shmctl(seg_id, IPC_RMID, NULL);
+        shmctl(seg_id1, IPC_RMID, NULL);
+        shmctl(seg_id2, IPC_RMID, NULL);
+        shmctl(seg_id3, IPC_RMID, NULL);
     }
 }
 
@@ -118,18 +149,34 @@ void ConnectionClientSetup::mode_subscriber() {
     ROS_DEBUG("%s", __FUNCTION__);
 
 
-    // 共有メモリIDの取得
-    size=0x6400;
-    seg_id = shmget(key, size, IPC_CREAT | IPC_EXCL | S_IRUSR | S_IWUSR);
-    if (seg_id == -1) {
+    //// 共有メモリIDの取得
+    size1=0x6400;
+    seg_id1 = shmget(key1, size1, IPC_CREAT | IPC_EXCL | S_IRUSR | S_IWUSR);
+    if (seg_id1 == -1) {
         ROS_ERROR("Failed to acquire segment");
         exit(-1);
     }
-
-    // 共有メモリをプロセスにアタッチする
-    shared_memory = reinterpret_cast<char *>(shmat(seg_id, 0, 0));
+    shared_memory1 = reinterpret_cast<char *>(shmat(seg_id1, 0, 0));
+    //// 共有メモリIDの取得
+    size2=0x6400;
+    seg_id2 = shmget(key2, size2, IPC_CREAT | IPC_EXCL | S_IRUSR | S_IWUSR);
+    if (seg_id2 == -1) {
+        ROS_ERROR("Failed to acquire segment");
+        exit(-1);
+    }
+    shared_memory2 = reinterpret_cast<char *>(shmat(seg_id2, 0, 0));
+    //// 共有メモリIDの取得
+    size3=0x6400;
+    seg_id3 = shmget(key3, size3, IPC_CREAT | IPC_EXCL | S_IRUSR | S_IWUSR);
+    if (seg_id3 == -1) {
+        ROS_ERROR("Failed to acquire segment");
+        exit(-1);
+    }
+    shared_memory3 = reinterpret_cast<char *>(shmat(seg_id3, 0, 0));
 
     sub_objects = nh.subscribe(TOPIC_NAME_OBJECTS, 100, &ConnectionClientSetup::callback_objects, this);
+    sub_tf = nh.subscribe(TOPIC_NAME_TF, 100, &ConnectionClientSetup::callback_tf, this);
+    sub_tf_static = nh.subscribe(TOPIC_NAME_TF_STATIC, 100, &ConnectionClientSetup::callback_tf_static, this);
 
 }
 
@@ -141,6 +188,7 @@ void ConnectionClientSetup::mode_publisher() {
     ROS_DEBUG("%s", __FUNCTION__);
 
     pub_objects=nh.advertise<autoware_msgs::DetectedObjectArray>(TOPIC_NAME_OBJECTS,100);
+
 
     seg_id = shmget(key, 0, 0);
     if (seg_id == -1) {
@@ -157,7 +205,7 @@ void ConnectionClientSetup::mode_publisher() {
 
         str = shared_memory;
         if (str != str_pre) {
-            std::thread thread([this, &str]() { this->publish(str); });
+            std::thread thread([this, &str]() { this->publish_objects(str); });
             thread.detach();
         }
 
@@ -169,7 +217,7 @@ void ConnectionClientSetup::mode_publisher() {
 
 
 /**
- * callback_fix
+ * callback_objects
  * @param msg
  */
 void ConnectionClientSetup::callback_objects(const autoware_msgs::DetectedObjectArray::ConstPtr &msg) {
@@ -202,58 +250,66 @@ void ConnectionClientSetup::callback_objects(const autoware_msgs::DetectedObject
 }
 
 /**
+ * callback_tf
+ * @param msg
+ */
+void ConnectionClientSetup::callback_tf(const tf2_msgs::TFMessage::ConstPtr &msg) {
+
+}
+
+/**
  *
  */
-void ConnectionClientSetup::publish(const std::string &objects_str) {
+void ConnectionClientSetup::publish_objects(const std::string &objects_str) {
 
     ROS_DEBUG("%s,%s", __FUNCTION__,objects_str.c_str());
 
     autoware_msgs::DetectedObjectArray objects;
 
-    /*   std::stringstream sstr(objects_str);
-       std::string token;
-       std::getline(sstr,token);
-       std::istringstream istr(token);
+ /*   std::stringstream sstr(objects_str);
+    std::string token;
+    std::getline(sstr,token);
+    std::istringstream istr(token);
 
-       istr >> objects.header.seq;
-       istr >> objects.header.stamp.sec;
-       istr >> objects.header.stamp.nsec;
-       istr >> objects.header.frame_id;
-       while(std::getline(sstr,token)){
-           autoware_msgs::DetectedObject ob;
-           istr.str(token);
-           istr >> ob.header.seq;
-           istr >> ob.header.stamp.sec;
-           istr >> ob.header.stamp.nsec;
-           istr >> ob.header.frame_id;
-           istr >> ob.label;
-           istr >> ob.id;
-           istr >> ob.score;
-           istr >> ob.pose.position.x;
-           istr >> ob.pose.position.y;
-           istr >> ob.pose.position.z;
-           istr >> ob.pose.orientation.x;
-           istr >> ob.pose.orientation.y;
-           istr >> ob.pose.orientation.z;
-           istr >> ob.pose.orientation.w;
-           istr >> ob.velocity.linear.x;
-           istr >> ob.velocity.linear.y;
-           istr >> ob.velocity.linear.z;
-           istr >> ob.velocity.angular.x;
-           istr >> ob.velocity.angular.y;
-           istr >> ob.velocity.angular.z;
-           istr >> ob.acceleration.linear.x;
-           istr >> ob.acceleration.linear.y;
-           istr >> ob.acceleration.linear.z;
-           istr >> ob.acceleration.angular.x;
-           istr >> ob.acceleration.angular.y;
-           istr >> ob.acceleration.angular.z;
-           istr >> ob.dimensions.x;
-           istr >> ob.dimensions.y;
-           istr >> ob.dimensions.z;
-           objects.objects.push_back(ob);
-       }
-   */
+    istr >> objects.header.seq;
+    istr >> objects.header.stamp.sec;
+    istr >> objects.header.stamp.nsec;
+    istr >> objects.header.frame_id;
+    while(std::getline(sstr,token)){
+        autoware_msgs::DetectedObject ob;
+        istr.str(token);
+        istr >> ob.header.seq;
+        istr >> ob.header.stamp.sec;
+        istr >> ob.header.stamp.nsec;
+        istr >> ob.header.frame_id;
+        istr >> ob.label;
+        istr >> ob.id;
+        istr >> ob.score;
+        istr >> ob.pose.position.x;
+        istr >> ob.pose.position.y;
+        istr >> ob.pose.position.z;
+        istr >> ob.pose.orientation.x;
+        istr >> ob.pose.orientation.y;
+        istr >> ob.pose.orientation.z;
+        istr >> ob.pose.orientation.w;
+        istr >> ob.velocity.linear.x;
+        istr >> ob.velocity.linear.y;
+        istr >> ob.velocity.linear.z;
+        istr >> ob.velocity.angular.x;
+        istr >> ob.velocity.angular.y;
+        istr >> ob.velocity.angular.z;
+        istr >> ob.acceleration.linear.x;
+        istr >> ob.acceleration.linear.y;
+        istr >> ob.acceleration.linear.z;
+        istr >> ob.acceleration.angular.x;
+        istr >> ob.acceleration.angular.y;
+        istr >> ob.acceleration.angular.z;
+        istr >> ob.dimensions.x;
+        istr >> ob.dimensions.y;
+        istr >> ob.dimensions.z;
+        objects.objects.push_back(ob);
+    }
+*/
 
     std::stringstream sstr(objects_str);
     std::string token;
@@ -279,7 +335,7 @@ void ConnectionClientSetup::publish(const std::string &objects_str) {
         objects.objects.push_back(ob);
     }
 
-    pub_objects.publish_objects(objects);
+    pub_objects.publish(objects);
 
 }
 

@@ -104,7 +104,7 @@ private:
 
     /** Topics **/
 
-    //// publish msgs
+    //// publish_objects msgs
     std::vector<autoware_msgs::DetectedObject> pedestrian2phone_objects;
 
     //// subscribe msgs

@@ -243,7 +243,7 @@ void Localizer::run(){
     pub_odom.publish(odom);
 
 //    accel.header.stamp=time;
-//    pub_accel.publish(accel);
+//    pub_accel.publish_objects(accel);
 //    ROS_INFO_STREAM(odom);
 
 }

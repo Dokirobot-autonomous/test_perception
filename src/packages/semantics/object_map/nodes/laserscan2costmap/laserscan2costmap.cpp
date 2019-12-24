@@ -379,7 +379,7 @@ void laserScanCallback(const sensor_msgs::LaserScanConstPtr& msg)
     precasted = true;
   }
 
-  // Create costmap and publish
+  // Create costmap and publish_objects
   createCostMap(*msg, precasted_grids);
 
   return;

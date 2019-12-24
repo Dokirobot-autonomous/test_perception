@@ -117,10 +117,10 @@ private:
                   const float offset_z = 0);
 
   /**
-  * @brief publish DetectedObject
+  * @brief publish_objects DetectedObject
   * @param[in] detections Network output bounding box
   * @param[in] in_header Header from pointcloud
-  * @details Convert std::vector to DetectedObject, and publish them
+  * @details Convert std::vector to DetectedObject, and publish_objects them
   */
   void pubDetectedObject(const std::vector<float>& detections, const std_msgs::Header& in_header);
 

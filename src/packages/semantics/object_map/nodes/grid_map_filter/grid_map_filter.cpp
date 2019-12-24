@@ -87,7 +87,7 @@ namespace object_map
 			DrawCirclesInLayer(map, original_layer, cost_threshold, radius);
 		}
 
-		// publish grid map as ROS message
+		// publish_objects grid map as ROS message
 		PublishGridMap(map, grid_map_pub_);
 
 		// timer end

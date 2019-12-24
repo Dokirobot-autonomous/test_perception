@@ -5,9 +5,9 @@
     <arg name="objects_out" default="detection/lidar_detector/objects" />
 
     <arg name="network_definition_file"
-         default="/home/ohashi/test_perception/src/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/models/velodyne64/deploy.prototxt"/>
+         default="$(find lidar_apollo_cnn_seg_detect)/models/velodyne64/deploy.prototxt"/>
     <arg name="pretrained_model_file"
-         default="/home/ohashi/test_perception/src/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/models/velodyne64/deploy.caffemodel"/>
+         default="$(find lidar_apollo_cnn_seg_detect)/models/velodyne64/deploy.caffemodel"/>
 
     <arg name="score_threshold" default="0.5"/>
     <arg name="use_gpu" default="true"/>

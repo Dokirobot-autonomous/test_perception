@@ -343,7 +343,7 @@ Changelog for package trafficlight_recognizer
   as traffic light recognition result which is
   subscribed by traffic_light_viewer
 * Runtime Manager, update feat_proj for SIGINT termination
-* Uncomment publish statement of region_tlr
+* Uncomment publish_objects statement of region_tlr
   Now region_tlr node publishes "light_color" topic
   as traffic light recognition result which is
   subscribed by traffic_light_viewer

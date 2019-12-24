@@ -25,9 +25,9 @@ Parameters can be set in both Launch file and Runtime manager:
 | `input twist` | `fake_twist_topic` | *String* | Input twist command, controlling fake object | `/fake_twist` |
 | `output objects` | `fake_objects_topic` | *String* | Output objects, input and fake object are merged | `/fake_objects` |
 | `output points` | `fake_points_topic` | *String* | Output points, input and fake points are merged | `/fake_points` |
-| `publish object` | `publish_objects` | *Bool* | Enable publishing fake objects | `true` |
-| `publish points` | `publish_points` | *Bool* | Enable publishing fake points | `true` |
-| `publish rate` | `publish_rate` | *Double* | Publish rate of fake objects/points [Hz] | `10.0` |
+| `publish_objects object` | `publish_objects` | *Bool* | Enable publishing fake objects | `true` |
+| `publish_objects points` | `publish_points` | *Bool* | Enable publishing fake points | `true` |
+| `publish_objects rate` | `publish_rate` | *Double* | Publish rate of fake objects/points [Hz] | `10.0` |
 | `object length` | `object_length` | *Double* | Length [m] | `4.8` |
 | `object width` | `object_width` | *Double* | Width [m] | `1.8` |
 | `object height` | `object_height` | *Double* | Height [m] | `1.8` |

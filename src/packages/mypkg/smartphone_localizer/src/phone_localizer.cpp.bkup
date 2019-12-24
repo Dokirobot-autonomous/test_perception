@@ -194,7 +194,7 @@ void PhoneLocalizer::publish_poseaary(const ros::Time &time) {
     }
     posearray.header.stamp = time;
 
-    pub_particles.publish(posearray);
+    pub_particles.publish_objects(posearray);
 
     ROS_DEBUG_STREAM("Published Particle States \n" << getParticles());
 

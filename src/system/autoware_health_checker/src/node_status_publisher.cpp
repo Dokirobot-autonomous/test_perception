@@ -45,7 +45,7 @@ void NodeStatusPublisher::publishStatus() {
     status.header.stamp = now;
     status.node_name = ros::this_node::getName();
     std::vector<std::string> checker_keys = getRateCheckerKeys();
-    // iterate Rate checker and publish rate_check result
+    // iterate Rate checker and publish_objects rate_check result
     for (auto key_itr = checker_keys.begin(); key_itr != checker_keys.end();
          key_itr++) {
       autoware_system_msgs::DiagnosticStatusArray diag_array;
@@ -61,7 +61,7 @@ void NodeStatusPublisher::publishStatus() {
       diag_array.status.push_back(diag);
       status.status.push_back(diag_array);
     }
-    // iterate Diagnostic Buffer and publish all diagnostic data
+    // iterate Diagnostic Buffer and publish_objects all diagnostic data
     std::vector<std::string> keys = getKeys();
     for (auto key_itr = keys.begin(); key_itr != keys.end(); key_itr++) {
       status.status.push_back(diag_buffers_[*key_itr]->getAndClearData());

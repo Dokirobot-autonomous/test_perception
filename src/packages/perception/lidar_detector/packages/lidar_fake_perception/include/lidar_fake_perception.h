@@ -54,7 +54,7 @@ private:
   // param, publishing
   bool publish_objects_;  // enable publishing fake objects
   bool publish_points_;   // enable publishing fake points
-  double publish_rate_;   // publish rate of fake objects/points [Hz]
+  double publish_rate_;   // publish_objects rate of fake objects/points [Hz]
 
   // param, object shape
   double object_length_;    // length [m]

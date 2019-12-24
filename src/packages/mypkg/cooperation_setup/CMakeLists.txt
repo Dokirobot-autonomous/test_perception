@@ -43,7 +43,7 @@ catkin_package(
         geometry_msgs
         autoware_msgs
         INCLUDE_DIRS
-        include
+#        include
 )
 
 include_directories(include include/autoware_msgs include/${PROJECT_NAME}/ ${catkin_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIRS})
