@@ -14,8 +14,8 @@
         </node>
 
         <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="log">
-            <param name="use_mag" value="true"/>
-            <param name="use_magnetic_field_msg" value="true"/>
+            <param name="use_mag" value="false"/>
+            <param name="use_magnetic_field_msg" value="false"/>
             <param name="publish_tf" value="false"/>
             <remap from="imu/data_raw" to="xsens/imu/data"/>
             <remap from="imu/mag" to="xsens/imu/mag"/>
@@ -46,7 +46,7 @@
                       args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/velodyne" required="true"/>
         -->
         <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_lidar"
-              args="0. 0. 0. 1.5707 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/velodyne" required="true"/>
+              args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/velodyne" required="true"/>
         <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_gps"
               args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/gps" required="true"/>
 

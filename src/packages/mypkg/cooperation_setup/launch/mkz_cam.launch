@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="vehicle_name" default="mkz"/>
+
+    <arg name="veh_frame_id" default="mkz/velodyne"/>
+    <arg name="can_hardware_id" default="10349"/>
+    <arg name="esr_can_circuit_id" default="0"/>
+    <arg name="pcap" default=""/>
+
+    <arg name="camera_1" value=""/>
+    <arg name="camera_2" value=""/>
+    <arg name="camera_3" value=""/>
+    <arg name="camera_4" value=""/>
+
+    <arg name="left_camera" value="16492265"/>
+    <arg name="enable_trigger" value="true"/>
+    <arg name="trigger_source" value="gpio3"/>
+    <arg name="right_camera" value="16492281"/>
+    <arg name="enable_strobe2" value="false"/>
+
+    <arg name="with_rviz" default="false"/>
+    <arg name="with_dgps" default="true"/>
+    <arg name="with_lidar" default="true"/>
+    <arg name="with_cams" default="true"/>
+    <arg name="with_dbw" default="true"/>
+    <arg name="with_xsens" default="true"/>
+    <arg name="with_esr" default="true"/>
+
+    <group ns="$(arg vehicle_name)">
+
+
+        <group if="$(arg with_cams)">
+            <!-- Camera Nodes -->
+<!--            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="left_camera">
+                <arg name="camera_serial" value="$(arg left_camera)"/>
+                <arg name="enable_trigger" value="$(arg enable_trigger)"/>
+                <arg name="trigger_source" value="$(arg trigger_source)"/>
+            </include>
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="right_camera">
+                <arg name="camera_serial" value="$(arg right_camera)"/>
+                <arg name="enable_strobe2" value="$(arg enable_strobe2)"/>
+            </include>
+            <node pkg="image_flip" type="image_flip" name="image_flip_left"
+                  args="image:=left_camera/pg_16492265/image_color flipped:=left_camera/pg_16492265/image_color_flipped b"/>
+            <node pkg="image_flip" type="image_flip" name="image_flip_right"
+                  args="image:=right_camera/pg_16492281/image_color flipped:=right_camera/pg_16492281/image_color_flipped b"/>
+
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_driver">
+                <arg name="camera_serial" value="$(arg front_driver_camera_serial)" />
+            </include>
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_center">
+                  <arg name="camera_serial" value="$(arg front_center_camera_serial)" />
+            </include>
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_passenger">
+                  <arg name="camera_serial" value="$(arg front_passenger_camera_serial)" />
+            </include>
+-->
+            <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="rear_driver">
+                <arg name="camera_serial" value="16492281" />
+            </include>
+        </group>
+
+
+    </group>
+
+</launch>

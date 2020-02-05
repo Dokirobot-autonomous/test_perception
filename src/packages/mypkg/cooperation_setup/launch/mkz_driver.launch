@@ -22,7 +22,7 @@
     <arg name="with_rviz" default="false"/>
     <arg name="with_dgps" default="true"/>
     <arg name="with_lidar" default="true"/>
-    <arg name="with_cams" default="false"/>
+    <arg name="with_cams" default="true"/>
     <arg name="with_dbw" default="true"/>
     <arg name="with_xsens" default="true"/>
     <arg name="with_esr" default="true"/>
@@ -42,9 +42,9 @@
                 <arg name="enable_strobe2" value="$(arg enable_strobe2)"/>
             </include>
             <node pkg="image_flip" type="image_flip" name="image_flip_left"
-                  args="image:=/left_camera/pg_16492265/image_color flipped:=/left_camera/pg_16492265/image_color_flipped b"/>
+                  args="image:=left_camera/pg_16492265/image_color flipped:=left_camera/pg_16492265/image_color_flipped b"/>
             <node pkg="image_flip" type="image_flip" name="image_flip_right"
-                  args="image:=/right_camera/pg_16492281/image_color flipped:=/right_camera/pg_16492281/image_color_flipped b"/>
+                  args="image:=right_camera/pg_16492281/image_color flipped:=right_camera/pg_16492281/image_color_flipped b"/>
             <!--
             <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="front_driver">
                 <arg name="camera_serial" value="$(arg front_driver_camera_serial)" />
