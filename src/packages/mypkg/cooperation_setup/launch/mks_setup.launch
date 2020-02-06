@@ -6,34 +6,39 @@
 
     <group ns="$(arg vehicle_name)">
 
+<!--
         <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="log">
             <param name="ifpath" value="$(arg android-dt)/"/>
-            <!--
+            &lt;!&ndash;
                   <param name="date" value="2019-12-16"/>
-            -->
+            &ndash;&gt;
         </node>
+-->
 
-        <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node" output="log">
-            <param name="use_mag" value="false"/>
-            <param name="use_magnetic_field_msg" value="false"/>
-            <param name="publish_tf" value="false"/>
-            <remap from="imu/data_raw" to="imu/data"/>
-            <!--
-                  <remap from="imu/mag" to="xsens/imu/mag"/>
-            -->
-            <remap from="imu/data" to="imu_raw"/>
-        </node>
-        <node pkg="cooperation_setup" type="nmea2fix" name="nmea2fix" output="log">
-            <param name="vehicle_name" value="$(arg vehicle_name)"/>
-            <remap from="fix" to="navsat/fix"/>
-        </node>
-        <node pkg="gnss_imu_localizer" type="gnss_imu_localizer_node" name="gnss_imu_localizer_node" output="log">
-            <param name="frame_id_world" value="$(arg vehicle_name)/odom"/>
-            <param name="frame_id_vehicle" value="$(arg vehicle_name)/base_link"/>
-        </node>
+        <group ns="gnss_localizer">
+            <node pkg="cooperation_setup" name="nmea2fix" type="nmea2fix">
+                <remap from="nmea_sentence" to="/mks/nmea_sentence"/>
+                <param name="vehicle_name" value="mks"/>
+            </node>
+            <node pkg="cooperation_setup" name="fix2pose" type="fix2pose">
+                <rosparam param="origin_fix" subst_value="True">$(arg origin_fix)</rosparam>
+                <remap from="pose" to="pose_raw"/>
+            </node>
+            <node pkg="path_follower" name="pose_estimation" type="pose_estimation">
+                <remap from="vehicle/twist" to="/mks/vehicle/twist"/>
+                <remap from="xsens/imu/data" to="/mks/imu/data"/>
+                <remap from="gnss_pose" to="pose_raw"/>
+            </node>
+            <node pkg="path_follower" name="state_estimation" type="state_estimation.py">
+                <remap from="vehicle/twist" to="/mks/vehicle/twist"/>
+                <remap from="xsens/imu/data" to="/mks/imu/data"/>
+                <param name="base_link" value="mks/gps"/>
+                <param name="tf_publish" value="true"/>
+            </node>
+        </group>
 
         <include file="$(find lidar_apollo_cnn_seg_detect)/launch/lidar_apollo_cnn_seg_detect.launch">
-            <arg name="points_src" value="velodyne_points"/>
+            <arg name="points_src" value="points_raw"/>
             <arg name="output" value="log"/>
         </include>
         <include file="$(find lidar_imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch">
@@ -41,17 +46,12 @@
             <arg name="output" value="log"/>
         </include>
 
-
-        <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_xsens"
-              args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/xsens" required="true"/>
-        <!--
-                <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_lidar"
-                      args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/velodyne" required="true"/>
-        -->
-        <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_lidar"
-              args="0. 0. 0. 1.5707 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/velodyne" required="true"/>
         <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_gps"
-              args="0. 0. 0. 0. 0. 0. $(arg vehicle_name)/base_link $(arg vehicle_name)/gps" required="true"/>
+              args="1. 0. 0. 0. 0. 0. mks/gps mks/base_link" required="true"/>
+        <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_xsens"
+              args="0. 0. 0. 0. 0. 0. mks/base_link mks/xsens" required="true"/>
+        <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_lidar"
+              args="0. 0. 0. 0. 0. 0. mks/base_link mks/velodyne" required="true"/>
 
     </group>
 

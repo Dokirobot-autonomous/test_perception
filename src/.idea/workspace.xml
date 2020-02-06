@@ -564,7 +564,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78db5cd5-c846-4ce4-9116-08869ba8c3a8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_setup.launch.bkup200205" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_driver.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_driver.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/mks_setup.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/prius_setup.launch" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch/prius_setup.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mks_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mks_setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mkz_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/mkz_setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/prius_setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/packages/mypkg/cooperation_setup/run/prius_setup.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe/docs/index.md" afterDir="false" />
@@ -622,7 +629,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dataset/UCB/191225" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -633,19 +640,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/mypkg/cooperation_setup/launch" />
+      <recent name="$PROJECT_DIR$/dataset/UCB/191225" />
+      <recent name="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src" />
+      <recent name="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer" />
+      <recent name="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/nodes/imm_ukf_pda" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/packages/localization" />
       <recent name="$PROJECT_DIR$/packages/mypkg" />
       <recent name="$PROJECT_DIR$/packages/mypkg/cooperation/run" />
       <recent name="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/include/smartphone_localizer/archive" />
       <recent name="$PROJECT_DIR$/packages/smartphones/smartphone_localizer/src/archive" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dataset/UCB/191225" />
-      <recent name="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/src" />
-      <recent name="$PROJECT_DIR$/packages/mypkg/smartphone_localizer/include/smartphone_localizer" />
-      <recent name="$PROJECT_DIR$/packages/perception/lidar_tracker/packages/lidar_imm_ukf_pda_track/nodes/imm_ukf_pda" />
-      <recent name="$PROJECT_DIR$/packages/localization/path_follower/scripts/state_estimation" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -4152,7 +4159,7 @@
       <workItem from="1580405907224" duration="19421000" />
       <workItem from="1580499866281" duration="12552000" />
       <workItem from="1580517288135" duration="1382000" />
-      <workItem from="1580953482964" duration="607000" />
+      <workItem from="1580953482964" duration="5718000" />
     </task>
     <servers />
   </component>
@@ -4167,11 +4174,11 @@
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="547" y="263" key="#_autoware_can_msgs_generate_messages_check_deps_CANData/65.24.1855.1056/1920.0.1920.1080@65.24.1855.1056" timestamp="1576612339205" />
-    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580334056547">
+    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580954906374">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="2512" y="328" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1855.1056/1920.0.1920.1080@1920.0.1920.1080" timestamp="1578772858117" />
-    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1855.1056/1920.0.1920.1080@65.24.1855.1056" timestamp="1580334056547" />
+    <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1855.1056/1920.0.1920.1080@65.24.1855.1056" timestamp="1580954906374" />
     <state x="637" y="345" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1855.1056/65.24.1855.1056@65.24.1855.1056" timestamp="1577315729898" />
     <state x="680" y="270" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576023220162">
       <screen x="65" y="24" width="1855" height="1056" />

@@ -19,5 +19,6 @@ sleep 1
 
 source ~/ohashi/test_perception/src/packages/mypkg/cooperation_setup/run/exports.sh
 
-xterm -e bash -c "export ROS_MASTER_URI=http://$MKZ_IP:1234/; export ROS_IP=$MKZ_IP; source ~/ohashi/test_perception/devel/setup.bash; roslaunch cooperation_setup connection_client_setup.launch p:=true vehicle_name:=mkz;" & sleep 1
+xterm -e bash -c "export ROS_MASTER_URI=http://$MKZ_IP:1234/; export ROS_IP=$MKZ_IP; source ~/ohashi/test_perception/devel/setup.bash; roslaunch cooperation_setup connection_client_setup.launch p:=true vehicle_name:=mkz;" &
+sleep 1
 
