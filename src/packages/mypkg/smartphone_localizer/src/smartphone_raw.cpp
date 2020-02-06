@@ -28,7 +28,7 @@
 #include <visualization_msgs/Marker.h>
 #include <tf/transform_listener.h>
 
-#include "geo_pos_conv.hpp"
+#include <gnss/geo_pos_conv.hpp>
 
 #define ORIGIN_FIX "37.9181551873,-122.331354939,0.0"
 #define PERSON_INITIAL_DERECTION "-0.580381653" // radian from north, opposite clock direction

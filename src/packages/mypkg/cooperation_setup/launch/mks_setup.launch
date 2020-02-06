@@ -37,7 +37,7 @@
             <arg name="output" value="log"/>
         </include>
         <include file="$(find lidar_imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch">
-            <arg name="tracking_frame" value="$(arg vehicle_name)/odom"/>
+            <arg name="tracking_frame" value="/odom"/>
             <arg name="output" value="log"/>
         </include>
 

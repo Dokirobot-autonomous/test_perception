@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ohashi/slam_kitti_ws/mypkg/catkin_ws/src/lidar_localizer/cmake-build-debug/devel/setup.sh

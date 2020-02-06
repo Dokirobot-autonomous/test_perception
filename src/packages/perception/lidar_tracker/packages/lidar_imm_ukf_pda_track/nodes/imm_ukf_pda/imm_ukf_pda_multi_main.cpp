@@ -18,7 +18,8 @@
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "imm_ukf_pda_multi_tracker");
+
+    ros::init(argc, argv, "imm_ukf_pda_multi_tracker");
   ImmUkfPdaMulti app;
   app.run();
   ros::spin();

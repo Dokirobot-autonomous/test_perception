@@ -1,0 +1,15 @@
+<launch>
+
+  <group ns="mkz">
+
+    <node pkg="path_follower" name="nmea_to_UTM" type="nmea_to_UTM"/>
+
+    <node pkg="path_follower" name="pose_estimation" type="pose_estimation"/>
+
+    <node pkg="path_follower" name="state_estimation" type="state_estimation.py"/>
+
+  </group>
+
+</launch>
+
+

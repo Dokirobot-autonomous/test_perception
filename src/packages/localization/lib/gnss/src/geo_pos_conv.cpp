@@ -43,6 +43,16 @@ double geo_pos_conv::z() const
   return m_z;
 }
 
+double geo_pos_conv::yaw() const
+{
+    return m_yaw;
+}
+
+double geo_pos_conv::diff() const
+{
+    return m_diff;
+}
+
 void geo_pos_conv::set_plane(double lat, double lon)
 {
     m_PLato = lat*M_PI/180.0;
@@ -189,6 +199,15 @@ void geo_pos_conv::set_plane(int num)
   // swap longitude and latitude
     m_PLato = M_PI * ((double)lat_deg + (double)lat_min / 60.0) / 180.0;
     m_PLo = M_PI * ((double)lon_deg + (double)lon_min / 60.0) / 180;
+}
+
+bool geo_pos_conv::empty_plane(){
+    if(m_PLato==0.0 && m_PLo==0.0){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 void geo_pos_conv::set_xyz(double cx, double cy, double cz)
@@ -372,6 +391,11 @@ void geo_pos_conv::conv_llh2xyz_us(void){
         }
     }
     m_z=m_h;
+
+    m_yaw=atan2(m_y, m_x);
+
+    m_diff=sqrt(m_x*m_x+m_y*m_y);
+
 
 }
 

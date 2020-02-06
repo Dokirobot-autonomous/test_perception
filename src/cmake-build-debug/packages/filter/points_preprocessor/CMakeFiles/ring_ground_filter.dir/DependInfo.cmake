@@ -50,6 +50,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/libxml2"
   "/usr/include/tcl"
   "devel/include"
+  "../packages/localization/lib/velodyne/velodyne_pointcloud/include"
+  "../packages/localization/lib/velodyne/velodyne_driver/include"
   "../system/autoware_health_checker/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
@@ -68,6 +70,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/ohashi/test_perception/src/cmake-build-debug/packages/localization/lib/velodyne/velodyne_pointcloud/src/lib/CMakeFiles/velodyne_rawdata.dir/DependInfo.cmake"
+  "/home/ohashi/test_perception/src/cmake-build-debug/packages/localization/lib/velodyne/velodyne_driver/src/lib/CMakeFiles/velodyne_input.dir/DependInfo.cmake"
   "/home/ohashi/test_perception/src/cmake-build-debug/system/autoware_health_checker/CMakeFiles/node_status_publisher.dir/DependInfo.cmake"
   )
 

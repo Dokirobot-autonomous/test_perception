@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: vector_map
 Description: Description of vector_map
 Version: 1.11.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib -lvector_map
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lvector_map
 Requires: roscpp tf geometry_msgs visualization_msgs vector_map_msgs

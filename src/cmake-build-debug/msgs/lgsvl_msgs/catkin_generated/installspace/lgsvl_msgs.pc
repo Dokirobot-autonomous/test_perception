@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: lgsvl_msgs
 Description: Description of lgsvl_msgs
 Version: 1.9.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib 
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
 Requires: message_runtime geometry_msgs sensor_msgs std_msgs

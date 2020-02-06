@@ -3,7 +3,7 @@
   <arg name="gating_thres" default="9.22" />
   <arg name="gate_probability" default="0.99" />
   <arg name="detection_probability" default="0.9" />
-  <arg name="life_time_thres" default="8" />
+  <arg name="life_time_thres" default="2" />
   <arg name="static_velocity_thres" default="0.5" />
   <arg name="static_num_history_thres" default="3" />
   <arg name="prevent_explosion_thres" default="1000" />
@@ -11,7 +11,7 @@
   <arg name="nearest_lane_distance_thres" default="1.0" />
   <arg name="tracker_input_topic" default="detection/lidar_detector/objects" />
   <arg name="tracker_output_topic" default="detection/object_tracker/objects" />
-  <arg name="use_sukf" default="use_sukf" />
+  <arg name="use_sukf" default="false" />
   <arg name="use_vectormap" default="false" />
 
   <arg name="tracking_frame" default="/odom" />

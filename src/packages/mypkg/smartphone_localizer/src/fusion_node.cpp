@@ -32,7 +32,8 @@
 //#include <tf2/convert.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
-#include "geo_pos_conv.hpp"
+
+#include <gnss/geo_pos_conv.hpp>
 #include "../../../../../devel/include/autoware_msgs/DetectedObject.h"
 #include "../../../../../devel/include/autoware_msgs/DetectedObjectArray.h"
 

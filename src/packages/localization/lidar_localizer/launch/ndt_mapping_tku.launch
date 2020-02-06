@@ -1,0 +1,40 @@
+<!-- -->
+<launch>
+
+  <!-- send table.xml to param server -->
+  <arg name="points_raw" default="points_raw"/>
+  <arg name="init_x" default="0.0" />
+  <arg name="init_y" default="0.0" />
+  <arg name="init_z" default="0.0" />  
+  <arg name="init_roll" default="0.0" />  
+  <arg name="init_pitch" default="0.0" />
+  <arg name="init_yaw" default="0.0" />
+<!--
+  <arg name="init_yaw" default="161.68983978892206" />
+-->
+    <arg name="tf_x" default="0.0" />
+    <arg name="tf_y" default="0.0" />
+    <arg name="tf_z" default="0.0" />
+    <arg name="tf_roll" default="0.0" />
+    <arg name="tf_pitch" default="0.0" />
+    <arg name="tf_yaw" default="0.0" />
+      <param name="tf_x" value="$(arg tf_x)" />
+      <param name="tf_y" value="$(arg tf_y)" />
+      <param name="tf_z" value="$(arg tf_z)" />
+      <param name="tf_roll" value="$(arg tf_roll)" />
+      <param name="tf_pitch" value="$(arg tf_pitch)" />
+      <param name="tf_yaw" value="$(arg tf_yaw)" />
+
+<!--  <node pkg="tf2_ros" type="static_transform_publisher" name="transform_local_cs_2_ndtmap" args="0 0 0 0 -1.57 1.57 local_cs ndt_map" />-->
+
+  <node pkg="lidar_localizer" type="ndt_mapping_tku" name="ndt_mapping_tku" output="screen">
+    <param name="init_x" value="$(arg init_x)" />
+    <param name="init_y" value="$(arg init_y)" />
+    <param name="init_z" value="$(arg init_z)" />
+    <param name="init_roll" value="$(arg init_roll)" />
+    <param name="init_pitch" value="$(arg init_pitch)" />
+    <param name="init_yaw" value="$(arg init_yaw)" />
+    <remap from="points_raw" to="$(arg points_raw)" />
+  </node>
+  
+</launch>

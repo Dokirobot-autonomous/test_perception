@@ -1,7 +1,6 @@
 #! /bin/bash
 
-#htpdate 192.168.0.102
-#ntpdate -q 192.168.0.102
+#ntpdate -q 192.168.0.101
 
 read -p "Is time sync ok? : "
 

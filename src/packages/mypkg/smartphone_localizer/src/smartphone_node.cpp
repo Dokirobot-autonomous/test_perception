@@ -28,7 +28,7 @@
 #include <nav_msgs/Odometry.h>
 #include <tf/transform_broadcaster.h>
 
-#include "geo_pos_conv.hpp"
+#include <gnss/geo_pos_conv.hpp>
 
 #include "ParticleFilter.h"
 #include "State.h"

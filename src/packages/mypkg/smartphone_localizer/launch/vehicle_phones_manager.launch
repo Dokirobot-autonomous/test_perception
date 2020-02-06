@@ -15,6 +15,9 @@
     <param name="vehicle_name" value="$(arg vehicle_name)" />
     <param name="phone_names" value="$(arg phone_names)" />
     <param name="topic_name_objects" value="detection/object_tracker/objects" />
+<!--
+    <param name="topic_name_objects" value="detection/lidar_detector/objects" />
+-->
     <param name="particlefilter_particle_size" value="$(arg pf_particle_size" />
     <param name="particlefilter_gyro_standard_deviation" value="$(arg pf_gyro_sd)" />
     <param name="particlefilter_system_noise_standard_deviation" value="$(arg pf_sys_noise_sd)" />

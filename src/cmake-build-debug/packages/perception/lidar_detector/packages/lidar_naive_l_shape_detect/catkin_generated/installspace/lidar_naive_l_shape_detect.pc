@@ -4,5 +4,5 @@ Name: lidar_naive_l_shape_detect
 Description: Description of lidar_naive_l_shape_detect
 Version: 1.11.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L${prefix}/lib 
 Requires: roscpp pcl_ros autoware_msgs tf

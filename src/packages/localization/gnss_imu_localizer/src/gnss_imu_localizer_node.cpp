@@ -72,6 +72,7 @@ private:
 
     std::string quaternion_sensor;
 
+    bool use_imu,use_odom,use_fix;
     bool update_imu,update_odom,update_fix;
 
 };

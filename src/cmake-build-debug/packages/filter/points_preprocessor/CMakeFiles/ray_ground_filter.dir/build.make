@@ -80,8 +80,8 @@ ray_ground_filter_EXTERNAL_OBJECTS =
 devel/lib/points_preprocessor/ray_ground_filter: packages/filter/points_preprocessor/CMakeFiles/ray_ground_filter.dir/nodes/ray_ground_filter/ray_ground_filter_main.cpp.o
 devel/lib/points_preprocessor/ray_ground_filter: packages/filter/points_preprocessor/CMakeFiles/ray_ground_filter.dir/build.make
 devel/lib/points_preprocessor/ray_ground_filter: devel/lib/libray_ground_filter_lib.so
-devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libvelodyne_rawdata.so
-devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libvelodyne_input.so
+devel/lib/points_preprocessor/ray_ground_filter: devel/lib/libvelodyne_rawdata.so
+devel/lib/points_preprocessor/ray_ground_filter: devel/lib/libvelodyne_input.so
 devel/lib/points_preprocessor/ray_ground_filter: devel/lib/libnode_status_publisher.so
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libjsk_rviz_plugins.so
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libjsk_recognition_utils.so
@@ -371,8 +371,8 @@ devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libroscons
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
 devel/lib/points_preprocessor/ray_ground_filter: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-devel/lib/points_preprocessor/ray_ground_filter: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libxmlrpcpp.so
+devel/lib/points_preprocessor/ray_ground_filter: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libroscpp_serialization.so
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/librostime.so
 devel/lib/points_preprocessor/ray_ground_filter: /opt/ros/kinetic/lib/libcpp_common.so

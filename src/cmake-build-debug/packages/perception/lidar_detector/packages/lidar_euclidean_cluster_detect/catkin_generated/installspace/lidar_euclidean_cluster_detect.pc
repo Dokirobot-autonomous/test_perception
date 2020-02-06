@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: lidar_euclidean_cluster_detect
 Description: Description of lidar_euclidean_cluster_detect
 Version: 1.11.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib 
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
 Requires: pcl_ros roscpp geometry_msgs std_msgs sensor_msgs autoware_msgs tf vector_map_server grid_map_ros grid_map_cv grid_map_msgs

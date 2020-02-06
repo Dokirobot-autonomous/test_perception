@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: dbw_mkz_msgs
 Description: Description of dbw_mkz_msgs
 Version: 1.11.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib 
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
 Requires: message_runtime std_msgs geometry_msgs
