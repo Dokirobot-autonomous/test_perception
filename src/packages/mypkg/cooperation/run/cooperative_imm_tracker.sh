@@ -2,7 +2,7 @@
 
 
 #! bagfile
-xterm -e bash -c "roslaunch /home/ohashi/test_perception/src/dataset/UCB/191213/1-2019-12-13-10-25-02.launch" & sleep 3
+xterm -e bash -c "roslaunch /home/ohashi/test_perception/src/dataset/UCB/191213/1-2019-12-25-10-29.launch" & sleep 3
 #! detectioin node mks
 xterm -e bash -c "source ~/test_perception/devel/setup.bash; \
                   roslaunch lidar_apollo_cnn_seg_detect lidar_apollo_cnn_seg_detect.launch \

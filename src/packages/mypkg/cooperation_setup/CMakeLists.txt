@@ -95,6 +95,15 @@ install(TARGETS nmea2fix
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
 
+add_executable(fix2pose src/fix2pose.cpp)
+target_link_libraries(fix2pose ${catkin_LIBRARIES})
+add_dependencies(fix2pose ${catkin_EXPORTED_TARGETS})
+install(TARGETS fix2pose
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
 add_executable(fix_tf_publisher src/fix_tf_publisher.cpp)
 target_link_libraries(fix_tf_publisher ${catkin_LIBRARIES})
 add_dependencies(fix_tf_publisher ${catkin_EXPORTED_TARGETS})

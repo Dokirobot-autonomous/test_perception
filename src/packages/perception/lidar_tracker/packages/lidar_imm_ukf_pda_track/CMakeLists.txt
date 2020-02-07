@@ -51,24 +51,24 @@ install(TARGETS
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
 
-##imm_ukf_pda_multi
-#add_executable(imm_ukf_pda_multi
-#        nodes/imm_ukf_pda/imm_ukf_pda_multi_main.cpp
-#        nodes/imm_ukf_pda/imm_ukf_pda_multi.cpp
-#        nodes/imm_ukf_pda/ukf.cpp
-#        )
-#target_link_libraries(imm_ukf_pda_multi
-#        ${catkin_LIBRARIES}
-#        )
-#add_dependencies(imm_ukf_pda_multi
-#        ${catkin_EXPORTED_TARGETS}
-#        )
-#install(TARGETS
-#        imm_ukf_pda_multi
-#        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-#        )
+#imm_ukf_pda_multi
+add_executable(imm_ukf_pda_multi
+        nodes/imm_ukf_pda/imm_ukf_pda_multi_main.cpp
+        nodes/imm_ukf_pda/imm_ukf_pda_multi.cpp
+        nodes/imm_ukf_pda/ukf.cpp
+        )
+target_link_libraries(imm_ukf_pda_multi
+        ${catkin_LIBRARIES}
+        )
+add_dependencies(imm_ukf_pda_multi
+        ${catkin_EXPORTED_TARGETS}
+        )
+install(TARGETS
+        imm_ukf_pda_multi
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
 
 install(DIRECTORY launch/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch

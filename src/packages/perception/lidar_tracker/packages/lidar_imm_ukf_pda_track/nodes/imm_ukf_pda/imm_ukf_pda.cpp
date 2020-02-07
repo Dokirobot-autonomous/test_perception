@@ -89,6 +89,15 @@ void ImmUkfPda::callback(const autoware_msgs::DetectedObjectArray &input) {
     tracker(transformed_input, detected_objects_output);
     transformPoseToLocal(detected_objects_output);
 
+    for (auto &obj:detected_objects_output.objects) {
+        if (std::isnan(obj.pose.orientation.x) ||
+            std::isnan(obj.pose.orientation.y) ||
+            std::isnan(obj.pose.orientation.z) ||
+            std::isnan(obj.pose.orientation.w)) {
+            obj.pose.orientation.x=obj.pose.orientation.y=obj.pose.orientation.z=obj.pose.orientation.w=0.0;
+        }
+    }
+
     pub_object_array_.publish(detected_objects_output);
 
     {
@@ -380,13 +389,14 @@ void ImmUkfPda::updateTrackingNum(const std::vector<autoware_msgs::DetectedObjec
     return;
 }
 
-bool ImmUkfPda::probabilisticDataAssociation(const autoware_msgs::DetectedObjectArray &input, const double dt,
+bool ImmUkfPda::probabilisticDataAssociation(const autoware_msgs::DetectedObjectArray &input, const double timestamp,
                                              std::vector<bool> &matching_vec,
                                              std::vector<autoware_msgs::DetectedObject> &object_vec, UKF &target) {
     double det_s = 0;
     Eigen::VectorXd max_det_z;
     Eigen::MatrixXd max_det_s;
     bool success = true;
+    double dt=timestamp-target.time_;
 
     if (use_sukf_) {
         max_det_z = target.z_pred_ctrv_;
@@ -680,8 +690,8 @@ void ImmUkfPda::tracker(const autoware_msgs::DetectedObjectArray &input,
         return;
     }
 
-    double dt = (timestamp - timestamp_);
-    timestamp_ = timestamp;
+//    double dt = (timestamp - timestamp_);
+//    timestamp_ = timestamp;
 
 
     // start UKF process
@@ -699,15 +709,17 @@ void ImmUkfPda::tracker(const autoware_msgs::DetectedObjectArray &input,
             continue;
         }
 
-        targets_[i].prediction(use_sukf_, has_subscribed_vectormap_, dt);
+        targets_[i].prediction(use_sukf_, has_subscribed_vectormap_, timestamp);
 
         std::vector<autoware_msgs::DetectedObject> object_vec;
-        bool success = probabilisticDataAssociation(input, dt, matching_vec, object_vec, targets_[i]);
+        bool success = probabilisticDataAssociation(input, timestamp, matching_vec, object_vec, targets_[i]);
         if (!success) {
+            targets_[i].time_=timestamp;
             continue;
         }
 
         targets_[i].update(use_sukf_, detection_probability_, gate_probability_, gating_thres_, object_vec);
+        targets_[i].time_=timestamp;
     }
     // end UKF process
 

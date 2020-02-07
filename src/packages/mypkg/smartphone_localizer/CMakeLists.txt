@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
         tf_conversions
         geometry_msgs
         autoware_msgs
+        gnss
         )
 
 find_package(Eigen3 QUIET)
@@ -65,7 +66,7 @@ install(DIRECTORY include/${PROJECT_NAME}/ include/autoware_msgs/
 add_executable(phone_localizer
         src/phone_localizer_node.cpp
         src/phone_localizer.cpp
-        src/geo_pos_conv.cpp)
+        )
 target_compile_options(phone_localizer PRIVATE ${OpenMP_FLAGS})
 target_link_libraries(phone_localizer ${catkin_LIBRARIES} ${OpenMP_LIBS})
 add_dependencies(phone_localizer ${catkin_EXPORTED_TARGETS})
@@ -78,7 +79,7 @@ install(TARGETS phone_localizer
 add_executable(vehicle_phones_manager
         src/vehicle_phones_manager.cpp
         src/phone_localizer.cpp
-        src/geo_pos_conv.cpp)
+        )
 target_link_libraries(vehicle_phones_manager ${catkin_LIBRARIES})
 add_dependencies(vehicle_phones_manager ${catkin_EXPORTED_TARGETS})
 install(TARGETS vehicle_phones_manager
@@ -102,7 +103,7 @@ install(TARGETS vehicle_phones_manager
 #        )
 
 
-add_executable(smartphone_sensors src/smartphone_node.cpp src/geo_pos_conv.cpp)
+add_executable(smartphone_sensors src/smartphone_node.cpp)
 target_link_libraries(smartphone_sensors ${catkin_LIBRARIES})
 add_dependencies(smartphone_sensors ${catkin_EXPORTED_TARGETS})
 install(TARGETS smartphone_sensors
@@ -111,7 +112,7 @@ install(TARGETS smartphone_sensors
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
 
-add_executable(fusion src/fusion_node.cpp src/geo_pos_conv.cpp)
+add_executable(fusion src/fusion_node.cpp)
 target_link_libraries(fusion ${catkin_LIBRARIES})
 add_dependencies(fusion ${catkin_EXPORTED_TARGETS})
 install(TARGETS fusion
@@ -121,10 +122,19 @@ install(TARGETS fusion
         )
 
 
-add_executable(phonesensors_raw src/smartphone_raw.cpp src/geo_pos_conv.cpp)
+add_executable(phonesensors_raw src/smartphone_raw.cpp)
 target_link_libraries(phonesensors_raw ${catkin_LIBRARIES})
 add_dependencies(phonesensors_raw ${catkin_EXPORTED_TARGETS})
 install(TARGETS phonesensors_raw
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
+add_executable(phone_raw src/phone_raw.cpp)
+target_link_libraries(phone_raw ${catkin_LIBRARIES})
+add_dependencies(phone_raw ${catkin_EXPORTED_TARGETS})
+install(TARGETS phone_raw
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

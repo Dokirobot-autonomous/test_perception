@@ -36,8 +36,8 @@ catkin_package(
         CATKIN_DEPENDS
         sensor_msgs
         roscpp
-        tf
         eigen_conversions
+        tf
         tf_conversions
         geometry_msgs
         INCLUDE_DIRS
@@ -51,8 +51,16 @@ SET(CMAKE_CXX_FLAGS "-O2 -g -Wall ${CMAKE_CXX_FLAGS}")
 add_executable(gnss_imu_localizer_node src/gnss_imu_localizer_node.cpp)
 target_link_libraries(gnss_imu_localizer_node ${catkin_LIBRARIES})
 add_dependencies(gnss_imu_localizer_node ${catkin_EXPORTED_TARGETS})
-
 install(TARGETS gnss_imu_localizer_node
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
+add_executable(gnss_localizer_node src/gnss_localizer_node.cpp)
+target_link_libraries(gnss_localizer_node ${catkin_LIBRARIES})
+add_dependencies(gnss_localizer_node ${catkin_EXPORTED_TARGETS})
+install(TARGETS gnss_localizer_node
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

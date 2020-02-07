@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/localization/imu_tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/localization/robot_localization" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/perception/lidar_detector/packages/lidar_apollo_cnn_seg_detect/caffe" vcs="Git" />
   </component>
 </project>

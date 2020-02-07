@@ -7,25 +7,9 @@
 
     <group ns="$(arg vehicle_name)">
 
-      <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="log">
-        <param name="ifpath" value="$(arg android-dt)/"/>
-<!--
-        <param name="date" value="2019-12-16"/>
--->
-      </node>
 
-        <node pkg="gnss_imu_localizer" type="gnss_imu_localizer_node" name="gnss_imu_localizer_node" output="log">
-        <param name="frame_id_world" value="$(arg vehicle_name)/odom"/>
-        <param name="frame_id_vehicle" value="$(arg vehicle_name)/base_link"/>
-          <param name="quaternion_sensor" value="odom"/>
-      </node>
-
-      <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_xsens"
-            args="0. 0. 0. 0. 0. 0. /$(arg vehicle_name)/base_link $(arg vehicle_name)/xsens" required="true"/>
       <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_lidar"
-            args="0. 0. 0. -1.5707 0. 0. /$(arg vehicle_name)/base_link /rslidar" required="true"/>
-      <node pkg="tf2_ros" type="static_transform_publisher" name="vehicle_to_gps"
-            args="0. 0. 0. 0. 0. 0. /$(arg vehicle_name)/base_link $(arg vehicle_name)/gps" required="true"/>
+            args="0. 0. 0. -1.5707 0. 0. /prius/base_link /rslidar" required="true"/>
 
     </group>
 

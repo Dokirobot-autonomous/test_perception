@@ -4,5 +4,5 @@ Name: vision_ssd_detect
 Description: Description of vision_ssd_detect
 Version: 1.11.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L${prefix}/lib 
 Requires: cv_bridge image_transport roscpp sensor_msgs std_msgs autoware_msgs autoware_config_msgs tf

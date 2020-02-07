@@ -4,5 +4,5 @@ Name: obj_db
 Description: Description of obj_db
 Version: 1.11.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L${prefix}/lib 
 Requires: roscpp gnss visualization_msgs autoware_can_msgs
