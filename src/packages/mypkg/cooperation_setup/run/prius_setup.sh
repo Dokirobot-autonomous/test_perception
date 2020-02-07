@@ -1,11 +1,11 @@
 #! /bin/bash
 
-htpdate 192.168.0.102
-ntpdate -q 192.168.0.102
+#htpdate 192.168.0.102
+#ntpdate -q 192.168.0.102
 
 read -p "Is time sync ok? : "
 
-xterm -e bash -c "python ../launch/prius_driver.launch" &
+python ../launch/prius_driver.py
 
 read -p "Make sure to turn \'XSENS\' on: "
 
