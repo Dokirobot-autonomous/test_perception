@@ -4,5 +4,5 @@ Name: lidar_point_pillars
 Description: Description of lidar_point_pillars
 Version: 1.11.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L${prefix}/lib 
 Requires: roscpp roslib pcl_ros autoware_msgs

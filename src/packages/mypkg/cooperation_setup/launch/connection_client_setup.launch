@@ -4,15 +4,22 @@
     <arg name="vehicle_name"/>
     <arg name="p" default="false"/>
     <arg name="s" default="false"/>
+    <arg name="android-dt" default="$(find cooperation_setup)/"/>
+
     <group ns="$(arg vehicle_name)">
         <node pkg="cooperation_setup" type="connection_client_setup" name="connection_client_subscriber" output="screen"
               if="$(arg s)">
             <param name="client_mode" value="subscriber"/>
         </node>
-        <node pkg="cooperation_setup" type="connection_client_setup" name="connection_client_publisher" output="screen"
-              if="$(arg p)">
-            <param name="client_mode" value="publisher"/>
-        </node>
+        <group if="$(arg p)">
+            <node pkg="cooperation_setup" type="connection_client_setup" name="connection_client_publisher" output="screen">
+                <param name="client_mode" value="publisher"/>
+                <remap from="detection/lidar_detector/objects" to="coonection/detection/lidar_detector/objects"/>
+            </node>
+            <node pkg="cooperation_setup" type="android_setup" name="android_setup" output="log">
+                <param name="ifpath" value="$(arg android-dt)/"/>
+            </node>
+        </group>
     </group>
 
 </launch>

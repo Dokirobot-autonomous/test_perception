@@ -4,5 +4,5 @@ Name: vision_segment_enet_detect
 Description: Description of vision_segment_enet_detect
 Version: 1.11.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L${prefix}/lib 
 Requires: cv_bridge image_transport roscpp sensor_msgs

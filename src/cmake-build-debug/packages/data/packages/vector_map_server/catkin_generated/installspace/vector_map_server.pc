@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: vector_map_server
 Description: Description of vector_map_server
 Version: 1.11.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib 
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
 Requires: message_runtime roscpp geometry_msgs autoware_msgs vector_map_msgs vector_map visualization_msgs

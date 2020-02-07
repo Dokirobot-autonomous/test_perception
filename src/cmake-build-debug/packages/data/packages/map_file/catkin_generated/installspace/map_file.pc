@@ -4,5 +4,5 @@ Name: map_file
 Description: Description of map_file
 Version: 1.11.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L${prefix}/lib 
 Requires: 

@@ -1,0 +1,28 @@
+<!-- -->
+<launch>
+
+    <arg name="output" default="screen"/>
+    <arg name="vehicle_name" default="mks"/>
+    <arg name="initital_quaternion" default="[]"/>
+
+    <group ns="$(arg vehicle_name)">
+        <node pkg="cooperation_setup" type="nmea2fix" name="nmea2fix" output="$(arg output)">
+            <param name="vehicle_name" value="$(arg vehicle_name)"/>
+            <remap from="fix" to="navsat/fix"/>
+        </node>
+
+        <node pkg="gnss_imu_localizer" type="gnss_localizer_node" name="gnss_localizer_node" output="$(arg output)">
+            <param name="frame_id_world" value="$(arg vehicle_name)/odom"/>
+            <param name="frame_id_vehicle" value="$(arg vehicle_name)/base_link"/>
+            <param name="publish_tf" value="true"/>
+            <remap from="navsat/fix" to="navsat/fix"/>
+            <remap from="vehicle/twist" to="vehicle/twist"/>
+            <remap from="odom" to="odom_tmp"/>
+            <remap from="init/fix" to="init/fix_tmp"/>
+<!--
+            <rosparam param="initital_quaternion" subst_value="True">$(arg initital_quaternion)</rosparam>
+-->
+        </node>
+    </group>
+
+</launch>

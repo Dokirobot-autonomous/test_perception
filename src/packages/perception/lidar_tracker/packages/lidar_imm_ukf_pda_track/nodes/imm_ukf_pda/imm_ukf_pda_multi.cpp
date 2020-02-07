@@ -15,7 +15,7 @@
  */
 
 
-#include <imm_ukf_pda_multi.h>
+#include "imm_ukf_pda_multi.h"
 
 ImmUkfPdaMulti::ImmUkfPdaMulti()
         : target_id_(0),  // assign unique ukf_id_ to each tracking targets
@@ -43,6 +43,29 @@ ImmUkfPdaMulti::ImmUkfPdaMulti()
     // rosparam for benchmark
     private_nh_.param<bool>("is_benchmark", is_benchmark_, false);
     private_nh_.param<std::string>("kitti_data_dir", kitti_data_dir_, "");
+
+    if (!private_nh_.getParam("topic_names_odom", topic_names_odom_)) {
+        ROS_ERROR("Non \"topic_names_odom\"");
+        exit(-1);
+    }
+    if (!private_nh_.getParam("topic_names_objects", topic_names_objects_)) {
+        ROS_ERROR("Non \"topic_names_objects\"");
+        exit(-1);
+    }
+
+    ofs_.open("/home/ohashi/test_perception/matlab/workspace/cooperative_tracking/log.csv");
+    ofs_ << "% timestamp,label,id,x,y,sigma_x,sigma_xy,sigma_yx,sigma_y" << std::endl;
+
+    // debug mode
+    bool debug;
+    private_nh_.param<bool>("debug", debug, false);
+    if (debug) {
+        if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Debug)) {
+            ros::console::notifyLoggerLevelsChanged();
+        }
+    }
+
+
     if (is_benchmark_) {
         result_file_path_ = kitti_data_dir_ + "benchmark_results.txt";
         std::remove(result_file_path_.c_str());
@@ -50,11 +73,21 @@ ImmUkfPdaMulti::ImmUkfPdaMulti()
 }
 
 void ImmUkfPdaMulti::run() {
-    pub_object_array_ = node_handle_.advertise<autoware_msgs::DetectedObjectArray>("/detection/objects", 1);
-    sub_detected_array_mks_ = node_handle_.subscribe("/mks/detection/fusion_tools/objects", 1, &ImmUkfPdaMulti::callback,
-                                                     this);
-    sub_detected_array_prius_ = node_handle_.subscribe("/prius/detection/fusion_tools/objects", 1, &ImmUkfPdaMulti::callback,
-                                                       this);
+    pub_object_array_ = node_handle_.advertise<autoware_msgs::DetectedObjectArray>("/detection/objects", 10);
+    sub_detected_array_mks_ = node_handle_.subscribe(topic_names_objects_[0], 10,
+                                                     &ImmUkfPdaMulti::callback, this);
+    sub_detected_array_mkz_ = node_handle_.subscribe(topic_names_objects_[1], 10,
+                                                     &ImmUkfPdaMulti::callback, this);
+    sub_detected_array_prius_ = node_handle_.subscribe(topic_names_objects_[2], 10,
+                                                       &ImmUkfPdaMulti::callback, this);
+    sub_odom_mks_ = node_handle_.subscribe(topic_names_odom_[0], 10,
+                                           &ImmUkfPdaMulti::callback_odom, this);
+    sub_odom_mkz_ = node_handle_.subscribe(topic_names_odom_[1], 10,
+                                           &ImmUkfPdaMulti::callback_odom, this);
+    sub_odom_prius_ = node_handle_.subscribe(topic_names_odom_[2], 10,
+                                             &ImmUkfPdaMulti::callback_odom, this);
+    msg_odom_.resize(topic_names_odom_.size());
+    p_vehicle_ = std::vector<Eigen::MatrixXd>(topic_names_odom_.size(), Eigen::MatrixXd::Zero(3, 3));
 
     if (use_vectormap_) {
         vmap_.subscribe(private_nh_, vector_map::Category::POINT |
@@ -63,8 +96,31 @@ void ImmUkfPdaMulti::run() {
     }
 }
 
-void ImmUkfPdaMulti::callback_mks(const autoware_msgs::DetectedObjectArray &input) {
+/**
+ *
+ * @param event
+ */
+void ImmUkfPdaMulti::callback(const ros::MessageEvent<autoware_msgs::DetectedObjectArray const> &event) {
+
+    const ros::M_string &header = event.getConnectionHeader();
+    std::string topic = header.at("topic");
+    tn_ = topic;
+    int v_idx = std::distance(topic_names_objects_.begin(),
+                              std::find(topic_names_objects_.begin(), topic_names_objects_.end(), topic));
+    const autoware_msgs::DetectedObjectArray input = *(event.getMessage());
+
     input_header_ = input.header;
+
+    {
+        std::ostringstream ostr;
+        ostr << input_header_ << std::endl;
+        for (const autoware_msgs::DetectedObject &obj:input.objects) {
+            ostr << obj.label << std::endl;
+            ostr << obj.pose;
+            ostr << obj.velocity;
+        }
+        ROS_DEBUG_STREAM("Input Objects: \n" << ostr.str());
+    }
 
     if (use_vectormap_) {
         checkVectormapSubscription();
@@ -72,47 +128,106 @@ void ImmUkfPdaMulti::callback_mks(const autoware_msgs::DetectedObjectArray &inpu
 
     bool success = updateNecessaryTransform();
     if (!success) {
-        ROS_INFO("Could not find coordiante transformation");
+        ROS_WARN("Could not find coordiante transformation");
         return;
     }
+
+    //// done: TODO inputのreliability_vecを計算（inputがある時点でreliabilityは確定する）
+    std::vector<Eigen::MatrixXd> reliability_vec = std::vector<Eigen::MatrixXd>(input.objects.size(),
+                                                                                Eigen::MatrixXd(2,
+                                                                                                2)); // covariance matrix based on odom frame
+    makeReliabilityVec(input, msg_odom_[v_idx], p_vehicle_[v_idx], reliability_vec);
+
 
     autoware_msgs::DetectedObjectArray transformed_input;
     autoware_msgs::DetectedObjectArray detected_objects_output;
     transformPoseToGlobal(input, transformed_input);
-    tracker(transformed_input, detected_objects_output);
-    transformPoseToLocal(detected_objects_output);
+
+    //// done: TODO ２つのvehicleのinputを一つのtransformed_inputにまとめる．0.1秒周期でtrackerを更新
+    static std::vector<autoware_msgs::DetectedObjectArray> transformed_input_vec(topic_names_objects_.size());
+    static std::vector<std::vector<Eigen::MatrixXd>> reliability_vec_vec(topic_names_objects_.size());
+    static std::vector<bool> update(topic_names_objects_.size(), false);
+    transformed_input_vec[v_idx] = transformed_input;
+    reliability_vec_vec[v_idx] = reliability_vec;
+    update[v_idx] = true;
+    if (!update[0] || !update[1]) {
+        return;
+    }
+    autoware_msgs::DetectedObjectArray transformed_input_all;
+    transformed_input_all.header = input_header_;
+    for (size_t i = 0; i < transformed_input_vec.size(); i++) {
+        for (size_t j = 0; j < transformed_input_vec[i].objects.size(); j++) {
+            transformed_input_all.objects.push_back(transformed_input_vec[i].objects[j]);
+            reliability_vec_.push_back(reliability_vec_vec[i][j]);
+        }
+    }
+
+    tracker(transformed_input_all, detected_objects_output);
+    detected_objects_output.header = input_header_;
+//    transformPoseToLocal(detected_objects_output);
+
+    autoware_msgs::DetectedObjectArray tmp;
+    for (auto &obj:detected_objects_output.objects) {
+        if (std::isnan(obj.pose.orientation.x) ||
+            std::isnan(obj.pose.orientation.y) ||
+            std::isnan(obj.pose.orientation.z) ||
+            std::isnan(obj.pose.orientation.w)) {
+            obj.pose.orientation.x = obj.pose.orientation.y = obj.pose.orientation.z = obj.pose.orientation.w = 0.0;
+        }
+        if (obj.label == "pedestrian") {
+            tmp.objects.push_back(obj);
+        }
+    }
+    tmp.header = input_header_;
+    tmp.header.frame_id = tracking_frame_;
+    for (auto &obj:tmp.objects) {
+        obj.header = tmp.header;
+    }
+    detected_objects_output = tmp;
 
     pub_object_array_.publish(detected_objects_output);
+
+    {
+        std::ostringstream ostr;
+        ostr << detected_objects_output.header << std::endl;
+        for (const autoware_msgs::DetectedObject &obj:detected_objects_output.objects) {
+            ostr << obj.label << std::endl;
+            ostr << obj.pose;
+            ostr << obj.velocity;
+        }
+        ROS_DEBUG_STREAM("Output Objects: \n" << ostr.str());
+    }
 
     if (is_benchmark_) {
         dumpResultText(detected_objects_output);
     }
+
+    transformed_input_vec = std::vector<autoware_msgs::DetectedObjectArray>(topic_names_objects_.size());
+    reliability_vec_vec = std::vector<std::vector<Eigen::MatrixXd>>(topic_names_objects_.size());
+    reliability_vec_ = std::vector<Eigen::MatrixXd>(0);
+    update = std::vector<bool>(topic_names_objects_.size(), false);
 }
 
-void ImmUkfPdaMulti::callback_prius(const autoware_msgs::DetectedObjectArray &input) {
-    input_header_ = input.header;
+/**
+ * callback_odom
+ * @param input
+ */
+void ImmUkfPdaMulti::callback_odom(const ros::MessageEvent<nav_msgs::Odometry const> &event) {
 
-    if (use_vectormap_) {
-        checkVectormapSubscription();
-    }
+    //// done: TODO Vehicle ごとにOdometryを入手し，ClassMemberとして保存
+    const ros::M_string &header = event.getConnectionHeader();
+    std::string topic = header.at("topic");
+    int idx = std::distance(topic_names_odom_.begin(),
+                            std::find(topic_names_odom_.begin(), topic_names_odom_.end(), topic));
+    msg_odom_[idx] = *(event.getMessage());
+    p_vehicle_[idx] = Eigen::MatrixXd(3, 3);
+    p_vehicle_[idx] <<
+                    msg_odom_[idx].pose.covariance[0], msg_odom_[idx].pose.covariance[1], msg_odom_[idx].pose.covariance[5],
+            msg_odom_[idx].pose.covariance[6], msg_odom_[idx].pose.covariance[7], msg_odom_[idx].pose.covariance[11],
+            msg_odom_[idx].pose.covariance[30], msg_odom_[idx].pose.covariance[31], msg_odom_[idx].pose.covariance[35];
+    ROS_DEBUG_STREAM(
+            "[" << std::string(__FUNCTION__) << "]\n" << msg_odom_[idx] << "covariance: \n" << p_vehicle_[idx]);
 
-    bool success = updateNecessaryTransform();
-    if (!success) {
-        ROS_INFO("Could not find coordiante transformation");
-        return;
-    }
-
-    autoware_msgs::DetectedObjectArray transformed_input;
-    autoware_msgs::DetectedObjectArray detected_objects_output;
-    transformPoseToGlobal(input, transformed_input);
-    tracker(transformed_input, detected_objects_output);
-    transformPoseToLocal(detected_objects_output);
-
-    pub_object_array_.publish(detected_objects_output);
-
-    if (is_benchmark_) {
-        dumpResultText(detected_objects_output);
-    }
 }
 
 void ImmUkfPdaMulti::checkVectormapSubscription() {
@@ -198,7 +313,9 @@ void ImmUkfPdaMulti::measurementValidation(const autoware_msgs::DetectedObjectAr
     // if making it allows to have more than one measurement, you will see non semipositive definite covariance
     bool exists_smallest_nis_object = false;
     double smallest_nis = std::numeric_limits<double>::max();
+    double smallest_det = std::numeric_limits<double>::max();
     int smallest_nis_ind = 0;
+    int smallest_det_ind = 0;
     for (size_t i = 0; i < input.objects.size(); i++) {
         double x = input.objects[i].pose.position.x;
         double y = input.objects[i].pose.position.y;
@@ -208,18 +325,32 @@ void ImmUkfPdaMulti::measurementValidation(const autoware_msgs::DetectedObjectAr
 
         Eigen::VectorXd diff = meas - max_det_z;
         double nis = diff.transpose() * max_det_s.inverse() * diff;
+        double det = reliability_vec_[i].determinant();
 
+        //// done: TODO もともとあるTargetと新規detectionのNIS．Measの分散円が大きくてもOldが小さければ，一致しないとして弾かれる（必要ない）
         if (nis < gating_thres_) {
+/*
             if (nis < smallest_nis) {
                 smallest_nis = nis;
                 target.object_ = input.objects[i];
                 smallest_nis_ind = i;
                 exists_smallest_nis_object = true;
             }
+*/
+            if (det < smallest_det) {
+                smallest_det = det;
+                target.object_ = input.objects[i];
+                smallest_det_ind = i;
+                exists_smallest_nis_object = true;
+            }
         }
     }
     if (exists_smallest_nis_object) {
+        //// TODO matchingのobjにsmallest_nis_indを使うか，smallest_det_indを使うかは今後検討．今のデータではどちらでも良いはず
+/*
         matching_vec[smallest_nis_ind] = true;
+*/
+        matching_vec[smallest_det_ind] = true;
         if (use_vectormap_ && has_subscribed_vectormap_) {
             autoware_msgs::DetectedObject direction_updated_object;
             bool use_direction_meas =
@@ -337,8 +468,10 @@ void ImmUkfPdaMulti::initTracker(const autoware_msgs::DetectedObjectArray &input
 void ImmUkfPdaMulti::secondInit(UKF &target, const std::vector<autoware_msgs::DetectedObject> &object_vec, double dt) {
     if (object_vec.size() == 0) {
         target.tracking_num_ = TrackingState::Die;
+        ROS_DEBUG_STREAM("[Die] secondInit: " << target.ukf_id_);
         return;
     }
+
     // record first_orientation_computation measurement for env classification
     target.init_meas_ << target.x_merge_(0), target.x_merge_(1);
 
@@ -375,27 +508,34 @@ void ImmUkfPdaMulti::updateTrackingNum(const std::vector<autoware_msgs::Detected
             target.tracking_num_ = TrackingState::Stable;
         } else if (target.tracking_num_ == TrackingState::Lost) {
             target.tracking_num_ = TrackingState::Die;
+            ROS_DEBUG_STREAM("[Die] target.tracking_num_ == TrackingState::Lost: " << target.ukf_id_);
         }
     } else {
         if (target.tracking_num_ < TrackingState::Stable) {
             target.tracking_num_ = TrackingState::Die;
+            ROS_DEBUG_STREAM(
+                    "[Die] target.tracking_num_ < TrackingState::Stable && : object_vec.size() <= 0" << target.ukf_id_);
         } else if (target.tracking_num_ >= TrackingState::Stable && target.tracking_num_ < TrackingState::Lost) {
             target.tracking_num_++;
         } else if (target.tracking_num_ == TrackingState::Lost) {
             target.tracking_num_ = TrackingState::Die;
+            ROS_DEBUG_STREAM("[Die] target.tracking_num_ == TrackingState::Lost: " << target.ukf_id_);
         }
     }
 
     return;
 }
 
-bool ImmUkfPdaMulti::probabilisticDataAssociation(const autoware_msgs::DetectedObjectArray &input, const double dt,
-                                                  std::vector<bool> &matching_vec,
-                                                  std::vector<autoware_msgs::DetectedObject> &object_vec, UKF &target) {
+//// done: TODO probabilisticDataAssociationの引数にodomのreliabilityを追加（必要ない）
+bool
+ImmUkfPdaMulti::probabilisticDataAssociation(const autoware_msgs::DetectedObjectArray &input, const double timestamp,
+                                             std::vector<bool> &matching_vec,
+                                             std::vector<autoware_msgs::DetectedObject> &object_vec, UKF &target) {
     double det_s = 0;
     Eigen::VectorXd max_det_z;
     Eigen::MatrixXd max_det_s;
     bool success = true;
+    double dt = timestamp - target.time_;
 
     if (use_sukf_) {
         max_det_z = target.z_pred_ctrv_;
@@ -410,6 +550,7 @@ bool ImmUkfPdaMulti::probabilisticDataAssociation(const autoware_msgs::DetectedO
     // prevent ukf not to explode
     if (std::isnan(det_s) || det_s > prevent_explosion_thres_) {
         target.tracking_num_ = TrackingState::Die;
+        ROS_DEBUG_STREAM("[Die] std::isnan(det_s) || det_s > prevent_explosion_thres_: " << target.ukf_id_);
         success = false;
         return success;
     }
@@ -422,6 +563,7 @@ bool ImmUkfPdaMulti::probabilisticDataAssociation(const autoware_msgs::DetectedO
     }
 
     // measurement gating
+    //// done: TODO Matching時にodomのreliabilityが考慮されるようにする（必要ない）
     measurementValidation(input, target, is_second_init, max_det_z, max_det_s, object_vec, matching_vec);
 
     // second detection for a target: update v and yaw
@@ -440,17 +582,51 @@ bool ImmUkfPdaMulti::probabilisticDataAssociation(const autoware_msgs::DetectedO
     return success;
 }
 
+//// done: TODO: makeNewTargetsのr_cv_にreliability_vec[i]を追加
 void ImmUkfPdaMulti::makeNewTargets(const double timestamp, const autoware_msgs::DetectedObjectArray &input,
-                                    const std::vector<bool> &matching_vec) {
+                                    const std::vector<bool> &matching_vec,
+                                    const std::vector<Eigen::MatrixXd> &reliability_vec) {
     for (size_t i = 0; i < input.objects.size(); i++) {
         if (matching_vec[i] == false) {
-            double px = input.objects[i].pose.position.x;
+            //// done: TODO NIS検定が古い奴に対して同一と判定した場合，新しく生成しない
+            bool skip = false;
+            for (size_t j = 0; j < targets_.size(); j++) {
+                double x = targets_[j].x_merge_(0);
+                double y = targets_[j].x_merge_(1);
+
+                Eigen::VectorXd target = Eigen::VectorXd(2);
+                target << x, y;
+
+                Eigen::VectorXd meas(2);
+                meas << input.objects[i].pose.position.x, input.objects[i].pose.position.y;
+
+
+                Eigen::VectorXd diff = target - meas;
+                double nis = diff.transpose() * reliability_vec[i].inverse() * diff;
+                ROS_DEBUG_STREAM("nis" << nis);
+
+                //// nis<gating_thres_ということは，targetの中にmeasに対応する点がある
+                if (nis < gating_thres_) {
+                    skip = true;
+                    break;
+                }
+            }
+            if (skip)
+                continue;
+
+            double px = input.objects[i].pose.position.x; // ここのinputはすでにodomフレームに変換済み
             double py = input.objects[i].pose.position.y;
             Eigen::VectorXd init_meas = Eigen::VectorXd(2);
             init_meas << px, py;
 
             UKF ukf;
+            //// done: TODO ukfのp_merge_の初期値をreliability_vec[i]に変更
             ukf.initialize(init_meas, timestamp, target_id_);
+            ukf.r_cv_ = reliability_vec[i];
+            ukf.r_cv_ = reliability_vec[i];
+            ukf.r_cv_ = reliability_vec[i];
+            ukf.p_merge_.block<2, 2>(1, 1) += reliability_vec[i];
+
             ukf.object_ = input.objects[i];
             targets_.push_back(ukf);
             target_id_++;
@@ -552,6 +728,8 @@ ImmUkfPdaMulti::removeRedundantObjects(const autoware_msgs::DetectedObjectArray 
             size_t current_index = matching_objects[i][j];
             if (current_index != oldest_object_index) {
                 targets_[in_tracker_indices[current_index]].tracking_num_ = TrackingState::Die;
+                ROS_DEBUG_STREAM("[Die] delete nearby targets except for the oldest target: "
+                                         << targets_[in_tracker_indices[current_index]].ukf_id_);
             }
         }
         autoware_msgs::DetectedObject best_object;
@@ -599,25 +777,25 @@ void ImmUkfPdaMulti::makeOutput(const autoware_msgs::DetectedObjectArray &input,
         dd.pose_reliable = targets_[i].is_stable_;
 
 
-        if (!targets_[i].is_static_ && targets_[i].is_stable_) {
-            // Aligh the longest side of dimentions with the estimated orientation
-            if (targets_[i].object_.dimensions.x < targets_[i].object_.dimensions.y) {
-                dd.dimensions.x = targets_[i].object_.dimensions.y;
-                dd.dimensions.y = targets_[i].object_.dimensions.x;
-            }
-
-            dd.pose.position.x = tx;
-            dd.pose.position.y = ty;
-
-            if (!std::isnan(q[0]))
-                dd.pose.orientation.x = q[0];
-            if (!std::isnan(q[1]))
-                dd.pose.orientation.y = q[1];
-            if (!std::isnan(q[2]))
-                dd.pose.orientation.z = q[2];
-            if (!std::isnan(q[3]))
-                dd.pose.orientation.w = q[3];
+//        if (!targets_[i].is_static_ && targets_[i].is_stable_) {
+        // Aligh the longest side of dimentions with the estimated orientation
+        if (targets_[i].object_.dimensions.x < targets_[i].object_.dimensions.y) {
+            dd.dimensions.x = targets_[i].object_.dimensions.y;
+            dd.dimensions.y = targets_[i].object_.dimensions.x;
         }
+
+        dd.pose.position.x = tx;
+        dd.pose.position.y = ty;
+
+        if (!std::isnan(q[0]))
+            dd.pose.orientation.x = q[0];
+        if (!std::isnan(q[1]))
+            dd.pose.orientation.y = q[1];
+        if (!std::isnan(q[2]))
+            dd.pose.orientation.z = q[2];
+        if (!std::isnan(q[3]))
+            dd.pose.orientation.w = q[3];
+//        }
         updateBehaviorState(targets_[i], dd);
 
         if (targets_[i].is_stable_ || (targets_[i].tracking_num_ >= TrackingState::Init &&
@@ -675,9 +853,49 @@ void ImmUkfPdaMulti::dumpResultText(autoware_msgs::DetectedObjectArray &detected
     frame_count_++;
 }
 
+void ImmUkfPdaMulti::makeReliabilityVec(const autoware_msgs::DetectedObjectArray &input,
+                                        const nav_msgs::Odometry &vehicle_odoom,
+                                        const Eigen::MatrixXd &p_vehicle,
+                                        std::vector<Eigen::MatrixXd> &reliability_vec) {
+
+    //// done: TODO makeReliabilityVec関数を作成
+    tf::Quaternion quat(vehicle_odoom.pose.pose.orientation.x, vehicle_odoom.pose.pose.orientation.y,
+                        vehicle_odoom.pose.pose.orientation.z, vehicle_odoom.pose.pose.orientation.w);
+    double rpy[3];
+    tf::Matrix3x3(quat).getRPY(rpy[0], rpy[1], rpy[2]);
+
+
+    for (size_t i = 0; i < input.objects.size(); i++) {
+        const auto &p = input.objects[i].pose;
+        Eigen::MatrixXd v_sigma, p_sigma, transform_v2p(2, 3), transform_pl2pw(2, 2);
+//        v_sigma = p_vehicle * 1.0e+2 * 5;
+        v_sigma = p_vehicle * 1.0e+2 * 6;
+        p_sigma = Eigen::MatrixXd::Identity(2, 2) * 0.15 * 0.15;
+        transform_v2p << 1.0, 0.0, -p.position.x * sin(rpy[2]) - p.position.y * cos(rpy[2]),
+                0.0, 1.0, p.position.x * cos(rpy[2]) - p.position.y * sin(rpy[2]);
+        transform_pl2pw << cos(rpy[2]), -sin(rpy[2]), sin(rpy[2]), cos(rpy[2]);
+        reliability_vec[i] = transform_v2p * v_sigma * transform_v2p.transpose() +
+                             transform_pl2pw * p_sigma * transform_pl2pw.transpose();
+/*
+        reliability_vec[i] = transform_pl2pw * p_sigma * transform_pl2pw.transpose();
+*/
+    }
+    std::ostringstream os;
+    os << "v_sigma: \n" << p_vehicle << std::endl;
+    os << "reliability_vec_: " << std::endl;
+    for (const auto &mat:reliability_vec) {
+        os << mat << std::endl;
+    }
+    ROS_DEBUG_STREAM(os.str());
+
+}
+
 void ImmUkfPdaMulti::tracker(const autoware_msgs::DetectedObjectArray &input,
                              autoware_msgs::DetectedObjectArray &detected_objects_output) {
+
     double timestamp = input.header.stamp.toSec();
+//    ros::Time t = ros::Time::now();
+//    double timestamp = t.toSec();
     std::vector<bool> matching_vec(input.objects.size(), false);
 
     if (!init_) {
@@ -686,12 +904,56 @@ void ImmUkfPdaMulti::tracker(const autoware_msgs::DetectedObjectArray &input,
         return;
     }
 
-    double dt = (timestamp - timestamp_);
-    timestamp_ = timestamp;
+//    double dt = (timestamp - timestamp_);
+//    timestamp_ = timestamp;
 
+    for (size_t i = 0; i < input.objects.size(); i++) {
+        //// done: TODO timestampとlabel=targets，id,targetsのx,y,Pをofs出力
+        ofs_ << timestamp << "," << input.objects[i].header.frame_id << "," << i << ","
+             << input.objects[i].pose.position.x << ","
+             << input.objects[i].pose.position.y << "," << reliability_vec_[i](0, 0) << "," << reliability_vec_[i](0, 1)
+             << "," << reliability_vec_[i](1, 0) << "," << reliability_vec_[i](1, 1) << std::endl;
+    }
 
     // start UKF process
     for (size_t i = 0; i < targets_.size(); i++) {
+
+        //// done: TODO timestampとlabel=targets，id,targetsのx,y,Pをofs出力
+        ofs_ << timestamp << ",target," << targets_[i].ukf_id_ << "," << targets_[i].z_pred_ctrv_(0) << ","
+             << targets_[i].z_pred_ctrv_(1)
+             << "," << targets_[i].s_ctrv_(0, 0) << "," << targets_[i].s_ctrv_(0, 1) << "," << targets_[i].s_ctrv_(1, 0)
+             << "," << targets_[i].s_ctrv_(1, 1) << std::endl;
+
+        //// ignore: TODO input_mksとinput_mkzの両方に対してmatching_vec_mksとmatching_vec_mkzを作成
+
+        std::vector<autoware_msgs::DetectedObject> object_vec_tmp;
+        double det_s = 0;
+        Eigen::VectorXd max_det_z;
+        Eigen::MatrixXd max_det_s;
+        if (use_sukf_) {
+            max_det_z = targets_[i].z_pred_ctrv_;
+            max_det_s = targets_[i].s_ctrv_;
+            det_s = max_det_s.determinant();
+        } else {
+            // find maxDetS associated with predZ
+            targets_[i].findMaxZandS(max_det_z, max_det_s);
+            det_s = max_det_s.determinant();
+        }
+        // measurement gatingukf_id_
+        measurementValidation(input, targets_[i], false, max_det_z, max_det_s, object_vec_tmp, matching_vec);
+        if (object_vec_tmp.empty() && targets_[i].num_pass <= 10) {
+            targets_[i].num_pass++;
+//            targets_[i].prediction(use_sukf_, has_subscribed_vectormap_, dt);
+            continue;
+        }
+        targets_[i].num_pass = 0;
+
+        //// done: TODO inputの中に両方のobjを入れれば，matching_vec生成時に勝手に適切なものを選択してくれるはず
+        //// done: TODO 最大0.05秒の時間差のあるLidar detection情報を利用することになるが，歩行者の歩行速度を最大1m/sとしても5cmしかずれないため，大きな影響はないはず
+        //// ignore: TODO input_mks，matching_vec_mks，reliability_vec_mksとinput_mkz，matching_vec_mkz,reliability_vec_mkzを作成
+        //// ignore: TODO matching_vecがtrueの全ての要素のreliability_vecのdetが最小のものをinput_mergeにpush_back，matching_vec_merge,reliability_vecも作成
+
+
         targets_[i].is_stable_ = false;
         targets_[i].is_static_ = false;
 
@@ -702,23 +964,38 @@ void ImmUkfPdaMulti::tracker(const autoware_msgs::DetectedObjectArray &input,
         if (targets_[i].p_merge_.determinant() > prevent_explosion_thres_ ||
             targets_[i].p_merge_(4, 4) > prevent_explosion_thres_) {
             targets_[i].tracking_num_ = TrackingState::Die;
+            ROS_DEBUG_STREAM("[Die] prevent ukf not to explode: " << targets_[i].ukf_id_);
             continue;
         }
 
-        targets_[i].prediction(use_sukf_, has_subscribed_vectormap_, dt);
+        for (size_t j = 0; j < input.objects.size(); j++) {
+            if (matching_vec[j]) {
+                //// done: TODO targets_[i]のr_cv_などを変更するreliability_vec[j]の値を基に変更する（Matchingは基本一つであるとしておこう）
+                targets_[i].r_cv_ = targets_[i].r_ctrv_ = targets_[i].r_rm_ = reliability_vec_[j];
+            }
+        }
+
+        //// done: TODO targets_[i]のr_cv_などが利用される（この前でr_cvを変更しておく）
+        targets_[i].prediction(use_sukf_, has_subscribed_vectormap_, timestamp);
 
         std::vector<autoware_msgs::DetectedObject> object_vec;
-        bool success = probabilisticDataAssociation(input, dt, matching_vec, object_vec, targets_[i]);
+        //// done TODO probabilisticDataAssociationの引数にodomのreliabilityを追加（たぶんいらない）
+        bool success = probabilisticDataAssociation(input, timestamp, matching_vec, object_vec, targets_[i]);
         if (!success) {
+            targets_[i].time_ = timestamp;
             continue;
         }
 
         targets_[i].update(use_sukf_, detection_probability_, gate_probability_, gating_thres_, object_vec);
+
+        targets_[i].time_ = timestamp;
+
     }
     // end UKF process
 
+    //// done: TODO makeNewTargetsにodomのreliabilityを考慮したinputのliabilityを追加
     // making new ukf target for no data association objects
-    makeNewTargets(timestamp, input, matching_vec);
+    makeNewTargets(timestamp, input, matching_vec, reliability_vec_);
 
     // static dynamic classification
     staticClassification();

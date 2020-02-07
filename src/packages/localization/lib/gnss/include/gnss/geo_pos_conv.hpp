@@ -9,13 +9,16 @@ private:
     double m_x;  //m
     double m_y;  //m
     double m_z;  //m
+    double m_yaw;//rad
+
+    double m_diff; //m
 
     double m_lat;  //latitude
     double m_lon; //longitude
     double m_h;
 
-    double m_PLato;        //plane lat
-    double m_PLo;          //plane lon
+    double m_PLato=0.0;        //plane lat
+    double m_PLo=0.0;          //plane lon
 
 public:
     geo_pos_conv();
@@ -26,9 +29,15 @@ public:
 
     double z() const;
 
+    double yaw() const;
+
+    double diff() const;
+
     void set_plane(double lat, double lon);
 
     void set_plane(int num);
+
+    bool empty_plane();
 
     void set_xyz(double cx, double cy, double cz);
 

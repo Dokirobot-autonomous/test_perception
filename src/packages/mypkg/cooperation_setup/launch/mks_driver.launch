@@ -201,6 +201,21 @@
         <!--
         <node pkg="rqt_topic" type="rqt_topic" name="rqt_topic"/>
         -->
+
+        #### IMU Filter ###
+        <node pkg="imu_complementary_filter" type="complementary_filter_node"
+              name="complementary_filter_gain_node" output="screen">
+            <param name="do_bias_estimation" value="true"/>
+            <param name="do_adaptive_gain" value="true"/>
+            <param name="use_mag" value="false"/>
+            <param name="gain_acc" value="0.01"/>
+            <param name="gain_mag" value="0.01"/>
+            <param name="bias_gyro_x" value="0.0039"/>
+            <param name="bias_gyro_y" value="0.0"/>
+            <param name="bias_gyro_z" value="0.0164"/>
+            <remap from="imu/data_raw" to="vehicle/imu/data_raw"/>
+        </node>
+
     </group>
 
 

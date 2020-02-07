@@ -1,0 +1,34 @@
+<launch>
+
+  <arg name="origin_fix" default="[37.918501, -122.332899]" />
+  <arg name="vehicle_name" default="mkz"/>
+
+  <group ns="$(arg vehicle_name)">
+
+    <group ns="gnss_localizer">
+      <node pkg="cooperation_setup" name="nmea2fix" type="nmea2fix">
+        <remap from="nmea_sentence" to="/$(arg vehicle_name)/nmea_sentence"/>
+        <param name="vehicle_name" value="mkz"/>
+      </node>
+      <node pkg="cooperation_setup" name="fix2pose" type="fix2pose">
+        <rosparam param="origin_fix" subst_value="True">$(arg origin_fix)</rosparam>
+        <remap from="pose" to="pose_raw"/>
+      </node>
+      <node pkg="path_follower" name="pose_estimation" type="pose_estimation">
+        <remap from="vehicle/twist" to="/mkz/vehicle/twist"/>
+        <remap from="xsens/imu/data" to="/mkz/xsens/imu/data"/>
+        <remap from="gnss_pose" to="pose_raw"/>
+      </node>
+      <node pkg="path_follower" name="state_estimation" type="state_estimation.py">
+        <remap from="vehicle/twist" to="/mkz/vehicle/twist"/>
+        <remap from="xsens/imu/data" to="/mkz/xsens/imu/data"/>
+        <param name="base_link" value="$(arg vehicle_name)/base_link"/>
+        <param name="tf_publish" value="true"/>
+      </node>
+    </group>
+
+  </group>
+
+</launch>
+
+

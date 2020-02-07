@@ -5,6 +5,8 @@
 #ifndef SRC_PHONE_LOCALIZER_H
 #define SRC_PHONE_LOCALIZER_H
 
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <math.h>
 #include<omp.h>
 
@@ -40,7 +42,7 @@
 #include "../../../../../devel/include/autoware_msgs/DetectedObject.h"
 
 
-#include "geo_pos_conv.hpp"
+#include <gnss/geo_pos_conv.hpp>
 
 #include <ParticleFilter.h>
 #include <State.h>
@@ -70,7 +72,7 @@
 //#define PARTICLEFITLER_INITIAL_V_RADIUS 0.01    // [m/s]
 
 #define PARTICLEFILTER_PARTICLE_SIZE 200
-#define PARTICLEFILTER_SYSTEM_NOISE_STANDARD_DEVIATION "0.05,0.05,0.087263889,0.1,0.00001"  // x,y,r,vx,vy
+#define PARTICLEFILTER_SYSTEM_NOISE_STANDARD_DEVIATION {0.05,0.05,0.087263889,0.1,0.00001}  // x,y,r,vx,vy
 
 #define PARTICLEFILTER_ACCELERATION_STANDARD_DEVIATION 0.17    //
 #define PARTICLEFILTER_GYRO_STANDARD_DEVIATION 0.01            // [rad/s]
@@ -85,23 +87,24 @@
 #define PARTICLEFILTER_GPS_R_STANDARD_DEVIATION 5*M_PI/180                      //
 
 #define PARTICLEFILTER_GNSSRAW_XY_BIAS 3.0                      //
-#define PARTICLEFILTER_GNSSRAW_VR_BIAS 0.0                      //
 #define PARTICLEFILTER_GNSSRAW_XY_STANDARD_DEVIATION 0.5                      //
-#define PARTICLEFILTER_GNSSRAW_VR_STANDARD_DEVIATION 0.1                      //
+#define PARTICLEFILTER_GNSSRAW_V_STANDARD_DEVIATION 0.1                      //
+#define PARTICLEFILTER_GNSSRAW_R_STANDARD_DEVIATION 5*M_PI/180                      //
+
 
 #define PARTICLEFILTER_VEHICLE_PERCEPTION_XY_STANDARD_DEVIATION 0.3                      //
 #define PARTICLEFILTER_VEHICLE_PERCEPTION_V_STANDARD_DEVIATION 0.01                      //
 #define PARTICLEFILTER_VEHICLE_PERCEPTION_R_STANDARD_DEVIATION 2.0*M_PI/180                      //
 
-#define TOPIC_NAME_INIT_FIX "/prius/origin"
+#define TOPIC_NAME_INIT_FIX "odom"
 #define TOPIC_NAME_SUB_IMU "imu"
-#define TOPIC_NAME_MAGNETIC "magnetic_field"
-#define TOPIC_NAME_GPS "fix"
-#define TOPIC_NAME_GNSSRAW_FIX "gnss/fixENU"
-#define TOPIC_NAME_GNSSRAW_ACCELERATION "gnss/accelENU"
-#define TOPIC_NAME_OBJECTS "pedestrian2phone"
-#define TOPIC_NAME_PUBLISH_ODOM "odom"
-#define TOPIC_NAME_PUBLISH_POSEARRAY "particles"
+#define TOPIC_NAME_SUB_MAGNETIC "magnetic_field"
+#define TOPIC_NAME_SUB_GPS "fix"
+#define TOPIC_NAME_SUB_GNSSRAW_FIX "gnss/fixENU"
+#define TOPIC_NAME_SUB_GNSSRAW_ACCELERATION "gnss/accelENU"
+#define TOPIC_NAME_SUB_OBJECTS "pedestrian2phone"
+#define TOPIC_NAME_PUB_ODOM "odom"
+#define TOPIC_NAME_PUB_POSEARRAY "particles"
 
 
 class PhoneLocalizer : public ParticleFilter<State<>> {
@@ -122,7 +125,7 @@ public:
 
     void callback_gnssraw_acceleration(const geometry_msgs::AccelWithCovarianceStamped::ConstPtr &msg);
 
-    void callback_vehicle_perception(const autoware_msgs::DetectedObjectConstPtr &msg);
+    void callback_vehicle_perception(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr &msg);
 
     void publish_odom(const ros::Time &time);
 
@@ -130,7 +133,7 @@ public:
 
     void run();
 
-    void particleInitialization();
+    bool particleInitialization();
 
     void particleTransition();
 
@@ -146,7 +149,9 @@ public:
 
     void particleLikelihoodGNSSRawXY();
 
-    void particleLikelihoodGNSSRawVR();
+    void particleLikelihoodGNSSRawV();
+
+    void particleLikelihoodGNSSRawR();
 
     void particleLikelihoodVehiclePerceptionXY();
 
@@ -160,7 +165,11 @@ public:
 
     void rpy2matrix(double roll, double pitch, double yaw, Eigen::Matrix3f *rotation_matrix);
 
+    void quaternion2matrix(double qx, double qy, double qz, double qw, Eigen::Matrix3f *rotation_matrix);
+
     void object2state(const autoware_msgs::DetectedObject &object, State<> *state);
+
+    bool isOrientationActive(const geometry_msgs::Quaternion& q);
 
     /** Thread lock **/
     std::mutex lock;
@@ -183,18 +192,22 @@ private:
     sensor_msgs::NavSatFix gnssraw_fix;
     geometry_msgs::AccelWithCovarianceStamped gnssraw_acceleration;
 
-    autoware_msgs::DetectedObject vehicle_perception;
+    geometry_msgs::PoseWithCovarianceStamped vehicle_perception;
 
     //// topic names
-    std::string topic_name_imu, topic_name_magnetic, topic_name_gps, topic_name_gnssraw_fix, topic_name_gnssraw_acceleration, topic_name_vehicle_perception;
+    std::string topic_name_sub_imu, topic_name_sub_magnetic, topic_name_sub_gps, topic_name_sub_gnssraw_fix, topic_name_sub_gnssraw_acceleration, topic_name_sub_vehicle_perception;
+    std::string topic_name_pub_odom, topic_name_pub_particles;
 
     //// Frame ID
     std::string origin_frame_id, phone_frame_id, phone_origin_frame_id;
 
     //// Others
     ros::Time time;
-    bool use_imu, use_mag, use_gps, use_gnssraw_fix, use_gnssraw_acceleration, use_vehicle_perception;
-    bool update_imu, update_magnetic, update_gps, update_gnssraw_fix, update_gnssraw_acceleration, update_vehicle_perception;
+    bool use_imu, use_mag, use_gps, use_gps_xy, use_gps_v, use_gps_r, use_gnssraw_fix,
+         use_gnssraw_acceleration, use_gnssraw_acceleration_v, use_gnssraw_acceleration_r,
+         use_vehicle_perception, use_vehicle_perception_xy, use_vehicle_perception_vr;
+    bool update_imu, update_magnetic, update_gps, update_gnssraw_fix, update_gnssraw_acceleration,
+         update_vehicle_perception, update_vehicle_perception_xy, update_vehicle_perception_vr;
 
     /** TF Listener **/
     tf2_ros::Buffer tf_buffer;
@@ -206,7 +219,8 @@ private:
 
     /** GPS fix -> pose **/
     geo_pos_conv geo;
-    double origin_lat, origin_lon, origin_ele;
+    std::vector<double> origin_fix;
+//    double origin_lat, origin_lon, origin_ele;
 
 
     /** Particle Filter Tracker **/
@@ -221,6 +235,9 @@ private:
 
     /** MUTEX **/
     std::mutex mtx;
+
+    /** File Output **/
+    std::ofstream ofs_state,ofs_particle,ofs_gps,ofs_imu,ofs_gnssraw_accel,ofs_weight,ofs_resampling;
 
 };
 

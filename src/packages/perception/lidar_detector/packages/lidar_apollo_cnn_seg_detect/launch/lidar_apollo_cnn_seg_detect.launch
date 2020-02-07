@@ -9,11 +9,11 @@
     <arg name="pretrained_model_file"
          default="$(find lidar_apollo_cnn_seg_detect)/models/velodyne64/deploy.caffemodel"/>
 
-    <arg name="score_threshold" default="0.5"/>
+    <arg name="score_threshold" default="0.7"/>
     <arg name="use_gpu" default="true"/>
     <arg name="gpu_device_id" default="0"/>
     <arg name="marker_display_duration" default="0.1"/>
-    <arg name="output" default="screen"/>
+    <arg name="output" default="log"/>
 
     <node pkg="lidar_apollo_cnn_seg_detect" type="lidar_apollo_cnn_seg_detect" name="lidar_apollo_cnn_seg_detect"
           output="$(arg output)">

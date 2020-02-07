@@ -4,5 +4,5 @@ Name: pos_db
 Description: Description of pos_db
 Version: 1.11.0
 Cflags: 
-Libs: -L/usr/local/lib 
+Libs: -L${prefix}/lib 
 Requires: roscpp gnss jsk_recognition_msgs tf autoware_msgs

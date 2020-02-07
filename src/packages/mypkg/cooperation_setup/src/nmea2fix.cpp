@@ -29,13 +29,13 @@
 #define TOPIC_NAME_NMEA "nmea_sentence"
 #define TOPIC_NAME_FIX_SOL_COMPUTED "fix"
 
-class MKZSetup {
+class Nmea2Fix {
 
 public:
 
-    MKZSetup();
+    Nmea2Fix();
 
-    ~MKZSetup();
+    ~Nmea2Fix();
 
     void callback_nmea(const nmea_msgs::Sentence::ConstPtr &msg);
 
@@ -59,7 +59,7 @@ private:
 };
 
 
-MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
+Nmea2Fix::Nmea2Fix() : nh(), private_nh(ros::NodeHandle("~")) {
 
     ROS_DEBUG("%s", __FUNCTION__);
 
@@ -71,38 +71,40 @@ MKZSetup::MKZSetup() : nh(), private_nh(ros::NodeHandle("~")) {
 
     pub_fix=nh.advertise<sensor_msgs::NavSatFix>(TOPIC_NAME_FIX_SOL_COMPUTED, 10);
 
-    sub_nmea=nh.subscribe(TOPIC_NAME_NMEA, 100, &MKZSetup::callback_nmea, this);
+    sub_nmea=nh.subscribe(TOPIC_NAME_NMEA, 100, &Nmea2Fix::callback_nmea, this);
 
 }
 
 /**
- * ~MKZSetup
+ * ~Nmea2Fix
  */
-MKZSetup::~MKZSetup() {}
+Nmea2Fix::~Nmea2Fix() {}
 
 /**
  * callback_fix
  * @param msg
  */
-void MKZSetup::callback_nmea(const nmea_msgs::Sentence::ConstPtr &msg) {
+void Nmea2Fix::callback_nmea(const nmea_msgs::Sentence::ConstPtr &msg) {
 
     msg_nmea = *msg;
     ROS_DEBUG_STREAM("[" << std::string(__FUNCTION__) << "]\n" << msg_nmea);
 
     std::string sen = msg_nmea.sentence;
     if(vehicle_name.compare("mkz")==0){
-        static std::string key = "<     SOL_COMPUTED PPP ";
+        std::vector<std::string> keys={"<     SOL_COMPUTED PPP ","<     SOL_COMPUTED PPP_CONVERGING "};
 
-        size_t found = sen.find(key);
-        if (found != std::string::npos) {
-            std::string sen_sub = sen.substr(key.size());
-            sscanf(sen_sub.c_str(), "%lf %lf %lf", &fix[0], &fix[1], &fix[2]);
-            msg_fix.header=msg_nmea.header;
-            msg_fix.latitude=fix[0];
-            msg_fix.longitude=fix[1];
-            msg_fix.altitude=fix[2];
-            current=msg_nmea.header.stamp;
-            pub_fix.publish(msg_fix);
+        for(const auto key:keys){
+            size_t found = sen.find(key);
+            if (found != std::string::npos) {
+                std::string sen_sub = sen.substr(key.size());
+                sscanf(sen_sub.c_str(), "%lf %lf %lf", &fix[0], &fix[1], &fix[2]);
+                msg_fix.header=msg_nmea.header;
+                msg_fix.latitude=fix[0];
+                msg_fix.longitude=fix[1];
+                msg_fix.altitude=fix[2];
+                current=msg_nmea.header.stamp;
+                pub_fix.publish(msg_fix);
+            }
         }
     }
     else if(vehicle_name.compare("mks")==0){
@@ -137,7 +139,7 @@ int main(int argc, char **argv) {
 
     // Initialize ROS
     ros::init(argc, argv, "nmea2fix");
-    MKZSetup node;
+    Nmea2Fix node;
     ros::spin();
 
     return (0);

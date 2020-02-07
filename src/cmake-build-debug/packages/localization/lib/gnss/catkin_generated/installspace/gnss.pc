@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: gnss
 Description: Description of gnss
 Version: 1.11.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib -lgnss
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lgnss
 Requires: 

@@ -6,9 +6,16 @@
   <arg name="use_imu" default="true"/>
   <arg name="use_magnetic" default="true"/>
   <arg name="use_gps" default="true"/>
-  <arg name="use_gnssraw_fix" default="true"/>
+  <arg name="use_gps_xy" default="true"/>
+  <arg name="use_gps_v" default="false"/>
+  <arg name="use_gps_r" default="false"/>
+  <arg name="use_gnssraw_fix" default="false"/>
   <arg name="use_gnssraw_acceleration" default="true"/>
+  <arg name="use_gnssraw_acceleration_v" default="true"/>
+  <arg name="use_gnssraw_acceleration_r" default="false"/>
   <arg name="use_vehicle_perception" default="true"/>
+  <arg name="use_vehicle_perception_xy" default="true"/>
+  <arg name="use_vehicle_perception_vr" default="true"/>
 
   <arg name="pf_particle_size" default="200"/>
   <arg name="pf_initial_xy_radius" default="2.0"/>
@@ -19,9 +26,9 @@
   <arg name="pf_sys_noise_sd" default="0.05,0.05,0.087263889,0.1,0.00001" />
   <arg name="pf_gps_xy_bias" default="0" />
   <arg name="pf_gps_xy_sd" default="1.5" />
-  <arg name="pf_gnssraw_vr_sd" default="0.1"/>
+  <arg name="pf_gnssraw_vr_sd" default="0.5"/>
   <arg name="pf_vehicle_perception_r_sd" default="0.034905556"/> <!-- 2[deg] -->
-  <arg name="output" default="log" />
+  <arg name="output" default="screen" />
 
 
   <node pkg="smartphone_localizer" type="phone_localizer" name="phone_localizer_node" output="$(arg output)" ns="$(arg device_name)$(arg no)">
@@ -29,9 +36,16 @@
     <param name="use_imu" value="$(arg use_imu)" />
     <param name="use_magnetic" value="$(arg use_magnetic)" />
     <param name="use_gps" value="$(arg use_gps)" />
+    <param name="use_gps_xy" value="$(arg use_gps_xy)"/>
+    <param name="use_gps_v" value="$(arg use_gps_v)"/>
+    <param name="use_gps_r" value="$(arg use_gps_r)"/>
     <param name="use_gnssraw_fix" value="$(arg use_gnssraw_fix)" />
     <param name="use_gnssraw_acceleration" value="$(arg use_gnssraw_acceleration)" />
+    <param name="use_gnssraw_acceleration_v" value="$(arg use_gnssraw_acceleration_v)" />
+    <param name="use_gnssraw_acceleration_r" value="$(arg use_gnssraw_acceleration_r)" />
     <param name="use_vehicle_perception" value="$(arg use_vehicle_perception)" />
+    <param name="use_vehicle_perception_xy" value="$(arg use_vehicle_perception_xy)" />
+    <param name="use_vehicle_perception_vr" value="$(arg use_vehicle_perception_vr)" />
     <param name="particlefilter_particle_size" value="$(arg pf_particle_size)"/>
     <param name="particlefilter_initial_xy_radius" value="$(arg pf_initial_xy_radius)"/>
     <param name="particlefilter_initial_r_radius" value="$(arg pf_initial_r_radius)"/>
