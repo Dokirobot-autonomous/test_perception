@@ -76,6 +76,20 @@ install(TARGETS phone_localizer
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
 
+add_executable(phone_localizer_ukf
+        src/phone_localizer_ukf_node.cpp
+        src/phone_localizer_ukf.cpp
+        src/ukf_estimator.cpp
+        )
+target_compile_options(phone_localizer_ukf PRIVATE ${OpenMP_FLAGS})
+target_link_libraries(phone_localizer_ukf ${catkin_LIBRARIES} ${OpenMP_LIBS})
+add_dependencies(phone_localizer_ukf ${catkin_EXPORTED_TARGETS})
+install(TARGETS phone_localizer_ukf
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
 add_executable(vehicle_phones_manager
         src/vehicle_phones_manager.cpp
         src/phone_localizer.cpp

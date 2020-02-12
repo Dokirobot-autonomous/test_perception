@@ -12,6 +12,7 @@
 #include <vector>
 
 #include <Eigen/Core>
+#include <Eigen/Dense>
 
 #include <ros/ros.h>
 #include <ros/console.h>
@@ -151,6 +152,14 @@ private:
 
     std::vector<std::ofstream> ofs_pedestrian2phone;
     std::ofstream ofs_vehicle;
+
+/*
+    double lambda_;
+    //* Weights of sigma points
+    Eigen::VectorXd weights_c_;
+    Eigen::VectorXd weights_s_;
+*/
+
 
 };
 

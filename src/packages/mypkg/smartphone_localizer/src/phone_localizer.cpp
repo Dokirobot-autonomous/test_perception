@@ -162,7 +162,10 @@ PhoneLocalizer::~PhoneLocalizer() {};
 void PhoneLocalizer::callback_imu(const sensor_msgs::Imu::ConstPtr &msg) {
 
     imu = *msg;
+/*
     time = msg->header.stamp;
+*/
+    time = ros::Time::now();
     ROS_DEBUG_STREAM("callback_imu: \n" << imu);
     update_imu = true;
     run();
@@ -172,7 +175,10 @@ void PhoneLocalizer::callback_imu(const sensor_msgs::Imu::ConstPtr &msg) {
 void PhoneLocalizer::callback_magnetic(const sensor_msgs::MagneticField::ConstPtr &msg) {
 
     magnetic = *msg;
+/*
     time = msg->header.stamp;
+*/
+    time = ros::Time::now();
     ROS_DEBUG_STREAM("callback_magnetic: \n" << magnetic);
     update_magnetic = true;
     run();
@@ -182,7 +188,10 @@ void PhoneLocalizer::callback_magnetic(const sensor_msgs::MagneticField::ConstPt
 void PhoneLocalizer::callback_gps(const sensor_msgs::NavSatFix::ConstPtr &msg) {
 
     gps = *msg;
+/*
     time = msg->header.stamp;
+*/
+    time = ros::Time::now();
     ROS_DEBUG_STREAM("callback_gps: \n" << gps);
     update_gps = true;
     run();
@@ -192,7 +201,10 @@ void PhoneLocalizer::callback_gps(const sensor_msgs::NavSatFix::ConstPtr &msg) {
 void PhoneLocalizer::callback_gnssraw_fix(const sensor_msgs::NavSatFix::ConstPtr &msg) {
 
     gnssraw_fix = *msg;
+/*
     time = msg->header.stamp;
+*/
+    time = ros::Time::now();
     ROS_DEBUG_STREAM("callback_gnssraw_fix: \n" << gnssraw_fix);
     update_gnssraw_fix = true;
     run();
@@ -212,7 +224,10 @@ void PhoneLocalizer::callback_gnssraw_acceleration(const geometry_msgs::AccelWit
         return;
     }
     gnssraw_acceleration = *msg;
+/*
     time = msg->header.stamp;
+*/
+    time = ros::Time::now();
     ROS_DEBUG_STREAM("callback_gnssraw_acceleration: \n" << gnssraw_acceleration);
     update_gnssraw_acceleration = true;
     run();
@@ -223,7 +238,10 @@ void PhoneLocalizer::callback_vehicle_perception(const geometry_msgs::PoseWithCo
 
     //// TODO: PoseWithCovarinceに変更
     vehicle_perception = *msg;
+/*
     time = msg->header.stamp;
+*/
+    time = ros::Time::now();
     ROS_DEBUG_STREAM("callback_vehicle_perception: \n" << vehicle_perception);
     update_vehicle_perception = true;
     run();
@@ -605,7 +623,7 @@ void PhoneLocalizer::particleTransition() {
 */
     private_nh.param("particlefilter_transition_v_standard_deviation", vsd,
                      PARTICLEFILTER_TRANSITION_V_STANDARD_DEVIATION);
-    gsd = diff_phone_yaw / 3.0;
+    gsd = diff_phone_yaw / 1.0;
     std::normal_distribution<double> rand_accel(0.0, asd);
     std::normal_distribution<double> rand_gyro(0.0, gsd);
     std::normal_distribution<double> rand_v(0.0, vsd);
@@ -635,13 +653,11 @@ void PhoneLocalizer::particleTransition() {
         s.y = s.y + ground_velocity(1) * d_t;
 //        s.vx = s.vx;
         s.vx = s.vx + rand_v(mt) * d_t;
-/*
         if (s.vx < 0) {
             s.vx = 0;
         }
-*/
         s.vy = s.vy;
-        s.r = s.r + diff_phone_yaw + rand_gyro(mt) * d_t;
+        s.r = s.r + diff_phone_yaw + rand_gyro(mt);
 
         *particle->getState() = s;
     }
@@ -942,8 +958,8 @@ void PhoneLocalizer::particleLikelihoodGNSSRawV() {
     double gnssraw_vx = gnssraw_acceleration.accel.accel.linear.y;
     double gnssraw_vy = -gnssraw_acceleration.accel.accel.linear.x;
     double gnssraw_v = std::sqrt(gnssraw_vx * gnssraw_vx + gnssraw_vy * gnssraw_vy);
-    if(gnssraw_v<0.2){
-        gnssraw_v=0.0;
+    if (gnssraw_v < 0.2) {
+        gnssraw_v = 0.0;
     }
 
     ofs_gnssraw_accel << time.sec << "." << time.nsec << "," << gnssraw_vx << "," << gnssraw_vy << std::endl;
@@ -1000,10 +1016,10 @@ void PhoneLocalizer::particleLikelihoodGNSSRawR() {
 */
     Eigen::Vector3f rpy_r = Eigen::Vector3f::Zero();
 
-//    ROS_DEBUG_STREAM("rpy_r(2): " << rpy_r(2));
+    ROS_DEBUG_STREAM("rpy_r(2): " << rpy_r(2));
 
     if (std::sqrt(gnssraw_vx * gnssraw_vx + gnssraw_vy * gnssraw_vy) < 0.3 ||
-        std::abs(rpy_r(2)) > 0.7) {
+        std::abs(rpy_r(2)) > 0.6) {
         return;
     }
     double gnssraw_r = std::atan2(gnssraw_vy, gnssraw_vx);
@@ -1046,6 +1062,8 @@ void PhoneLocalizer::particleLikelihoodGNSSRawR() {
 /**
  * particleLikelihoodVehiclePerceptionXY
  */
+
+/*
 void PhoneLocalizer::particleLikelihoodVehiclePerceptionXY() {
 
 //    ROS_DEBUG("%s", __FUNCTION__);
@@ -1079,6 +1097,7 @@ void PhoneLocalizer::particleLikelihoodVehiclePerceptionXY() {
         x << d_x, d_y;
 
         Eigen::MatrixXd ans = x * covariance.inverse() * x.transpose();
+        std::cout<<ans(0,0)<<std::endl;
         double d_xy = std::sqrt(d_x * d_x + d_y * d_y);
         double w = std::exp(-ans(0, 0) / 2);
 
@@ -1105,6 +1124,78 @@ void PhoneLocalizer::particleLikelihoodVehiclePerceptionXY() {
     }
 
 }
+*/
+
+void PhoneLocalizer::particleLikelihoodVehiclePerceptionXY() {
+
+//    ROS_DEBUG("%s", __FUNCTION__);
+
+    geometry_msgs::Pose pose = vehicle_perception.pose.pose;
+    double dist = std::sqrt(std::pow(pose.position.x - now_phone_state.x, 2) +
+                            std::pow(pose.position.y - now_phone_state.y, 2));
+    if (dist > 10) {
+        return;
+    }
+
+    Eigen::MatrixXd covariance(2, 2);
+    covariance << vehicle_perception.pose.covariance[0], vehicle_perception.pose.covariance[1],
+            vehicle_perception.pose.covariance[6], vehicle_perception.pose.covariance[7];
+
+    static double xy_sd;
+    private_nh.param("particlefilter_vehicle_perception_xy_statndard_deviation", xy_sd,
+                     PARTICLEFILTER_VEHICLE_PERCEPTION_XY_STANDARD_DEVIATION);
+    static double nis_th;
+    private_nh.param("particlefilter_vehicle_perception_xy_nis_th",nis_th,PARTICLEFILTER_VEHICLE_PERCEPTION_XY_NIS_TH);
+
+    std::vector<double> weights;
+// #pragma omp parallel for
+    for (size_t i = 0; i < getParticles().size(); i++) {
+        auto &particle = getParticles()[i];
+        State<> par_s = *particle->getState();
+
+        //// Likelihood XY
+        double d_x = pose.position.x - par_s.x;
+        double d_y = pose.position.y - par_s.y;
+
+        Eigen::MatrixXd x(1, 2);
+        x << d_x, d_y;
+
+        Eigen::MatrixXd ans = x * covariance.inverse() * x.transpose();
+//        std::cout<<ans(0,0)<<std::endl;
+
+        double w;
+        if(ans(0,0)<nis_th){
+            w=1.0;
+        }
+        else{
+            w=0.0;
+        }
+
+        weights.push_back(w);
+    }
+
+    std::ostringstream ostr;
+    for (int i = 0; i < 10; i++) {
+        ostr << *getParticles()[i]->getState() << ",\t w: " << weights[i] << std::endl;
+    }
+    ROS_DEBUG_STREAM("[particleLikelihoodVehiclePerceptionXY] Particle Status: " << ostr.str());
+
+    if (std::accumulate(weights.begin(), weights.end(), 0.0) != 0.0) {
+        for (size_t i = 0; i < weights.size(); i++) {
+            double w = weights[i] * getParticles()[i]->getWeight();
+            getParticles()[i]->setWeight(w);
+            ofs_weight << time.sec << "." << time.nsec << "," << std::string(__FUNCTION__) << "," << weights[i]
+                       << std::endl;
+        }
+        particleNormalize();
+//    std::cout << "Particle States \n" << pl->getParticles() << std::endl;
+    } else {
+        ROS_DEBUG("Skip likelihood: %s", __FUNCTION__);
+    }
+
+}
+
+
 
 void PhoneLocalizer::particleLikelihoodVehiclePerceptionV() {
 

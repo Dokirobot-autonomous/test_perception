@@ -89,6 +89,18 @@ VehiclePhonesManager::VehiclePhonesManager(ros::NodeHandle *nh, ros::NodeHandle 
             << "%time,x,y,r,xyr_cov00,xyr_cov01,xyr_cov02,xyr_cov10,xyr_cov11,xyr_cov12,xyr_cov20,xyr_cov21,xyr_cov22"
             << std::endl;
 
+/*
+    double alpha = 1.0+0.0025;
+    double beta = 2;
+    double k = 0;
+    int num_state_=5;
+    lambda_ = alpha * alpha * (num_state_ + k) - num_state_;
+    double weight_s_0 = lambda_ / (lambda_ + num_state_);
+    double weight_c_0 = lambda_ / (lambda_ + num_state_) + (1 - alpha * alpha + beta);
+    weights_s_(0) = weight_s_0;
+    weights_c_(0) = weight_c_0;
+*/
+
 }
 
 
@@ -246,8 +258,12 @@ bool VehiclePhonesManager::convertPedestrianObjects2States() {
         out.header.frame_id = origin_frame_id;
         out.header.stamp = in.header.stamp;
         try {
+/*
             geometry_msgs::TransformStamped transform = tf_buffer.lookupTransform(origin_frame_id, in.header.frame_id,
                                                                                   in.header.stamp, ros::Duration(1.0));
+*/
+            geometry_msgs::TransformStamped transform = tf_buffer.lookupTransform(origin_frame_id, in.header.frame_id,
+                                                                                  ros::Time::now(), ros::Duration(1.0));
             if (isOrientationActive(in.pose.orientation))
                 tf2::doTransform(in, out, transform);
             else
@@ -306,8 +322,8 @@ void VehiclePhonesManager::generatePedestrianCovariances() {
 
     Eigen::MatrixXd p_sigma = Eigen::MatrixXd::Identity(2, 2) * psd * psd;
 
-    ///// Vehicle Coordinateの歩行者を変換すること
     for (size_t i_pe = 0; i_pe < pedestrian_objects.objects.size(); i_pe++) {
+
         autoware_msgs::DetectedObject obj = pedestrian_objects.objects[i_pe];
 
         Eigen::MatrixXd transform_v2p(2, 3), transform_pl2pw(2, 2);

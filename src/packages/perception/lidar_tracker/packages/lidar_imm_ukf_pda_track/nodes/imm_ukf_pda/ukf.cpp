@@ -843,10 +843,12 @@ void UKF::randomMotion(const double p_x, const double p_y, const double v, const
 
 void UKF::initCovarQs(const double dt, const double yaw)
 {
+/*
     if (tracking_num_ != TrackingState::Init)
     {
         return;
     }
+*/
     double dt_2 = dt * dt;
     double dt_3 = dt_2 * dt;
     double dt_4 = dt_3 * dt;
@@ -1344,6 +1346,7 @@ void UKF::prediction(const bool use_sukf, const bool has_subscribed_vectormap, c
     {
         predictionIMMUKF(dt, has_subscribed_vectormap);
     }
+    time_=timestamp;
 }
 
 void UKF::update(const bool use_sukf, const double detection_probability, const double gate_probability,

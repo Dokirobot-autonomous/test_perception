@@ -2,6 +2,10 @@
 
 #ntpdate -q 192.168.0.101
 
+#sudo systemctl restart chrony.service
+#sudo systemctl start chrony.service
+#sudo systemctl stop chrony.service
+
 read -p "Is time sync ok? : "
 
 xterm -e bash -c "source ~/ohashi/test_perception/devel/setup.bash; roslaunch cooperation_setup mks_driver.launch" &
