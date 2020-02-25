@@ -12,7 +12,7 @@ namespace nmea2pose_ws
 // Constructor 
 Nmea2PoseNode::Nmea2PoseNode()
   : private_nh_("~")
-  , MAP_FRAME_("map")
+  , MAP_FRAME_("odom")
   , GPS_FRAME_("gps")
   , roll_(0)
   , pitch_(0)
@@ -36,6 +36,10 @@ void Nmea2PoseNode::initForROS()
   this->sub1_ = this->nh_.subscribe("nmea_sentence", 100, &Nmea2PoseNode::callbackFromNmeaSentence, this);
   // setup publisher
   this->pub1_ = this->nh_.advertise<geometry_msgs::PoseStamped>("gnss_pose", 10);
+  if(!this->private_nh_.getParam("vehicle_name",vehicle_name_)){
+      ROS_ERROR("a");
+      exit(-1);
+  }
 }
 
 void Nmea2PoseNode::run()
@@ -119,8 +123,40 @@ std::vector<std::string> split(const std::string &string)
 void Nmea2PoseNode::callbackFromNmeaSentence(const nmea_msgs::Sentence::ConstPtr &msg)
 {
   this->current_time_ = msg->header.stamp;
-  convert(split(msg->sentence));
-  publishPoseStamped();
+//  convert(split(msg->sentence));
+
+    double fix[3];
+    std::string sen = (*msg).sentence;
+    if(vehicle_name_.compare("mkz")==0){
+        std::vector<std::string> keys={"<     SOL_COMPUTED PPP ","<     SOL_COMPUTED PPP_CONVERGING "};
+        for(const auto key:keys){
+            size_t found = sen.find(key);
+            if (found != std::string::npos) {
+                std::string sen_sub = sen.substr(key.size());
+                sscanf(sen_sub.c_str(), "%lf %lf %lf", &fix[0], &fix[1], &fix[2]);
+                UTM coordinates = LatLon2Utm(fix[0],fix[1]);
+                this->geo_.x = coordinates.x;
+                this->geo_.y = coordinates.y;
+                this->geo_.z = 0;
+                ROS_INFO("lat & long is subscribed.");
+            }
+        }
+    }
+    else if(vehicle_name_.compare("mks")==0){
+        static std::string key = ";SOL_COMPUTED,PPP,";
+        size_t found = sen.find(key);
+        if (found != std::string::npos) {
+            std::string sen_sub = sen.substr(found+key.size());
+            sscanf(sen_sub.c_str(), "%lf %lf %lf", &fix[0], &fix[1], &fix[2]);
+            UTM coordinates = LatLon2Utm(fix[0],fix[1]);
+            this->geo_.x = coordinates.x;
+            this->geo_.y = coordinates.y;
+            this->geo_.z = 0;
+            ROS_INFO("lat & long is subscribed.");
+        }
+    }
+
+    publishPoseStamped();
   return;
 }
 

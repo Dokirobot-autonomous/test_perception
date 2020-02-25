@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "ukf.h"
+#include <ukf.h>
 
 /**
 * Initializes Unscented Kalman filter
@@ -61,11 +61,10 @@ UKF::UKF()
     std_cv_yawdd_ = 1.5;
     std_rm_yawdd_ = 3;
 
-    //// TODO ここの値が計測ノイズに影響
-    //// Laser measurement noise standard deviation position1 in m
-    std_laspx_ = 0.15;
-    //// Laser measurement noise standard deviation position2 in m
-    std_laspy_ = 0.15;
+    // Laser measurement noise standard deviation position1 in m
+    std_laspx_ = 0.40;
+    // Laser measurement noise standard deviation position2 in m
+    std_laspy_ = 0.40;
 
     // time when the state is true, in us
     time_ = 0.0;
@@ -203,8 +202,7 @@ void UKF::initialize(const Eigen::VectorXd& z, const double timestamp, const int
     // first measurement
     x_merge_ << 0, 0, 0, 0, 0.1;
 
-    //// TODO ukfのpの初期値をodom_reliabilityをtransformした値に変更
-    // first_orientation_computation covariance matrix by hardcoding since no clue about initial state covrariance
+    // init covariance matrix by hardcoding since no clue about initial state covrariance
     p_merge_ << 0.5, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 1;
 
     // set weights
@@ -225,7 +223,7 @@ void UKF::initialize(const Eigen::VectorXd& z, const double timestamp, const int
         weights_c_(i) = weight;
     }
 
-    // first_orientation_computation timestamp
+    // init timestamp
     time_ = timestamp;
 
     x_merge_(0) = z(0);
@@ -247,8 +245,7 @@ void UKF::initialize(const Eigen::VectorXd& z, const double timestamp, const int
     s_ctrv_ << 1, 0, 0, 1;
     s_rm_ << 1, 0, 0, 1;
 
-    //// TODO r_cvの初期化
-    //// initialize R covariance
+    // initialize R covariance
     r_cv_ << std_laspx_ * std_laspx_, 0, 0, std_laspy_ * std_laspy_;
     r_ctrv_ << std_laspx_ * std_laspx_, 0, 0, std_laspy_ * std_laspy_;
     r_rm_ << std_laspx_ * std_laspx_, 0, 0, std_laspy_ * std_laspy_;
@@ -266,7 +263,7 @@ void UKF::initialize(const Eigen::VectorXd& z, const double timestamp, const int
             0,                       0, std_lane_direction_*std_lane_direction_;
     // clang-format on
 
-    // first_orientation_computation tracking num
+    // init tracking num
     tracking_num_ = 1;
 }
 
@@ -432,7 +429,6 @@ void UKF::predictionIMMUKF(const double dt, const bool has_subscribed_vectormap)
     /*****************************************************************************
     *  Prediction Measurement
     ****************************************************************************/
-    //// TODO predictionLidarMeasurementにodom_reliabilityを追加
     predictionLidarMeasurement(MotionModel::CV, num_lidar_state_);
     predictionLidarMeasurement(MotionModel::CTRV, num_lidar_state_);
     predictionLidarMeasurement(MotionModel::RM, num_lidar_state_);
@@ -479,18 +475,18 @@ void UKF::findMaxZandS(Eigen::VectorXd& max_det_z, Eigen::MatrixXd& max_det_s)
     }
 }
 
-void UKF::updateEachMotion(const double detection_probability, const double gate_probability, const double gating_thres,
+void UKF::updateEachMotion(const double detection_probability, const double gate_probability, const double gating_threshold,
                            const std::vector<autoware_msgs::DetectedObject>& object_vec,
                            std::vector<double>& lambda_vec)
 {
     // calculating association probability
     double num_meas = object_vec.size();
-    double b = 2 * num_meas * (1 - detection_probability * gate_probability) / (gating_thres * detection_probability);
+    double b = 2 * num_meas * (1 - detection_probability * gate_probability) / (gating_threshold * detection_probability);
 
     Eigen::VectorXd max_det_z;
     Eigen::MatrixXd max_det_s;
     findMaxZandS(max_det_z, max_det_s);
-    double Vk = M_PI * sqrt(gating_thres * max_det_s.determinant());
+    double Vk = M_PI * sqrt(gating_threshold * max_det_s.determinant());
 
     for (int motion_ind = 0; motion_ind < num_motion_model_; motion_ind++)
     {
@@ -641,7 +637,6 @@ void UKF::updateEachMotion(const double detection_probability, const double gate
         Eigen::MatrixXd updated_p(p_cv_.rows(), p_cv_.cols());
         if (num_meas != 0)
         {
-            //// TODO s_pred内には，計測誤差がすでに考慮視されている
             updated_p = beta_zero * p + (1 - beta_zero) * (p - kalman_gain * s_pred * kalman_gain.transpose()) +
                         kalman_gain * sigma_p * kalman_gain.transpose();
         }
@@ -751,7 +746,7 @@ void UKF::updateSUKF(const std::vector<autoware_msgs::DetectedObject>& object_ve
     uppateForCTRV();
 }
 
-void UKF::updateIMMUKF(const double detection_probability, const double gate_probability, const double gating_thres,
+void UKF::updateIMMUKF(const double detection_probability, const double gate_probability, const double gating_threshold,
                        const std::vector<autoware_msgs::DetectedObject>& object_vec)
 {
     /*****************************************************************************
@@ -764,7 +759,7 @@ void UKF::updateIMMUKF(const double detection_probability, const double gate_pro
 
     // update state varibale x and state covariance p
     std::vector<double> lambda_vec;
-    updateEachMotion(detection_probability, gate_probability, gating_thres, object_vec, lambda_vec);
+    updateEachMotion(detection_probability, gate_probability, gating_threshold, object_vec, lambda_vec);
     /*****************************************************************************
     *  IMM Merge Step
     ****************************************************************************/
@@ -1159,42 +1154,31 @@ void UKF::updateKalmanGain(const int motion_ind)
     }
 }
 
-//// TODO predictionLidarMeasurementにodom_reliabilityを追加
 void UKF::predictionLidarMeasurement(const int motion_ind, const int num_meas_state)
 {
     Eigen::MatrixXd x_sig_pred(x_sig_pred_cv_.rows(), x_sig_pred_cv_.cols());
     Eigen::MatrixXd covariance_r(num_meas_state, num_meas_state);
-
-    //// TODO covariance_r = r_cvの値にvehicle odom_reliabilityを加算(covariance_r = r_cv+odom_reliability)
-    //// TODO 基本，一致するobject_vecは一つであると考えよう
-    //// TODO この関数が呼ばれる前にc_tv_を書き換えよう
     if (motion_ind == MotionModel::CV)
     {
         x_sig_pred = x_sig_pred_cv_;
-        if (num_meas_state == num_lidar_direction_state_){
-            ROS_DEBUG("lidar_direction_r_cv_");
+        if (num_meas_state == num_lidar_direction_state_)
             covariance_r = lidar_direction_r_cv_;
-        }
         else
             covariance_r = r_cv_;
     }
     else if (motion_ind == MotionModel::CTRV)
     {
         x_sig_pred = x_sig_pred_ctrv_;
-        if (num_meas_state == num_lidar_direction_state_){
-            ROS_DEBUG("lidar_direction_r_ctrv_");
+        if (num_meas_state == num_lidar_direction_state_)
             covariance_r = lidar_direction_r_ctrv_;
-        }
         else
             covariance_r = r_ctrv_;
     }
     else
     {
         x_sig_pred = x_sig_pred_rm_;
-        if (num_meas_state == num_lidar_direction_state_){
-            ROS_DEBUG("lidar_direction_r_rm_");
+        if (num_meas_state == num_lidar_direction_state_)
             covariance_r = lidar_direction_r_rm_;
-        }
         else
             covariance_r = r_rm_;
     }
@@ -1236,8 +1220,7 @@ void UKF::predictionLidarMeasurement(const int motion_ind, const int num_meas_st
         s_pred = s_pred + weights_c_(i) * z_diff * z_diff.transpose();
     }
 
-    //// TODO ここで，計測ノイズrを追加，diffによって変更すべき
-    //// add measurement noise covariance matrix
+    // add measurement noise covariance matrix
     s_pred += covariance_r;
 
     if (num_meas_state == num_lidar_direction_state_)
@@ -1306,14 +1289,14 @@ double UKF::calculateNIS(const autoware_msgs::DetectedObject& in_object, const i
 }
 
 bool UKF::isLaneDirectionAvailable(const autoware_msgs::DetectedObject& in_object, const int motion_ind,
-                                   const double lane_direction_chi_thres)
+                                   const double lane_direction_chi_threshold)
 {
     predictionLidarMeasurement(motion_ind, num_lidar_direction_state_);
 
     double lidar_direction_nis = calculateNIS(in_object, motion_ind);
 
     bool is_direction_available = false;
-    if (lidar_direction_nis < lane_direction_chi_thres)
+    if (lidar_direction_nis < lane_direction_chi_threshold)
     {
         is_direction_available = true;
     }
@@ -1321,23 +1304,22 @@ bool UKF::isLaneDirectionAvailable(const autoware_msgs::DetectedObject& in_objec
 }
 
 void UKF::checkLaneDirectionAvailability(const autoware_msgs::DetectedObject& in_object,
-                                         const double lane_direction_chi_thres, const bool use_sukf)
+                                         const double lane_direction_chi_threshold, const bool use_sukf)
 {
     if (use_sukf)
     {
-        is_direction_ctrv_available_ = isLaneDirectionAvailable(in_object, MotionModel::CTRV, lane_direction_chi_thres);
+        is_direction_ctrv_available_ = isLaneDirectionAvailable(in_object, MotionModel::CTRV, lane_direction_chi_threshold);
     }
     else
     {
-        is_direction_cv_available_ = isLaneDirectionAvailable(in_object, MotionModel::CV, lane_direction_chi_thres);
-        is_direction_ctrv_available_ = isLaneDirectionAvailable(in_object, MotionModel::CTRV, lane_direction_chi_thres);
+        is_direction_cv_available_ = isLaneDirectionAvailable(in_object, MotionModel::CV, lane_direction_chi_threshold);
+        is_direction_ctrv_available_ = isLaneDirectionAvailable(in_object, MotionModel::CTRV, lane_direction_chi_threshold);
     }
 }
 
 void UKF::prediction(const bool use_sukf, const bool has_subscribed_vectormap, const double timestamp)
 {
-    double dt=timestamp-time_;
-
+    double dt=timestamp-timestamp_;
     if (use_sukf)
     {
         predictionSUKF(dt, has_subscribed_vectormap);
@@ -1346,11 +1328,10 @@ void UKF::prediction(const bool use_sukf, const bool has_subscribed_vectormap, c
     {
         predictionIMMUKF(dt, has_subscribed_vectormap);
     }
-    time_=timestamp;
 }
 
 void UKF::update(const bool use_sukf, const double detection_probability, const double gate_probability,
-                 const double gating_thres, const std::vector<autoware_msgs::DetectedObject>& object_vec)
+                 const double gating_threshold, const std::vector<autoware_msgs::DetectedObject>& object_vec)
 {
     if (use_sukf)
     {
@@ -1358,7 +1339,6 @@ void UKF::update(const bool use_sukf, const double detection_probability, const 
     }
     else
     {
-        //// TODO odomのreliabilityを追加
-        updateIMMUKF(detection_probability, gate_probability, gating_thres, object_vec);
+        updateIMMUKF(detection_probability, gate_probability, gating_threshold, object_vec);
     }
 }

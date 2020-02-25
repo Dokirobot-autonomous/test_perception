@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(path_follower)
 
+SET (CMAKE_CXX_FLAGS "-O3 -std=c++11 -Wall")
+
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -158,6 +160,7 @@ add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/path_follower_node.cpp)
 add_executable(pose_estimation src/pose_estimation/pose_estimation.cpp)
+add_executable(pose_estimation_fixed src/pose_estimation/pose_estimation_fixed.cpp)
 add_executable(nmea_to_UTM src/nmea_to_UTM/nmea2pose_core.cpp src/nmea_to_UTM/nmea2pose_node.cpp src/nmea_to_UTM/latlongtoUTM.cpp)
 
 ## Rename C++ executable without prefix
@@ -170,7 +173,8 @@ add_executable(nmea_to_UTM src/nmea_to_UTM/nmea2pose_core.cpp src/nmea_to_UTM/nm
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS}${catkin_EXPORTED_TARGETS})
 add_dependencies(pose_estimation path_follower_generate_messages_cpp) 
-add_dependencies(nmea_to_UTM path_follower_generate_messages_cpp) 
+add_dependencies(pose_estimation_fixed path_follower_generate_messages_cpp)
+add_dependencies(nmea_to_UTM path_follower_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
@@ -180,6 +184,9 @@ add_dependencies(nmea_to_UTM path_follower_generate_messages_cpp)
 target_link_libraries(pose_estimation
  ${catkin_LIBRARIES}
 )
+target_link_libraries(pose_estimation_fixed
+        ${catkin_LIBRARIES}
+        )
 target_link_libraries(nmea_to_UTM
  ${catkin_LIBRARIES}
 )

@@ -51,6 +51,7 @@ header=Header()
 def RelativeOrientationCallback(data):
 	global relative_quaternion
 	global Yaw_initialize
+	rospy.loginfo("RelativeOrientationCallback")
 	relative_quaternion = (data.x,data.y,data.z,data.w)
 	Yaw_initialize = 1
 
@@ -63,12 +64,14 @@ def RelativeOrientationCallback(data):
 def TwistCallback(data):
 	global Vx_meas
 	global delta_meas
+	rospy.loginfo("TwistCallback")
 	Vx_meas = data.twist.linear.x
 	delta_meas = data.twist.angular.z
 
 def CurrentPose2DCallback(data):
 	global Yaw_meas, X_meas, Y_meas
 	global GPS_read, GPS_initialize
+	rospy.loginfo("CurrentPose2DCallback")
 	Yaw_meas = data.theta
 	X_meas = data.x
 	Y_meas = data.y
@@ -79,6 +82,7 @@ def CurrentPoseStampedCallback(data):
 	global Yaw_meas, X_meas, Y_meas
 	global GPS_read, GPS_initialize
 	global header
+	rospy.loginfo("CurrentPoseStampedCallback")
 	# Yaw_meas = data.theta
 	X_meas = data.pose.position.x
 	Y_meas = data.pose.position.y
@@ -94,6 +98,7 @@ def IMUCallback(data):
 	global ax_meas, ay_meas
 	global quaternion_prev, quaternion
 
+	rospy.loginfo("IMUCallback")
 	ori        = data.orientation
 	quaternion = (ori.x, ori.y, ori.z, ori.w)
 
@@ -104,7 +109,8 @@ def IMUCallback(data):
 		(roll, pitch, Yaw_meas)      = transformations.euler_from_quaternion(actual_quaternion)
 		(roll, pitch, Yaw_meas_prev) = transformations.euler_from_quaternion(transformations.quaternion_multiply(quaternion_prev, relative_quaternion))
 
-	IMU_time = float(str(data.header.stamp))
+	# IMU_time = float(str(data.header.stamp))
+	IMU_time = data.header.stamp.to_sec()
 
 	if IMU_start == 0:
 		IMU_start    = 1
@@ -119,7 +125,7 @@ def IMUCallback(data):
 	ay_meas          = data.linear_acceleration.y
 
 def state_estimation():
-	global Vx_meas, Yaw_meas, X_meas, Y_meas, delta_meas
+	global Vx_meas, Yaw_meas, X_meas, Y_meas, delta_meas, Yawrate_meas
 	global Yaw_initialize, GPS_initialize, GPS_read
 	global start_X, start_Y, pub_flag
 	global header
@@ -166,18 +172,18 @@ def state_estimation():
 	var_noise = 1.0e-04
 
 	P         = eye(6)    # initial dynamics coveriance matrix
-	Q         = diag(array([var_ax, var_delta, var_noise, var_noise, var_noise, var_noise]))     # process noise coveriance matrix
-	R2         = diag(array([var_v, var_gps, var_gps, var_psi]))     # measurement noise coveriance matrix
-	R1         = diag(array([var_v, var_psi, var_ay]))
+	# Q         = diag(array([var_ax, var_delta, var_noise, var_noise, var_noise, var_noise]))     # process noise coveriance matrix
+	# R2         = diag(array([var_v, var_gps, var_gps, var_psi]))     # measurement noise coveriance matrix
+	# R1         = diag(array([var_v, var_psi, var_ay]))
 
 	while (rospy.is_shutdown() != 1):
 
 		#print((Yaw_initialize, GPS_initialize))
 
 		if Yaw_initialize == 0 or GPS_initialize == 0:
-			print("not initialized")
-			print(Yaw_initialize)
-			print(GPS_initialize)
+			rospy.logwarn("not initialized")
+			rospy.logwarn(Yaw_initialize)
+			rospy.logwarn(GPS_initialize)
 			rate.sleep()
 			continue
 
@@ -185,20 +191,35 @@ def state_estimation():
 			z_EKF            = array([Vx_meas, 0, X_meas, Y_meas, Yaw_meas, Yawrate_meas])
 			state_est        = z_EKF
 			state_initialize = 1
+			rospy.loginfo("state_initialize")
 
 		else:
 			u_ekf      = array([ax_meas, delta_meas])
 			w_ekf      = array([0., 0., 0., 0., 0., 0.])
 			args       = (u_ekf, vhMdl, trMdl, dt)
+			# var_noise_delta=var_noise
+			var_noise_delta=var_noise*5.0**((delta_meas)*10)
+			Q         = diag(array([var_ax, var_noise_delta, var_noise, var_noise, var_noise, var_noise]))     # process noise coveriance matrix
+			rospy.loginfo(Q)
 			z_EKF_prev = z_EKF
 
 			if GPS_read == 0:
 				y_ekf      = array([Vx_meas, Yaw_meas, ay_meas])
 				v_ekf      = array([0.,0.,0.])
+				# var_psi_yaw=var_psi
+				#				rospy.loginfo(Yawrate_meas)
+				var_psi_yaw=var_psi*2.0**((Yawrate_meas)*10)
+				R1         = diag(array([var_v, var_psi_yaw, var_ay]))
+				rospy.loginfo(R1)
 				(z_EKF, P) = ekf(f_BicycleModel, z_EKF, w_ekf, v_ekf, P, h_BicycleModel_withoutGPS, y_ekf, Q, R1, args)
 			else:
 				y_ekf      = array([Vx_meas, X_meas, Y_meas, Yaw_meas])
 				v_ekf      = array([0.,0.,0.,0.])
+				# var_psi_yaw=var_psi
+				#				rospy.loginfo(Yawrate_meas)
+				var_psi_yaw=var_psi*2.0**((Yawrate_meas)*10)
+				R2         = diag(array([var_v, var_gps, var_gps, var_psi_yaw]))     # measurement noise coveriance matrix
+				rospy.loginfo(R2)
 
 				(z_EKF, P) = ekf(f_BicycleModel, z_EKF, w_ekf, v_ekf, P, h_BicycleModel_withGPS, y_ekf, Q, R2, args)
 				GPS_read   = 0
@@ -220,6 +241,18 @@ def state_estimation():
 		odom_est_obj.pose.pose.position.y  = state_est[3]
 		(odom_est_obj.pose.pose.orientation.x,odom_est_obj.pose.pose.orientation.y,odom_est_obj.pose.pose.orientation.z,odom_est_obj.pose.pose.orientation.w)=transformations.quaternion_from_euler(0.0,0.0,state_est[4])
 		odom_est_obj.twist.twist.angular.z = state_est[5]
+		odom_est_obj.pose.covariance[0]=P[2][2]
+		odom_est_obj.pose.covariance[7]=P[3][3]
+		odom_est_obj.pose.covariance[35]=P[4][4]
+		odom_est_obj.pose.covariance[1]=odom_est_obj.pose.covariance[6]=P[2][3]
+		odom_est_obj.pose.covariance[5]=odom_est_obj.pose.covariance[30]=P[2][4]
+		odom_est_obj.pose.covariance[11]=odom_est_obj.pose.covariance[31]=P[3][4]
+		odom_est_obj.twist.covariance[0]=P[0][0]
+		odom_est_obj.twist.covariance[7]=P[1][1]
+		odom_est_obj.twist.covariance[35]=P[5][5]
+		odom_est_obj.twist.covariance[1]=odom_est_obj.twist.covariance[6]=P[0][1]
+		odom_est_obj.twist.covariance[5]=odom_est_obj.twist.covariance[30]=P[0][5]
+		odom_est_obj.twist.covariance[11]=odom_est_obj.twist.covariance[31]=P[1][5]
 		odom_pub.publish(odom_est_obj)
 		if tf_publish:
 			tf.header=header

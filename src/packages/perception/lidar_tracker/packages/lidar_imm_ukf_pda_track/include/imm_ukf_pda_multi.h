@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef OBJECT_TRACKING_IMM_UKF_JPDAF_MULTI_H
-#define OBJECT_TRACKING_IMM_UKF_JPDAF_MULTI_H
+#ifndef OBJECT_TRACKING_IMM_UKF_MULTI_JPDAF_H
+#define OBJECT_TRACKING_IMM_UKF_MULTI_JPDAF_H
 
 
 #include <vector>
 #include <chrono>
 #include <stdio.h>
-#include <fstream>
 
 
 #include <ros/ros.h>
@@ -36,11 +35,19 @@
 
 #include <vector_map/vector_map.h>
 
+/*
 #include "autoware_msgs/DetectedObject.h"
 #include "autoware_msgs/DetectedObjectArray.h"
-#include <nav_msgs/Odometry.h>
+*/
 
 #include "ukf.h"
+#include "../../../../../../../devel/include/autoware_msgs/DetectedObjectArray.h"
+#include "../../../../../../../devel/include/autoware_msgs/DetectedObject.h"
+//#include "../../../../../../../devel/include/autoware_msgs/UkfStateArray.h"
+#include "../../../../../../../devel/include/msc_msgs/Object.h"
+#include "../../../../../../../devel/include/msc_msgs/ObjectArray.h"
+#include <std_msgs/Float64MultiArray.h>
+
 
 class ImmUkfPdaMulti
 {
@@ -52,16 +59,16 @@ private:
     std::vector<UKF> targets_;
 
     // probabilistic data association params
-    double gating_thres_;
+    double gating_threshold_;
     double gate_probability_;
     double detection_probability_;
 
     // object association param
-    int life_time_thres_;
+    int life_time_threshold_;
 
     // static classification param
-    double static_velocity_thres_;
-    int static_num_history_thres_;
+    double static_velocity_threshold_;
+    int static_num_history_threshold_;
 
     // switch sukf and ImmUkfPdaMulti
     bool use_sukf_;
@@ -75,16 +82,18 @@ private:
     std::string result_file_path_;
 
     // prevent explode param for ukf
-    double prevent_explosion_thres_;
+    double prevent_explosion_threshold_;
 
     // for vectormap assisted tarcking
     bool use_vectormap_;
     bool has_subscribed_vectormap_;
-    double lane_direction_chi_thres_;
-    double nearest_lane_distance_thres_;
+    double lane_direction_chi_threshold_;
+    double nearest_lane_distance_threshold_;
     std::string vectormap_frame_;
     vector_map::VectorMap vmap_;
     std::vector<vector_map_msgs::Lane> lanes_;
+
+    std::vector<std::string> topic_names_odom_,topic_names_objects_;
 
     double merge_distance_threshold_;
     const double CENTROID_DISTANCE = 0.2;//distance to consider centroids the same
@@ -102,22 +111,17 @@ private:
     ros::NodeHandle node_handle_;
     ros::NodeHandle private_nh_;
     ros::Subscriber sub_detected_array_mks_,sub_detected_array_mkz_,sub_detected_array_prius_;
-    ros::Subscriber sub_odom_mks_,sub_odom_mkz_,sub_odom_prius_;
-    ros::Publisher pub_object_array_;
+/*
+    ros::Subscriber sub_detected_array_;
+*/
+    ros::Publisher pub_object_array_,pub_msc_object_array_,pub_states_array_;
 
     std_msgs::Header input_header_;
 
-    std::vector<std::string> topic_names_odom_,topic_names_objects_;
-    std::vector<nav_msgs::Odometry> msg_odom_;
-    std::vector<Eigen::MatrixXd> p_vehicle_;
-    std::vector<Eigen::MatrixXd> reliability_vec_;
-
-    std::ofstream ofs_;
-    std::string tn_;
-
-
+/*
+    void callback(const autoware_msgs::DetectedObjectArray& input);
+*/
     void callback(const ros::MessageEvent<autoware_msgs::DetectedObjectArray const>& event);
-    void callback_odom(const ros::MessageEvent<nav_msgs::Odometry const>& event);
 
     void transformPoseToGlobal(const autoware_msgs::DetectedObjectArray& input,
                                autoware_msgs::DetectedObjectArray& transformed_input);
@@ -133,10 +137,10 @@ private:
                                std::vector<autoware_msgs::DetectedObject>& object_vec, std::vector<bool>& matching_vec);
     autoware_msgs::DetectedObject getNearestObject(UKF& target,
                                                    const std::vector<autoware_msgs::DetectedObject>& object_vec);
-    void updateBehaviorState(const UKF& target, autoware_msgs::DetectedObject& object);
+    void updateBehaviorState(const UKF& target, const bool use_sukf, autoware_msgs::DetectedObject& object);
 
     void initTracker(const autoware_msgs::DetectedObjectArray& input, double timestamp);
-    void secondInit(UKF& target, const std::vector<autoware_msgs::DetectedObject>& object_vec, double timestamp);
+    void secondInit(UKF& target, const std::vector<autoware_msgs::DetectedObject>& object_vec, double dt);
 
     void updateTrackingNum(const std::vector<autoware_msgs::DetectedObject>& object_vec, UKF& target);
 
@@ -144,7 +148,7 @@ private:
                                       std::vector<bool>& matching_vec,
                                       std::vector<autoware_msgs::DetectedObject>& object_vec, UKF& target);
     void makeNewTargets(const double timestamp, const autoware_msgs::DetectedObjectArray& input,
-                        const std::vector<bool>& matching_vec,const std::vector<Eigen::MatrixXd>& reliability_vec);
+                        const std::vector<bool>& matching_vec);
 
     void staticClassification();
 
@@ -192,13 +196,9 @@ private:
     void updateTargetWithAssociatedObject(const std::vector<autoware_msgs::DetectedObject>& object_vec,
                                           UKF& target);
 
-    void makeReliabilityVec(const autoware_msgs::DetectedObjectArray &input,const nav_msgs::Odometry &vehicle_odom,const Eigen::MatrixXd& p_vehicle,std::vector<Eigen::MatrixXd>& reliability_vec);
-
-    //// TODO vehicle2pedの変換行列を作成
-
 public:
     ImmUkfPdaMulti();
     void run();
 };
 
-#endif /* OBJECT_TRACKING_IMM_UKF_JPDAF_MULTI_H */
+#endif /* OBJECT_TRACKING_IMM_UKF_MULTI_JPDAF_H */

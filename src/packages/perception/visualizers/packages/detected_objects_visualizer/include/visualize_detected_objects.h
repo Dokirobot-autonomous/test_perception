@@ -22,6 +22,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include <sstream>
 #include <cmath>
 #include <iomanip>

@@ -1,5 +1,7 @@
 #! /bin/bash
 
+htpdate www.google.com
+
 ntpdate -q 192.168.0.101
 
 #sudo systemctl restart chrony.service

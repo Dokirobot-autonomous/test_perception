@@ -31,7 +31,7 @@ PhoneLocalizerUKF::PhoneLocalizerUKF(ros::NodeHandle *nh, ros::NodeHandle *priva
             << "%time,e00,e01,e02,e03,e04,e10,e11,e12,e13,e14,e20,e21,e22,e23,e24,e30,e31,e32,e33,e34,e40,e41,e42,e43,e44"
             << std::endl;
     ofs_cov_update.open(path + "/cov_update.csv");
-    ofs_cov_pred
+    ofs_cov_update
             << "%time,e00,e01,e02,e03,e04,e10,e11,e12,e13,e14,e20,e21,e22,e23,e24,e30,e31,e32,e33,e34,e40,e41,e42,e43,e44"
             << std::endl;
     ofs_imu.open(path + "/imu.csv");
@@ -42,6 +42,8 @@ PhoneLocalizerUKF::PhoneLocalizerUKF(ros::NodeHandle *nh, ros::NodeHandle *priva
     ofs_gnssraw_accel << "%time,vx,vy" << std::endl;
     ofs_weight.open(path + "/weight.csv");
     ofs_weight << "%time,w_s,w_c" << std::endl;
+    ofs_kalman_gain.open(path + "/kalman_gain.csv");
+    ofs_kalman_gain << "%time,e00,e01,e10,e11,e20,e21,e30,e31,e40,e41" << std::endl;
 
 
     /** Set parameter **/
@@ -191,7 +193,7 @@ void PhoneLocalizerUKF::callback_gps(const sensor_msgs::NavSatFix::ConstPtr &msg
 //    ROS_DEBUG_STREAM("callback_gps: \n" << gps);
     update_gps = true;
 
-    geo.llh_to_xyz_us(gps.latitude,gps.longitude,0.0);
+    geo.llh_to_xyz_us(gps.latitude, gps.longitude, 0.0);
     double gps_x = geo.y(), gps_y = -geo.x();
     ofs_gps << gps.header.stamp.sec << "." << gps.header.stamp.nsec << "," << gps_x << "," << gps_y << std::endl;
 
@@ -293,13 +295,14 @@ void PhoneLocalizerUKF::publish_odom(const ros::Time &time) {
                    << ukf.p_ctrv_(3, 0) << "," << ukf.p_ctrv_(3, 1) << "," << ukf.p_ctrv_(3, 2) << ","
                    << ukf.p_ctrv_(3, 3) << "," << ukf.p_ctrv_(3, 4) << ","
                    << ukf.p_ctrv_(4, 0) << "," << ukf.p_ctrv_(4, 1) << "," << ukf.p_ctrv_(4, 2) << ","
-                   << ukf.p_ctrv_(4, 3) << "," << ukf.p_ctrv_(4, 4);
+                   << ukf.p_ctrv_(4, 3) << "," << ukf.p_ctrv_(4, 4) << std::endl;
 
     pub_odom.publish(odom);
 
     ROS_DEBUG_STREAM("Published Phone State \n" << now_phone_state);
 
 }
+
 
 void PhoneLocalizerUKF::run() {
 
@@ -320,7 +323,7 @@ void PhoneLocalizerUKF::run() {
                  << ukf.p_ctrv_(3, 0) << "," << ukf.p_ctrv_(3, 1) << "," << ukf.p_ctrv_(3, 2) << ","
                  << ukf.p_ctrv_(3, 3) << "," << ukf.p_ctrv_(3, 4) << ","
                  << ukf.p_ctrv_(4, 0) << "," << ukf.p_ctrv_(4, 1) << "," << ukf.p_ctrv_(4, 2) << ","
-                 << ukf.p_ctrv_(4, 3) << "," << ukf.p_ctrv_(4, 4);
+                 << ukf.p_ctrv_(4, 3) << "," << ukf.p_ctrv_(4, 4) << std::endl;
 
 
     if (update_imu) {
@@ -526,8 +529,6 @@ void PhoneLocalizerUKF::ukfUpdateIMU() {
     Eigen::VectorXd z(1, 1);
     z << yawd;
 
-    std::cout << __FUNCTION__ << "\n" << z << "\n" << r << std::endl;
-
     ukf.r_ctrv_ = r;
 /*
     ukf.predictionMeasurement(MotionModel::CV, update_state);
@@ -541,6 +542,7 @@ void PhoneLocalizerUKF::ukfUpdateIMU() {
 /*
     ukf.updateKalmanGain(MotionModel::RM, update_state);
 */
+
 
     std::vector<double> lambda_vec;
     ukf.updateEachMotion(detection_probability, gate_probability, gating_thres, z, lambda_vec);
@@ -592,6 +594,11 @@ void PhoneLocalizerUKF::ukfUpdateGnssrawAcceleration() {
     ukf.r_ctrv_ = r;
     ukf.predictionMeasurement(MotionModel::CTRV, update_state);
     ukf.updateKalmanGain(MotionModel::CTRV, update_state);
+    ofs_kalman_gain << time.sec << "." << time.nsec << "," << ukf.k_ctrv_(0, 0) << "," << ukf.k_ctrv_(0, 1) << ","
+                    << ukf.k_ctrv_(1, 0) << "," << ukf.k_ctrv_(1, 1) << "," << ukf.k_ctrv_(2,0)<<","
+                    << ukf.k_ctrv_(2, 1) << "," << ukf.k_ctrv_(3, 0) << "," << ukf.k_ctrv_(3, 1) << ","
+                    << ukf.k_ctrv_(4, 0) << "," << ukf.k_ctrv_(4,1)<< std::endl;
+
     std::vector<double> lambda_vec;
     ukf.updateEachMotion(detection_probability, gate_probability, gating_thres, z, lambda_vec);
 
@@ -610,6 +617,10 @@ void PhoneLocalizerUKF::ukfUpdateVehiclePerception() {
     ukf.r_ctrv_ = r;
     ukf.predictionMeasurement(MotionModel::CTRV, update_state);
     ukf.updateKalmanGain(MotionModel::CTRV, update_state);
+    ofs_kalman_gain << time.sec << "." << time.nsec << "," << ukf.k_ctrv_(0, 0) << "," << ukf.k_ctrv_(0, 1) << ","
+                    << ukf.k_ctrv_(1, 0) << "," << ukf.k_ctrv_(1, 1) << "," << ukf.k_ctrv_(2,0)<<","
+                    << ukf.k_ctrv_(2, 1) << "," << ukf.k_ctrv_(3, 0) << "," << ukf.k_ctrv_(3, 1) << ","
+                    << ukf.k_ctrv_(4, 0) << "," << ukf.k_ctrv_(4,1)<< std::endl;
 
     std::vector<double> lambda_vec;
     ukf.updateEachMotion(detection_probability, gate_probability, gating_thres, z, lambda_vec);

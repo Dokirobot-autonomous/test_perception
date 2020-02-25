@@ -42,6 +42,8 @@ private:
   ros::NodeHandle nh_;
   ros::NodeHandle private_nh_;
 
+  std::string vehicle_name_;
+
   // publisher
   ros::Publisher pub1_;
 

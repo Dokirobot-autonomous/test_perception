@@ -25,16 +25,15 @@
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 
-#include "../../../../../../../devel/include/autoware_msgs/DetectedObject.h"
-#include "../../../../../../../devel/include/autoware_msgs/DetectedObjectArray.h"
+#include "autoware_msgs/DetectedObject.h"
 
 enum TrackingState : int
 {
     Die = 0,     // No longer tracking
     Init = 1,    // Start tracking
-    Stable = 2,  // Stable tracking
-    Occlusion = 3, // Lost 1 frame possibly by occlusion
-    Lost = 50,   // About to lose target
+    Stable = 4,  // Stable tracking
+    Occlusion = 5, // Lost 1 frame possibly by occlusion
+    Lost = 10,   // About to lose target
 };
 
 enum MotionModel : int
@@ -54,6 +53,10 @@ class UKF
 
 public:
     int ukf_id_;
+
+    std::string last_frame_id_;
+
+    double timestamp_;
 
     int num_state_;
 
@@ -97,7 +100,7 @@ public:
     Eigen::MatrixXd x_sig_pred_rm_;
 
     //* time when the state is true, in us
-    double time_;
+    long long time_;
 
     //* Process noise standard deviation longitudinal acceleration in m/s^2
     double std_a_cv_;
@@ -174,6 +177,10 @@ public:
     bool is_stable_;
     autoware_msgs::DetectedObject object_;
     std::string label_;
+    std::vector<std::string> label_candidates_;
+    std::vector<size_t> label_num_;
+
+
     double min_assiciation_distance_;
 
     // for env classification
@@ -239,8 +246,6 @@ public:
 
     Eigen::VectorXd lidar_direction_ctrv_meas_;
 
-    size_t num_pass=0;
-
     /**
      * Constructor
      */
@@ -248,7 +253,7 @@ public:
 
     void updateYawWithHighProb();
 
-    void initialize(const Eigen::VectorXd& z, const double timestamp, const int target_id);
+    void initialize(const Eigen::VectorXd& z, const double timestamp, const int target_ind);
 
     void updateModeProb(const std::vector<double>& lambda_vec);
 
@@ -268,12 +273,12 @@ public:
 
     void uppateForCTRV();
 
-    void updateEachMotion(const double detection_probability, const double gate_probability, const double gating_thres,
+    void updateEachMotion(const double detection_probability, const double gate_probability, const double gating_threshold,
                           const std::vector<autoware_msgs::DetectedObject>& object_vec, std::vector<double>& lambda_vec);
 
     void updateSUKF(const std::vector<autoware_msgs::DetectedObject>& object_vec);
 
-    void updateIMMUKF(const double detection_probability, const double gate_probability, const double gating_thres,
+    void updateIMMUKF(const double detection_probability, const double gate_probability, const double gating_threshold,
                       const std::vector<autoware_msgs::DetectedObject>& object_vec);
 
     void ctrv(const double p_x, const double p_y, const double v, const double yaw, const double yawd,
@@ -290,14 +295,14 @@ public:
     void predictionMotion(const double delta_t, const int model_ind);
 
     void checkLaneDirectionAvailability(const autoware_msgs::DetectedObject& in_object,
-                                        const double lane_direction_chi_thres, const bool use_sukf);
+                                        const double lane_direction_chi_threshold, const bool use_sukf);
 
     void predictionLidarMeasurement(const int motion_ind, const int num_meas_state);
 
     double calculateNIS(const autoware_msgs::DetectedObject& in_object, const int motion_ind);
 
     bool isLaneDirectionAvailable(const autoware_msgs::DetectedObject& in_object, const int motion_ind,
-                                  const double lane_direction_chi_thres);
+                                  const double lane_direction_chi_threshold);
 
     // void updateKalmanGain(const int motion_ind, const int num_meas_state);
     void updateKalmanGain(const int motion_ind);
@@ -305,7 +310,7 @@ public:
     double normalizeAngle(const double angle);
 
     void update(const bool use_sukf, const double detection_probability, const double gate_probability,
-                const double gating_thres, const std::vector<autoware_msgs::DetectedObject>& object_vec);
+                const double gating_threshold, const std::vector<autoware_msgs::DetectedObject>& object_vec);
 
     void prediction(const bool use_sukf, const bool has_subscribed_vectormap, const double timestamp);
 };

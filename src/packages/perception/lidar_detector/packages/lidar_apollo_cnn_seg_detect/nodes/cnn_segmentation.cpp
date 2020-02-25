@@ -208,9 +208,22 @@ void CNNSegmentation::pointsCallback(const sensor_msgs::PointCloud2 &msg) {
     objects.header = message_header_;
     segment(in_pc_ptr, valid_idx, objects);
 
-    pubColoredPoints(objects);
+    autoware_msgs::DetectedObjectArray out;
+    out.header=objects.header;
+    for(const auto obj:objects.objects){
+        out.objects.push_back(obj);
+/*
+        if(obj.label=="pedestrian"){
+            out.objects.push_back(obj);
+        }
+*/
+    }
 
-    objects_pub_.publish(objects);
+//    pubColoredPoints(objects);
+//    objects_pub_.publish(objects);
+
+    objects_pub_.publish(out);
+    pubColoredPoints(out);
 
     end = std::chrono::system_clock::now();
     double elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();

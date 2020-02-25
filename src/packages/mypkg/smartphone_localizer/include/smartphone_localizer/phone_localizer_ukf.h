@@ -214,7 +214,7 @@ private:
     Eigen::MatrixXd now_phone_state;
 
     /** File Output **/
-    std::ofstream ofs_state,ofs_cov_pred,ofs_cov_update,ofs_sigma_points,ofs_gps,ofs_imu,ofs_gnssraw_accel,ofs_weight,ofs_resampling;
+    std::ofstream ofs_state,ofs_cov_pred,ofs_cov_update,ofs_kalman_gain,ofs_gps,ofs_imu,ofs_gnssraw_accel,ofs_weight,ofs_resampling;
 
 };
 

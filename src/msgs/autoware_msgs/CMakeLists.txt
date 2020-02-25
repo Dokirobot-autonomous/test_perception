@@ -69,6 +69,8 @@ add_message_files(
 
             ## Remote Control
             RemoteCmd.msg
+
+#            UkfStateArray.msg
 )
 
 ## Generate added messages and services with any dependencies listed here

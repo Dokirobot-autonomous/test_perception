@@ -21,7 +21,7 @@
 
   <arg name="marker_display_duration" default="0.2"/>
 
-  <arg name="output" default="screen" />
+  <arg name="output" default="log" />
 
   <arg name="namespace" default=""/>
 

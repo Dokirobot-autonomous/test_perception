@@ -19,12 +19,14 @@
 
 #include "visualize_detected_objects.h"
 
-VisualizeDetectedObjects::VisualizeDetectedObjects() : arrow_height_(0.5), label_height_(1.0) {
+VisualizeDetectedObjects::VisualizeDetectedObjects() : arrow_height_(0.5), label_height_(1.0)
+{
     ros::NodeHandle private_nh_("~");
 
     ros_namespace_ = ros::this_node::getNamespace();
 
-    if (ros_namespace_.substr(0, 2) == "//") {
+    if (ros_namespace_.substr(0, 2) == "//")
+    {
         ros_namespace_.erase(ros_namespace_.begin());
     }
 
@@ -36,37 +38,37 @@ VisualizeDetectedObjects::VisualizeDetectedObjects() : arrow_height_(0.5), label
 
     ROS_INFO("[%s] objects_src_topic: %s", __APP_NAME__, object_src_topic.c_str());
 
-    private_nh_.param<double>("object_speed_threshold", object_speed_threshold_, 0.1);
+    private_nh_.param<double>("object_speed_threshold", object_speed_threshold_, 0.01);
     ROS_INFO("[%s] object_speed_threshold: %.2f", __APP_NAME__, object_speed_threshold_);
 
-    private_nh_.param<double>("arrow_speed_threshold", arrow_speed_threshold_, 0.25);
+    private_nh_.param<double>("arrow_speed_threshold", arrow_speed_threshold_, 0.025);
     ROS_INFO("[%s] arrow_speed_threshold: %.2f", __APP_NAME__, arrow_speed_threshold_);
 
     private_nh_.param<double>("marker_display_duration", marker_display_duration_, 0.2);
     ROS_INFO("[%s] marker_display_duration: %.2f", __APP_NAME__, marker_display_duration_);
 
     std::vector<double> color;
-    private_nh_.param<std::vector<double>>("label_color", color, {255., 255., 255., 1.0});
+    private_nh_.param<std::vector<double>>("label_color", color, {255.,255.,255.,1.0});
     label_color_ = ParseColor(color);
     ROS_INFO("[%s] label_color: %s", __APP_NAME__, ColorToString(label_color_).c_str());
 
-    private_nh_.param<std::vector<double>>("arrow_color", color, {0., 255., 0., 0.8});
+    private_nh_.param<std::vector<double>>("arrow_color", color, {0.,255.,0.,0.8});
     arrow_color_ = ParseColor(color);
     ROS_INFO("[%s] arrow_color: %s", __APP_NAME__, ColorToString(arrow_color_).c_str());
 
-    private_nh_.param<std::vector<double>>("hull_color", color, {51., 204., 51., 0.8});
+    private_nh_.param<std::vector<double>>("hull_color", color, {51.,204.,51.,0.8});
     hull_color_ = ParseColor(color);
     ROS_INFO("[%s] hull_color: %s", __APP_NAME__, ColorToString(hull_color_).c_str());
 
-    private_nh_.param<std::vector<double>>("box_color", color, {51., 128., 204., 0.8});
+    private_nh_.param<std::vector<double>>("box_color", color, {51.,128.,204.,0.8});
     box_color_ = ParseColor(color);
     ROS_INFO("[%s] box_color: %s", __APP_NAME__, ColorToString(box_color_).c_str());
 
-    private_nh_.param<std::vector<double>>("model_color", color, {190., 190., 190., 0.5});
+    private_nh_.param<std::vector<double>>("model_color", color, {190.,190.,190.,0.5});
     model_color_ = ParseColor(color);
     ROS_INFO("[%s] model_color: %s", __APP_NAME__, ColorToString(model_color_).c_str());
 
-    private_nh_.param<std::vector<double>>("centroid_color", color, {77., 121., 255., 0.8});
+    private_nh_.param<std::vector<double>>("centroid_color", color, {77.,121.,255.,0.8});
     centroid_color_ = ParseColor(color);
     ROS_INFO("[%s] centroid_color: %s", __APP_NAME__, ColorToString(centroid_color_).c_str());
 
@@ -76,33 +78,36 @@ VisualizeDetectedObjects::VisualizeDetectedObjects() : arrow_height_(0.5), label
     ROS_INFO("[%s] object_src_topic: %s", __APP_NAME__, object_src_topic.c_str());
 
     publisher_markers_ = node_handle_.advertise<visualization_msgs::MarkerArray>(
-            markers_out_topic, 0);
+            markers_out_topic, 1);
     ROS_INFO("[%s] markers_out_topic: %s", __APP_NAME__, markers_out_topic.c_str());
 
 }
 
-std::string VisualizeDetectedObjects::ColorToString(const std_msgs::ColorRGBA &in_color) {
+std::string VisualizeDetectedObjects::ColorToString(const std_msgs::ColorRGBA &in_color)
+{
     std::stringstream stream;
 
-    stream << "{R:" << std::fixed << std::setprecision(1) << in_color.r * 255 << ", ";
-    stream << "G:" << std::fixed << std::setprecision(1) << in_color.g * 255 << ", ";
-    stream << "B:" << std::fixed << std::setprecision(1) << in_color.b * 255 << ", ";
+    stream << "{R:" << std::fixed << std::setprecision(1) << in_color.r*255 << ", ";
+    stream << "G:" << std::fixed << std::setprecision(1) << in_color.g*255 << ", ";
+    stream << "B:" << std::fixed << std::setprecision(1) << in_color.b*255 << ", ";
     stream << "A:" << std::fixed << std::setprecision(1) << in_color.a << "}";
     return stream.str();
 }
 
-float VisualizeDetectedObjects::CheckColor(double value) {
+float VisualizeDetectedObjects::CheckColor(double value)
+{
     float final_value;
     if (value > 255.)
         final_value = 1.f;
     else if (value < 0)
         final_value = 0.f;
     else
-        final_value = value / 255.f;
+        final_value = value/255.f;
     return final_value;
 }
 
-float VisualizeDetectedObjects::CheckAlpha(double value) {
+float VisualizeDetectedObjects::CheckAlpha(double value)
+{
     float final_value;
     if (value > 1.)
         final_value = 1.f;
@@ -113,9 +118,10 @@ float VisualizeDetectedObjects::CheckAlpha(double value) {
     return final_value;
 }
 
-std_msgs::ColorRGBA VisualizeDetectedObjects::ParseColor(const std::vector<double> &in_color) {
+std_msgs::ColorRGBA VisualizeDetectedObjects::ParseColor(const std::vector<double> &in_color)
+{
     std_msgs::ColorRGBA color;
-    float r, g, b, a;
+    float r,g,b,a;
     if (in_color.size() == 4) //r,g,b,a
     {
         color.r = CheckColor(in_color[0]);
@@ -126,7 +132,8 @@ std_msgs::ColorRGBA VisualizeDetectedObjects::ParseColor(const std::vector<doubl
     return color;
 }
 
-void VisualizeDetectedObjects::DetectedObjectsCallback(const autoware_msgs::DetectedObjectArray &in_objects) {
+void VisualizeDetectedObjects::DetectedObjectsCallback(const autoware_msgs::DetectedObjectArray &in_objects)
+{
     visualization_msgs::MarkerArray label_markers, arrow_markers, centroid_markers, polygon_hulls, bounding_boxes,
             object_models;
 
@@ -159,10 +166,13 @@ void VisualizeDetectedObjects::DetectedObjectsCallback(const autoware_msgs::Dete
 }
 
 visualization_msgs::MarkerArray
-VisualizeDetectedObjects::ObjectsToCentroids(const autoware_msgs::DetectedObjectArray &in_objects) {
+VisualizeDetectedObjects::ObjectsToCentroids(const autoware_msgs::DetectedObjectArray &in_objects)
+{
     visualization_msgs::MarkerArray centroid_markers;
-    for (auto const &object: in_objects.objects) {
-        if (IsObjectValid(object)) {
+    for (auto const &object: in_objects.objects)
+    {
+        if (IsObjectValid(object))
+        {
             visualization_msgs::Marker centroid_marker;
             centroid_marker.lifetime = ros::Duration(marker_display_duration_);
 
@@ -176,9 +186,12 @@ VisualizeDetectedObjects::ObjectsToCentroids(const autoware_msgs::DetectedObject
             centroid_marker.scale.y = 0.5;
             centroid_marker.scale.z = 0.5;
 
-            if (object.color.a == 0) {
+            if (object.color.a == 0)
+            {
                 centroid_marker.color = centroid_color_;
-            } else {
+            }
+            else
+            {
                 centroid_marker.color = object.color;
             }
             centroid_marker.id = marker_id_++;
@@ -189,13 +202,16 @@ VisualizeDetectedObjects::ObjectsToCentroids(const autoware_msgs::DetectedObject
 }//ObjectsToCentroids
 
 visualization_msgs::MarkerArray
-VisualizeDetectedObjects::ObjectsToBoxes(const autoware_msgs::DetectedObjectArray &in_objects) {
+VisualizeDetectedObjects::ObjectsToBoxes(const autoware_msgs::DetectedObjectArray &in_objects)
+{
     visualization_msgs::MarkerArray object_boxes;
 
-    for (auto const &object: in_objects.objects) {
+    for (auto const &object: in_objects.objects)
+    {
         if (IsObjectValid(object) &&
             (object.pose_reliable || object.label != "unknown") &&
-            (object.dimensions.x + object.dimensions.y + object.dimensions.z) < object_max_linear_size_) {
+            (object.dimensions.x + object.dimensions.y + object.dimensions.z) < object_max_linear_size_)
+        {
             visualization_msgs::Marker box;
 
             box.lifetime = ros::Duration(marker_display_duration_);
@@ -210,9 +226,12 @@ VisualizeDetectedObjects::ObjectsToBoxes(const autoware_msgs::DetectedObjectArra
             if (object.pose_reliable)
                 box.pose.orientation = object.pose.orientation;
 
-            if (object.color.a == 0) {
+            if (object.color.a == 0)
+            {
                 box.color = box_color_;
-            } else {
+            }
+            else
+            {
                 box.color = object.color;
             }
 
@@ -223,13 +242,16 @@ VisualizeDetectedObjects::ObjectsToBoxes(const autoware_msgs::DetectedObjectArra
 }//ObjectsToBoxes
 
 visualization_msgs::MarkerArray
-VisualizeDetectedObjects::ObjectsToModels(const autoware_msgs::DetectedObjectArray &in_objects) {
+VisualizeDetectedObjects::ObjectsToModels(const autoware_msgs::DetectedObjectArray &in_objects)
+{
     visualization_msgs::MarkerArray object_models;
 
-    for (auto const &object: in_objects.objects) {
+    for (auto const &object: in_objects.objects)
+    {
         if (IsObjectValid(object) &&
             object.label != "unknown" &&
-            (object.dimensions.x + object.dimensions.y + object.dimensions.z) < object_max_linear_size_) {
+            (object.dimensions.x + object.dimensions.y + object.dimensions.z) < object_max_linear_size_)
+        {
             visualization_msgs::Marker model;
 
             model.lifetime = ros::Duration(marker_display_duration_);
@@ -239,17 +261,28 @@ VisualizeDetectedObjects::ObjectsToModels(const autoware_msgs::DetectedObjectArr
             model.ns = ros_namespace_ + "/model_markers";
             model.mesh_use_embedded_materials = false;
             model.color = model_color_;
-            if (object.label == "car") {
+            if(object.label == "car")
+            {
                 model.mesh_resource = "package://detected_objects_visualizer/models/car.dae";
-            } else if (object.label == "person") {
+            }
+            else if (object.label == "person")
+            {
                 model.mesh_resource = "package://detected_objects_visualizer/models/person.dae";
-            } else if (object.label == "bicycle" || object.label == "bike") {
+            }
+            else if (object.label == "bicycle" || object.label == "bike")
+            {
                 model.mesh_resource = "package://detected_objects_visualizer/models/bike.dae";
-            } else if (object.label == "bus") {
+            }
+            else if (object.label == "bus")
+            {
                 model.mesh_resource = "package://detected_objects_visualizer/models/bus.dae";
-            } else if (object.label == "truck") {
+            }
+            else if(object.label == "truck")
+            {
                 model.mesh_resource = "package://detected_objects_visualizer/models/truck.dae";
-            } else {
+            }
+            else
+            {
                 model.mesh_resource = "package://detected_objects_visualizer/models/box.dae";
             }
             model.scale.x = 1;
@@ -257,7 +290,7 @@ VisualizeDetectedObjects::ObjectsToModels(const autoware_msgs::DetectedObjectArr
             model.scale.z = 1;
             model.id = marker_id_++;
             model.pose.position = object.pose.position;
-            model.pose.position.z -= object.dimensions.z / 2;
+            model.pose.position.z-= object.dimensions.z/2;
 
             if (object.pose_reliable)
                 model.pose.orientation = object.pose.orientation;
@@ -269,11 +302,14 @@ VisualizeDetectedObjects::ObjectsToModels(const autoware_msgs::DetectedObjectArr
 }//ObjectsToModels
 
 visualization_msgs::MarkerArray
-VisualizeDetectedObjects::ObjectsToHulls(const autoware_msgs::DetectedObjectArray &in_objects) {
+VisualizeDetectedObjects::ObjectsToHulls(const autoware_msgs::DetectedObjectArray &in_objects)
+{
     visualization_msgs::MarkerArray polygon_hulls;
 
-    for (auto const &object: in_objects.objects) {
-        if (IsObjectValid(object) && !object.convex_hull.polygon.points.empty() && object.label == "unknown") {
+    for (auto const &object: in_objects.objects)
+    {
+        if (IsObjectValid(object) && !object.convex_hull.polygon.points.empty() && object.label == "unknown")
+        {
             visualization_msgs::Marker hull;
             hull.lifetime = ros::Duration(marker_display_duration_);
             hull.header = in_objects.header;
@@ -283,7 +319,8 @@ VisualizeDetectedObjects::ObjectsToHulls(const autoware_msgs::DetectedObjectArra
             hull.id = marker_id_++;
             hull.scale.x = 0.2;
 
-            for (auto const &point: object.convex_hull.polygon.points) {
+            for(auto const &point: object.convex_hull.polygon.points)
+            {
                 geometry_msgs::Point tmp_point;
                 tmp_point.x = point.x;
                 tmp_point.y = point.y;
@@ -291,9 +328,12 @@ VisualizeDetectedObjects::ObjectsToHulls(const autoware_msgs::DetectedObjectArra
                 hull.points.push_back(tmp_point);
             }
 
-            if (object.color.a == 0) {
+            if (object.color.a == 0)
+            {
                 hull.color = hull_color_;
-            } else {
+            }
+            else
+            {
                 hull.color = object.color;
             }
 
@@ -304,13 +344,18 @@ VisualizeDetectedObjects::ObjectsToHulls(const autoware_msgs::DetectedObjectArra
 }
 
 visualization_msgs::MarkerArray
-VisualizeDetectedObjects::ObjectsToArrows(const autoware_msgs::DetectedObjectArray &in_objects) {
+VisualizeDetectedObjects::ObjectsToArrows(const autoware_msgs::DetectedObjectArray &in_objects)
+{
     visualization_msgs::MarkerArray arrow_markers;
-    for (auto const &object: in_objects.objects) {
-        if (IsObjectValid(object) && object.pose_reliable) {
-            double velocity = object.velocity.linear.x;
+    for (auto const &object: in_objects.objects)
+    {
+//        if (IsObjectValid(object) && object.pose_reliable)
+        if (IsObjectValid(object))
+        {
+//            double velocity = object.velocity.linear.x;
 
-            if (abs(velocity) >= arrow_speed_threshold_) {
+            if (object.velocity.linear.x >= arrow_speed_threshold_)
+            {
                 visualization_msgs::Marker arrow_marker;
                 arrow_marker.lifetime = ros::Duration(marker_display_duration_);
 
@@ -323,7 +368,8 @@ VisualizeDetectedObjects::ObjectsToArrows(const autoware_msgs::DetectedObjectArr
                 tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
 
                 // in the case motion model fit opposite direction
-                if (velocity < -0.1) {
+                if (object.velocity.linear.x < -0.1)
+                {
                     yaw += M_PI;
                     // normalize angle
                     while (yaw > M_PI)
@@ -344,9 +390,12 @@ VisualizeDetectedObjects::ObjectsToArrows(const autoware_msgs::DetectedObjectArr
                 arrow_marker.type = visualization_msgs::Marker::ARROW;
 
                 // green
-                if (object.color.a == 0) {
+                if (object.color.a == 0)
+                {
                     arrow_marker.color = arrow_color_;
-                } else {
+                }
+                else
+                {
                     arrow_marker.color = object.color;
                 }
                 arrow_marker.id = marker_id_++;
@@ -374,10 +423,14 @@ VisualizeDetectedObjects::ObjectsToArrows(const autoware_msgs::DetectedObjectArr
 }//ObjectsToArrows
 
 visualization_msgs::MarkerArray
-VisualizeDetectedObjects::ObjectsToLabels(const autoware_msgs::DetectedObjectArray &in_objects) {
+VisualizeDetectedObjects::ObjectsToLabels(const autoware_msgs::DetectedObjectArray &in_objects)
+{
     visualization_msgs::MarkerArray label_markers;
-    for (auto const &object: in_objects.objects) {
-        if (IsObjectValid(object)) {
+    for (auto const &object: in_objects.objects)
+    {
+        if (IsObjectValid(object))
+        {
+
             visualization_msgs::Marker label_marker;
 
             label_marker.lifetime = ros::Duration(marker_display_duration_);
@@ -393,119 +446,19 @@ VisualizeDetectedObjects::ObjectsToLabels(const autoware_msgs::DetectedObjectArr
 
             label_marker.id = marker_id_++;
 
-//      if(!object.label.empty() && object.label != "unknown")
-//        label_marker.text = object.label + " "; //Object Class if available
-//
-//      std::stringstream distance_stream;
-//      distance_stream << std::fixed << std::setprecision(1)
-//                      << sqrt((object.pose.position.x * object.pose.position.x) +
-//                                (object.pose.position.y * object.pose.position.y));
-//      std::string distance_str = distance_stream.str() + " m";
-//      label_marker.text += distance_str;
+            if(!object.label.empty() && object.label != "unknown")
+                label_marker.text = object.label + " "; //Object Class if available
 
-            if (object.velocity_reliable) {
-                double velocity = object.velocity.linear.x;
-                if (velocity < -0.1) {
-                    velocity *= -1;
-                }
-
-                if (abs(velocity) < object_speed_threshold_) {
-                    velocity = 0.0;
-                }
-
-                tf::Quaternion q(object.pose.orientation.x, object.pose.orientation.y,
-                                 object.pose.orientation.z, object.pose.orientation.w);
-
-                double roll, pitch, yaw;
-                tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
-
-                // convert m/s to km/h
-                std::stringstream kmh_velocity_stream;
-                kmh_velocity_stream << std::fixed << std::setprecision(1) << (velocity * 3.6);
-//        std::string text = "\n<" + std::to_string(object.id) + "> " + kmh_velocity_stream.str() + " km/h";
-                std::string text = "<" + std::to_string(object.id) + "> " + kmh_velocity_stream.str() + " km/h\n";
-                label_marker.text += text;
-            }
-
-            label_marker.pose.position.x = object.pose.position.x;
-            label_marker.pose.position.y = object.pose.position.y;
-            label_marker.pose.position.z = label_height_;
-            label_marker.scale.z = 1.0;
-            if (!label_marker.text.empty())
-                label_markers.markers.push_back(label_marker);
-        }
-    }  // end in_objects.objects loop
-
-/*
-    visualization_msgs::MarkerArray label_markers;
-    for (auto const &object: in_objects.objects)
-    {
-        if (IsObjectValid(object))
-        {
-            visualization_msgs::Marker label_marker;
-
-            label_marker.lifetime = ros::Duration(marker_display_duration_);
-            label_marker.header = in_objects.header;
-            label_marker.ns = ros_namespace_ + "/label_markers";
-            label_marker.action = visualization_msgs::Marker::ADD;
-            label_marker.type = visualization_msgs::Marker::TEXT_VIEW_FACING;
-            label_marker.scale.x = 0.5;
-            label_marker.scale.y = 0.5;
-            label_marker.scale.z = 0.5;
-
-            label_marker.color = label_color_;
-
-            label_marker.id = marker_id_++;
-
-//            if(!object.label.empty() && object.label != "unknown")
-//                label_marker.text = object.label + " "; //Object Class if available
-
-//            if (object.velocity_reliable)
-            {
-                double velocity = object.velocity.linear.x;
-                if (velocity < -0.1)
-                {
-                    velocity *= -1;
-                }
-
-                if (abs(velocity) < object_speed_threshold_)
-                {
-                    velocity = 0.0;
-                }
-
-                tf::Quaternion q(object.pose.orientation.x, object.pose.orientation.y,
-                                 object.pose.orientation.z, object.pose.orientation.w);
-
-                double roll, pitch, yaw;
-                tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
-
-                // convert m/s to km/h
-                std::stringstream velocity_stream;
-                velocity_stream << std::fixed << std::setprecision(1) << velocity;
-                std::string text = "<" + std::to_string(object.id) + "> " + velocity_stream.str() + " m/s\n";
-                label_marker.text += text;
-            }
-
-            label_marker.pose.position.x = object.pose.position.x;
-            label_marker.pose.position.y = object.pose.position.y;
-            label_marker.pose.position.z = label_height_;
-            label_marker.scale.z = 1.0;
-            if (!label_marker.text.empty())
-                label_markers.markers.push_back(label_marker);
-
-//            distance_stream << std::fixed << std::setprecision(1)
-//                            << sqrt((object.pose.position.x * object.pose.position.x) +
-//                                    (object.pose.position.y * object.pose.position.y));
-//            std::string distance_str = distance_stream.str() + " m";
             std::stringstream distance_stream;
             distance_stream << std::fixed << std::setprecision(1)
-                            << "("<<object.pose.position.x
-                            <<","<<object.pose.position.y<<")\n";
-            std::string distance_str = distance_stream.str();
+                            << sqrt((object.pose.position.x * object.pose.position.x) +
+                                    (object.pose.position.y * object.pose.position.y));
+            std::string distance_str = distance_stream.str() + " m";
             label_marker.text += distance_str;
 
 //            if (object.velocity_reliable)
-//            {
+            if (object.velocity.linear.x!=0.0)
+            {
 //                double velocity = object.velocity.linear.x;
 //                if (velocity < -0.1)
 //                {
@@ -516,34 +469,36 @@ VisualizeDetectedObjects::ObjectsToLabels(const autoware_msgs::DetectedObjectArr
 //                {
 //                    velocity = 0.0;
 //                }
-//
-//                tf::Quaternion q(object.pose.orientation.x, object.pose.orientation.y,
-//                                 object.pose.orientation.z, object.pose.orientation.w);
-//
-//                double roll, pitch, yaw;
-//                tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
-//
-//                // convert m/s to km/h
-//                std::stringstream kmh_velocity_stream;
-//                kmh_velocity_stream << std::fixed << std::setprecision(1) << (velocity * 3.6);
-//                std::string text = "\n<" + std::to_string(object.id) + "> " + kmh_velocity_stream.str() + " km/h";
-//                label_marker.text += text;
-//            }
-//
-//            label_marker.pose.position.x = object.pose.position.x;
-//            label_marker.pose.position.y = object.pose.position.y;
-//            label_marker.pose.position.z = label_height_;
-//            label_marker.scale.z = 1.0;
-//            if (!label_marker.text.empty())
-//                label_markers.markers.push_back(label_marker);
+
+                tf::Quaternion q(object.pose.orientation.x, object.pose.orientation.y,
+                                 object.pose.orientation.z, object.pose.orientation.w);
+
+                double roll, pitch, yaw;
+                tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
+
+                // convert m/s to km/h
+                std::stringstream kmh_velocity_stream;
+                kmh_velocity_stream << std::fixed << std::setprecision(1) << object.velocity.linear.x*3.60;
+                std::string text = "\n<" + std::to_string(object.id) + "> " + kmh_velocity_stream.str() + " km/h";
+                label_marker.text += text;
+                ROS_INFO("%d,%.5lf,%.5lf,%s",object.id,object.velocity.linear.x,object.velocity.linear.x*3.6,label_marker.text.c_str());
+            }
+
+            label_marker.pose.position.x = object.pose.position.x;
+            label_marker.pose.position.y = object.pose.position.y;
+            label_marker.pose.position.z = label_height_;
+            label_marker.scale.z = 1.0;
+            if (!label_marker.text.empty())
+                label_markers.markers.push_back(label_marker);
         }
     }  // end in_objects.objects loop
-*/
 
+    std::cout<<std::endl;
     return label_markers;
 }//ObjectsToLabels
 
-bool VisualizeDetectedObjects::IsObjectValid(const autoware_msgs::DetectedObject &in_object) {
+bool VisualizeDetectedObjects::IsObjectValid(const autoware_msgs::DetectedObject &in_object)
+{
     if (!in_object.valid ||
         std::isnan(in_object.pose.orientation.x) ||
         std::isnan(in_object.pose.orientation.y) ||
@@ -557,7 +512,8 @@ bool VisualizeDetectedObjects::IsObjectValid(const autoware_msgs::DetectedObject
         (in_object.dimensions.x <= 0.) ||
         (in_object.dimensions.y <= 0.) ||
         (in_object.dimensions.z <= 0.)
-            ) {
+            )
+    {
         return false;
     }
     return true;
